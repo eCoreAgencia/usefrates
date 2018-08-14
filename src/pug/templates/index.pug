@@ -1,8 +1,94 @@
 extends ../layouts/default.pug
 
 block content
-    img(src="/arquivos/logo.png")
+  section.section__page.section__hero
+    .banner.banner--full
+      +vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
+        .box-banner
+          a(href="")
+            img(src="http://via.placeholder.com/2000x500")/
+        .box-banner
+          a(href="")
+            img(src="http://via.placeholder.com/2000x500")/
+        .box-banner
+          a(href="")
+            img(src="http://via.placeholder.com/2000x500")/
+    .kits.kits--absolute kits
+  section.section__page.section__diff
+    .diff.container.is-fluid
+      .diff__container
+        .diff__box
+          .diff__icon.diff__icon--boleto
+            include ../../svg/coupon.svg
+          .diff__info
+            span.diff__title 10% de desconto no boleto
+            span.diff__subtitle em todos os produtos do site
+        .diff__box
+          .diff__icon.diff__icon--frete
+            include ../../svg/truck.svg
+          .diff__info
+            span.diff__title frete grátis
+            span.diff__subtitle a partir de R$ 299 para o Sudeste
+        .diff__box
+          .diff__icon.diff__icon--troca
+            include ../../svg/refresh.svg
+          .diff__info
+            span.diff__title troca grátis (7 dias)
+            span.diff__subtitle Tranquilidade na sua primeira compra
+        .diff__box
+          .diff__icon.diff__icon--atacado
+            include ../../svg/percent.svg
+          .diff__info
+            span.diff__title Compre no Atacado
+            span.diff__subtitle Receba descontos especiais
 
-    h1.teste.teste--primary logo
+  section.section__page.section__call
+    .call call
+  section.section__page.section__shelf
+    .container.is-fluid
+      h2.section__title Novidades
+      +vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades" />')
+        .shelf.prateleira.shelf__carousel--full
+          ul
+            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+              li
+                include ../shelves/prateleira
+  section.section__page.section__shelf
+    .container.is-fluid
+      h2.section__title Mais Vendidos
+      +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
+        .shelf.prateleira.shelf__carousel--full
+          ul
+            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+              li
+                include ../shelves/prateleira
+  section.section__page.section__shelf
+    .container.is-fluid
+      h2.section__title Comprar por categoria
+      .buy-by-category
+        .category.category__card
+          .category__card-header
+            .category__card-media
+              img(src="http://via.placeholder.com/275x275")/
+            .category__card-info
+              span.category__name Ferramentas Manuais
+              a.category__link(href="/category.html") Ver todos
+          .category__menu
+            ul.menu-list
+              li
+                a(href="/category.html") Alicates
+              li
+                a(href="/category.html") Lixadeira Manual
+              li
+                a(href="/category.html") Jogos de Soquetes
+              li
+                a(href="/category.html") Grampos
+              li
+                a(href="/category.html") Martelo
 
-    include ../subtemplates/teste.pug
+        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
+          .shelf.prateleira.shelf__carousel--category
+            ul
+              each val in [1, 2, 3]
+                li
+                  include ../shelves/prateleira

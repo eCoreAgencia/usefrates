@@ -1,0 +1,80 @@
+.shelf {
+  padding: 0 10px;
+  ul {
+    display: flex;
+    width: 100%;
+  }
+
+  li {
+    padding: 10px;
+    width: 100%;
+    max-width: 301px;
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    .shelf__carousel--full & {
+      height: 60px;
+      top: 50%;
+      margin-top: -30px;
+      position: absolute;
+      z-index: 10;
+      outline: none;
+      svg {
+        width: 30px;
+      }
+
+      &.slick-prev {
+        left: -30px;
+      }
+
+      &.slick-next {
+        right: -30px;
+      }
+
+    }
+  }
+}
+
+.buy-by-category {
+  display: flex;
+
+  .category__card {
+    padding: 10px;
+
+    &-header {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      height: 275px;
+    }
+
+    &-info {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .category__menu {
+    background-color: #eeeeee;
+    padding: 10px;
+    text-align: center;
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      border: 1px solid $c-primary;
+      color: $c-primary;
+      background-color: $c-white;
+      border-radius: 10px;
+      &:hover {
+        background-color: $c-primary;
+        text-decoration: none;
+        color: $c-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.search-form {
+  padding: 10px;
+  background-color: $c-gray;
+  border-radius: 10px;
+
+  .input {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  .button {
+    border: none;
+    background-color: transparent;
+  }
+
+  svg {
+    width: 30px;
+  }
+}

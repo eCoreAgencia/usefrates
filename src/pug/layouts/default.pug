@@ -27,14 +27,15 @@ html(xmlns="http://www.w3.org/1999/xhtml", xmlns:vtex="http://www.vtex.com.br/20
     block head
 
   body(class= bodyClass)
-    //include ../subtemplates/Header
+    include ../subtemplates/header
 
     main
       block content
 
-    //include ../subtemplates/Newsletter
-    //include ../subtemplates/Footer
+
+    include ../subtemplates/footer
 
     block scripts
 
     +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%Bottom-scripts" />')
+      script(src='/arquivos/om-slick.js')

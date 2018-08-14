@@ -1,0 +1,22 @@
+.section {
+  &__page {
+    position: relative;
+  }
+  &__diff {
+    padding: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $f-secondary;
+    font-size: 40px;
+    font-weight: 700;
+    color: $c-blue;
+    margin-bottom: 20px;
+  }
+
+  &__shelf {
+    margin: 20px 0;
+  }
+}
