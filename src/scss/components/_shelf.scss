@@ -34,6 +34,28 @@
       }
 
     }
+
+    .shelf__brand & {
+      svg {
+        width: 30px;
+      }
+    }
+  }
+
+  &__brand {
+    li {
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+      margin: 0 auto;
+    }
   }
 }
 
@@ -54,6 +76,9 @@
     &-info {
       position: absolute;
       bottom: 0;
+      width: 100%;
+      padding: 10px;
+      font-family: $f-secondary;
     }
   }
   .category__menu {
@@ -76,5 +101,16 @@
         color: $c-white;
       }
     }
+  }
+
+  .category__name {
+    display: block;
+    color: $c-white;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .category__link {
+    color: #bebebe;
   }
 }

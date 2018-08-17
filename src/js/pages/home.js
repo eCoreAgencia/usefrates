@@ -18,6 +18,17 @@ $('.shelf__carousel--full ul').slick({
   nextArrow:shelf__next
 });
 
+$('.shelf__brand ul').slick({
+  arrows: true,
+  slideToShow: 4,
+  slidesToScroll: 1,
+  infinite: true,
+  centerMode: true,
+  variableWidth: true,
+  prevArrow: shelf__prev,
+  nextArrow:shelf__next
+});
+
 /* $('.shelf__carousel--category ul').slick({
   arrows: true,
   slideToShow: 3,
