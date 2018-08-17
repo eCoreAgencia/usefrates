@@ -9,10 +9,9 @@ const shelf__next = `<button type='button' class='slick-next shelf__button'><svg
 
 $('.shelf__carousel--full ul').slick({
   arrows: true,
-  slideToShow: 4,
+  slideToShow: 5,
   slidesToScroll: 1,
   infinite: true,
-  centerMode: true,
   variableWidth: true,
   prevArrow: shelf__prev,
   nextArrow:shelf__next
