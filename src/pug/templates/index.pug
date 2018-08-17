@@ -13,7 +13,7 @@ block content
         .box-banner
           a(href="")
             img(src="http://via.placeholder.com/2000x500")/
-    .kits.kits--absolute kits
+    .kits.kits--absolute
   section.section__page.section__diff
     .diff.container.is-fluid
       .diff__container
@@ -43,7 +43,7 @@ block content
             span.diff__subtitle Receba descontos especiais
 
   section.section__page.section__call
-    .call call
+    .call
   section.section__page.section__shelf
     .container.is-fluid
       h2.section__title Novidades
@@ -89,6 +89,77 @@ block content
         +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
           .shelf.prateleira.shelf__carousel--category
             ul
-              each val in [1, 2, 3]
+              each val in [1, 2, 3, 4]
                 li
                   include ../shelves/prateleira
+      .buy-by-category
+        .category.category__card
+          .category__card-header
+            .category__card-media
+              img(src="http://via.placeholder.com/275x275")/
+            .category__card-info
+              span.category__name Ferramentas Manuais
+              a.category__link(href="/category.html") Ver todos
+          .category__menu
+            ul.menu-list
+              li
+                a(href="/category.html") Alicates
+              li
+                a(href="/category.html") Lixadeira Manual
+              li
+                a(href="/category.html") Jogos de Soquetes
+              li
+                a(href="/category.html") Grampos
+              li
+                a(href="/category.html") Martelo
+
+        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
+          .shelf.prateleira.shelf__carousel--category
+            ul
+              each val in [1, 2, 3, 4]
+                li
+                  include ../shelves/prateleira
+      .buy-by-category
+        .category.category__card
+          .category__card-header
+            .category__card-media
+              img(src="http://via.placeholder.com/275x275")/
+            .category__card-info
+              span.category__name Ferramentas Manuais
+              a.category__link(href="/category.html") Ver todos
+          .category__menu
+            ul.menu-list
+              li
+                a(href="/category.html") Alicates
+              li
+                a(href="/category.html") Lixadeira Manual
+              li
+                a(href="/category.html") Jogos de Soquetes
+              li
+                a(href="/category.html") Grampos
+              li
+                a(href="/category.html") Martelo
+
+        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
+          .shelf.prateleira.shelf__carousel--category
+            ul
+              each val in [1, 2, 3,4]
+                li
+                  include ../shelves/prateleira
+  section.section__page.section__brand
+    .container.is-fluid
+      .shelf.shelf__brand
+        ul
+          each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+            li
+              a(href='')
+                img(src='http://via.placeholder.com/175x75')/
+  section.section__page.section__shelf
+    .container.is-fluid
+      h2.section__title Ofertas da semana
+      +vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades" />')
+        .shelf.prateleira
+          ul
+            each val in [1, 2, 3, 4, 5]
+              li
+                include ../shelves/prateleira

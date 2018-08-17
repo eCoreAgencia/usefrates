@@ -1,9 +1,9 @@
 const pjson = require('../package.json');
 
 module.exports = {
-  PROJECT_ID: "vtex-structure",
+  PROJECT_ID: "casaegaragem",
   TEMPLATE_PREFIX: "eCore-",
   PROJECT_VERSION: pjson.version,
-  STORE_ID: "vtex-structure",
-  STORE_NAME: "Vtex Structure"
+  STORE_ID: "casaegaragem",
+  STORE_NAME: "Casa e Garagem"
 }
