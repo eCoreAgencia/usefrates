@@ -1,83 +1,70 @@
 import axios from 'axios';
+import { isLocalhost } from '../utils';
 
 export default class SearchForm {
-    constructor(){
-        
 
-        const resultTeste = {
-            "itemsReturned": [
-                {
-                    "items": [],
-                    "thumb": "",
-                    "thumbUrl": null,
-                    "name": "bomba em Bombas",
-                    "href": "https://casaegaragem.vtexcommercestable.com.br/bombas/bomba",
-                    "criteria": "£bomba em Bombas¢/bombas/bomba"
-                },
-                {
-                    "items": [
-                        {
-                            "itemId": "25",
-                            "name": "Bomba Pressurizadora BFL120 Intech Machine - 110v",
-                            "nameComplete": "Bomba Pressurizadora BFL120 Intech Machine - 110v",
-                            "imageUrl": "https://casaegaragem.vteximg.com.br/arquivos/ids/155455-25-25/5da4f7c27dd7f558a989edcc97245770.jpg?v=636688096382430000"
-                        },
-                        {
-                            "itemId": "26",
-                            "name": "Bomba Pressurizadora BFL120 Intech Machine - 220v",
-                            "nameComplete": "Bomba Pressurizadora BFL120 Intech Machine - 220v",
-                            "imageUrl": "https://casaegaragem.vteximg.com.br/arquivos/ids/155458-25-25/5da4f7c27dd7f558a989edcc97245770.jpg?v=636688096450570000"
-                        }
-                    ],
-                    "thumb": "<img src=\"https://casaegaragem.vteximg.com.br/arquivos/ids/155455-25-25/5da4f7c27dd7f558a989edcc97245770.jpg?v=636688096382430000\" width=\"25\" height=\"25\" alt=\"5da4f7c27dd7f558a989edcc97245770\" id=\"\" />",
-                    "thumbUrl": "https://casaegaragem.vteximg.com.br/arquivos/ids/155455-25-25/5da4f7c27dd7f558a989edcc97245770.jpg?v=636688096382430000",
-                    "name": "bomba pressurizadora bfl120 intech machine",
-                    "href": "https://casaegaragem.vtexcommercestable.com.br/bomba-pressurizadora-bfl120-intech-machine/p",
-                    "criteria": null
-                },
-                {
-                    "items": [
-                        {
-                            "itemId": "23",
-                            "name": "Bomba Periférica BP500 Intech Machine - 110v",
-                            "nameComplete": "Bomba Periférica BP500 Intech Machine - 110v",
-                            "imageUrl": "https://casaegaragem.vteximg.com.br/arquivos/ids/155453-25-25/f4977dfb7c83397233803a73cae17ecd.jpg?v=636688095792900000"
-                        },
-                        {
-                            "itemId": "24",
-                            "name": "Bomba Periférica BP500 Intech Machine - 220v",
-                            "nameComplete": "Bomba Periférica BP500 Intech Machine - 220v",
-                            "imageUrl": "https://casaegaragem.vteximg.com.br/arquivos/ids/155454-25-25/f4977dfb7c83397233803a73cae17ecd.jpg?v=636688095925230000"
-                        }
-                    ],
-                    "thumb": "<img src=\"https://casaegaragem.vteximg.com.br/arquivos/ids/155453-25-25/f4977dfb7c83397233803a73cae17ecd.jpg?v=636688095792900000\" width=\"25\" height=\"25\" alt=\"f4977dfb7c83397233803a73cae17ecd\" id=\"\" />",
-                    "thumbUrl": "https://casaegaragem.vteximg.com.br/arquivos/ids/155453-25-25/f4977dfb7c83397233803a73cae17ecd.jpg?v=636688095792900000",
-                    "name": "bomba periférica bp500 intech machine",
-                    "href": "https://casaegaragem.vtexcommercestable.com.br/bomba-periferica-bp500-intech-machine/p",
-                    "criteria": null
-                }
-            ]
-        }
-    }
-
+  constructor(element){
     
+    this.form = $(element);
+    this.shelfId = 'ebccb84c-3bc2-590c-7999-9849b0cbd4d5';
+    this.init()    
+  }
 
-    renderResultList(items){
+  init(){
+    let self = this;
+    const input = this.form.find('.input');
+    this.listHtml(this.form)
 
-    }
+    input.on('keyup focus', function(){
+      const list = $('.search-form__result-list');
+      const word = $(this).val();
+      console.log(word)
+      if(word.length >= 3) self.getSearchResult(word) 
+    })
 
-    getSearch(query){
-        const baseUrl = 'https://casaegaragem.vtexcommercestable.com.br/';
-        axios.get(`${baseUrl}/buscaautocomplete/?productNameContains=${query}`)
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
+    input.on('blur', function(){
+      const list = $('.search-form__result-list');
+      setTimeout(function(){
+        list.hide();
+        list.empty();
+      }, 500)
+      
+    })
+
+  }
+
+  listHtml(element){
+    const resultWrapper = `<ul class="search-form__result-list"></ul>`;
+    element.append(resultWrapper);
+  }
+
+  getSearchResult(query){
+    let self = this;
+    const endpoint = isLocalhost ? `/` : `/buscapagina?&ft=${query}&PS=5&sl=${this.shelfId}&cc=50&sm=0&PageNumber=1`;
+    //const endpoint = `http://casaegaragem.vtexcommercestable.com.br/buscapagina?&ft=${query}&PS=5&sl=${this.shelfId}&cc=50&sm=0&PageNumber=1`;
+    axios.get(endpoint)
+      .then(data => self.appendResultList(data.data))
+      .catch(error => console.log(error)) 
+  }
+
+  appendResultList(resultList){
+    console.log(resultList);
+    const list = $('.search-form__result-list');
+    list.empty();
+    list.show();
+    list.append(resultList);
+
+  }
+
 
 
 }
 
-window.searchForm = new SearchForm();
+
+
+window.searchForm = new SearchForm('#header-form');
+
+
+
+
+

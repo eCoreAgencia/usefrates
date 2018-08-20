@@ -1,5 +1,5 @@
 header.header
-  .header__area.header__info
+  .header__area.header__info.container
     .header__inner.row
       .header__contact-bar
         span.contact__phone.contact__box
@@ -17,7 +17,7 @@ header.header
             include ../../svg/whatsapp.svg
           strong Atendimento via Whatsapp:
           | (24) 99259 1944
-  .header__area.header__main.container.is-fluid
+  .header__area.header__main.container
     .header__inner
       .columns
         .header__logo.column.is-2
@@ -26,7 +26,7 @@ header.header
               a.logo__link(href="/")
                 img.logo__image(src="/arquivos/logo.png", alt="")/
         .header__search-form.column.is-6
-          .search-form
+          .search-form#header-form
             .field.has-addons
               .control.is-expanded
                 input.input(type='text', placeholder='Digite o nome do produto...')/
@@ -45,7 +45,7 @@ header.header
               include ../../svg/user.svg
             span Minha Conta
           .minicart
-  .header__area.header__menu
+  .header__area.header__menu.container
     nav.navbar(role='navigation', aria-label='dropdown navigation')
       .navbar-item.has-dropdown.is-hoverable
         a.navbar-link

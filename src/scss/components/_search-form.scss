@@ -2,6 +2,7 @@
   padding: 10px;
   background-color: $c-gray;
   border-radius: 10px;
+  position: relative;
 
   .input {
     background-color: transparent;
@@ -16,5 +17,38 @@
 
   svg {
     width: 30px;
+  }
+
+  
+
+  .field {
+    margin: 0;
+  }
+  &__result-list {
+    display: none;
+    position: absolute;
+    z-index: 40;
+    min-height: 200px;
+    width: 100%;
+    top: 100%;
+    background-color: #ffffff;
+    left: 0;
+    &-item, &-link {
+      display: flex;
+      width: 100%;
+    }
+    .shelf ul li {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .product__shelf {
+      display: flex;
+      align-items: center;
+    }
+
+    .product__header {
+      max-width: 150px;
+    }
   }
 }
