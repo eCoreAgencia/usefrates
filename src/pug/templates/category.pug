@@ -1,0 +1,169 @@
+extends ../layouts/default.pug
+
+block vars
+  - var pageTitle = 'Categoria'
+  - var bodyClass = 'catalog category'
+
+block content
+    section.section__page.section__diff
+        .diff.container.is-fluid
+            .diff__container
+                .diff__box
+                    .diff__icon.diff__icon--boleto
+                        include ../../svg/coupon.svg
+                    .diff__info
+                        span.diff__title 10% de desconto no boleto
+                        span.diff__subtitle em todos os produtos do site
+                .diff__box
+                    .diff__icon.diff__icon--frete
+                        include ../../svg/truck.svg
+                    .diff__info
+                        span.diff__title frete grátis
+                        span.diff__subtitle a partir de R$ 299 para o Sudeste
+                .diff__box
+                    .diff__icon.diff__icon--troca
+                        include ../../svg/refresh.svg
+                    .diff__info
+                        span.diff__title troca grátis (7 dias)
+                        span.diff__subtitle Tranquilidade na sua primeira compra
+                .diff__box
+                    .diff__icon.diff__icon--atacado
+                        include ../../svg/percent.svg
+                    .diff__info
+                        span.diff__title Compre no Atacado
+                        span.diff__subtitle Receba descontos especiais
+    section.section__page.section__banner
+        .banner.banner__category
+            +vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
+                .box-banner
+                    a(href="")
+                        img(src="http://via.placeholder.com/2000x207")/
+    section.section__page.section__filter
+        .category__filter.filter
+            .filter__inner
+    section.section__page.section__breadcrumb
+        .container.is-fluid
+            .section__inner
+                +vtex-controller('<vtex.cmc:breadCrumb />')
+                    .bread-crumb
+                        ul
+                            li
+                                a(title='casaegaragem', href='/') casaegaragem
+                            li
+                                a(title='Casa e Jardim', href='https://casaegaragem.vtexcommercestable.com.br/casa-e-jardim') Casa e Jardim
+                            li.last
+                                strong
+                                    a(title='Black & Decker', href='https://casaegaragem.vtexcommercestable.com.br/casa-e-jardim/black---decker?O=OrderByTopSaleDESC&PS=12') Black & Decker
+                .orderBy
+                    .select
+                        select
+                            option(value='') Ordenar por
+                            option(value='OrderByPriceASC') Menor Preço
+                            option(value='OrderByPriceDESC') Maior Preço
+                            option(value='OrderByTopSaleDESC') Mais vendidos
+                            option(value='OrderByReviewRateDESC') Melhores avaliações
+                            option(value='OrderByNameASC') A - Z
+                            option(value='OrderByNameDESC') Z - A
+                            option(value='OrderByReleaseDateDESC') Data de lançamento
+                            option(value='OrderByBestDiscountDESC') Melhor Desconto
+    section.section__page.section__shelf
+        .container.is-fluid
+            +vtex-controller('<vtex.cmc:searchResult layout="65c15678-2bbe-72e0-3aa6-0aa635db2f86" itemCount="12"  columnCount="4" />')
+                p.searchResultsTime
+                    span.resultado-busca-numero
+                    span.label Produtos encontrados:
+                    span.value 2
+                    span.resultado-busca-termo
+                    span.label Resultado da Pesquisa por:
+                    strong.value
+                    span.resultado-busca-tempo
+                    span.label em
+                    span.value 7 ms
+                .sub
+                    .resultado-busca-filtro
+                    fieldset.orderBy
+                        label Ordenar por:
+                        select#O(onchange="window.location.href= '/casa-e-jardim/black---decker?PS=12&' + 'O=' + this.options[this.selectedIndex].value")
+                        option(value='') Selecione
+                        option(value='OrderByPriceASC') Menor Preço
+                        option(value='OrderByPriceDESC') Maior Preço
+                        option(value='OrderByTopSaleDESC') Mais vendidos
+                        option(value='OrderByReviewRateDESC') Melhores avaliações
+                        option(value='OrderByNameASC') A - Z
+                        option(value='OrderByNameDESC') Z - A
+                        option(value='OrderByReleaseDateDESC') Data de lançamento
+                        option(value='OrderByBestDiscountDESC') Melhor Desconto
+                    fieldset.filterBy
+                        | Itens por página:
+                        select#PS(onchange="window.location.href= '/casa-e-jardim/black---decker?' + 'PS=' + this.options[this.selectedIndex].value")
+                        option(selected='selected', value='12') 12
+                        option(value='24') 24
+                        option(value='36') 36
+                        option(value='48') 48
+                    p.compare
+                        | Produtos selecionados para comparar: 
+                        strong
+                        span#NumeroSuperior.compare-selection-count 0
+                        a.btn-comparar(title='Comparar', href='#') Comparar
+                .vitrine.resultItemsWrapper
+                    
+                    #PagerTop_52435197.pager.top
+                    ul.pages
+                        li.first.pgEmpty primeiro
+                        li.previous.pgEmpty anterior
+                        li.page-number.pgCurrent 1
+                        li.next.pgEmpty próximo
+                        li.last.pgEmpty último
+                    #ResultItems_52435197.prateleira
+                    .shelf.prateleira
+                        ul
+                            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                                li
+                                    include ../shelves/prateleira
+                                li#helperComplement_19.helperComplement(style='display:none')
+                    #PagerBottom_52435197.pager.bottom
+                    ul.pages
+                        li.first.pgEmpty primeiro
+                        li.previous.pgEmpty anterior
+                        li.page-number.pgCurrent 1
+                        li.next.pgEmpty próximo
+                        li.last.pgEmpty último
+                p.searchResultsTime
+                    span.resultado-busca-numero
+                    span.label Produtos encontrados:
+                    span.value 2
+                    span.resultado-busca-termo
+                    span.label Resultado da Pesquisa por:
+                    strong.value
+                    span.resultado-busca-tempo
+                    span.label em
+                    span.value 7 ms
+                .sub
+                    .resultado-busca-filtro
+                    fieldset.orderBy
+                        label Ordenar por:
+                        select#O(onchange="window.location.href= '/casa-e-jardim/black---decker?PS=12&' + 'O=' + this.options[this.selectedIndex].value")
+                        option(value='') Selecione
+                        option(value='OrderByPriceASC') Menor Preço
+                        option(value='OrderByPriceDESC') Maior Preço
+                        option(value='OrderByTopSaleDESC') Mais vendidos
+                        option(value='OrderByReviewRateDESC') Melhores avaliações
+                        option(value='OrderByNameASC') A - Z
+                        option(value='OrderByNameDESC') Z - A
+                        option(value='OrderByReleaseDateDESC') Data de lançamento
+                        option(value='OrderByBestDiscountDESC') Melhor Desconto
+                    fieldset.filterBy
+                        | Itens por página:
+                        select#PS(onchange="window.location.href= '/casa-e-jardim/black---decker?' + 'PS=' + this.options[this.selectedIndex].value")
+                        option(selected='selected', value='12') 12
+                        option(value='24') 24
+                        option(value='36') 36
+                        option(value='48') 48
+                    p.compare
+                        | Produtos selecionados para comparar: 
+                        strong
+                        span#NumeroSuperior.compare-selection-count 0
+                        a.btn-comparar(title='Comparar', href='#') Comparar
+                
+
+                             

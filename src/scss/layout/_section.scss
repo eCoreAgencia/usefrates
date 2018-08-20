@@ -4,6 +4,7 @@
   }
   &__diff {
     padding: 20px;
+
   }
 
   &__title {
@@ -23,5 +24,10 @@
   &__brand {
     background-color: $c-gray-light;
     padding: 70px 0;
+  }
+
+  &__filter {
+    background-color: #fafafa;
+    padding: 10px 20px;
   }
 }

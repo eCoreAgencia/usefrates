@@ -29,4 +29,10 @@
       }
     }
   }
+
+  .box-banner {
+    & > a {
+      display: block;
+    }
+  }
 }
