@@ -35,7 +35,9 @@ html(xmlns="http://www.w3.org/1999/xhtml", xmlns:vtex="http://www.vtex.com.br/20
 
     include ../subtemplates/footer
 
+    +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%bottom" />')
+      script(src='/arquivos/ec-slick.js')
+
     block scripts
 
-    +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%bottom" />')
-      script(src='/arquivos/om-slick.js')
+
