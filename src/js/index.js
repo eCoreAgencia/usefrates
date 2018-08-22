@@ -1,7 +1,7 @@
 import '../scss/main.scss'
 
 
-
+import './components/menu';
 import './components/searchForm';
 import './components/filter';
 

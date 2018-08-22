@@ -46,35 +46,6 @@ header.header
             span Minha Conta
           .minicart
   .header__area.header__menu.container
-    nav.navbar(role='navigation', aria-label='dropdown navigation')
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Ferramentas Elétricas
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Ferramentas Manuais
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Iluminação
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Material Elétrico
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Construção Civil
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Bombas
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Ferramentas e Segurança
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Casa e Jardim
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Automotivo
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          | Hidráulica
-
+    nav.navbar(role='navigation', aria-label='dropdown navigation') 
+    #top-menu
+      //+vtex-controller('<vtex.cmc:departmentNavigator/>')   
