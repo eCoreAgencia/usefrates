@@ -2,11 +2,11 @@ extends ../layouts/default.pug
 
 block vars
 	- var pageTitle = 'Categoria'
-	- var bodyClass = 'home'
+	- var bodyClass = 'home '
 
 block content
 	section.section__page.section__hero
-		.banner.banner--full
+		.banner.banner--full.container
 			+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
 				.box-banner
 					a(href="")

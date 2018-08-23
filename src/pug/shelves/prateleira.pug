@@ -24,7 +24,7 @@ else
   - var categoryName = '+ Iluminação'
   - var categoryHref = '/category.html'
 
-.product__shelf
+.product.product--shelf
   span.product__id(data-product-id= dataProductId)
   .product__header
     .product__media
@@ -32,7 +32,7 @@ else
         != getImageTag
     .product__actions
       a.button.product__link(title= title, href= href) Ver Produto
-      a.button.product__buy(href="") Compre Rápido
+      a.button.product__buy(href= href, data-product-id= dataProductId) Compre Rápido
   .product__reviews
   .product__info
     h3.product__name

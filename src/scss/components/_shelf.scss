@@ -2,14 +2,29 @@
   padding: 0 10px;
   ul {
     display: flex;
-    width: 100%;
+		width: 100%;
+		justify-content: space-between;
   }
 
   li {
     padding: 10px;
     width: 100%;
-    max-width: 301px;
-  }
+		max-width: 301px;
+
+	}
+
+	&__carousel--full {
+		li {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
+
+	.prateleira {
+		& > h2 {
+			display: none;
+		}
+	}
 
   &__button {
     border: none;
