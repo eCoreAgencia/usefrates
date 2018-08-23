@@ -23,9 +23,9 @@ html(xmlns="http://www.w3.org/1999/xhtml", xmlns:vtex="http://www.vtex.com.br/20
         if bodyClass == 'produto'
           include ../../../config/skuJson.js
         include ../../../config/vtexjs-mock.js
-
+    
     block head
-
+      
   body(class= bodyClass)
     +vtex-controller('<vtex:template id="%TEMPLATE_PREFIX%header" />')
       include ../subtemplates/header

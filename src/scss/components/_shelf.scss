@@ -13,12 +13,23 @@
 
 	}
 
-	&__carousel--full {
+	&__carousel--full{
 		li {
-			margin-left: 20px;
-			margin-right: 20px;
+			
+      @media screen and (min-width: $g-max-width) {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
 		}
-	}
+  }
+  
+  &__carousel--category {
+    max-width: calc(100% - 275px);
+    li {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
 
 	.prateleira {
 		& > h2 {
@@ -79,7 +90,7 @@
 
   .category__card {
     padding: 10px;
-
+    max-width: 275px;
     &-header {
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;

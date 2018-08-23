@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { isLocalhost, categoryTreeEndpoint } from '../utils';
+import { isLocalhost, vtexcategoryTreeEndpoint } from '../utils';
 
 class MakeMenu {
 	constructor(){
@@ -8,16 +8,16 @@ class MakeMenu {
 	}
 
 	getCategoryTree(){
-    let self = this;
-    const endpoint = isLocalhost ? `/json/categoryTree.json` : vtexcategoryTreeEndpoint(2);
-    axios.get(endpoint)
-      .then((data) => {
+		let self = this;
+		const endpoint = isLocalhost ? `/json/categoryTree.json` : vtexcategoryTreeEndpoint(2);
+		axios.get(endpoint)
+		.then((data) => {
 
-				self.categoryTree.push(...data.data);
-				$(window).trigger('categoryTreeUpdated');
+					self.categoryTree.push(...data.data);
+					$(window).trigger('categoryTreeUpdated');
 
-			})
-      .catch(error => console.log(error))
+				})
+		.catch(error => console.log(error))
 	}
 
 	displayMenu(){

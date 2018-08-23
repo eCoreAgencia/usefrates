@@ -1,6 +1,10 @@
 .navbar {
   background-color: $c-yellow;
   justify-content: space-around;
+  @media screen and (max-width: $g-max-width) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   &-item {
     max-width: 100px;
     font-family: $f-base;
@@ -17,8 +21,17 @@
     font-size: 16px;
     padding: 10px;
     color: $c-blue;
+    @media screen and (max-width: $g-max-width) {
+      font-size: 14px;
+    }
     &:hover {
       text-decoration: none;
     }
+
+    &::after {
+      display: none;
+    }
   }
+
+  
 }

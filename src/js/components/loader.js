@@ -4,6 +4,11 @@ export default class Loader {
 	constructor(element){
 		this.loaderHtml = ``;
 		this.render(element);
+		
+	}
+
+	render(element){
+		$('<div class="loading"><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span></div>').appendTo(element);		
 		const balls = document.querySelectorAll('.ball');
 		TweenMax.staggerFromTo(balls, 1,  {
 			scale: .1,
@@ -16,9 +21,9 @@ export default class Loader {
 		}, .2);
 	}
 
-	render(element){
-		$(element).append();		
-	}
-
 
 }
+
+$(document).ready(function(){
+	window.loader = new Loader();
+})
