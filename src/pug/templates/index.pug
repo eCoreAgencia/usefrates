@@ -2,11 +2,11 @@ extends ../layouts/default.pug
 
 block vars
 	- var pageTitle = 'Categoria'
-	- var bodyClass = 'home'
+	- var bodyClass = 'home '
 
 block content
 	section.section__page.section__hero
-		.banner.banner--full
+		.banner.banner--full.container
 			+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
 				.box-banner
 					a(href="")
@@ -19,7 +19,7 @@ block content
 						img(src="http://via.placeholder.com/2000x500")/
 		.kits.kits--absolute
 	section.section__page.section__diff
-		.diff.container.is-fluid
+		.diff.container
 			.diff__container
 				.diff__box
 					.diff__icon.diff__icon--boleto
@@ -49,26 +49,27 @@ block content
 	section.section__page.section__call
 		.call
 	section.section__page.section__shelf
-		.container.is-fluid
+		.container
 			h2.section__title Novidades
-			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades" />')
-				.shelf.prateleira.shelf__carousel--full
-					ul
-						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-							li
-								include ../shelves/prateleira
-	section.section__page.section__shelf
-		.container.is-fluid
-			h2.section__title Mais Vendidos
-			.shelf__carousel--full
-				+vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
-					.shelf.prateleira
+			.shelf.shelf__carousel--full
+				+vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades" />')
+					.prateleira
 						ul
 							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 								li
 									include ../shelves/prateleira
 	section.section__page.section__shelf
-		.container.is-fluid
+		.container
+			h2.section__title Mais Vendidos
+			.shelf.shelf__carousel--full
+				+vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
+					.prateleira
+						ul
+							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+								li
+									include ../shelves/prateleira
+	section.section__page.section__shelf
+		.container
 			h2.section__title Comprar por categoria
 			.buy-by-category
 				.category.category__card
@@ -152,7 +153,7 @@ block content
 								li
 									include ../shelves/prateleira
 	section.section__page.section__brand
-		.container.is-fluid
+		.container
 			.shelf.shelf__brand
 				ul
 					each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
@@ -160,11 +161,11 @@ block content
 							a(href='')
 								img(src='http://via.placeholder.com/175x75')/
 	section.section__page.section__shelf
-		.container.is-fluid
+		.container
 			h2.section__title Ofertas da semana
 			+vtex-controller('<vtex:contentPlaceHolder id="Ofertas da semana" />')
 				.shelf.prateleira
 					ul
-						each val in [1, 2, 3, 4, 5]
+						each val in [1, 2, 3, 4]
 							li
 								include ../shelves/prateleira

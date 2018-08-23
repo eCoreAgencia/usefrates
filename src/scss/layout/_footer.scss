@@ -8,9 +8,10 @@
 
     &__contact {
         display: flex;
-        justify-content: space-between;
+				justify-content: space-between;
+				padding: 0 20px;
         svg {
-            
+
             width: 20px;
             path {
                 fill: $c-white;
@@ -33,7 +34,7 @@
                 color: #5391ba;
                 display: block;
                 width: 100%;
-                
+
             }
         }
         &-title {
@@ -54,12 +55,12 @@
                 justify-content: space-between;
                 color: $c-white;
                 max-width: 200px;
-    
+
                 span {
                     width: 100%;
                     display: block;
                 }
-    
+
                 strong {
                     margin-left: 10px;
                     margin-right: auto;
@@ -105,7 +106,7 @@
     &__copyright {
         border-top: 1px solid #d3d3d3;
         padding: 20px;
-        
+
         .footer__inner {
             justify-content: center;
             align-items: center;
@@ -119,7 +120,7 @@
         }
     }
     &__develop {
-        
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -169,7 +170,7 @@
         }
     }
 
-    
+
 }
 
 .social-links {
@@ -191,7 +192,7 @@
             margin: 0 10px;
         }
 
-         
+
     }
 
     &__text {
@@ -201,5 +202,5 @@
         font-weight: 700;
     }
 
-    
+
 }

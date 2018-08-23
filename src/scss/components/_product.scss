@@ -13,7 +13,7 @@
 
   &__actions {
     font-family: $f-base;
-    .product__shelf & {
+    .product--shelf & {
       display: none;
       position: absolute;
       bottom: 10px;
@@ -22,14 +22,14 @@
       font-size: 19px;
     }
 
-    .product__shelf:hover & {
+    .product--shelf:hover & {
       display: flex;
     }
   }
 
   &__header {
     position: relative;
-    .product__shelf & {
+    .product--shelf & {
       border-radius: 5px;
       overflow: hidden;
       max-height: 365px;
@@ -38,15 +38,13 @@
     }
   }
 
-  &__media {
-
-  }
+  &__media {}
 
   &__buy {
     color: $c-white;
     background-color: $c-blue;
     border-color: $c-blue;
-    .product__shelf & {
+    .product--shelf & {
       font-size: 19px;
     }
   }
@@ -55,7 +53,7 @@
     color: $c-black;
     font-family: $f-base;
     font-weight: 700;
-    .product__shelf & {
+    .product--shelf & {
       text-align: center;
       padding: 5px;
       font-size: 19px;
@@ -70,14 +68,14 @@
   }
 
   &__category {
-    .product__shelf & {
+    .product--shelf & {
       padding: 5px;
       text-align: center;
     }
   }
 
   &__price {
-    .product__shelf & {
+    .product--shelf & {
       padding: 5px;
       text-align: center;
       font-family: $f-base;
