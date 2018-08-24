@@ -18,4 +18,4 @@ class Filter {
   }
 }
 
-window.filter = new Filter();
+//window.filter = new Filter();

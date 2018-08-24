@@ -7,13 +7,15 @@
     "build:checkout": "cross-env NODE_ENV=production webpack --config ./config/webpack.checkout.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js",
     "dev": "webpack-dev-server --open --hot --config ./config/webpack.dev.js",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "mock": "json-server --watch ./config/db.json"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
@@ -31,6 +33,7 @@
     "html-webpack-plugin": "^2.30.1",
     "imagemin-webpack-plugin": "^1.5.2",
     "interpolate-html-plugin": "^2.0.0",
+    "json-server": "^0.14.0",
     "node-sass": "^4.5.3",
     "numeral": "^2.0.6",
     "object-assign": "^4.1.0",

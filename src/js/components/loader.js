@@ -21,6 +21,10 @@ export default class Loader {
 		}, .2);
 	}
 
+	remove(element){
+		$(element).find('.loading').remove();
+	}
+
 
 }
 

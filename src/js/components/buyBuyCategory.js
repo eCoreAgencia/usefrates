@@ -1,22 +1,21 @@
 import axios from 'axios';
 import { isLocalhost, vtexSeachProductByCategoryEndpoint } from '../utils';
 import { productShelf } from './shelf';
+import vtexRequest from '../modules/vtexRequest';
 
 
 class BuyByCategory {
     constructor(){
         if(!$('.js-department-ids')) throw "N"
         const self = this;
+        loader.render('.js-buy-by-category');
+        self.init();
         
-        $(window).on('categoryTreeUpdated', function(){
-            loader.render('.js-buy-by-category');
-            self.init();
-        })
 
         $(window).on('cardCategoryFinished', function(){
             $('.js-buy-by-category .loading').remove();
             $('.category__card .menu-list').each(function(){
-                if($('li', this).length > 5){
+                if($('li', this).length > 5 && !$(this).hasClass('slick-initialized')){
                     $(this).slick({
                         vertical: true,
                         slidesToShow: 5
@@ -45,15 +44,20 @@ class BuyByCategory {
     init(){
         const self = this;
         const departmentIds = $('.js-department-ids').html().split(',');
-        const categories = departmentIds.map(id => self.getCategory(id))
-        categories.map(category => self.displayCardCategory(...category))
-        $(window).trigger('cardCategoryFinished');
+        const api = new vtexRequest();
+		api.getCategoryTree(2)
+            .then(data => {
+                const filteredCategories = departmentIds.map(id => self.filterCategory(id, data))
+                filteredCategories.map(category => self.displayCardCategory(...category))
+            }
+        );
     }
+
 
     
 
-    getCategory(categoryId){
-        const categories = menu.categoryTree.filter(category => category.id == parseInt(categoryId))
+    filterCategory(categoryId, categoryTree){
+        const categories = categoryTree.filter(category => category.id == parseInt(categoryId))
         return categories;
     }
 
@@ -72,6 +76,7 @@ class BuyByCategory {
             
         </div>`
       $('.js-buy-by-category').append(html);
+      $(window).trigger('cardCategoryFinished')
         self.displayProducts(category.id)
     }
 
@@ -97,12 +102,10 @@ class BuyByCategory {
     }
 
     getProducts(categoryId, callback) {
+        const api = new vtexRequest();
         let self = this;
-        const endpoint = isLocalhost ? `/json/productByCategory.json` : vtexSeachProductByCategoryEndpoint(categoryId);
-        fetch(endpoint)
-            .then(data => data.json())
-            .then(products => callback(products, categoryId)) 
-            .catch(error => console.log(error))
+        api.getProductsByCategoryId(categoryId)
+            .then(products => callback(products, categoryId));        
     }
 
     renderProducts(products, cardId){

@@ -1,4 +1,5 @@
 import '../scss/main.scss'
+import './modules/vtexRequest'
 
 import './components/loader';
 import './components/menu';
