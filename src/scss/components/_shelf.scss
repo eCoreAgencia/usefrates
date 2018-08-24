@@ -9,26 +9,17 @@
   li {
     padding: 10px;
     width: 100%;
-		max-width: 301px;
+		max-width: #{($g-max-width - 20)/4};
 
 	}
 
 	&__carousel--full{
-		li {
-			
-      @media screen and (min-width: $g-max-width) {
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-		}
+		
   }
   
   &__carousel--category {
     max-width: calc(100% - 275px);
-    li {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+    
   }
 
 	.prateleira {

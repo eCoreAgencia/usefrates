@@ -71,8 +71,31 @@
 		display: none;
 	}
 
-  #top-menu {
-	  display: none;
-  }
+	&__menu {
+		.navbar-item {
+			align-items: stretch;
+			padding: 0;
+		}
+		.navbar-item:hover .navbar-link,
+		.navbar-item.has-dropdown:hover .navbar-link, 
+		.navbar-item.has-dropdown.is-active .navbar-link {
+			background-color: rgba(255,255,255, 0.2);
+			color: $c-primary;
+
+			
+		}
+
+		.navbar-item.has-dropdown:hover {
+			.navbar-dropdown {
+				display: flex !important;
+				padding: 0;
+				border: none;
+				border-radius: 0;
+				box-shadow: none;
+
+				
+			}
+		}
+	}
 
 }

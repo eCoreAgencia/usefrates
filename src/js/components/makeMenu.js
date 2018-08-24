@@ -38,14 +38,27 @@ class MakeMenu {
 	}
 
 	displaySubMenu(children){
+		
 		const html = `
 		<div class="navbar-dropdown">
-		${ children.map(category => {
-				return `<a href="${category.url}" class="navbar-item">
-				${category.name}
-				</a>`;
-			}).join('')
-		}
+			<div class="navbar-dropdown-items">
+				${ children.map((category, i) => {
+						if(i % 10 == 0){ console.log(children.length, 'inicio', i)}
+						if(i == children.length - 1){ console.log(children.length, 'final', i)}
+						
+						return `
+							${ (i % 10 == 0) ? '<div class="navbar-dropdown-column">' : ''	}
+								<a href="${category.url}" class="navbar-item ${i}">
+									${category.name}
+								</a>
+							${(i == children.length -1 || (i + 1) % 10 == 0) ? '</div>': ''}
+						`;
+					}).join('')
+				}
+			</div>
+			<div class="navbar-dropdown-image">
+				<img src="http://via.placeholder.com/400x289" />
+			</div>	
 		</div>`
 
 		return html;
