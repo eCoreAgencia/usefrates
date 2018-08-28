@@ -3,26 +3,51 @@ import * as api from './endpoint';
 
 export default class vtexRequest {
 
-    getProductById(id){
-        const product = [];
-        const http = new requestHttp();
-        const promise = http.get(api.vtexSeachProductByCategory(id))
-                        .then(response => response.json())
-                        .then(data => product.push(data))
-        return product;
+
+
+
+  async getCategoryTree(level) {
+    try {
+      const http = new requestHttp();
+      const response = await http.get(api.vtexCategoryTree(level));
+      const categoryTree = await response.json();
+      return categoryTree;
+    } catch (err) {
+      console.log(err);
     }
 
-    getCategoryTree(level){
-        const http = new requestHttp();
-        const promise = http.get(api.vtexCategoryTree(level))
-                            .then(response => response.json())
-        return promise;
-    }
+  }
 
-    getProductsByCategoryId(id){
-        const http = new requestHttp();
-        const promise = http.get(api.vtexSeachProductByCategory(id))
-                        .then(response => response.json())
-        return promise;
+  async getProductsByCategoryId(id) {
+    try {
+      const http = new requestHttp();
+      const response = await http.get(api.vtexSeachProductByCategory(id));
+      const products = await response.json();
+      return products;
+    } catch (err) {
+      console.log(err);
     }
+  }
+
+  async getProductById(id) {
+    try {
+      const http = new requestHttp();
+      const response = await http.get(api.vtexSeachProductByCategory(id));
+      const product = await response.json();
+      return product;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async getProductWithVariations(id) {
+    try {
+      const http = new requestHttp();
+      const response = await http.get(api.vtexProductWithVariations(id));
+      const product = await response.json();
+      return product;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }

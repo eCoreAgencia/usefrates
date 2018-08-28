@@ -1,97 +1,114 @@
 extends ../layouts/default.pug
 
 block vars
-	- var pageTitle = 'Categoria'
-	- var bodyClass = 'home '
+  - var pageTitle = 'Categoria'
+  - var bodyClass = 'home '
 
 block content
-	section.section__page.section__hero
-		.container
-			.banner.banner--full
-				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
-					.box-banner
-						a(href="")
-							img(src="http://via.placeholder.com/2000x500")/
-					.box-banner
-						a(href="")
-							img(src="http://via.placeholder.com/2000x500")/
-					.box-banner
-						a(href="")
-							img(src="http://via.placeholder.com/2000x500")/
-			.kits.kits--absolute
-	section.section__page.section__diff
-		.container
-			.diff
-				.diff__container
-					.diff__box
-						.diff__icon.diff__icon--boleto
-							include ../../svg/coupon.svg
-						.diff__info
-							span.diff__title 10% de desconto no boleto
-							span.diff__subtitle em todos os produtos do site
-					.diff__box
-						.diff__icon.diff__icon--frete
-							include ../../svg/truck.svg
-						.diff__info
-							span.diff__title frete grátis
-							span.diff__subtitle a partir de R$ 299 para o Sudeste
-					.diff__box
-						.diff__icon.diff__icon--troca
-							include ../../svg/refresh.svg
-						.diff__info
-							span.diff__title troca grátis (7 dias)
-							span.diff__subtitle Tranquilidade na sua primeira compra
-					.diff__box
-						.diff__icon.diff__icon--atacado
-							include ../../svg/percent.svg
-						.diff__info
-							span.diff__title Compre no Atacado
-							span.diff__subtitle Receba descontos especiais
-	
-	section.section__page.section__call
-		.call
-	section.section__page.section__shelf
-		.container
-			h2.section__title Novidades
-			.shelf.shelf__carousel--full
-				+vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades" />')
-					.prateleira
-						ul
-							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-								li
-									include ../shelves/prateleira
-	section.section__page.section__shelf
-		.container
-			h2.section__title Mais Vendidos
-			.shelf.shelf__carousel--full
-				+vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
-					.prateleira
-						ul
-							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-								li
-									include ../shelves/prateleira
-	span.is-invisible.js-department-ids
-		include ../vtexParts/departmentsIDs								
-	section.section__page.section__shelf
-		.container
-			h2.section__title Comprar por categoria
-			.js-buy-by-category
-			
-	section.section__page.section__brand
-		.container
-			.shelf.shelf__brand
-				ul
-					each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-						li
-							a(href='')
-								img(src='http://via.placeholder.com/175x75')/
-	section.section__page.section__shelf
-		.container
-			h2.section__title Ofertas da semana
-			.shelf
-				+vtex-controller('<vtex:contentPlaceHolder id="Ofertas da semana" />')
-					.prateleira
-						ul
-							each val in [1, 2, 3, 4]
-								li
-									include ../shelves/prateleira
+  section.section__page.section__hero
+    .container
+      .banner.banner--full
+        .slide-count-wrap
+          span.current
+          | |
+          span.total
+        .banner__inner
+          +vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
+            .box-banner
+              a(href="")
+                img(src="http://via.placeholder.com/1378x400")/
+            .box-banner
+              a(href="")
+                img(src="http://via.placeholder.com/1378x400")/
+            .box-banner
+              a(href="")
+                img(src="http://via.placeholder.com/1378x400")/
+      .kits.kits--absolute
+  section.section__page.section__diff
+    .container
+      .diff
+        .diff__container
+          .diff__box
+            .diff__icon.diff__icon--boleto
+              include ../../svg/coupon.svg
+            .diff__info
+              span.diff__title 10% de desconto no boleto
+              span.diff__subtitle em todos os produtos do site
+          .diff__box
+            .diff__icon.diff__icon--frete
+              include ../../svg/truck.svg
+            .diff__info
+              span.diff__title frete grátis
+              span.diff__subtitle a partir de R$ 299 para o Sudeste
+          .diff__box
+            .diff__icon.diff__icon--troca
+              include ../../svg/refresh.svg
+            .diff__info
+              span.diff__title troca grátis (7 dias)
+              span.diff__subtitle Tranquilidade na sua primeira compra
+          .diff__box
+            .diff__icon.diff__icon--atacado
+              include ../../svg/percent.svg
+            .diff__info
+              span.diff__title Compre no Atacado
+              span.diff__subtitle Receba descontos especiais
+  section.section__page.section__call
+    .container
+      .call
+        .call__box
+          h2.call__title Faça você mesmo
+          span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+          a.button.button-transparent Ver Produtos
+        .call__box
+          h2.call__title Seleção Profissionais
+          span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+          a.button.button-transparent Ver Produtos
+        .call__box
+          h2.call__title Compre por atacado
+          span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+          a.button.button-transparent Ver Produtos
+  section.section__page.section__shelf
+    .container
+      h2.section__title Novidades
+      .shelf.shelf__carousel--full
+        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades" />')
+          .prateleira
+            ul
+              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                li
+                  include ../shelves/prateleira
+  section.section__page.section__shelf
+    .container
+      h2.section__title Mais Vendidos
+      .shelf.shelf__carousel--full
+        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
+          .prateleira
+            ul
+              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                li
+                  include ../shelves/prateleira
+  span.is-invisible.js-department-ids
+    include ../vtexParts/departmentsIDs
+  section.section__page.section__shelf
+    .container
+      h2.section__title Comprar por categoria
+      .js-buy-by-category
+
+  section.section__page.section__brand
+    .container
+      .shelf.shelf__brand
+        ul
+          each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+            li
+              a(href='')
+                img(src='http://via.placeholder.com/175x75')/
+  section.section__page.section__shelf
+    .container
+      h2.section__title Ofertas da semana
+      .shelf
+        +vtex-controller('<vtex:contentPlaceHolder id="Ofertas da semana" />')
+          .prateleira
+            ul
+              each val in [1, 2, 3, 4]
+                li
+                  include ../shelves/prateleira

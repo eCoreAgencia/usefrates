@@ -11,15 +11,11 @@
     width: 100%;
 		max-width: #{($g-max-width - 20)/4};
 
-	}
-
-	&__carousel--full{
-		
   }
-  
+
   &__carousel--category {
     max-width: calc(100% - 275px);
-    
+
   }
 
 	.prateleira {
@@ -78,14 +74,30 @@
 
 .buy-by-category {
   display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  & + .buy-by-category {
+    margin-top: 20px;
+  }
+
+  .slick-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $c-white;
+    border: none;
+    box-shadow: 0px 1px 10px 1px #cccccc;
+  }
 
   .category__card {
-    padding: 10px;
+
     max-width: 275px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: hidden;
+    background-color: #eeeeee;
     &-header {
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-      overflow: hidden;
       position: relative;
       height: 275px;
     }
@@ -130,4 +142,33 @@
   .category__link {
     color: #bebebe;
   }
+
+  .slick-arrow svg {
+    width: 8px;
+  }
+
+  .shelf .slick-slider {
+    display: block;
+  }
+
+  .shelf .slick-arrow {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    margin-top: -15px;
+  }
+
+  .shelf .slick-next {
+    right: 0;
+  }
+
+  .menu-list .slick-prev {
+    transform: rotate(90deg);
+  }
+
+  .menu-list .slick-next {
+    transform: rotate(90deg);
+  }
+
+
 }

@@ -1,5 +1,24 @@
 .banner {
   &--full {
+    position: relative;
+    .slide-count-wrap {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+      z-index: 99;
+      color: $c-white;
+      font-size: 29px;
+      .current, .total {
+        padding: 0 5px;
+      }
+      .current {
+        font-weight: 700;
+      }
+
+      .total {
+        opacity: 0.5;
+      }
+    }
     .slick-dots {
       position: absolute;
       right: 0;
@@ -27,6 +46,12 @@
         margin: 2px 0;
 
       }
+
+
+    }
+
+    img {
+      max-height: 400px;
     }
   }
 
