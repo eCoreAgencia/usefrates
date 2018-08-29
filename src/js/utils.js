@@ -5,6 +5,7 @@ export const vtexSeachProductByCategoryEndpoint = (categoryId) => `/api/catalog_
 
 export const addToCart = function(id, quantity = 1, seller = '1', redirect = false) {
 	let item = { id, quantity, seller }
+	console.log(item)
 	vtexjs.checkout.addToCart([item], null, 1)
 	  .done(orderForm => {
 	    console.log(orderForm);

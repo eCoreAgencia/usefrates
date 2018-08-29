@@ -37,7 +37,7 @@ export const productShelf = (product, list = false) => {
                 ${getUrlImageTag(image, 279, 365)}
           </a>
         </div>
-        <div class="product__actions"><a class="button product__link" title="Nome do produto" href="${link}" tabindex="-1">Ver Produto</a><a class="button product__buy" href="${link}" data-product-id="225047" tabindex="-1">Compre Rápido</a></div>
+        <div class="product__actions"><a class="button product__link" title="Nome do produto" href="${link}" tabindex="-1">Ver Produto</a><a class="button button--primary product__buy" href="${link}" data-product-id="225047" tabindex="-1">Compre Rápido</a></div>
       </div>
 	    <div class="product__reviews"></div>
       <div class="product__info">
