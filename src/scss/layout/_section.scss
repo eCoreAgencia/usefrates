@@ -4,18 +4,29 @@
   }
   &__diff {
     padding: 20px;
+    
 
   }
 
-  &__title {
+  &__title, &__subtitle {
     text-align: center;
-    text-transform: uppercase;
     font-family: $f-secondary;
+  }
+
+  &__title {
+    
+    text-transform: uppercase;
     font-size: 40px;
     font-weight: 700;
     color: $c-blue;
     margin-bottom: 20px;
   }
+
+  &__subtitle {
+   display: block;
+  }
+
+  
 
   &__shelf {
     margin: 20px 0;

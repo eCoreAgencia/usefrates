@@ -1,7 +1,7 @@
 extends ../layouts/default.pug
 
 block vars
-  - var pageTitle = 'Categoria'
+  - var pageTitle = 'Home'
   - var bodyClass = 'home '
 
 block content
@@ -112,3 +112,14 @@ block content
               each val in [1, 2, 3, 4]
                 li
                   include ../shelves/prateleira
+  section.section__page.section__shelf
+    .container
+      h2.section__title Produtos Coringas
+      span.section__subtitle Selecionamos 6 dicas os problemas de cada dia
+      .shelf.shelf--flip
+        .prateleira
+          ul
+            each val in [1, 2, 3, 4, 5, 6]
+              li
+                include ../shelves/flip-shelf
+                       
