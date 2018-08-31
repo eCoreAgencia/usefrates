@@ -27,7 +27,11 @@ else
 .product.product--shelf.product--shelf-flip
   .product__flip
     .product__front
-      | Frente
+      .product__front-inner
+        include ../../svg/logo-cart.svg
+        p.product__flip-phrase 
+          | Não entorte o pescoço para colocar um cabo na tv
+        span.product__flip-action (clique para revelar o nome)  
     .product__back       
       span.product__id(data-product-id= dataProductId)
       .product__header

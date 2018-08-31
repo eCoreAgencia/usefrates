@@ -40,6 +40,8 @@
   }
 
   &__action-user {
+    display: flex;
+    align-items: center;
     .button {
       border: none;
 

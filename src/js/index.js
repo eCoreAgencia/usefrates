@@ -1,6 +1,7 @@
 import '../scss/main.scss'
 import './modules/vtexRequest'
 
+import './components/minicart';
 import './components/loader';
 import './components/menu';
 import './components/makeMenu';

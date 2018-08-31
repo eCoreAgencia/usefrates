@@ -109,6 +109,12 @@
         margin-bottom: 10px;
       }
     }
+    .product--shelf-flip & {
+      text-align: left;
+      .price__list {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &--shelf {
@@ -130,28 +136,61 @@
     left: 0;
     bottom: 0;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
-    .product--shelf-flip & {
-      padding: 40px;
-    }
+    
 
   }
 
   &__front {
     z-index: 2;
     background-color: #FFB808;
+
+    &:hover {
+      cursor: pointer;
+    }
+    .product--shelf-flip & {
+      padding: 10px;
+    }
+
     
-    .product--shelf-flip:hover & { transform: rotateY(180deg); }
+    .product--shelf-flip.hover & { transform: rotateY(180deg); }
+
+    &-inner {
+      border: 2px solid $c-white;
+      border-radius: 20px;
+      height: 100%;
+      text-align: center;
+      padding: 10px 20px;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+
+      svg {
+        width: 70px;
+        height: 70px;
+        fill: $c-white;
+      }
+    }
     
   }
 
   &__back {
     transform: rotateY(180deg);
     background-color: #DDDDDD;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    .product--shelf-flip:hover & { transform: rotateY(0deg); }  	
+    background-image: url($logo-cart-bg);
+    background-repeat: no-repeat;
+    background-position: -150px -28px;
+    background-size: 450px;
+    
+    .product--shelf-flip.hover & { transform: rotateY(0deg); }  	
+    .product--shelf-flip & {
+      padding: 30px;
+    }
      
   }
 
@@ -161,6 +200,24 @@
     height: 350px;
     border-radius: 20px;
     overflow: hidden;
+
+    &-phrase {
+      @include font-size(28px);
+      text-transform: uppercase;
+      font-family: $f-secondary;
+      font-weight: 700;
+      color: $c-white;
+    }
+
+    &-action {
+      color: $c-blue;
+      margin-top: auto;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+
+
     
     
   }

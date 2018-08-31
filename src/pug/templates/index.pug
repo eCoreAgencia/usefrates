@@ -48,7 +48,7 @@ block content
               span.diff__subtitle Tranquilidade na sua primeira compra
           .diff__box
             .diff__icon.diff__icon--atacado
-              include ../../svg/percent.svg
+              include ../../svg/ic_atacado.svg
             .diff__info
               span.diff__title Compre no Atacado
               span.diff__subtitle Receba descontos especiais
@@ -117,9 +117,10 @@ block content
       h2.section__title Produtos Coringas
       span.section__subtitle Selecionamos 6 dicas os problemas de cada dia
       .shelf.shelf--flip
-        .prateleira
-          ul
-            each val in [1, 2, 3, 4, 5, 6]
-              li
-                include ../shelves/flip-shelf
+        +vtex-controller('<vtex:contentPlaceHolder id="Produtos Coringas" />')
+          .prateleira
+            ul
+              each val in [1, 2, 3, 4, 5, 6]
+                li
+                  include ../shelves/flip-shelf
                        

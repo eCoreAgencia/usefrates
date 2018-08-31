@@ -19,6 +19,10 @@ $(document).ready(function(){
       $('li.helperComplement').remove();
     }
 
+    $('.product--shelf-flip .product__front').on('click', function(){
+      $(this).parents('.product--shelf-flip').addClass('hover');
+    })
+
     var $gallery = $('.banner--full .banner__inner');
     var slideCount = null;
 
