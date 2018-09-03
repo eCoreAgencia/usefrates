@@ -98,5 +98,25 @@ $(document).ready(function(){
       prevArrow: shelf__prev,
       nextArrow:shelf__next
     });
+
+    $(window).on('productFinished', function () {
+      console.log('productFinished');
+      $('.buy-by-category .shelf ul').each(function () {
+        if($('li.helperComplement', this)[0]){
+          $('li.helperComplement', this).remove();
+        }
+        if ($('li', this).length > 5 && !$(this).hasClass('slick-initialized')) {
+          $(this).slick({
+            arrows: true,
+            slideToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            variableWidth: true,
+            prevArrow: shelf__prev,
+            nextArrow:shelf__next
+          });
+        }
+      })
+    })
   }
 })
