@@ -50,4 +50,15 @@ export default class vtexRequest {
       console.log(err);
     }
   }
+
+  async getProductWithShelfId(query, shelfId, ps) {
+    try {
+      const http = new requestHttp();
+      const response = await http.get(api.vtexSearchPage(query, shelfId, ps));
+      const search = await response.text();
+      return search;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }

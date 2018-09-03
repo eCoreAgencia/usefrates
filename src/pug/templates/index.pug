@@ -89,9 +89,11 @@ block content
                   include ../shelves/prateleira
   span.is-invisible.js-department-ids
     include ../vtexParts/departmentsIDs
+
   section.section__page.section__shelf
     .container
       h2.section__title Comprar por categoria
+      #buyByCategory
       .js-buy-by-category
 
   section.section__page.section__brand
@@ -123,4 +125,4 @@ block content
               each val in [1, 2, 3, 4, 5, 6]
                 li
                   include ../shelves/flip-shelf
-                       
+

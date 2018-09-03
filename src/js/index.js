@@ -8,7 +8,10 @@ import './components/makeMenu';
 import './components/searchForm';
 import './components/shelf';
 import './components/filter';
-import './components/buyBuyCategory';
+//import './components/buyBuyCategory';
+
+
+import './components/buy-by-category/main'
 
 
 import './pages/home';
