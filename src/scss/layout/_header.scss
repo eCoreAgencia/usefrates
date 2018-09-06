@@ -23,9 +23,13 @@
       color: $c-primary;
     }
 
-    svg {
-      width: 20px;
+    [class^="icon-"], [class*=" icon-"] {
+      font-size: 20px;
       padding: 0;
+    }
+
+    .icon-help {
+      font-size: 22px;
     }
   }
   &__info {
@@ -45,18 +49,16 @@
     .button {
       border: none;
 
-      .icon:first-child:not(:last-child) {
+      [class^="icon-"], [class*=" icon-"] {
         margin-right: 10px;
       }
 
-      svg {
-        width: 30px;
+      & .icon-user {
+        font-size: 30px;
       }
 
-      &--account {
-        svg {
-          width: 40px;
-        }
+      & .icon-mark {
+        font-size: 30px;
       }
     }
   }

@@ -29,26 +29,22 @@ block content
       .diff
         .diff__container
           .diff__box
-            .diff__icon.diff__icon--boleto
-              include ../../svg/coupon.svg
+            i.diff__icon.icon-coupon
             .diff__info
               span.diff__title 10% de desconto no boleto
               span.diff__subtitle em todos os produtos do site
           .diff__box
-            .diff__icon.diff__icon--frete
-              include ../../svg/truck.svg
+            i.diff__icon.icon-truck
             .diff__info
               span.diff__title frete grátis
               span.diff__subtitle a partir de R$ 299 para o Sudeste
           .diff__box
-            .diff__icon.diff__icon--troca
-              include ../../svg/refresh.svg
+            i.diff__icon.icon-refresh
             .diff__info
               span.diff__title troca grátis (7 dias)
               span.diff__subtitle Tranquilidade na sua primeira compra
           .diff__box
-            .diff__icon.diff__icon--atacado
-              include ../../svg/ic_atacado.svg
+            i.diff__icon.icon-atacado
             .diff__info
               span.diff__title Compre no Atacado
               span.diff__subtitle Receba descontos especiais
@@ -56,17 +52,23 @@ block content
     .container
       .call
         .call__box
-          h2.call__title Faça você mesmo
-          span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
-          a.button.button-transparent Ver Produtos
+          img(src="http://via.placeholder.com/250x250/ffffff/000000", alt="")/
+          .call__inner
+            h2.call__title Faça você mesmo
+            span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+            a.button.button-transparent Ver Produtos
         .call__box
-          h2.call__title Seleção Profissionais
-          span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
-          a.button.button-transparent Ver Produtos
+          img(src="http://via.placeholder.com/250x250/ffff00/000000", alt="")/
+          .call__inner
+            h2.call__title Seleção Profissionais
+            span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+            a.button.button-transparent Ver Produtos
         .call__box
-          h2.call__title Compre por atacado
-          span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
-          a.button.button-transparent Ver Produtos
+          img(src="http://via.placeholder.com/250x250/ff00ff/000000", alt="")/
+          .call__inner
+            h2.call__title Compre por atacado
+            span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+            a.button.button-transparent Ver Produtos
   section.section__page.section__shelf
     .container
       h2.section__title Novidades
@@ -94,16 +96,16 @@ block content
     .container
       h2.section__title Comprar por categoria
       #buyByCategory
-      .js-buy-by-category
 
   section.section__page.section__brand
     .container
       .shelf.shelf__brand
-        ul
-          each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-            li
-              a(href='')
-                img(src='http://via.placeholder.com/175x75')/
+        +vtex-controller('<vtex:contentPlaceHolder id="Carrossel de Marcas" />')
+          ul
+            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+              li
+                a(href='')
+                  img(src='http://via.placeholder.com/175x75')/
   section.section__page.section__shelf
     .container
       h2.section__title Ofertas da semana

@@ -89,6 +89,7 @@
         }
         &-value {
             color: $c-white;
+            
         }
     }
 
@@ -125,8 +126,8 @@
     &__count {
         display: flex;
         align-items: center;
-        svg {
-            width: 30px;
+        .icon-cart {
+            font-size: 30px;
         }
 
         &-value {
@@ -136,7 +137,20 @@
             border-radius: 5px;
             padding: 5px;
             width: 30px;
-            margin-left: 10px;
+            margin-left: 15px;
+            position: relative;
+            &:before {
+                content: '';
+                width: 0; 
+                height: 0; 
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-right: 5px solid red;
+                position: absolute;
+                left: -5px;
+                top: 50%;
+                margin-top: -5px;
+            }
         }
     }
 }

@@ -19,6 +19,14 @@ $(document).ready(function(){
       $('li.helperComplement').remove();
     }
 
+    if($('.call__box')[0]){
+      $('.call__box').each(function(){
+        const img = $('img', this).attr('src');
+
+        $(this).css('background-image', 'url('+img+')');
+      })
+    }
+
     $('.product--shelf-flip .product__front').on('click', function(){
       $(this).parents('.product--shelf-flip').addClass('hover');
     })

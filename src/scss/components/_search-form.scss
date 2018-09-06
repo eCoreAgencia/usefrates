@@ -5,14 +5,19 @@
   border-radius: 10px;
   position: relative;
 
+  .icon-search {
+    font-size: 26px;
+    color: #a0a0a0;
+  }
+
   &--focus {
     background-color: #fff;
     .field {
       flex-direction: row-reverse;
     }
 
-    svg, path {
-      fill: $c-primary;
+    .icon-search {
+      color: $c-primary;
     }
 
 
@@ -29,9 +34,7 @@
     background-color: transparent;
   }
 
-  svg {
-    width: 30px;
-  }
+  
 
 
 

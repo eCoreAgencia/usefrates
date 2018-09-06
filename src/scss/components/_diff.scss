@@ -20,21 +20,8 @@
 	}
 
 	&__icon {
-		svg {
-		width: 30px;
-		}
-
-		&--boleto {
-		svg {
-			width: 30px;
-		}
-		}
-
-		&--frete {
-		svg {
-			width: 40px;
-		}
-		}
+		font-size: 30px;
+		color: $c-primary;
 	}
 
 	&__info {
