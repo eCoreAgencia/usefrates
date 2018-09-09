@@ -31,6 +31,38 @@
     }
   }
 
+  &__action {
+    &-top {
+      padding: 10px 0;
+    }
+    &-bottom {
+      padding: 10px 0;
+    }
+  }
+
+  .buy-button {
+    text-align: center;
+    color: #fff;
+    background-color: $c-primary;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      text-decoration: none;
+      background-color: darken($c-primary, 10%);
+    }
+
+    &::before {
+      content: $icon-cart;
+      font-family: 'icomoon';
+      font-size: 35px;
+      margin-right: 10px;
+    }
+  }
+
   &__header {
     position: relative;
     .product--shelf & {
@@ -49,7 +81,39 @@
     }
   }
 
-  &__media {}
+  &__media {
+    #show {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    .thumbs {
+      width: 98px;
+
+      li {
+
+        margin-bottom: 6px;
+      }
+      a {
+        display: block;
+        border: 1px solid #dcdcdc;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &.ON, &:hover {
+          border-color: $c-primary;
+        }
+      }
+    }
+
+    #include {
+      width: calc(100% - 98px - 10px);
+      border: 1px solid #dcdcdc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
 
   &__buy {
     color: $c-white;
@@ -60,7 +124,7 @@
     }
   }
 
-  &__name {
+  &__name, .productName {
     color: $c-black;
     font-family: $f-base;
     font-weight: 700;
@@ -84,6 +148,10 @@
       text-align: left;
     }
 
+  }
+
+  .productName {
+    font-size: 26px;
   }
 
   &__category {
@@ -128,7 +196,7 @@
     &-flip {
       perspective: 1000;
 
-      
+
     }
   }
 
@@ -136,10 +204,10 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    transition: 0.8s;  	
-    transform-style: preserve-3d;      	
-    position: absolute;  	
-    top: 0;  	
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
     left: 0;
     bottom: 0;
     border-radius: 20px;
@@ -147,7 +215,7 @@
     justify-content: space-between;
     flex-direction: column;
 
-    
+
 
   }
 
@@ -162,7 +230,7 @@
       padding: 10px;
     }
 
-    
+
     .product--shelf-flip.hover & { transform: rotateY(180deg); }
 
     &-inner {
@@ -183,7 +251,7 @@
         fill: $c-white;
       }
     }
-    
+
   }
 
   &__back {
@@ -193,12 +261,12 @@
     background-repeat: no-repeat;
     background-position: -150px -28px;
     background-size: 450px;
-    
-    .product--shelf-flip.hover & { transform: rotateY(0deg); }  	
+
+    .product--shelf-flip.hover & { transform: rotateY(0deg); }
     .product--shelf-flip & {
       padding: 30px;
     }
-     
+
   }
 
   &__flip {
@@ -225,8 +293,70 @@
 
 
 
-    
-    
+
+
+  }
+
+  &__skus {
+    padding: 10px 0;
+    input {
+      display: none;
+    }
+
+    label {
+      border: 1px solid #dcdcdc;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 18px;
+      display: block;
+      margin-right: 10px;
+
+      &.checked, &:hover {
+        border-color: $c-primary;
+        background-color: $c-primary;
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+    .specification {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .skuList {
+      span {
+        display: flex;
+      }
+    }
+    li.select {
+      height: auto;
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+
+  &__qtd {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 110px;
+    .button {
+      border: none;
+      font-size: 20px;
+      padding: 0;
+      width: 30px;
+      height: 50px;
+    }
+    input {
+      border: none;
+      font-size: 26px;
+      padding: 5px;
+      width: 50px;
+      text-align: center;
+    }
   }
 
 
@@ -236,6 +366,45 @@
 .price {
   &__list {
     font-size: 14px;
+  }
+
+  &__list, .skuBestPrice {
     color: $c-primary;
+  }
+
+  .valor-de, .valor-por {
+    font-size: 0;
+    strong {
+      font-style: normal;
+    }
+  }
+
+  .valor-por {
+    strong {
+      font-size: 28px;
+    }
+  }
+
+  .valor-de {
+    strong {
+      font-size: 22px;
+      font-weight: normal;
+      text-decoration: line-through;
+      color: #9c9c9c;
+    }
+  }
+
+  .valor-dividido {
+
+    span, strong {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      color: #565656;
+    }
+  }
+
+  .preco-a-vista {
+    display: none !important;
   }
 }

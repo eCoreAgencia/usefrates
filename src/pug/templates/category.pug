@@ -6,32 +6,8 @@ block vars
 
 block content
     section.section__page.section__diff
-        .diff.container
-            .diff__container
-                .diff__box
-                    .diff__icon.diff__icon--boleto
-                        include ../../svg/coupon.svg
-                    .diff__info
-                        span.diff__title 10% de desconto no boleto
-                        span.diff__subtitle em todos os produtos do site
-                .diff__box
-                    .diff__icon.diff__icon--frete
-                        include ../../svg/truck.svg
-                    .diff__info
-                        span.diff__title frete grátis
-                        span.diff__subtitle a partir de R$ 299 para o Sudeste
-                .diff__box
-                    .diff__icon.diff__icon--troca
-                        include ../../svg/refresh.svg
-                    .diff__info
-                        span.diff__title troca grátis (7 dias)
-                        span.diff__subtitle Tranquilidade na sua primeira compra
-                .diff__box
-                    .diff__icon.diff__icon--atacado
-                        include ../../svg/percent.svg
-                    .diff__info
-                        span.diff__title Compre no Atacado
-                        span.diff__subtitle Receba descontos especiais
+        .container
+          include ../vtexParts/diff.pug
     section.section__page.section__banner
         .container
             .banner.banner__category
@@ -49,7 +25,7 @@ block content
                             .filter__options
                                 label
                     .filter__actions
-                        button.button.button--primary Aplicar             
+                        button.button.button--primary Aplicar
                 +vtex-controller('<vtex.cmc:searchNavigator />')
                     script(type='text/javascript', language='javascript').
                         $(document).ready(function() {
@@ -308,12 +284,12 @@ block content
                         option(value='36') 36
                         option(value='48') 48
                     p.compare
-                        | Produtos selecionados para comparar: 
+                        | Produtos selecionados para comparar:
                         strong
                         span#NumeroSuperior.compare-selection-count 0
                         a.btn-comparar(title='Comparar', href='#') Comparar
                 .vitrine.resultItemsWrapper
-                    
+
                     #PagerTop_52435197.pager.top
                     ul.pages
                         li.first.pgEmpty primeiro
@@ -367,11 +343,10 @@ block content
                             option(value='36') 36
                             option(value='48') 48
                     p.compare
-                        | Produtos selecionados para comparar: 
+                        | Produtos selecionados para comparar:
                         strong
                         span#NumeroSuperior.compare-selection-count 0
                         a.btn-comparar(title='Comparar', href='#') Comparar
-               
+
 block scripts
     script(src='/arquivos/vtex-SmartResearch.js')
-                             

@@ -19,7 +19,7 @@ header.header
       .columns
         .header__logo.column
           .logo
-            h1.logo__brand
+            .logo__brand
               a.logo__link(href="/")
                 img.logo__image(src="/arquivos/logo.png", alt="")/
         .header__search-form.column.is-6
@@ -32,10 +32,10 @@ header.header
                   span.icon-search
         .header__action-user.column
 
-          a.button.button--buy-list
+          a.button.button--buy-list(href='/lista-de-compras')
             span.icon-mark
             span Lista de Compras
-          a.button.button--account
+          a.button.button--account(href='/account')
             span.icon-user
             span Minha Conta
           .header__minicart.js-minicart

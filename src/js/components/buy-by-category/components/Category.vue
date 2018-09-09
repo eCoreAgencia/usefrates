@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a :href="url" @click="$emit('onButtonClick', id)">
+    <a @click="$emit('onButtonClick', id)">
       {{ name }}
     </a>
   </li>

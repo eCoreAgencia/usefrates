@@ -1,9 +1,14 @@
 import vtexRequest from '../modules/vtexRequest';
+import { slugify, myLoad } from '../utils';
 
 class MakeMenu {
   constructor() {
     this.categoryTree = [];
     this.init();
+    const self = this;
+    $(window).on('makeMenuFinished', function(){
+      self.getBannerPlaceholder();
+    });
   }
 
   async init() {
@@ -11,6 +16,7 @@ class MakeMenu {
     const api = new vtexRequest();
     const categories = await api.getCategoryTree(2);
     self.displayMenu(categories);
+    $(window).trigger('makeMenuFinished');
   }
 
 
@@ -18,23 +24,31 @@ class MakeMenu {
   displayMenu(categories) {
     let self = this;
     const html = categories.map(category => {
+      const slug = slugify(category.name);
       return `
-					<div class="navbar-item ${category.children.length > 0 ? ' has-dropdown': ''} is-hoverable">
+					<div id="${slug}"class="navbar-item ${category.children.length > 0 ? ' has-dropdown': ''} is-hoverable">
 						<a href="${category.url}" class="navbar-link">${category.name}</a>
-						${category.children.length > 0 ? self.displaySubMenu(category.children): ''}
+            ${category.children.length > 0 ? `
+              <div class="navbar-dropdown">
+                <div class="navbar-dropdown-items">
+                  ${self.displaySubMenu(category.children)}
+                </div>
+                <div class="navbar-dropdown-image">
+
+                  <img src="http://via.placeholder.com/400x289" />
+                </div>
+              </div>` : ''}
 					</div>
 				`;
     }).join('');
     $('.header__menu .navbar').html(html);
     $('.header__menu .navbar').addClass('js-make-menu');
+
   }
 
   displaySubMenu(children) {
 
-    const html = `
-				<div class="navbar-dropdown">
-					<div class="navbar-dropdown-items">
-						${ children.map((category, i) => {
+    const html = `${ children.map((category, i) => {
 							return `
 									${ (i % 10 == 0) ? '<div class="navbar-dropdown-column">' : ''	}
 										<a href="${category.url}" class="navbar-item ${i}">
@@ -43,18 +57,18 @@ class MakeMenu {
 									${(i == children.length -1 || (i + 1) % 10 == 0) ? '</div>': ''}
 								`;
 							}).join('')
-						}
-					</div>
-					<div class="navbar-dropdown-image">
-						<img src="http://via.placeholder.com/400x289" />
-					</div>
-				</div>`
+						}`
 
     return html;
   }
 
   getBannerPlaceholder() {
-
+    $('.navbar-item.has-dropdown').each(function(){
+      const id = $(this).attr('id');
+      console.log(id);
+      const container = `#${id} .navbar-dropdown-image`;
+      $(container).load(`/bannermenu.html #${id}`)
+    })
   }
 
 }

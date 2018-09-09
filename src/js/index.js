@@ -9,6 +9,7 @@ import './components/searchForm';
 import './components/shelf';
 import './components/filter';
 //import './components/buyBuyCategory';
+import './components/product';
 
 
 import './components/buy-by-category/main'
