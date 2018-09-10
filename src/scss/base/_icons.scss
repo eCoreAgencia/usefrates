@@ -1,6 +1,10 @@
 $icomoon-font-family: "icomoon" !default;
 $icomoon-font-path: "/arquivos" !default;
 
+$icon-stars: "\e912";
+$icon-finger: "\e913";
+$icon-medal: "\e914";
+$icon-ray: "\e915";
 $icon-arrow-left: "\e900";
 $icon-arrow-right: "\e901";
 $icon-cart: "\e902";
@@ -46,94 +50,114 @@ $icon-whatsapp: "\e911";
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .icon-stars {
+    &:before {
+      content: $icon-stars; 
+    }
+  }
+  .icon-finger {
+    &:before {
+      content: $icon-finger; 
+    }
+  }
+  .icon-medal {
+    &:before {
+      content: $icon-medal; 
+    }
+  }
+  .icon-ray {
+    &:before {
+      content: $icon-ray; 
+    }
+  }
   .icon-arrow-left {
     &:before {
-      content: $icon-arrow-left;
+      content: $icon-arrow-left; 
     }
   }
   .icon-arrow-right {
     &:before {
-      content: $icon-arrow-right;
+      content: $icon-arrow-right; 
     }
   }
   .icon-cart {
     &:before {
-      content: $icon-cart;
+      content: $icon-cart;     
       color: #616161;
     }
   }
   .icon-coupon {
     &:before {
-      content: $icon-coupon;
+      content: $icon-coupon; 
     }
   }
   .icon-help {
     &:before {
-      content: $icon-help;
+      content: $icon-help; 
     }
   }
   .icon-atacado {
     &:before {
-      content: $icon-atacado;
+      content: $icon-atacado; 
     }
   }
   .icon-facebook {
     &:before {
-      content: $icon-facebook;
+      content: $icon-facebook; 
     }
   }
   .icon-instagram {
     &:before {
-      content: $icon-instagram;
+      content: $icon-instagram; 
     }
   }
   .icon-youtube {
     &:before {
-      content: $icon-youtube;
+      content: $icon-youtube; 
     }
   }
   .icon-logo-cart {
     &:before {
-      content: $icon-logo-cart;
+      content: $icon-logo-cart; 
     }
   }
   .icon-mark {
     &:before {
-      content: $icon-mark;
+      content: $icon-mark; 
     }
   }
   .icon-menu {
     &:before {
-      content: $icon-menu;
+      content: $icon-menu; 
     }
   }
   .icon-phone {
     &:before {
-      content: $icon-phone;
+      content: $icon-phone; 
     }
   }
   .icon-refresh {
     &:before {
-      content: $icon-refresh;
+      content: $icon-refresh; 
     }
   }
   .icon-search {
     &:before {
-      content: $icon-search;
+      content: $icon-search; 
     }
   }
   .icon-truck {
     &:before {
-      content: $icon-truck;
+      content: $icon-truck; 
     }
   }
   .icon-user {
     &:before {
-      content: $icon-user;
+      content: $icon-user; 
     }
   }
   .icon-whatsapp {
     &:before {
-      content: $icon-whatsapp;
+      content: $icon-whatsapp; 
     }
   }

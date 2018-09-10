@@ -15,7 +15,7 @@ class Minicart {
              <strong class="minicart-product__price">R$ ${(item.price / 100).formatMoney()}</strong>
            </div>
            
-             <button class="minicart-product__remove" type="button" onclick="Minicart.removeItem.apply(null, [${i}])" title="Remover ${item.name} do carrinho">Remover</button>
+             <button class="minicart-product__remove" type="button" onclick="Minicart.removeItem.apply(null, [${i}])" title="Remover ${item.name} do carrinho">X</button>
          </li>
        `
      }

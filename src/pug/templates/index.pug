@@ -29,25 +29,26 @@ block content
       include ../vtexParts/diff.pug
   section.section__page.section__call
     .container
-      .call
-        .call__box
-          img(src="http://via.placeholder.com/250x250/ffffff/000000", alt="")/
-          .call__inner
-            h2.call__title Faça você mesmo
-            span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
-            a.button.button-transparent Ver Produtos
-        .call__box
-          img(src="http://via.placeholder.com/250x250/ffff00/000000", alt="")/
-          .call__inner
-            h2.call__title Seleção Profissionais
-            span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
-            a.button.button-transparent Ver Produtos
-        .call__box
-          img(src="http://via.placeholder.com/250x250/ff00ff/000000", alt="")/
-          .call__inner
-            h2.call__title Compre por atacado
-            span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
-            a.button.button-transparent Ver Produtos
+      +vtex-controller('<vtex:contentPlaceHolder id="Chamadas" />')
+        .call
+          .call__box
+            img(src="http://via.placeholder.com/250x250/ffffff/000000", alt="")/
+            .call__inner
+              h2.call__title Faça você mesmo
+              span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+              a.button.button-transparent Ver Produtos
+          .call__box
+            img(src="http://via.placeholder.com/250x250/ffff00/000000", alt="")/
+            .call__inner
+              h2.call__title Seleção Profissionais
+              span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+              a.button.button-transparent Ver Produtos
+          .call__box
+            img(src="http://via.placeholder.com/250x250/ff00ff/000000", alt="")/
+            .call__inner
+              h2.call__title Compre por atacado
+              span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
+              a.button.button-transparent Ver Produtos
   section.section__page.section__shelf
     .container
       h2.section__title Novidades

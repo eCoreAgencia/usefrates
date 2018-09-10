@@ -28,6 +28,15 @@ block content
               include ../vtexParts/vtexProductImages.pug
           .product__media-bottom
             .product__share
+              .share
+                span.share__text Compartilhe: 
+                ul.share__list
+                  li
+                    a(href="")
+                      i.icon-whatsapp
+                      i.icon-facebook
+                      i.icon-twitter
+
         .product__info.column.is-6
           .product__name
             +vtex-controller('<vtex.cmc:productName />')
@@ -82,9 +91,12 @@ block content
             .product__action-top
               .product__qtd
                 button.button.button--minus -
-                input.product__qtd-value(type="text")
+                input.product__qtd-value(type="text" value="1")/
                 button.button.button--plus +
               .product__more
+                button.button.button--more-products 
+                  strong Leve mais 
+                  | Pague Menos
             .product__action-bottom
               +vtex-controller('<vtex.cmc:BuyButton/>')
                 a.buy-button.buy-button-ref(target='_top', href="javascript:alert('Por favor, selecione o modelo desejado.');", style='display:block')
@@ -111,6 +123,38 @@ block content
                     fieldset.error(style='display: none')
                       label
                         span.sku-notifyme-error.notifyme-error
+          .product__shipping
+            .product__shipping-text
+              i.icon-truck
+              span Entrega
+            .shipping
+              .shipping__form
+                .field.has-addons
+                  .control.is-expanded
+                    input.input(type='text', placeholder='Digite seu CEP para calcular o prazo e valor')/
+                  .control
+                    a.button
+                      | ok
+              a.shipping__link Não sei meu CEP
+          .product__secure-buy 
+            h3.product__secure-title Compre Com Segurança:
+            .product__secure-imagem
+              a.button--secure(href="")
+                i.icon-medal
+                span Este produto possui 
+                  strong Garantia de 24 meses
+              a.button--secure(href="")
+                i.icon-refresh
+                span
+                  strong Troca Grátis (7 dias)   
+
+
+    section.section__page.section__product-bottom
+      .product__description
+        h2.product__description-title Informações:
+        .product__description-text
+          +vtex-controller('<vtex.cmc:ProductDescription />')
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint voluptates laudantium nesciunt veniam quae in error similique aliquid, magnam voluptas ex eum autem architecto? Consequatur unde animi quae aliquid deserunt.
     section.section__page.section__shelf
       h2.section__title Quem Viu, Viu Também
       .shelf.shelf__carousel--full

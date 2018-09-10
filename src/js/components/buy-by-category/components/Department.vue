@@ -99,8 +99,9 @@ import { slugify } from '../../../utils';
 
         const list = $(`.buy-by-category[data-id="${this.id}"] .shelf__carousel--category`);
 
-        const products = api.getProductWithShelfId(this.id, '65c15678-2bbe-72e0-3aa6-0aa635db2f86')
+        const products = api.getProductWithShelfId(id, '65c15678-2bbe-72e0-3aa6-0aa635db2f86')
                           .then(response => {
+                            console.log(response, 'result')
                             setTimeout(function(){
                               $(window).trigger('productFinished');
                             }, 1000)
