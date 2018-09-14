@@ -249,7 +249,7 @@ block content
                             option(value='OrderByNameDESC') Z - A
                             option(value='OrderByReleaseDateDESC') Data de lançamento
                             option(value='OrderByBestDiscountDESC') Melhor Desconto
-    section.section__page.section__shelf
+    section.section__page.section__shelf.shelf
         .container.is-fluid
             +vtex-controller('<vtex.cmc:searchResult layout="65c15678-2bbe-72e0-3aa6-0aa635db2f86" itemCount="12"  columnCount="4" />')
                 p.searchResultsTime
@@ -349,4 +349,4 @@ block content
                         a.btn-comparar(title='Comparar', href='#') Comparar
 
 block scripts
-    script(src='/arquivos/vtex-SmartResearch.js')
+    script(src='/arquivos/vtex-SmartResearch.js?v=%PROJECT_VERSION%')

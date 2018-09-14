@@ -15,9 +15,7 @@
 
 $(document).ready(function(){
   if($('body').hasClass('home')){
-    if($('li.helperComplement')[0]){
-      $('li.helperComplement').remove();
-    }
+    
 
     if($('.call__box')[0]){
       $('.call__box').each(function(){
@@ -96,7 +94,7 @@ $(document).ready(function(){
       nextArrow:shelf__next
     });
 
-    $('.shelf__brand ul').slick({
+    $('.shelf__brand').slick({
       arrows: true,
       slideToShow: 4,
       slidesToScroll: 1,

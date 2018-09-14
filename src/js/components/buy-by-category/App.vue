@@ -1,7 +1,7 @@
 
 <template>
   <div class="js-vue-buy-by-category">
-    <Department v-for="department in departments" :key="department[0].id" :id="department[0].id" :titulo="department[0].name" :categories="department[0].children"/>
+    <Department v-for="department in departments" :key="department[0].id" :id="department[0].id" :titulo="department[0].name" :categories="department[0].children" :url="department[0].url"/>
   </div>
 </template>
 

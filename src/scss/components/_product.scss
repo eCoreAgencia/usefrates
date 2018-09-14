@@ -63,7 +63,7 @@
 
   .buy-button {
     text-align: center;
-    color: #fff;
+    color: $c-white;
     background-color: $c-primary;
     padding: 10px;
     font-size: 30px;
@@ -87,7 +87,7 @@
   &__header {
     position: relative;
     .product--shelf & {
-      border-radius: 5px;
+      border-radius: 10px;
       overflow: hidden;
       max-height: 365px;
       border: 1px solid $c-gray;
@@ -195,14 +195,19 @@
       text-align: center;
       font-family: $f-base;
 
-      .price__list, .price__instatement {
-        font-size: 22px;
+      .price__list, .price__instament {
+        
         display: block;
       }
 
       .price__list {
         font-weight: 700;
         margin-bottom: 10px;
+        font-size: 22px;
+      }
+      .price__instament {
+        font-size: 18px;
+        font-weight: 700;
       }
     }
     .product--shelf-flip & {
@@ -335,7 +340,7 @@
       &.checked, &:hover {
         border-color: $c-primary;
         background-color: $c-primary;
-        color: #ffffff;
+        color: $c-white;
         cursor: pointer;
       }
     }
@@ -546,7 +551,7 @@
     
     border: 1px solid #e8e8e8;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: $c-white;
     overflow: hidden;
     width: 416px;
 

@@ -76,6 +76,7 @@
 	}
 
 	&__menu {
+    padding: 0!important;
 		.navbar-item {
 			align-items: stretch;
 			padding: 0;
@@ -95,11 +96,30 @@
 				padding: 0;
 				border: none;
 				border-radius: 0;
-				box-shadow: none;
-
-				
+        box-shadow: none;
+        
+        		
 			}
-		}
-	}
+    }
+
+    .navbar-item.has-dropdown.is-first:hover {
+			.navbar-dropdown {
+				display: grid !important;
+        width: 1300px;
+        display: grid;
+        grid-template-columns: repeat(7, 186px);
+      }
+      
+      .navbar-item {
+        font-size: 13px;
+      }
+    }
+    
+    .navbar {
+      justify-content: space-between;
+    }
+  }
+  
+ 
 
 }

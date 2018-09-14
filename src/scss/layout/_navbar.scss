@@ -8,6 +8,17 @@
   &-item {
     max-width: 100px;
 		font-family: $f-base;
+		&.is-first {
+			
+			.navbar-link {
+				color: $c-white;
+				background-color: $c-primary;
+			}
+
+			.icon-menu {margin-right: 5px;}
+			
+			
+		}
 		
 		&.has-dropdown:nth-child(n + 6){
 			.navbar-dropdown {

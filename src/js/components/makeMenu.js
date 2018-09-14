@@ -8,6 +8,16 @@ class MakeMenu {
     const self = this;
     $(window).on('makeMenuFinished', function(){
       self.getBannerPlaceholder();
+      const all = `<div id="toda-loja" class="navbar-item is-first has-dropdown is-hoverable">
+      <a href="/" class="navbar-link"> <i class="icon-menu"></i>Toda Loja</a>
+      <div class="navbar-dropdown"></div>
+    </div>`;
+    var html = '';
+      $('.header__menu .navbar').prepend(all);
+      $('.navbar-department .navbar-dropdown-column').each(function(){
+        html += $(this).html();
+        $('.header__menu .is-first .navbar-dropdown').html(html);
+      });
     });
   }
 
@@ -26,7 +36,7 @@ class MakeMenu {
     const html = categories.map(category => {
       const slug = slugify(category.name);
       return `
-					<div id="${slug}"class="navbar-item ${category.children.length > 0 ? ' has-dropdown': ''} is-hoverable">
+					<div id="${slug}"class="navbar-department navbar-item ${category.children.length > 0 ? ' has-dropdown': ''} is-hoverable">
 						<a href="${category.url}" class="navbar-link">${category.name}</a>
             ${category.children.length > 0 ? `
               <div class="navbar-dropdown">
@@ -51,7 +61,7 @@ class MakeMenu {
     const html = `${ children.map((category, i) => {
 							return `
 									${ (i % 10 == 0) ? '<div class="navbar-dropdown-column">' : ''	}
-										<a href="${category.url}" class="navbar-item ${i}">
+										<a href="${category.url}" class="navbar-item navbar-item-${i}">
 											${category.name}
 										</a>
 									${(i == children.length -1 || (i + 1) % 10 == 0) ? '</div>': ''}

@@ -49,6 +49,7 @@ block content
               h2.call__title Compre por atacado
               span.call__subtitle Selecionamos as ferramentas ideias para você começar por a mão na obra
               a.button.button-transparent Ver Produtos
+          
   section.section__page.section__shelf
     .container
       h2.section__title Novidades
@@ -61,12 +62,12 @@ block content
                   include ../shelves/prateleira
   section.section__page.section__shelf
     .container
-      h2.section__title Mais Vendidos
-      .shelf.shelf__carousel--full
-        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
+      h2.section__title Ofertas da semana
+      .shelf
+        +vtex-controller('<vtex:contentPlaceHolder id="Ofertas da semana" />')
           .prateleira
             ul
-              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+              each val in [1, 2, 3, 4]
                 li
                   include ../shelves/prateleira
   span.is-invisible.js-department-ids
@@ -81,21 +82,20 @@ block content
     .container
       .shelf.shelf__brand
         +vtex-controller('<vtex:contentPlaceHolder id="Carrossel de Marcas" />')
-          ul
-            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-              li
-                a(href='')
-                  img(src='http://via.placeholder.com/175x75')/
+          each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+            .box-banner
+              a(href='')
+                img(src='http://via.placeholder.com/175x75')/
   section.section__page.section__shelf
     .container
-      h2.section__title Ofertas da semana
-      .shelf
-        +vtex-controller('<vtex:contentPlaceHolder id="Ofertas da semana" />')
+      h2.section__title Mais Vendidos
+      .shelf.shelf__carousel--full
+        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
           .prateleira
             ul
-              each val in [1, 2, 3, 4]
+              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                 li
-                  include ../shelves/prateleira
+                  include ../shelves/prateleira    
   section.section__page.section__shelf
     .container
       h2.section__title Produtos Coringas

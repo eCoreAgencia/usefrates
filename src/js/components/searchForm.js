@@ -45,7 +45,7 @@ export default class SearchForm {
 
   getSearchResult(query) {
     let self = this;
-    const endpoint = isLocalhost ? `/product.html` : vtexSearchPageEndpoint(query, this.shelfId, 5);
+    const endpoint = isLocalhost ? `/product.html` : vtexSearchPageEndpoint(query, this.shelfId, 3);
     axios.get(endpoint)
       .then(data => self.appendResultList(data.data))
       .catch(error => self.appendResultList(`<span class="no-result">Não foi encontrado nenhum resultado</span>`))

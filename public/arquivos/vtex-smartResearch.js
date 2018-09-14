@@ -140,54 +140,80 @@ jQuery.fn.vtexSmartResearch=function(opts)
 				return false;
 			});
 		},
-		infinitScroll:function()
-		{
-			var elementPages,pages,currentStatus,tmp;
+		infinitScroll: function() {
 
-			elementPages=body.find(".pager:first").attr("id");
-			tmp=(elementPages||"").split("_").pop();
-			pages=(null!==options.pageLimit)?options.pageLimit:window["pagecount_"+tmp];
-			currentStatus=true;
-
+			var elementPages, pages, currentStatus, tmp;
+	
+			elementPages = body.find(".pager:first").attr("id");
+			tmp = (elementPages || "").split("_").pop();
+			pages = (null !== options.pageLimit) ? options.pageLimit : window["pagecount_" + tmp];
+			currentStatus = true;
+	
 			// Reportando erros
-			// if("undefined"===typeof pages) log("Não foi possível localizar quantidade de páginas.\n Tente adicionar o .js ao final da página. \n[Método: infinitScroll]");
-
-			if("undefined"===typeof pages)
-				pages=99999999;
-
-			_window.bind('scroll',function(){
-				var _this=jQuery(this);
-				if(!animatingFilter && currentPage<=pages && moreResults && options.authorizeScroll(ajaxCallbackObj))
-				{
-					if((_this.scrollTop()+_this.height())>=(options.getShelfHeight(loadContentE)) && currentStatus)
-					{
-						var currentItems=loadContentE.find(options.shelfClass).filter(":last");
+			// if("undefined"===typeof pages) log("NÃ£o foi possÃ­vel localizar quantidade de pÃ¡ginas.\n Tente adicionar o .js ao final da pÃ¡gina. \n[MÃ©todo: infinitScroll]");
+	
+			if ("undefined" === typeof pages)
+				pages = 99999999;
+	
+			loadContentE.append("<div class='button btn-load-more confira-todos-produtos'>Ver Mais</div>");
+	
+			pageJqxhr = jQuery.ajax({
+				url: fn.getUrl(true),
+				success: function(data) {
+					if(data.trim().length == "") {
+						$('.btn-load-more').remove();
+					}
+				}
+			});
+	
+			loadContentE.live('click', '.btn-load-more', function(){
+			// _window.bind('scroll', function() {
+				var _this = jQuery(this);
+				if (!animatingFilter && currentPage <= pages && moreResults && options.authorizeScroll(ajaxCallbackObj)) {
+					if ((_this.scrollTop() + _this.height()) >= (options.getShelfHeight(loadContentE)) && currentStatus) {
+						var currentItems = loadContentE.find(options.shelfClass).filter(":last");
 						currentItems.after(elemLoading);
-						currentStatus=false;
-						pageJqxhr=jQuery.ajax({
+						currentStatus = false;
+						pageJqxhr = jQuery.ajax({
 							url: fn.getUrl(true),
-							success:function(data)
-							{
-								if(data.trim().length<1)
-								{
-									moreResults=false;
-									log("Não existem mais resultados a partir da página: "+(currentPage-1),"Aviso");
-								}
-								else
+							success: function(data) {
+								if (data.trim().length < 1) {
+									moreResults = false;
+									log("NÃ£o existem mais resultados a partir da pÃ¡gina: " + (currentPage - 1), "Aviso");
+									loadContentE.find('.btn-load-more').fadeOut('fast');
+								} else {
+									if ($('.btn-load-more').length > 0) {
+										console.log('maior que 0');
+									} else{
+										console.log('menor que 0');
+									};
+									//shelfColors.init();
 									currentItems.after(data);
-								currentStatus=true;
+									//global.flagDiscount();
+								}
+								currentStatus = true;
 								elemLoading.remove();
 								ajaxCallbackObj.requests++;
 								options.ajaxCallback(ajaxCallbackObj);
 							}
 						});
 						currentPage++;
+	
+						pageJqxhr = jQuery.ajax({
+							url: fn.getUrl(true),
+							success: function(data) {
+								if(data.trim().length == "") {
+									$('.btn-load-more').remove();
+								}
+							}
+						});
 					}
+				} else {
+					loadContentE.find('.btn-load-more').fadeOut('fast');
+					// return false;
 				}
-				else
-					return false;
 			});
-		}
+		},
 	};
 
 	if(null!==options.searchUrl)
@@ -200,7 +226,7 @@ jQuery.fn.vtexSmartResearch=function(opts)
 	{
 		log("Nenhuma opção de filtro encontrada","Aviso");
 		if(options.showLinks) jQuery(options.linksMenu).css("visibility","visible").show();
-		fn.infinitScroll();
+		//fn.infinitScroll();
 		fn.scrollToTop();
 		return $this;
 	}

@@ -1,5 +1,5 @@
 .search-form {
-  padding: 10px;
+  padding: 5px;
   background-color: $c-gray;
   border: 1px solid $c-gray;
   border-radius: 10px;
@@ -11,7 +11,7 @@
   }
 
   &--focus {
-    background-color: #fff;
+    background-color: $c-white;
     .field {
       flex-direction: row-reverse;
     }
@@ -48,14 +48,16 @@
     min-height: 200px;
     width: 100%;
     top: 100%;
-    background-color: #ffffff;
+    background-color: $c-white;
     left: 0;
     border: 1px solid $c-gray;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     &-item, &-link {
       display: flex;
       width: 100%;
     }
-    .shelf ul li {
+    ul li {
       width: 100%;
       max-width: 100%;
       + li {

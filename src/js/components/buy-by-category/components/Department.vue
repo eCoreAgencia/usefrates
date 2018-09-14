@@ -7,7 +7,7 @@
         </div>
         <div class="category__card-info">
           <span class="category__name">{{ titulo }}</span>
-          <a class="category__link" href="http://casaegaragem.com.br/ferramentas-manuais">Ver todos</a>
+          <a class="category__link" :href="url">Ver todos</a>
         </div>
       </div>
 
@@ -31,6 +31,7 @@ import { slugify } from '../../../utils';
     props: {
       id: Number,
       titulo: String,
+      url: String,
       categories: Array
     },
     computed: {

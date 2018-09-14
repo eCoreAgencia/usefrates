@@ -1,11 +1,11 @@
 .button {
     &--primary {
-        color: #fff;
+        color: $c-white;
         background-color: #004774;
         border-color: #004774;
         &:hover {
             background-color: darken(#004774, 10%);
-            color: #fff;
+            color: $c-white;
         }
     }
 }

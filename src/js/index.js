@@ -18,3 +18,10 @@ import './components/buy-by-category/main'
 import './pages/home';
 import './pages/empty-search';
 
+
+$(document).ready(function(){
+    if($('li.helperComplement')[0]){
+        $('li.helperComplement').remove();
+      }
+})
+
