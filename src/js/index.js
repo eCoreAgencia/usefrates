@@ -1,6 +1,7 @@
 import '../scss/main.scss'
 import './modules/vtexRequest'
 
+
 import './components/minicart';
 import './components/loader';
 import './components/menu';
@@ -15,6 +16,7 @@ import './components/product';
 import './components/buy-by-category/main'
 
 
+import './pages/global';
 import './pages/home';
 import './pages/empty-search';
 

@@ -1,25 +1,38 @@
 .product {
+
+  &:hover {
+    .price__list {
+      color: #e75300 !important;
+    }
+  }
+
   &__link {
     .product__media & {
       display: block;
     }
 
     &.button {
-      color: $c-blue;
-      border-color: $c-blue;
-      font-size: 19px;
+      width: 100%;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 0;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #e75300;
     }
   }
 
   &__actions {
     font-family: $f-base;
     .product--shelf & {
-      display: none;
-      position: absolute;
-      bottom: 10px;
+      bottom: 0;
       width: 100%;
-      justify-content: space-around;
+      display: none;
       font-size: 19px;
+      position: absolute;
+      justify-content: space-around;
     }
 
     .product--shelf:hover & {
@@ -78,26 +91,26 @@
 
     &::before {
       content: $icon-cart;
-      font-family: 'icomoon';
       font-size: 35px;
       margin-right: 10px;
+      font-family: 'icomoon';
     }
   }
 
   &__header {
     position: relative;
+
     .product--shelf & {
-      border-radius: 10px;
+      padding: 2px;
       overflow: hidden;
       max-height: 365px;
       border: 1px solid $c-gray;
-      padding: 2px;
     }
 
     .product--shelf-flip & {
-      max-height: 100%;
-      display: flex;
       border: none;
+      display: flex;
+      max-height: 100%;
       justify-content: space-between;
     }
   }
@@ -113,14 +126,14 @@
       width: 98px;
 
       li {
-
         margin-bottom: 6px;
       }
+
       a {
         display: block;
-        border: 1px solid #dcdcdc;
-        border-radius: 10px;
         overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid #dcdcdc;
 
         &.ON, &:hover {
           border-color: $c-primary;
@@ -130,33 +143,36 @@
 
     #include {
       width: calc(100% - 98px - 10px);
-      border: 1px solid #dcdcdc;
-      border-radius: 10px;
       overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid #dcdcdc;
     }
   }
 
   &__buy {
     color: $c-white;
-    background-color: $c-blue;
     border-color: $c-blue;
+    background-color: $c-blue;
+
     .product--shelf & {
       font-size: 19px;
     }
   }
 
   &__name, .productName {
-    color: $c-black;
-    font-family: $f-base;
-    font-weight: 700;
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto';
 
     .product--shelf & {
-      text-align: center;
       padding: 5px;
       font-size: 19px;
+      text-align: center;
 
       .product__link {
         color: $c-black;
+
         &:hover {
           text-decoration: none;
         }
@@ -201,15 +217,20 @@
       }
 
       .price__list {
-        font-weight: 700;
-        margin-bottom: 10px;
-        font-size: 22px;
+        color: #000;
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-family: "United Sans Reg - Heavy";
       }
       .price__instament {
-        font-size: 18px;
+        font-size: 13px;
+        color: #9b9b9b;
         font-weight: 700;
+        font-family: "United Sans Reg - Bold";
       }
     }
+
     .product--shelf-flip & {
       text-align: left;
       .price__list {
@@ -221,8 +242,6 @@
   &--shelf {
     &-flip {
       perspective: 1000;
-
-
     }
   }
 
@@ -240,9 +259,6 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
-
-
   }
 
   &__front {
@@ -316,11 +332,6 @@
       margin-bottom: 10px;
       display: block;
     }
-
-
-
-
-
   }
 
   &__skus {
@@ -577,7 +588,6 @@
   }
 
   &__link {
-    font-size: 12px;
-    color: $c-primary;
+    border-radius: 0;
   }
 }

@@ -2,48 +2,37 @@ extends ../layouts/default.pug
 
 block vars
   - var pageTitle = 'Minha Conta'
-  - var bodyClass = 'account catalog category'
+  - var bodyClass = 'account'
 
 block head
-    link(rel="stylesheet", href="https://casaegaragem.vteximg.com.br/arquivos/bootstrap.min.css")/
-    script(src='https://casaegaragem.vteximg.com.br/arquivos/bootstrap.js')
+    link(rel="stylesheet", href="https://tactical.vteximg.com.br/arquivos/bootstrap.min.css")/
+    script(src='https://tactical.vteximg.com.br/arquivos/bootstrap.js')
 
 block content
-    section.section__page.section__diff
-        .diff.container
-            .diff__container
-                .diff__box
-                    .diff__icon.diff__icon--boleto
-                        include ../../svg/coupon.svg
-                    .diff__info
-                        span.diff__title 10% de desconto no boleto
-                        span.diff__subtitle em todos os produtos do site
-                .diff__box
-                    .diff__icon.diff__icon--frete
-                        include ../../svg/truck.svg
-                    .diff__info
-                        span.diff__title frete grátis
-                        span.diff__subtitle a partir de R$ 299 para o Sudeste
-                .diff__box
-                    .diff__icon.diff__icon--troca
-                        include ../../svg/refresh.svg
-                    .diff__info
-                        span.diff__title troca grátis (7 dias)
-                        span.diff__subtitle Tranquilidade na sua primeira compra
-                .diff__box
-                    .diff__icon.diff__icon--atacado
-                        include ../../svg/percent.svg
-                    .diff__info
-                        span.diff__title Compre no Atacado
-                        span.diff__subtitle Receba descontos especiais
     section.section__page.section__account
         .container
-            .columns
-                .column
+            section.section__page.section__breadcrumb
+                +vtex-controller('<vtex.cmc:breadCrumb />')
+                .bread-crumb
+                    ul
+                        li
+                            a(href='/', rel='v:url', property='v:title') Home
+                        li
+                            a(href='/ferramentas-eletricas', rel='v:url', property='v:title') Ferramentas Elétricas
+                        li
+                            a(href='/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
+                        li.last
+                            a(href='/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
+            h3.section__account__tlt MINHA CONTA
+            section.section__account__box
+                h6.section__account__box__tlt Olá Luiz Felipe
+                article.section__account__box__txt Durante toda a sua navegação, você estará em um ambiente virtual 100% seguro, garantimos os padrões rígidos de segurança e confidencialidade a fim de proteger suas informações.
+            section.account__boxes.columns
+                .column.is-4
                     .account__box
                         +vtex-controller('<vtex.cmc:accountUserProfile />')
                             .span4.profile-detail-display
-                                h4 Meu Perfil
+                                h4 Meus Dados
                                 h5 luiz.felipe@ecorecomunicacao.com
                                 p.profile-detail-display-email luiz.felipe@ecorecomunicacao.com
                                 p.edit.edit-profile-link
@@ -153,7 +142,7 @@ block content
                                         input#VTEXRequestVerificationToken(type='hidden', name='VTEXRequestVerificationToken', value='706e67c5f064448994d2a49c4fd39e83')
                                         button.btn-link(data-dismiss='modal', type='button') Cancelar
 
-                .column
+                .column.is-4
                     .account__box
                         +vtex-controller('<vtex.cmc:accountAddress/>')
                             .span6.address-display-block
@@ -270,4 +259,11 @@ block content
                                         input#userId(type='hidden', name='userId', value='d221ee23-bdb1-48e6-a8f3-e95f25bd6fad')
                                         input#addressId(type='hidden', name='addressId', value='')
                                         input#country(type='hidden', name='country', value='BRA')
-                        
+
+                .column.is-4
+                    .account__box
+                        .span6.address-display-block
+                            h4 Meus Pedidos
+                        .account__box__orders
+                            a.account__box__orders__link(href='/account/orders') Ver meus Pedidos
+                            .account__box__orders__area Clique no link acima para acompanhar seus pedidos realizados.

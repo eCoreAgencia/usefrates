@@ -22,7 +22,7 @@ export const productShelf = (product, list = false) => {
   const getUrlImageTag = (image, width, height) => {
    image = image.replace('#width#', width)
    image = image.replace('#height#', height)
-   image = image.replace('~', 'http://casaegaragem.vteximg.com.br')
+   image = image.replace('~', 'http://tactical.vteximg.com.br')
    image = image.replace('-undefined', '')
 
     return image;

@@ -1,13 +1,83 @@
 
- .section__account .address-display-unit,
- .section__account .profile-detail-display,
- .section__account .address-display,
- .section__account .address-display-unit .row,
- .section__account .profile-detail-display .row{
-   width: 100%;
-   padding: 0;
-   margin: 0;
- }
+    .section__account {
+      &__tlt {
+        font-size: 50px;
+        color: #211e14;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      &__box {
+        margin-bottom: 40px;
+
+        &__tlt {
+          font-size: 20px;
+          color: #e75300;
+          font-weight: 800;
+          line-height: 32px;
+        }
+
+        &__txt {
+          font-size: 14px;
+          color: #372527;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .account__boxes {
+      .column {
+        padding: 0;
+
+        .account__box {
+          padding: 0;
+
+          h4 {
+            color: #fff;
+            font-size: 20px;
+            padding: 15px 0;
+            font-weight: 800;
+            line-height: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background-color: #211e14;
+
+            &:before {
+              content: '';
+              width: 25px;
+              height: 25px; 
+              margin: 0 20px 0 30px;
+              display: inline-block;
+              vertical-align: text-bottom;
+              background: url(/arquivos/ico-account.png) no-repeat scroll 0 0 transparent;
+            }
+          }
+
+          p,
+          h5,
+          div {
+            padding: 0 30px;
+          }
+
+          div.profile-detail-display,
+          div.address-display-block {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .section__account .address-display-unit,
+    .section__account .profile-detail-display,
+    .section__account .address-display,
+    .section__account .address-display-unit .row,
+    .section__account .profile-detail-display .row{
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
    .section__account h4{
      color: #333;
      font-size: 18px;
@@ -44,16 +114,6 @@
      min-height: 0;
      vertical-align: top;
    }
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  .modal-backdrop {
    position: fixed;
@@ -189,35 +249,32 @@
      }
 
      &__box {
-         background-color: #f9f9f9;
-         border: 2px solid #cacaca;
-         padding: 40px;
-         height: 100%;
-         margin: 10px;
+      width: 358px;
+      height: 400px;
+      margin: 10px;
+      padding: 40px;
+      background-color: #fbf7f1;
      }
 
      h4 {
-         text-transform: uppercase;
-         font-size: 32px;
-         padding: 5px 0 25px 20px;
-         margin-bottom: 50px;
-         border-bottom: 1px solid #cacaca;
+      font-size: 32px;
+      margin-bottom: 50px;
+      padding: 5px 0 25px 20px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #cacaca;
      }
 
-     .address-update, #edit-data-link {
-         @extend .button;
-         margin: 10px 0;
-         background-color: $c-primary;
-         border: 1px solid $c-primary;
-         color: $c-white;
-         text-transform: uppercase;
-         font-size: 20px;
-
-         &:hover {
-            border: 1px solid $c-primary;
-            color: $c-white;
-            text-decoration: none;
-         }
+     .address-update,
+     #edit-data-link,
+     .account__box__orders__link {
+      display: block;
+      margin: 10px 0;
+      color: #372527;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: Roboto;
+      text-decoration: underline;
+      background-color: #fbf7f1;
      }
 
      .modal {
@@ -235,4 +292,18 @@
      }
  }
 
- 
+body.account {
+  main {
+    margin-bottom: 126px;
+  }
+  
+  .title {
+    color: #372527 !important;
+  }
+  .header__area {
+    padding: 12px 0;
+  }
+  .navbar-link {
+    line-height: 0;
+  }
+}

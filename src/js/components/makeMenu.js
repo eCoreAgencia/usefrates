@@ -8,12 +8,7 @@ class MakeMenu {
     const self = this;
     $(window).on('makeMenuFinished', function(){
       self.getBannerPlaceholder();
-      const all = `<div id="toda-loja" class="navbar-item is-first has-dropdown is-hoverable">
-      <a href="/" class="navbar-link"> <i class="icon-menu"></i>Toda Loja</a>
-      <div class="navbar-dropdown"></div>
-    </div>`;
     var html = '';
-      $('.header__menu .navbar').prepend(all);
       $('.navbar-department .navbar-dropdown-column').each(function(){
         html += $(this).html();
         $('.header__menu .is-first .navbar-dropdown').html(html);
@@ -25,7 +20,8 @@ class MakeMenu {
     let self = this;
     const api = new vtexRequest();
     const categories = await api.getCategoryTree(2);
-    self.displayMenu(categories);
+    //console.log(categories[0].children);
+    self.displayMenu(categories[0].children);
     $(window).trigger('makeMenuFinished');
   }
 

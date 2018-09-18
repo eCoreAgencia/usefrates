@@ -2,10 +2,9 @@ class Menu {
 	constructor(){
 		this.vtexMenu = $('#top-menu .menu-departamento');
 		this.menu = $('.header__menu .navbar');
+		this.hoverArea = $('.header');
 		this.eachItem();
 	}
-
-	
 
 	eachItem(){
 		let self = this;
@@ -26,8 +25,6 @@ class Menu {
 		</div>`;
 		console.log(newItemHtml);
 		this.menu.append(newItemHtml);
-
-		
 	}
 
 	renderChildren(children){
@@ -44,9 +41,6 @@ class Menu {
 		}
 		return newChildren;
 	}
-
-	
 }
 
 window.menu = new Menu();
-

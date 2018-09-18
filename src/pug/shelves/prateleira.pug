@@ -18,8 +18,8 @@ else
   - var dataProductId = Math.floor(Math.random() * 9999999)
   - var listPrice = 'R$ 299,99'
   - var bestPrice = 'R$ 199,99'
-  - var flags = '<p class="flag destaque">destaque</p>'
-  - var getImageTag = '<img src="https://casaegaragem.vteximg.com.br/arquivos/ids/155449-279-365/aparador-de-grama-black-decker-500w-gl300p-principal.jpg?v=636688094892030000" width="279" height="365" />'
+  - var flags = '<p class="flag destaque">novo</p>'
+  - var getImageTag = '<img src="http://via.placeholder.com/279x365" width="279" height="365" />'
   - var getImageTag2 = '<img src="http://via.placeholder.com/279x365" width="279" height="365" />'
   - var categoryName = '+ Iluminação'
   - var categoryHref = '/category.html'
@@ -31,8 +31,7 @@ else
       a.product__link(href= href)
         != getImageTag
     .product__actions
-      a.button.product__link(title= title, href= href) Ver Produto
-      a.button.button--primary.product__buy(href= href, data-product-id= dataProductId) Compre Rápido
+      a.button.product__link(title= title, href= href) Compre Agora
   .product__reviews
   .product__info
     h3.product__name
@@ -41,10 +40,10 @@ else
       if ( global.process.env.NODE_ENV === 'production' )
         != '\n#if ($product.IsInStock)'
         != '\n  <div class="price">'
-        != '\n    <span class="price__list">' + listPrice + ' no boleto </span>'
+        != '\n    <span class="price__list">' + listPrice + '</span>'
         != '\n    #if ($product.NumbersOfInstallment > 1)'
-        != '\n      <span class="price__instament">'
-        != '\n        ${product.NumbersOfInstallment}X ${product.InstallmentValue} sem juros'
+        != '\n      <span class="price__instament">ou até'
+        != '\n        ${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
         != '\n      </span>'
         != '\n    #end'
         != '\n  </div>'
@@ -53,7 +52,5 @@ else
         != '\n#end\n'
       else
         .price
-          span.price__list R$ 5,99 no boleto
-          span.price__instament 12x R$ 13,24 sem juros
-  .product__category
-    a.button(href= categoryHref)= categoryName
+          span.price__list R$ 432,75
+          span.price__instament ou até 10x de R$ 43,28
