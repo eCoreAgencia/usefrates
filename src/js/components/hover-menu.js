@@ -1,22 +1,26 @@
 class AddHover {
-    constructor(target) {
+    constructor() {
+      const self = this;
       this.target = $('.header');
-      this.beginning = $('.header__menu');
-      this.hover(this.beginning);
+
+      $('body').on('mouseenter', '.header__menu', function(){
+        self.hover();
+      });
+
+      $('body').on('mouseleave', '.header__menu', function(){
+        self.hover();
+      });
     }
     
-    hover(beginning) {
-      let $hoverTarget = this.target;
+    hover() {
+      const self = this;
       let rolloverClass = 'hover';
-      $hoverTarget.hover(
-        (event) => {
-          $(event.currentTarget).addClass(rolloverClass);    
-        },
-        (event) => {
-          $(event.currentTarget).removeClass(rolloverClass); 
-        }
-      )
-    }
+      if(self.target.hasClass(rolloverClass)){
+        self.target.removeClass(rolloverClass);
+        return false
+      }
+      self.target.addClass(rolloverClass);
+    }  
   }
   
   new AddHover('.header');
