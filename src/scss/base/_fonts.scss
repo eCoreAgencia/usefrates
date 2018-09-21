@@ -1,3 +1,61 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|PT+Sans+Narrow:400,700');
 
+@font-face {
+  font-family: "TrumpGothicProBold";
+  src: url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProWOFF/TrumpGothicPro-Bold.woff.css') format('woff'),
+       url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProEOT/TrumpGothicPro-Bold.eot.css') format('eot');
+  font-weight: bold;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "TrumpGothicProBoldItalic";
+  src: url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProWOFF/TrumpGothicPro-BoldItalic.woff.css') format('woff'),
+       url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProEOT/TrumpGothicPro-BoldItalic.eot.css') format('eot');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "TrumpGothicProItalic";
+  src: url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProWOFF/TrumpGothicPro-Italic.woff.css') format('woff'),
+       url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProEOT/TrumpGothicPro-Italic.eot.css') format('eot');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "TrumpGothicProMedium";
+  src: url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProWOFF/TrumpGothicPro-Medium.woff.css') format('woff'),
+       url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProEOT/TrumpGothicPro-Medium.eot.css') format('eot');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TrumpGothicProMediumItalic";
+  src: url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProWOFF/TrumpGothicPro-MediumItalic.woff.css') format('woff'),
+       url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProEOT/TrumpGothicPro-MediumItalic.eot.css') format('eot');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "TrumpGothicProRegular";
+  src: url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProWOFF/TrumpGothicPro-Regular.woff.css') format('woff'),
+       url('/arquivos/_Fontes/TrumpGothicWebFont/CT0057_web/CT0057-TrumpGothicProEOT/TrumpGothicPro-Regular.eot.css') format('eot');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%TrumpGothicProBold {font-family: "TrumpGothicProBold";}
+%TrumpGothicProBoldItalic {font-family: "TrumpGothicProBoldItalic";}
+%TrumpGothicProItalic {font-family: "TrumpGothicProItalic";}
+%TrumpGothicProMedium {font-family: "TrumpGothicProMedium";}
+%TrumpGothicProMediumItalic {font-family: "TrumpGothicProMediumItalic";}
+%TrumpGothicProRegular {font-family: "TrumpGothicProRegular";}
+
+// html,
+// body{
+//   @extend %TrumpGothicProBold;
+// }
