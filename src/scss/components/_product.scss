@@ -212,7 +212,7 @@
       font-family: $f-base;
 
       .price__list, .price__instament {
-        
+
         display: block;
       }
 
@@ -437,7 +437,7 @@
       display: flex;
       flex-direction: row-reverse;
     }
-    
+
   }
 
   &__description {
@@ -456,7 +456,7 @@
     }
   }
 
-  
+
 
   &__secure {
     &-buy {
@@ -480,7 +480,7 @@
       i {
         font-size: 30px;
         color: $c-primary;
-        margin-right: 10px;  
+        margin-right: 10px;
       }
 
       span {
@@ -510,10 +510,10 @@
 
 }
 
-
 .price {
   &__list {
     font-size: 14px;
+    font-family: 'Roboto';
   }
 
   &__list, .skuBestPrice {
@@ -559,7 +559,7 @@
 
 .shipping {
   &__form {
-    
+
     border: 1px solid #e8e8e8;
     border-radius: 10px;
     background-color: $c-white;
@@ -570,7 +570,7 @@
       box-shadow: none !important;
       border: none !important;
       outline: none !important;
-      
+
     }
     .is-expanded {
       padding: 10px;
