@@ -128,12 +128,22 @@
       position: relative;
 
       .input {
-        border: none;
-        color: #c0c0c0;
-        font-size: 18px;
+        width: 500px;
+        height: 60px;
+        border: 2px solid #dadad8;
         border-radius: 0;
-        padding: 25px 15px;
-        border: 1px solid #c0c0c0;
+        background-color: #ffffff;
+        &::placeholder{
+/* Style for "Insira seu" */
+width: 137px;
+height: 21px;
+color: #c0c0c0;
+font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+/* Text style for "Insira seu" */
+letter-spacing: -0.36px;
+        }
       }
 
       .button--newsletter {
