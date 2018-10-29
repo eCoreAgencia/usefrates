@@ -10,9 +10,13 @@
 			@extend %UnitedSansRgHv;
 			color: #000;
 			font-weight: 800;
-			font-size: 2.3rem;
+      font-size: 26px;
 			display: inline-block;
 			text-transform: uppercase;
+<<<<<<< HEAD
+=======
+      @extend %UnitedSansRgHv;
+>>>>>>> 7c52fdd9ada2c3d8de4da84c84654df696f0b486
 		}
 	}
 

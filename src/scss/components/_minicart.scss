@@ -87,7 +87,7 @@
         }
         &-value {
             color: $c-white;
-            
+
         }
     }
 
@@ -113,7 +113,6 @@
 
         &__name {
             @include font-size(14px);
-            
         }
 
         &__remove {
@@ -126,17 +125,21 @@
         display: flex;
         margin-top: 5px;
         align-items: center;
-        
+
         .icon-cart {
             font-size: 30px;
         }
 
         &-value {
-            width: 30px;
+          width: 21px;
+          height: 20px;
             padding: 5px;
-            color: #000;
-            font-size: 18px;
+            color: #211e14;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.34px;
             position: relative;
+           @extend %UnitedSansCdBd
         }
     }
 }

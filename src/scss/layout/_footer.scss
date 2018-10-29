@@ -1,50 +1,77 @@
 .footer {
-    padding: 0;
-    background-color: transparent;
+  padding: 0;
+  background-color: transparent;
 
+  &__top {
+    padding: 40px 0;
+    margin-top: 20px;
+    background: url(/arquivos/news-textura.jpg) repeat-x scroll 0 0 transparent;
+  }
+
+  &__contact {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+
+    &-title {
+      color: #000;
+      font-size: 36px;
+      font-weight: 800;
+      text-transform: uppercase;
+      @extend %UnitedSansRgHv;
+    }
+
+<<<<<<< HEAD
     &__top {
         margin-top: 20px;
         padding: 20px 0 40px;
         background: url(/arquivos/news-textura.jpg) repeat-x scroll 0 0 transparent;
+=======
+    &-subtitle {
+      display: block;
+      font-size: 20px;
+      color: #e75300;
+      font-weight: 800;
+      text-transform: uppercase;
+      @extend %UnitedSansRgHv;
+>>>>>>> 7c52fdd9ada2c3d8de4da84c84654df696f0b486
+    }
+  }
+
+  &__main {
+    padding: 45px 0 45px;
+    background-color: #211e14;
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
     }
 
-    &__contact {
-        display: flex;
-        padding: 0 20px;
-        justify-content: space-between;
-        
-        &-title {
-            color: #000;
-            font-size: 36px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        &-subtitle {
-            display: block;
-            font-size: 20px;
-            color: #e75300;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
+    &__title {
+      color: #ffffff;
+      @extend %UnitedSansRgHv;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
-    &__main {
-        padding: 45px 0 45px;
-        background-color: #211e14;
+    &__menu {
+      &__list {
+        &__item {
+          color: #fff;
+          font-family: Roboto;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 30px;
 
-        &__inner {
-            display: flex;
-            justify-content: space-between;
-        }
-    
-        &__title {
+          &__link {
             color: #fff;
-            font-size: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 30px;
+            font-family: Roboto;
 
+<<<<<<< HEAD
         &__menu {
             &__list {
                 &__item {
@@ -86,10 +113,15 @@
                         }
                     }
                 }
+=======
+            &:hover {
+              color: #e75300;
+>>>>>>> 7c52fdd9ada2c3d8de4da84c84654df696f0b486
             }
+          }
         }
-    }
 
+<<<<<<< HEAD
     &__develop {
         display: flex;
         align-items: center;
@@ -102,29 +134,97 @@
                 display: block;
                 margin-left: 10px;
             }
+=======
+        &--social {
+          margin: 20px 0 30px;
+>>>>>>> 7c52fdd9ada2c3d8de4da84c84654df696f0b486
         }
-    }
 
-    &__newsletter {
-        .newsletter {
-            margin-top: 16px;
-            position: relative;
+        &--social,
+        &--security {
+          &__item {
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
 
-            .input {
-                border: none;
-                color: #c0c0c0;
-                font-size: 18px;
-                border-radius: 0;
-                padding: 25px 15px;
-                border: 1px solid #c0c0c0;
-            }
-
+<<<<<<< HEAD
             .button--newsletter {
                 top: 4px;
                 right: 13px;
                 border: none;
                 position: absolute;
+=======
+            &:last-child {
+              margin-right: 0;
+>>>>>>> 7c52fdd9ada2c3d8de4da84c84654df696f0b486
             }
+          }
         }
+      }
+
+      &__txt {
+        width: 272px;
+        height: 100px;
+        font-size: 12px;
+        color: #bab1a8;
+        font-weight: 500;
+        line-height: 20px;
+        font-family: "Roboto Medium", sans-serif;
+      }
+
+      &__copy {
+        font-size: 12px;
+        color: #bab1a8;
+        font-weight: 500;
+        line-height: 20px;
+        font-family: "Roboto Medium", sans-serif;
+      }
     }
+  }
+
+  &__develop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      &__vtex {
+        margin-left: 10px;
+        display: block;
+        width: 100px;
+      }
+    }
+  }
+
+  &__newsletter {
+    .newsletter {
+      margin-top: 16px;
+      position: relative;
+
+      .input {
+        width: 500px;
+        height: 60px;
+        border: 2px solid #dadad8;
+        border-radius: 0;
+        background-color: #ffffff;
+        &::placeholder{
+/* Style for "Insira seu" */
+width: 137px;
+height: 21px;
+color: #c0c0c0;
+font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+/* Text style for "Insira seu" */
+letter-spacing: -0.36px;
+        }
+      }
+
+      .button--newsletter {
+        top: 8px;
+        right: 20px;
+        position: absolute;
+      }
+    }
+  }
 }
