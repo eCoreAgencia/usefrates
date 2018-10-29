@@ -1,4 +1,4 @@
-$icomoon-font-family: "icomoon" !default;
+$icomoon-font-family: "icomoon-2" !default;
 $icomoon-font-path: "/arquivos" !default;
 
 $icon-stars: "\e912";
@@ -50,114 +50,187 @@ $icon-whatsapp: "\e911";
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .icon-stars {
-    &:before {
-      content: $icon-stars; 
-    }
+  .icon-arrow-little:before {
+    content: "\e900";
   }
-  .icon-finger {
-    &:before {
-      content: $icon-finger; 
-    }
+  .icon-arrow_filter:before {
+    content: "\e902";
   }
-  .icon-medal {
-    &:before {
-      content: $icon-medal; 
-    }
+  .icon-arrow-left:before {
+    content: "\e903";
   }
-  .icon-ray {
-    &:before {
-      content: $icon-ray; 
-    }
+  .icon-arrow-right:before {
+    content: "\e904";
   }
-  .icon-arrow-left {
-    &:before {
-      content: $icon-arrow-left; 
-    }
+  .icon-bt-cadastrar:before {
+    content: "\e906";
   }
-  .icon-arrow-right {
-    &:before {
-      content: $icon-arrow-right; 
-    }
+  .icon-cart:before {
+    content: "\e907";
   }
-  .icon-cart {
-    &:before {
-      content: $icon-cart;     
-      color: #616161;
-    }
+  .icon-check-select .path1:before {
+    content: "\e908";
   }
-  .icon-coupon {
-    &:before {
-      content: $icon-coupon; 
-    }
+  .icon-check-select .path2:before {
+    content: "\e909";
   }
-  .icon-help {
-    &:before {
-      content: $icon-help; 
-    }
+  .icon-check-select .path3:before {
+    content: "\e90a";
   }
-  .icon-atacado {
-    &:before {
-      content: $icon-atacado; 
-    }
+  .icon-check:before {
+    content: "\e90b";
   }
-  .icon-facebook {
-    &:before {
-      content: $icon-facebook; 
-    }
+  .icon-clearsale:before {
+    content: "\e90c";
   }
-  .icon-instagram {
-    &:before {
-      content: $icon-instagram; 
-    }
+  .icon-coupon:before {
+    content: "\e90e";
   }
-  .icon-youtube {
-    &:before {
-      content: $icon-youtube; 
-    }
+  .icon-footer-logo .path1:before {
+    content: "\e90f";
   }
-  .icon-logo-cart {
-    &:before {
-      content: $icon-logo-cart; 
-    }
+  .icon-footer-logo .path2:before {
+    content: "\e910";
   }
-  .icon-mark {
-    &:before {
-      content: $icon-mark; 
-    }
+  .icon-footer-logo .path3:before {
+    content: "\e911";
   }
-  .icon-menu {
-    &:before {
-      content: $icon-menu; 
-    }
+  .icon-footer-logo .path4:before {
+    content: "\e912";
   }
-  .icon-phone {
-    &:before {
-      content: $icon-phone; 
-    }
+  .icon-footer-logo .path5:before {
+    content: "\e913";
   }
-  .icon-refresh {
-    &:before {
-      content: $icon-refresh; 
-    }
+  .icon-footer-logo .path6:before {
+    content: "\e914";
   }
-  .icon-search {
-    &:before {
-      content: $icon-search; 
-    }
+  .icon-footer-logo .path7:before {
+    content: "\e915";
   }
-  .icon-truck {
-    &:before {
-      content: $icon-truck; 
-    }
+  .icon-footer-logo .path8:before {
+    content: "\e916";
   }
-  .icon-user {
-    &:before {
-      content: $icon-user; 
-    }
+  .icon-footer-logo .path9:before {
+    content: "\e917";
   }
-  .icon-whatsapp {
-    &:before {
-      content: $icon-whatsapp; 
-    }
+  .icon-footer-logo .path10:before {
+    content: "\e918";
   }
+  .icon-footer-logo .path11:before {
+    content: "\e919";
+  }
+  .icon-grid-grade:before {
+    content: "\e91a";
+  }
+  .icon-help:before {
+    content: "\e91b";
+  }
+  .icon-ico-safe:before {
+    content: "\e91c";
+  }
+  .icon-ico-shelf-vendidos:before {
+    content: "\e91d";
+  }
+  .icon-Icon-Cart:before {
+    content: "\e91e";
+  }
+  .icon-IconFb:before {
+    content: "\e91f";
+  }
+  .icon-IconInsta:before {
+    content: "\e920";
+  }
+  .icon-IconTwitter:before {
+    content: "\e921";
+  }
+  .icon-IconYtb:before {
+    content: "\e922";
+  }
+  .icon-logo_white_ceg:before {
+    content: "\e923";
+  }
+  .icon-logo-cart:before {
+    content: "\e924";
+  }
+  .icon-logo-checkout .path1:before {
+    content: "\e925";
+  }
+  .icon-logo-checkout .path2:before {
+    content: "\e926";
+  }
+  .icon-logo-checkout .path3:before {
+    content: "\e927";
+  }
+  .icon-logo-checkout .path4:before {
+    content: "\e928";
+  }
+  .icon-logo-checkout .path5:before {
+    content: "\e929";
+  }
+  .icon-logo-checkout .path6:before {
+    content: "\e92a";
+  }
+  .icon-logo-checkout .path7:before {
+    content: "\e92b";
+  }
+  .icon-logo-checkout .path8:before {
+    content: "\e92c";
+  }
+  .icon-logo-checkout .path9:before {
+    content: "\e92d";
+  }
+  .icon-logo .path1:before {
+    content: "\e92e";
+  }
+  .icon-logo .path2:before {
+    content: "\e92f";
+  }
+  .icon-logo .path3:before {
+    content: "\e930";
+  }
+  .icon-logo .path4:before {
+    content: "\e931";
+  }
+  .icon-logo .path5:before {
+    content: "\e932";
+  }
+  .icon-logo .path6:before {
+    content: "\e933";
+  }
+  .icon-logo .path7:before {
+    content: "\e934";
+  }
+  .icon-logo .path8:before {
+    content: "\e935";
+  }
+  .icon-logo .path9:before {
+    content: "\e936";
+  }
+  .icon-mark:before {
+    content: "\e937";
+  }
+  .icon-menu:before {
+    content: "\e938";
+  }
+  .icon-percent:before {
+    content: "\e939";
+  }
+  .icon-phone:before {
+    content: "\e93a";
+  }
+  .icon-refresh:before {
+    content: "\e93b";
+  }
+  .icon-search:before {
+    content: "\e93c";
+  }
+  .icon-truck:before {
+    content: "\e93d";
+  }
+  .icon-user:before {
+    content: "\e93e";
+  }
+  .icon-whatsapp:before {
+    content: "\e93f";
+  }
+  

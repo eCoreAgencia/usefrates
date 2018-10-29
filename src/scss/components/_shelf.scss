@@ -1,29 +1,80 @@
+.logged {
+  display: block !important;
+}
+.not-logged {
+  display: none !important;
+}
+
 .shelf {
   padding: 0 10px;
-  ul {
 
+  .product--shelf .product__header {
+    border: none;
+  }
+  
+  .product__actions {
+    bottom: 50px !important;
+  }
+
+  .product__actions .product__link,
+  .product__actions .product__cadastre {
+    width: 100%;
+    border: none;
+    display: block;
+    padding: 7px 0;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 0;
+    text-align: center;
+    color: #fff !important;
+    text-transform: uppercase;
+    background-color: #e75300;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .product__cadastre {
+    &:after {
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 17px;
+      padding-bottom: 10px;
+      background: #e75300;
+      content: 'PARA COMPRAR';
+    }
+  }
+
+  .product--shelf:hover {
+    .product__link img {
+      opacity: 0.7;
+    }
+  }
+
+  ul {
     display: grid;
-    grid-template-columns: repeat(4, 276px);
+    grid-template-columns: repeat(4, 220px);
     grid-column-gap: 65px;
     grid-row-gap: 30px;
+    padding-left: 50px;
+
     &.slick-slider {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
     }
-
-    
 		width: 100%;
-    
   }
 
   li {
     padding: 10px;
     &.slick-slide {
-      max-width: 276px;
+      max-width: 220px;
       width: 100%;
       margin-left: 28px;
-      margin-right: 28px;
+      margin-right: 55px;
 
       &:first-child{
         margin-left: 0;
@@ -121,8 +172,6 @@
      padding: 0;
     }
   }
-
-
 }
 
 .buy-by-category {
@@ -187,13 +236,16 @@
       color: $c-primary;
       background-color: $c-white;
       border-radius: 10px;
+
       &:hover {
         background-color: $c-primary;
         text-decoration: none;
         color: $c-white;
       }
     }
-  }  .category__name {
+  }
+  
+  .category__name {
     display: block;
     color: $c-white;
     font-weight: 700;
@@ -230,6 +282,4 @@
   .menu-list .slick-next {
     transform: rotate(90deg);
   }
-
-
 }

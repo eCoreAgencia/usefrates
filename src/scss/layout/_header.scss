@@ -1,8 +1,9 @@
 .header {
   top: 0;
+  z-index: 1;
   width: 100%;
-  z-index: 99;
   position: fixed;
+  min-height: 116px;
 
   &.hover {
     height: 500px;
@@ -29,6 +30,7 @@
     &__contact-bar {
       text-align: right;
       padding: 10px 0 20px;
+      
       &__list {
         &__item {
           font-size: 16px;

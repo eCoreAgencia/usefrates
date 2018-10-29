@@ -5,7 +5,7 @@ import './modules/vtexRequest'
 import './components/minicart';
 import './components/loader';
 import './components/menu';
-import './components/makeMenu';
+import './components/modal';
 import './components/searchForm';
 import './components/shelf';
 import './components/filter';

@@ -16,6 +16,10 @@
 $(document).ready(function(){
   if($('body').hasClass('home')){
     
+    $('.forms-b2b').appendTo('.modaleCore__middle');
+    $('.product__cadastre').on('click', function(event){
+      $('.modaleCore').addClass('active');
+    });
 
     if($('.call__box')[0]){
       $('.call__box').each(function(){
