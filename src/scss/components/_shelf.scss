@@ -53,9 +53,11 @@
 
   ul {
     display: grid;
-    grid-template-columns: repeat(4, 220px);
-    grid-column-gap: 65px;
-    grid-row-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    @include atMedium {
+      display: block;
+    }
 
     &.slick-slider {
       display: flex;
