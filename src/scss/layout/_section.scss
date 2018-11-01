@@ -1,20 +1,22 @@
 .section {
   &__page {
     position: relative;
+    margin-top: 30px;
+    @include atMedium {
+      margin-top: initial;
+    }
   }
   &__diff {
     padding: 20px;
-
-
   }
 
-  &__title, &__subtitle {
+  &__title,
+  &__subtitle {
     text-align: center;
     font-family: $f-secondary;
   }
 
   &__title {
-
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 700;
@@ -23,7 +25,7 @@
   }
 
   &__subtitle {
-   display: block;
+    display: block;
   }
 
   &__shelf {
@@ -39,5 +41,17 @@
     background-color: #fafafa;
     border-top: 1px solid #e4e4e4;
     border-bottom: 1px solid #e4e4e4;
+  }
+  &__compre-categoria--mobile {
+    display: block;
+    @include atMedium {
+      display: none;
+    }
+  }
+  &__comprecategoria {
+    display: none;
+    @include atMedium {
+      display: block;
+    }
   }
 }

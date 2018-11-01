@@ -20,42 +20,39 @@ a.button {
   }
 }
 
-
 img {
   max-width: 100%;
   height: auto;
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
+@import '../../node_modules/bulma/sass/utilities/_all.sass';
+@import '../../node_modules/bulma/sass/base/_all.sass';
+@import '../../node_modules/bulma/sass/elements/button.sass';
+@import '../../node_modules/bulma/sass/elements/form.sass';
+@import '../../node_modules/bulma/sass/elements/title.sass';
+@import '../../node_modules/bulma/sass/elements/box.sass';
+@import '../../node_modules/bulma/sass/elements/button.sass';
+@import '../../node_modules/bulma/sass/elements/content.sass';
+@import '../../node_modules/bulma/sass/elements/form.sass';
+@import '../../node_modules/bulma/sass/elements/icon.sass';
+@import '../../node_modules/bulma/sass/elements/image.sass';
+@import '../../node_modules/bulma/sass/elements/notification.sass';
+@import '../../node_modules/bulma/sass/elements/progress.sass';
+@import '../../node_modules/bulma/sass/elements/table.sass';
+@import '../../node_modules/bulma/sass/elements/tag.sass';
+@import '../../node_modules/bulma/sass/elements/title.sass';
 
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../node_modules/bulma/sass/base/_all.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
-@import "../../node_modules/bulma/sass/elements/form.sass";
-@import "../../node_modules/bulma/sass/elements/title.sass";
-@import "../../node_modules/bulma/sass/elements/box.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
-@import "../../node_modules/bulma/sass/elements/content.sass";
-@import "../../node_modules/bulma/sass/elements/form.sass";
-@import "../../node_modules/bulma/sass/elements/icon.sass";
-@import "../../node_modules/bulma/sass/elements/image.sass";
-@import "../../node_modules/bulma/sass/elements/notification.sass";
-@import "../../node_modules/bulma/sass/elements/progress.sass";
-@import "../../node_modules/bulma/sass/elements/table.sass";
-@import "../../node_modules/bulma/sass/elements/tag.sass";
-@import "../../node_modules/bulma/sass/elements/title.sass";
-
-@import "../../node_modules/bulma/sass/elements/other.sass";
-@import "../../node_modules/bulma/sass/components/_all.sass";
-@import "../../node_modules/bulma/sass/grid/_all.sass";
-@import "../../node_modules/bulma/sass/layout/_all.sass";
-
+@import '../../node_modules/bulma/sass/elements/other.sass';
+@import '../../node_modules/bulma/sass/components/_all.sass';
+@import '../../node_modules/bulma/sass/grid/_all.sass';
+@import '../../node_modules/bulma/sass/layout/_all.sass';
 
 $family-sans-serif: $f-base;
 
@@ -63,12 +60,8 @@ $family-sans-serif: $f-base;
   display: block;
   margin: 0 auto;
   width: 100%;
-  max-width: #{$g-max-width + ($g-spacing * 2)};
-  
-
-  @media screen and (min-width: $g-max-width) {
-  }
-  
+  max-width: #{$g-max-width};
+  padding: 0 20px;
 }
 
 * {

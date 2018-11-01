@@ -1,0 +1,5 @@
+.container {
+  @include atMedium {
+    padding: 0;
+  }
+}

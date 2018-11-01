@@ -6,12 +6,10 @@
 }
 
 .shelf {
-  padding: 0 10px;
-
   .product--shelf .product__header {
     border: none;
   }
-  
+
   .product__actions {
     bottom: 50px !important;
   }
@@ -58,29 +56,26 @@
     grid-template-columns: repeat(4, 220px);
     grid-column-gap: 65px;
     grid-row-gap: 30px;
-    padding-left: 50px;
 
     &.slick-slider {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
     }
-		width: 100%;
+    width: 100%;
   }
 
   li {
-    padding: 10px;
     &.slick-slide {
       max-width: 220px;
       width: 100%;
-      margin-left: 28px;
-      margin-right: 55px;
+      margin: 0 20px;
 
-      &:first-child{
+      &:first-child {
         margin-left: 0;
       }
 
-      &:last-child{
+      &:last-child {
         margin-right: 0;
       }
     }
@@ -90,18 +85,30 @@
     max-width: calc(100% - 324px);
     overflow: hidden;
     width: 100%;
-
   }
 
-	.prateleira {
-		& > h2 {
-			display: none;
-		}
-	}
+  .prateleira {
+    & > h2 {
+      display: none;
+    }
+  }
 
   &__button {
     border: none;
     background-color: transparent;
+    padding: 0;
+    svg {
+      use {
+        stroke: #cccbc7;
+      }
+    }
+    &:hover {
+      svg {
+        use {
+          stroke: #000;
+        }
+      }
+    }
     .shelf__carousel--full & {
       height: 60px;
       top: 50%;
@@ -109,18 +116,14 @@
       position: absolute;
       z-index: 10;
       outline: none;
-      svg {
-        width: 30px;
-      }
 
       &.slick-prev {
-        left: -30px;
+        left: 0;
       }
 
       &.slick-next {
-        right: -30px;
+        right: 0;
       }
-
     }
 
     .shelf__brand & {
@@ -169,8 +172,10 @@
       grid-row-gap: 55px;
     }
     li {
-     padding: 0;
+      padding: 0;
     }
+  }
+  &::hover {
   }
 }
 
@@ -194,7 +199,6 @@
   }
 
   .category__card {
-
     max-width: 275px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -244,7 +248,7 @@
       }
     }
   }
-  
+
   .category__name {
     display: block;
     color: $c-white;
