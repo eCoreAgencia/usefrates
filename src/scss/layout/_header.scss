@@ -1,1 +1,80 @@
+.header {
+    @extend %background-color-black;
+    &__inner {
+        @extend .container;
+        @extend %display-flex;
+        @extend %flex-wrap-wrap;
+        @extend %flex-justify-content-space-between;
+        @extend %flex-align-items-center;
+        @include mq(mobile) {
+            padding: 0;
+        }
 
+        .header__top & {
+            padding-left: 164px;
+        }
+    }
+    &__top {
+        @include mq(mobile) {
+            display: none;
+        }
+        @include mq(tablet) {
+            display: block;
+        }
+    }
+
+    &__main {
+        @include mq(tablet) {
+            background-color: #fbf7f1;
+            padding: 20px 0;
+        }
+    }
+
+    &__menu {
+        @include mq(mobile) {
+            display: none;
+        }
+        @include mq(tablet) {
+            display: block;
+            padding-left: 194px;
+            width: 100%;
+            max-width: 750px;
+            .btn--close {
+                display: none;
+            }
+        } 
+    }
+
+    &__logo {
+        margin-left: 10px;
+        margin-right: auto;
+        @extend %background-color-black;
+        @extend %display-flex;
+        
+        @include mq(tablet) {
+            padding: 20px;
+            border-bottom: 6px solid $c-primary;
+            position: absolute;
+            top: 0;
+            bottom: -6px;
+            z-index: 10;
+            align-items: flex-end;
+
+        }
+        
+    }
+
+    &__search-form {
+        padding-left: 5px;
+        padding-right: 5px;
+        
+    }
+
+    @include mq(tablet) {
+        .btn--search, .btn--menu {
+            display: none;
+        }
+        background-color: #fff;
+        position: relative;
+    }
+}

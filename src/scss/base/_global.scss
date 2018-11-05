@@ -33,7 +33,6 @@ html [type='button'],
 }
 
 .container {
-  @extend %display-block;
   width: 100%;
   max-width: $page-container;
   padding: 0 20px;
