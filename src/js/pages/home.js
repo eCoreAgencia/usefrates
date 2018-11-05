@@ -19,46 +19,6 @@ $(document).ready(function(){
     })
 
     var $gallery = $('.banner--full .banner__inner , .banner--mobile .banner__inner');
-    // var slideCount = null;
-
-    // $gallery.on('init', function(event, slick){
-    //   slideCount = slick.slideCount;
-    //   setSlideCount();
-    //   setCurrentSlideNumber(slick.currentSlide);
-    // });
-
-    // $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    //   setCurrentSlideNumber(nextSlide);
-    // });
-
-    // function setSlideCount() {
-    //   var $el = $('.slide-count-wrap').find('.total');
-    //   $el.text(function (i, n) {
-    //       var result = Number(n) + 1;
-    //       if ( result < 10 ) {
-    //           return "0" + slideCount;
-    //       } else {
-    //           return result;
-    //       }
-    //   })
-    // }
-
-    // function setCurrentSlideNumber(currentSlide) {
-    //   var $el = $('.slide-count-wrap').find('.current');
-    //   var n = currentSlide + 1;
-    //   $el.text(function (i, n) {
-    //       var result = currentSlide + 1;
-    //       if ( result < 10 ) {
-    //           return "0" + result;
-    //       } else {
-    //           return result;
-    //       }
-    //   });
-
-    // }
-
-
-
 
     $gallery.slick({
       dots: true,
@@ -89,17 +49,6 @@ $(document).ready(function(){
       ]
     });
 
-
-    $('.shelf__brand').slick({
-      arrows: true,
-      slideToShow: 4,
-      slidesToScroll: 1,
-      infinite: true,
-      centerMode: true,
-      variableWidth: true,
-      prevArrow: shelf__prev,
-      nextArrow:shelf__next
-    });
 
     $(window).on('productFinished', function () {
       console.log('productFinished');
