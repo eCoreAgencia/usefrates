@@ -31,11 +31,13 @@ html [type='button'],
 [type='submit'] {
   -webkit-appearance: button;
 }
-
+ul {
+	padding: 0;
+	margin: 0;
+}
 .container {
   @extend %display-block;
   width: 100%;
   max-width: $page-container;
-  padding: 0 20px;
   margin: 0 auto;
 }

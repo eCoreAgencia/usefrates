@@ -35,7 +35,7 @@ $(document).ready(function(){
 
     $('.shelf__carousel--full ul').slick({
       arrows: true,
-      slideToShow: 3,
+      slideToShow: 4,
       slidesToScroll: 1,
       infinite: true,
       variableWidth: true,

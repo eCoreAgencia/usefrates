@@ -1,1 +1,20 @@
-
+.shelf {
+	&--grid {
+		ul {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template: 1fr 1fr;
+			list-style: none;
+			grid-gap: 20px;
+			@include atMedium {
+				display: block;
+			}
+		}
+		.prateleira {
+			padding: 0 25px;
+			@include atMedium {
+				padding: 0;
+			}
+		}
+	}
+}

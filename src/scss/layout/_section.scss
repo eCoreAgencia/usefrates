@@ -16,21 +16,11 @@
     text-align: center;
   }
 
-  &__title {
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: 700;
-    color: $c-primary;
-    margin-bottom: 20px;
-  }
-
   &__subtitle {
     display: block;
   }
 
-  &__shelf {
-    margin: 20px 0;
-  }
+
 
   &__brand {
     @extend %background-color-gray--light;
@@ -54,16 +44,84 @@
       display: block;
     }
   }
-  &__banner-categoria {
+  &__bannercategoria {
     display: none;
     @include atMedium {
       display: flex;
     }
     &--mobile {
       display: flex;
+      .box-banner {
+        width: 100%;
+      }
       @include atMedium {
         display: none;
       }
     }
+  }
+  &__comprecategoriabottom {
+    display: none;
+    @include atMedium {
+      display: block;
+    }
+    .comprecategoria__box {
+      padding: 31.5px 0;
+    }
+    &--mobile {
+      display: block;
+      margin-bottom: 30px;
+      @include atMedium {
+        display: none;
+      }
+    }
+  }
+  &__hero {
+    .box-banner {
+      &:not(.slick-slide) {
+        display: none;
+        :first-of-type {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    color: $c-primary;
+    margin: 0;
+    margin-bottom: 33px;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	@include atMedium {
+		margin-bottom: 38px;
+	}
+    &__ico {
+      display: inline-block;
+      margin-right: 10px;
+      @include atMedium {
+        margin: 2px 19px 5px 0px;
+      }
+    }
+
+    &__txt {
+      @extend %font-family-unitedsans;
+      color: #000;
+      font-weight: 800;
+      font-size: 20px;
+      display: inline-block;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      @include atMedium {
+        font-size: 23px;
+      }
+	}
+
   }
 }
