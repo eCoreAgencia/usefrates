@@ -1,6 +1,10 @@
 .section {
   &__page {
     position: relative;
+    margin-top: 30px;
+    @include atMedium {
+      margin-top: initial;
+    }
   }
 
   &__diff {
@@ -10,7 +14,6 @@
   &__title,
   &__subtitle {
     text-align: center;
-
   }
 
   &__title {
@@ -38,5 +41,29 @@
     background-color: #fafafa;
     border-top: 1px solid #e4e4e4;
     border-bottom: 1px solid #e4e4e4;
+  }
+  &__compre-categoria--mobile {
+    display: block;
+    @include atMedium {
+      display: none;
+    }
+  }
+  &__comprecategoria {
+    display: none;
+    @include atMedium {
+      display: block;
+    }
+  }
+  &__banner-categoria {
+    display: none;
+    @include atMedium {
+      display: flex;
+    }
+    &--mobile {
+      display: flex;
+      @include atMedium {
+        display: none;
+      }
+    }
   }
 }
