@@ -2,28 +2,27 @@
   &__page {
     position: relative;
   }
+
   &__diff {
     padding: 20px;
-
-
   }
 
-  &__title, &__subtitle {
+  &__title,
+  &__subtitle {
     text-align: center;
-    font-family: $f-secondary;
+
   }
 
   &__title {
-
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 700;
-    color: $c-blue;
+    color: $c-primary;
     margin-bottom: 20px;
   }
 
   &__subtitle {
-   display: block;
+    display: block;
   }
 
   &__shelf {
@@ -31,7 +30,7 @@
   }
 
   &__brand {
-    background-color: $c-gray-light;
+    @extend %background-color-gray--light;
     padding: 70px 0;
   }
 

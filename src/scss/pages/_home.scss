@@ -1,58 +1,58 @@
 .home {
-	.section__title {
-		&__ico {
-			margin-right: 10px;
-			display: inline-block;
-			vertical-align: middle;
-		}
+  .section__title {
+    &__ico {
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-		&__txt {
-			@extend %UnitedSansRgHv;
-			color: #000;
-			font-weight: 800;
+    &__txt {
+
+      color: #000;
+      font-weight: 800;
       font-size: 26px;
-			display: inline-block;
-			text-transform: uppercase;
-      @extend %UnitedSansRgHv;
-		}
-	}
+      display: inline-block;
+      text-transform: uppercase;
 
-	.slick-prev {
-		transform: rotate(180deg);
-	}
+    }
+  }
 
-	.comprecategoria {
-		&__box {
-			padding: 15px 0;
-			text-align: center;
-			background: url(/arquivos/textura-areas.png) repeat scroll 0 0 transparent;
+  .slick-prev {
+    transform: rotate(180deg);
+  }
 
-			.box-banner {
-				text-align: center;
-				margin-right: 15px;
-				display: inline-block;
-				vertical-align: middle;
+  .comprecategoria {
+    &__box {
+      padding: 15px 0;
+      text-align: center;
+      background: url(/arquivos/textura-areas.png) repeat scroll 0 0 transparent;
 
-				img {
-					-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-					-moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-					-ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-					-o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-					transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-		
-					&:hover {
-						-webkit-transform: scale(0.9);
-						-moz-transform: scale(0.9);
-						-ms-transform: scale(0.9);
-						-o-transform: scale(0.9);
-						transform: scale(0.9);
-					}
-				}
+      .box-banner {
+        text-align: center;
+        margin-right: 15px;
+        display: inline-block;
+        vertical-align: middle;
 
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-		}
-	}
+        img {
+          -webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+          -moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+          -ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+          -o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+          transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+
+          &:hover {
+            -webkit-transform: scale(0.9);
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -o-transform: scale(0.9);
+            transform: scale(0.9);
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }
