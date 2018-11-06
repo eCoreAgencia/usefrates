@@ -1,80 +1,163 @@
 .header {
-    @extend %background-color-black;
-    &__inner {
-        @extend .container;
-        @extend %display-flex;
-        @extend %flex-wrap-wrap;
-        @extend %flex-justify-content-space-between;
-        @extend %flex-align-items-center;
-        @include mq(mobile) {
-            padding: 0;
-        }
+	@extend %background-color-black;
 
-        .header__top & {
-            padding-left: 164px;
-        }
-    }
-    &__top {
-        @include mq(mobile) {
-            display: none;
-        }
-        @include mq(tablet) {
-            display: block;
-        }
-    }
+	&__inner {
+		@extend .container;
+		@extend %display-flex;
+		@extend %flex-wrap-wrap;
+		@extend %flex-justify-content-space-between;
+		@extend %flex-align-items-center;
 
-    &__main {
-        @include mq(tablet) {
-            background-color: #fbf7f1;
-            padding: 20px 0;
-        }
-    }
+		@include mq(mobile) {
+			padding: 0;
+		}
 
-    &__menu {
-        @include mq(mobile) {
-            display: none;
-        }
-        @include mq(tablet) {
-            display: block;
-            padding-left: 194px;
-            width: 100%;
-            max-width: 750px;
-            .btn--close {
-                display: none;
-            }
-        } 
-    }
+		.header__top & {
+			padding-left: 174px;
+		}
+	}
 
-    &__logo {
-        margin-left: 10px;
-        margin-right: auto;
-        @extend %background-color-black;
-        @extend %display-flex;
-        
-        @include mq(tablet) {
-            padding: 20px;
-            border-bottom: 6px solid $c-primary;
-            position: absolute;
-            top: 0;
-            bottom: -6px;
-            z-index: 10;
-            align-items: flex-end;
+	&__top {
+		@include mq(mobile) {
+			display: none;
+		}
 
-        }
-        
-    }
+		@include mq(tablet) {
+			display: block;
+		}
 
-    &__search-form {
-        padding-left: 5px;
-        padding-right: 5px;
-        
-    }
+		.menu--institutional {
+			@extend %display-flex;
+			@extend %flex-justify-content-space-between;
+		}
 
-    @include mq(tablet) {
-        .btn--search, .btn--menu {
-            display: none;
-        }
-        background-color: #fff;
-        position: relative;
-    }
+		.menu__item {
+			padding: 0 10px;
+
+			+.menu__item {
+				border-left: 1px solid $c-primary;
+			}
+		}
+
+		.header__inner {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		.b2b__link,
+		.menu__link {
+			@extend %font-family-unitedsanscondensed;
+			@extend %text-transform-uppercase;
+			font-weight: 700;
+			@include font-size(16px);
+			letter-spacing: 0.8px;
+
+			&:hover {
+				@extend %text-decoration-none;
+			}
+		}
+
+		.menu__link {
+			color: #6c6359;
+
+			&:hover {
+				@extend %color-primary;
+			}
+		}
+	}
+
+	&__main {
+		@include mq(tablet) {
+			background-color: #fbf7f1;
+			background-image: url('/arquivos/bg-header.png');
+			background-repeat: repeat-x;
+			height: 75px;
+		}
+	}
+
+	&__menu {
+		@include mq(mobile) {
+			display: none;
+		}
+
+		@include mq(tablet) {
+			display: block;
+			padding-left: 174px;
+			width: 100%;
+			max-width: 750px;
+			height: 75px;
+
+			.btn--close {
+				display: none;
+			}
+
+			.menu {
+				height: 75px;
+			}
+
+			.menu__item {
+				display: flex;
+				align-items: center;
+			}
+
+			.menu__submenu {
+				padding: 30px;
+			}
+
+			.menu__inner {
+				margin: 0 auto;
+				width: 100%;
+				max-width: 1100px;
+			}
+
+			.menu__submenu .menu__link {
+				color: $c-white;
+				padding: 10px;
+				letter-spacing: 0.57px;
+			}
+
+			.menu__submenu .menu {
+				flex-direction: column;
+				height: 100%;
+				border-right: 2px solid #6a6157;
+				max-width: 167px;
+			}
+		}
+	}
+
+	&__logo {
+		margin-left: 10px;
+		margin-right: auto;
+		@extend %background-color-black--light;
+		@extend %display-flex;
+
+		@include mq(tablet) {
+			padding: 20px;
+			border-bottom: 6px solid $c-primary;
+			position: absolute;
+			top: 0;
+			bottom: -6px;
+			z-index: 10;
+			align-items: flex-end;
+
+		}
+
+	}
+
+	&__search-form {
+		padding-left: 5px;
+		padding-right: 5px;
+
+	}
+
+	@include mq(tablet) {
+
+		.btn--search,
+		.btn--menu {
+			display: none;
+		}
+
+		background-color: #fff;
+		position: relative;
+	}
 }

@@ -1,51 +1,68 @@
 .menu {
-    padding: 0;
-    list-style: none;
-    &__item {
-        
-    }
+	padding: 0;
+	list-style: none;
 
-    &__link {
-        &:hover {
-            @extend %color-white;
-            @extend %text-decoration-none;
-        }
-    }
+	&__item {
+		&--dropdown {
+			&:hover {
+				.menu__submenu {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__link {
+		&:hover {
+			@extend %color-white;
+			@extend %text-decoration-none;
+		}
+	}
+
+	&__submenu {
+		@extend %position-absolute;
+		@extend %background-color-black--light;
+		top: 100%;
+		left: 0;
+		right: 0;
+		padding: 20px;
+		z-index: 11;
+	}
 }
 
 .navbar {
-    width: 100%;
-    
-    .menu {
-        @extend %display-flex;
-        @extend %flex-justify-content-space-between;
-        @extend %no-margin;
+	width: 100%;
 
-        &--mobile {
-            @include mq(tablet){
-                display: none;
-            }
-        }
+	.menu {
+		@extend %display-flex;
+		@extend %flex-justify-content-space-between;
+		@extend %no-margin;
 
-        &--desktop {
-            @include mq(tablet, max){
-                display: none;
-            }
-        }
-    }
+		&--mobile {
+			@include mq(tablet) {
+				display: none;
+			}
+		}
 
-    .menu__submenu {
-        @extend %display-none;
-    }
+		&--desktop {
+			@include mq(tablet, max) {
+				display: none;
+			}
+		}
+	}
 
-    .menu__link {
-        @extend %color-black;
-        @extend %font-family-unitedsanscondensed;
-        @extend %text-transform-uppercase;
-        color: #211e14;
-        font-weight: 700;
-        @include font-size(18px);
-    }
+	.menu__submenu {
+		@extend %display-none;
+	}
+
+	.menu__link {
+		@extend %color-black;
+		@extend %font-family-unitedsanscondensed;
+		@extend %text-transform-uppercase;
+		color: #211e14;
+		font-weight: 700;
+		@include font-size(18px);
+	}
 
 
 }

@@ -3,7 +3,8 @@ header.header
     .header__inner
       a.b2b__link(href="/") 5.11 para lojistas
       ul.menu.menu--institutional
-        li.menu__item Atendimento: (11) 0000-0000
+        li.menu__item
+          a.menu__link(href="") Atendimento: (11) 0000-0000
         li.menu__item
           a.menu__link(href="") Encontre uma loja
         li.menu__item
@@ -27,5 +28,12 @@ header.header
         button.btn.btn--search
           i.icon-search
         .js-search-form
+          .search-form
+            form.search-form__form(action="/busca")
+              .search-form__control
+                input.search-form__input(type="search", required='required', autocomplete='off', placeholder='Faça uma busca...', onfocus="this.placeholder = ''", onblur="this.placeholder = 'Faça uma busca...'")/
+                button.btn.btn--submit
+                  i.icon-search
+            .search-form__result
       .header__minicart
         .js-minicart
