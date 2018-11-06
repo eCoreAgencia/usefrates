@@ -9,3 +9,39 @@
         }
     }
 }
+
+
+.btn {
+    @extend %display-flex;
+    &--menu {
+        @extend %background-color-primary;
+        @extend %flex-wrap-wrap;
+        @extend %no-border;
+        @extend %color-white;
+        @extend %flex-justify-content-center;
+        @extend %flex-align-items-center;
+        @extend %text-transform-uppercase;
+        width: 60px;
+        height: 60px;
+        @include font-size(11px);
+
+        i {
+            @include font-size(30px);
+        }
+
+    }
+
+    &--search {
+        background-color: transparent;
+        @extend %no-border;
+        @extend %flex-justify-content-center;
+        @extend %flex-align-items-center;
+        width: 30px;
+        height: 30px;
+        color: #bab1a8;
+
+        i {
+            @include font-size(20px);
+        }
+    }
+}

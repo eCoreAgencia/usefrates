@@ -19,7 +19,7 @@ $(document).ready(function() {
 				.addClass('hover');
 		});
 
-		var $gallery = $('.banner--full .banner__inner , .banner--mobile .banner__inner'); 
+		var $gallery = $('.banner--full .banner__inner , .banner--mobile .banner__inner');
 
 		$gallery.slick({
 			dots: true,

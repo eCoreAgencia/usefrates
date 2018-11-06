@@ -36,7 +36,6 @@ ul {
 	margin: 0;
 }
 .container {
-  @extend %display-block;
   width: 100%;
   max-width: $page-container;
   margin: 0 auto;

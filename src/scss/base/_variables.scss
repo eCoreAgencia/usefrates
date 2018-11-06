@@ -41,27 +41,46 @@ $c-green: #0f0;
 $c-orange: #e75300;
 $c-primary: $c-orange;
 
-$colors: (white:(base: $c-white,
-),
-black:(base: $c-black,
-light: #211e14),
-gray: (base: $c-gray,
-light: #f2f2f2,
-lighter: #dadad8,
-dark: #9b9b9b),
-error: (base: $c-red,
-light: lighten($c-red, 25%)),
-success: (base: $c-green,
-light: lighten($c-green, 25%)),
-primary: (base: $c-primary,
-invert: invert($c-primary),
-));
 
-$fonts: (roboto: 'Roboto',
-trumpgothicwest: 'Trump Gothic West',
-trumpgothicpro: 'Trump Gothic Pro',
-unitedsans: 'United Sans',
-primary: 'Roboto'
+
+$colors: (
+    white:(
+        base: $c-white,
+    ),
+    black:(
+        base: $c-black,
+        light: #211e14
+    ),
+    gray: (
+        base: $c-gray,
+        light: #f2f2f2,
+        lighter: #dadad8,
+        dark: #9b9b9b
+    ),
+    error: (
+        base: $c-red,
+        light: lighten($c-red, 25%)
+        ),
+    success: (
+        base: $c-green,
+        light: lighten($c-green, 25%)
+    ),
+    primary: (
+        base: $c-primary,
+        invert: invert($c-primary),
+    )
+);
+
+$fonts: (
+    roboto: 'Roboto',
+    trumpgothicwest: 'Trump Gothic West',
+    trumpgothicpro: 'Trump Gothic Pro',
+    unitedsans: 'United Sans',
+    unitedsanscondensed: 'United Sans Condensed',
+    unitedsansextra: 'United Sans Extra',
+    unitedsanssemicondensed: 'United Sans Semi Condensed',
+    unitedsanssemiextra: 'United Sans Semi Extra',
+    primary: 'Roboto'
 
 );
 
@@ -88,8 +107,9 @@ $grid-gutter-width: 20px !default;
 $page-container: 1100px !default;
 
 
-$breakpoints: ("mobile": 320px,
-"tablet": 768px,
-"tablet-wide": 1024px,
-"desktop": 1248px,
-"desktop-wide": 1440px);
+$breakpoints: (
+    "mobile": 320px,
+    "tablet": 768px,
+    "tablet-wide": 1024px,
+    "desktop": 1248px,
+    "desktop-wide": 1440px);
