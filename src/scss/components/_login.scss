@@ -1,0 +1,69 @@
+body.login {
+	.vtexIdUI {
+		width: 505px;
+		min-height: 405px;
+		padding: 30px;
+	}
+	.vtexIdUI .modal-header {
+		background-color: white;
+		border: 0;
+	}
+	.vtexIdUI .vtexIdUI-heading::before {
+		content: 'minha conta';
+		text-transform: uppercase;
+		color: #e75300;
+		font-size: 30px;
+		font-weight: 800;
+		text-transform: uppercase;
+		display: block;
+		@extend %font-family-unitedsans;
+		margin-bottom: 5px;
+	}
+
+	.vtexIdUI .vtexIdUI-heading {
+		color: #372527;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 25px;
+		letter-spacing: -0.1px;
+		@extend %font-family-unitedsans;
+	}
+
+	.vtexIdUI .vtexIdUI-providers-list li .btn {
+		width: 411px;
+		height: 80px;
+		background-image: none;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		background-color: #e75300;
+		border-radius: 0;
+		i {
+			display: none;
+		}
+		span {
+			color: #ffffff;
+			// @extend %font-family-unitedsans;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 25px;
+			text-transform: uppercase;
+			text-shadow: none;
+			display: flex;
+			flex-wrap: nowrap;
+			flex: 1;
+		}
+	}
+	.vtexIdUI #vtexIdUI-facebook {
+		&::before {
+			content: '\e908';
+			font-family: 'icomoon-tactical';
+		}
+	}
+
+	.vtexIdUI-others-send-email span {
+		&::before {
+			content: '\e908';
+			font-family: 'icomoon-tactical';
+			margin: 0 20px;
+		}
+	}
+}
