@@ -25,18 +25,25 @@
 				padding: 0;
 			}
 		}
+		li {
+			display: none;
+			@include atMedium {
+				display: block;
+			}
+		}
+		li:nth-child(-n + 4) {
+			display: block;
+		}
 	}
 	&__button {
 		border: 0;
 		padding: 0;
 		background: none;
-
 	}
 }
 
 ul.slick-initialized.slick-slider {
 	display: flex;
-
 }
 
 // .shelf li {
@@ -131,7 +138,6 @@ ul.slick-initialized.slick-slider {
 // .product__header {
 // 	position: relative
 // }
-
 
 // .product--shelf .product__header {
 // 	padding: 2px;
