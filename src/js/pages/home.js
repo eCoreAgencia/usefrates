@@ -34,10 +34,9 @@ $(document).ready(function() {
 
 		$('.shelf__carousel--full ul').slick({
 			arrows: true,
-			slideToShow: 4,
+			slidesToShow: 4,
 			slidesToScroll: 1,
 			infinite: true,
-			variableWidth: true,
 			prevArrow: shelf__prev,
 			nextArrow: shelf__next,
 			responsive: [

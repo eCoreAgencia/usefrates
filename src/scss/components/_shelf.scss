@@ -11,6 +11,12 @@
 				display: block;
 			}
 		}
+		.price {
+			display: none;
+			@include atMedium {
+				display: block;
+			}
+		}
 
 		.prateleira {
 			padding: 0 25px;
@@ -30,7 +36,7 @@
 
 ul.slick-initialized.slick-slider {
 	display: flex;
-	
+
 }
 
 // .shelf li {
