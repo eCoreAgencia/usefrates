@@ -20,10 +20,17 @@
 			}
 		}
 	}
+	&__button {
+		border: 0;
+		padding: 0;
+		background: none;
+
+	}
 }
 
 ul.slick-initialized.slick-slider {
 	display: flex;
+	
 }
 
 // .shelf li {
