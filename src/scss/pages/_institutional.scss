@@ -1,10 +1,19 @@
 body.institucional {
+
+	.bread-crumb {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+
+	}
 	.section__institutional {
 		margin: 50px 0;
 		.columns {
 			display: grid;
+			grid-gap: 40px;
 			@include atMedium {
-				grid-template-columns: 0.3fr 1fr;
+				grid-template-columns: 0.2fr 1fr;
 			}
 		}
 
