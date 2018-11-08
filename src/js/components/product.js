@@ -1,6 +1,7 @@
 import {
 	getProductWithVariations
 } from '../modules/vtexRequest';
+import { isMobile } from '../utils';
 class Product {
 	constructor() {
 		const productId = $('#___rc-p-id').val();
@@ -19,5 +20,14 @@ class Product {
 }
 
 $(document).ready(() => {
-	window.Product = new Product();
+    if($('body').hasClass('product')){
+        window.Product = new Product();
+        if(isMobile.any()){
+            $('.thumbs').slick({
+                arrows: false,
+                dots: true
+            });
+        }    
+    }
+	
 })

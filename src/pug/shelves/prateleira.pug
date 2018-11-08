@@ -9,20 +9,16 @@ if (global.process.env.NODE_ENV === 'production')
 	- var flags = '$product.HightLight'
 	- var getImageTag = '$product.GetImageTag(2)'
 	- var getImageTag2 = '$product.GetImageTag(2)'
-	- var categoryName = '+ $product.CategoryName'
-	- var categoryHref = '$product.CategoryLink'
 
 else
 	- var title = 'XPRT® MultiCam® Tactical Pant'
-	- var href = '/produto.html'
+	- var href = '/product.html'
 	- var dataProductId = Math.floor(Math.random() * 9999999)
 	- var listPrice = 'R$ 299,99'
 	- var bestPrice = 'R$ 199,99'
 	- var flags = '<p class="flag destaque">novo</p>'
 	- var getImageTag = '<img src="/arquivos/ImgProduto-220x220.png" width="220" height="220" />'
 	- var getImageTag2 = '<img src="/arquivos/ImgProduto-220x220.png" width="220" height="220" />'
-	- var categoryName = '+ Iluminação'
-	- var categoryHref = '/category.html'
 
 .product.product--shelf
 	span.product__id(data-product-id= dataProductId)

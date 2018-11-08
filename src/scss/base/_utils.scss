@@ -96,6 +96,10 @@ $font-value in $fonts {
   font-style: italic;
 }
 
+%italic {
+  font-style: italic;
+}
+
 %no-italic {
   font-style: normal;
 }
@@ -245,6 +249,10 @@ $font-value in $fonts {
 %flex-direction-row {
   flex-direction: row;
 }
+
+%flex-direction-row-reverse {
+    flex-direction: row-reverse;
+  }
 
 %flex-direction-column {
   flex-direction: column;
