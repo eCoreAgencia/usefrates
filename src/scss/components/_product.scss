@@ -45,6 +45,14 @@
 				@extend %display-block;
 				width: 100%;
 			}
+
+			.product__link,
+			.price__best,
+			.price__list {
+				@extend %color-primary;
+			}
+
+
 		}
 
 		.btn--buy {
@@ -87,6 +95,7 @@
 		&:hover {
 			cursor: pointer;
 		}
+
 		img {
 			width: 100%;
 		}
