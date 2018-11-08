@@ -58,6 +58,15 @@
 		.btn--buy {
 			width: 100%;
 			padding: 16px 32px;
+			&.btn-list {
+				display: none;
+			}
+		}
+	}
+
+	&__info {
+		.description {
+			display: none;
 		}
 	}
 
