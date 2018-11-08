@@ -5,6 +5,12 @@
   padding-left: 20px;
   padding-top: 20px;
   padding-right: 20px;
+  .search-multiple-navigator {
+        display: block !important;
+  }
+  .search-single-navigator {
+      display: none !important;
+  }
   &__inner {
       .navigation-tabs {
           //display: none;

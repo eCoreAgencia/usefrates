@@ -11,6 +11,7 @@ if (global.process.env.NODE_ENV === 'production')
 	- var getImageTag2 = '$product.GetImageTag(2)'
 	- var categoryName = '+ $product.CategoryName'
 	- var categoryHref = '$product.CategoryLink'
+	- var description = '$product.DescriptionShort'
 
 else
 	- var title = 'XPRT® MultiCam® Tactical Pant'
@@ -23,6 +24,7 @@ else
 	- var getImageTag2 = '<img src="/arquivos/ImgProduto-220x220.png" width="220" height="220" />'
 	- var categoryName = '+ Iluminação'
 	- var categoryHref = '/category.html'
+	- var description = 'Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é...'
 
 .product.product--shelf
 	span.product__id(data-product-id= dataProductId)
@@ -34,8 +36,11 @@ else
 			a.btn.btn--buy.product__buy(title= title, href= href) Compre Agora
 	.product__reviews
 	.product__info
-		h3.product__name
-			a.product__link(title= title, href= href)= title
+		.product__info--name
+			h3.product__name
+				a.product__link(title= title, href= href)= title
+			h4.description= description
+
 		.product__price
 			if ( global.process.env.NODE_ENV === 'production' )
 				!= '\n#if ($product.IsInStock)'
@@ -60,3 +65,4 @@ else
 					span.price__old R$ 432,75
 					span.price__best R$ 432,75
 					span.price__installment ou até 10x de R$ 43,28
+					a.btn.btn--buy.product__buy.btn-list(title= title, href= href) VER DETALHES
