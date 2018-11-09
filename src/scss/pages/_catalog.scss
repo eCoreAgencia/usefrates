@@ -130,13 +130,12 @@ body {
                     display: none;
                 }
                 ul {
-                    display: flex;
-                    justify-content: space-between;
+                    text-align: center;
                     li {
-                        transition: 1s ease;
-                        display: flex;
+                        transition: .5s ease;
+                        display: inline-block;
                         width: 230px;
-                        margin-top: 30px;
+                        margin: 10px;
                     }
                     &.active {
                         display: flex;
@@ -275,7 +274,10 @@ body {
                 }
             }
             &__shelf {
-                .title__colection {
+                .prateleira {
+                    > h2 {
+                        display: none;
+                    }
                 }
 
                 .shelf {
