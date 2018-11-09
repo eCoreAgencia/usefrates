@@ -63,6 +63,13 @@ block content
                                             | Preço a vista:
                                             strong.skuPrice R$ 639,90
                     .product__skus
+                        #dd.wrapper-dropdown-1(tabindex='1')
+                            span Gender
+                            ul.dropdown
+                                li
+                                    a(href='#') Male
+                                li
+                                    a(href='#') Female
                         +vtex-controller('<vtex.cmc:skuRichSelection changeImage="1" />')
                             .sku-selector-container.sku-selector-container-0
                                 ul.topic.Voltagem.productid-21.numopt-2
