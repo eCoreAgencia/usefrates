@@ -102,4 +102,13 @@ body.login {
 			}
 		}
 	}
+	.vtexIdUI .modal-header .close {
+		display: block !important;
+		background: transparent !important;
+		color: #e75300 !important;
+		z-index: 9999999 !important;
+		font-size: 32px;
+		font-weight: lighter;
+		top: -10px;
+	}
 }
