@@ -48,6 +48,46 @@
 		}
 	}
 }
+
+.cattop {
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 220px;
+	&--1 {
+		background-image: url("/arquivos/categoriatop-1.png");
+	}
+	&--2 {
+		background-image: url("/arquivos/categoriatop-2.png");
+	}
+	&--3 {
+		background-image: url("/arquivos/categoriatop-3.png");
+	}
+	&--4 {
+		background-image: url("/arquivos/categoriatop-4.png");
+	}
+	&--5 {
+		background-image: url("/arquivos/categoriatop-5.png");
+	}
+	&--6 {
+		background-image: url("/arquivos/categoriatop-6.png");
+	}
+	&__tlt {
+		text-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+		color: #ffffff;
+		@extend %font-family-trumpgothicwest;
+		font-size: 30px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	&__buy {
+		color: #ffffff;
+		@extend %font-family-unitedsansextra;
+		font-size: 16px;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+}
+
 .categoria-mobile {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
