@@ -60,10 +60,10 @@ class Product {
 
 			<form class="form" id="form-notifyme">
 				<div class="form-control">
-					<input class="input" type="text" placeholder="Insira seu nome" name=""/>
+					<input class="input" type="text" placeholder="Insira seu nome" name="" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Insira seu nome...'" />
 				</div>
 				<div class="form-control">
-					<input class="input" type="email" placeholder="Insira seu e-mail" name="" />
+					<input class="input" type="email" placeholder="Insira seu e-mail" name="" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Insira seu nome...'" />
 				</div>
 				<button class="btn btn--primary">Avise-Me</button>
 			</form>
