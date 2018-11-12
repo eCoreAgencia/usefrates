@@ -41,6 +41,11 @@
 		@include atMedium {
 			display: block;
 		}
+		.comprecategoria__box__list {
+			display: grid !important;
+			grid-template-columns: repeat(6, 1fr);
+			grid-gap: 10px;
+		}
 	}
 	&__bannercategoria {
 		display: none;
@@ -64,6 +69,11 @@
 		}
 		.comprecategoria__box {
 			padding: 31.5px 0;
+		}
+		.comprecategoria__box__list {
+			display: grid !important;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 25px;
 		}
 		&--mobile {
 			display: block;

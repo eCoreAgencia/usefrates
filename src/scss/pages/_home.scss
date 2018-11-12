@@ -8,11 +8,8 @@
 			text-align: center;
 			@include atMedium {
 				padding: 24.5px 0;
-				background: url(/arquivos/textura-areas.png) repeat scroll 0 0 transparent;
-			}
-			&__list {
-				display: flex;
-				justify-content: space-between;
+				background: url(/arquivos/textura-areas.png) repeat scroll 0 0
+					transparent;
 			}
 			.box-banner {
 				display: inline-block;
@@ -74,7 +71,7 @@
 			justify-content: space-between;
 			align-items: center;
 			&::after {
-				content: '';
+				content: "";
 				display: inline-block;
 				width: 8px;
 				height: 8px;
