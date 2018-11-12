@@ -11,8 +11,10 @@ class Product {
 		let self = this;
 		const productWithVariations = getProductWithVariations(productId);
 		productWithVariations.then(product => {
-			if (product) {
+			if (product.available) {
 				self.renderSkuSelectors(product);
+			} else {
+				self.renderFormNotifyMe(product);
 			}
 		})
 	}
@@ -47,6 +49,29 @@ class Product {
 
 	createSkuThumb(dimensions) {
 		return dimensions.map(dimension => `<li><label for="${slugify(dimension)}">${dimension}</label><input type="radio" id="${slugify(dimension)}" name="sku-color" value="${dimension}"></li>`).join('');
+	}
+
+	renderFormNotifyMe() {
+		const html = `<div class="product__unavailable">
+			<span class="product__unavailable-title"> PRODUTO INDISPONÍVEL</span>
+			<p class="product__unavailable-text">
+				Preencha os dados e clique no botão abaixo para ser avisado quando houver disponibilidade.
+			</p>
+
+			<form class="form" id="form-notifyme">
+				<div class="form-control">
+					<input class="input" type="text" placeholder="Insira seu nome" name=""/>
+				</div>
+				<div class="form-control">
+					<input class="input" type="email" placeholder="Insira seu e-mail" name="" />
+				</div>
+				<button class="btn btn--primary">Avise-Me</button>
+			</form>
+		</div>`;
+
+		$('.product__action').hide();
+
+		$('.product__skus').html(html);
 	}
 }
 

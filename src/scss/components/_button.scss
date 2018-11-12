@@ -48,7 +48,8 @@
 		}
 	}
 
-	&--buy {
+	&--buy,
+	&--primary {
 		@extend %background-color-primary;
 		@extend %color-white;
 		@extend %font-family-unitedsans;

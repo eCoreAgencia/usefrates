@@ -519,6 +519,44 @@
 		}
 	}
 
+	&__unavailable {
+		&-title {
+			@extend %color-primary;
+			@extend %font-family-unitedsans;
+			@extend %text-transform-uppercase;
+			font-weight: 800;
+			@include font-size(24px);
+		}
+
+		&-text {
+			color: #6a6157;
+			font-weight: 400;
+			@include font-size(15px);
+		}
+
+		input {
+			border: 2px solid #dadad8;
+			padding: 12px 30px;
+			width: 100%;
+			@include font-size(15px);
+
+			@include input-placeholder {
+				color: #c0c0c0;
+				font-style: italic;
+			}
+		}
+
+		.form-control {
+			margin: 10px 0;
+		}
+
+		.btn--primary {
+			@extend %no-border;
+			padding: 13px 26px;
+			width: 100%;
+		}
+	}
+
 }
 
 .price {
