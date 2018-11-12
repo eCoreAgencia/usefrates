@@ -1,5 +1,5 @@
-$(document).ready(function() {
-	if ($("body").hasClass("login")) {
-		$("").onClick("");
-	}
-});
+// $(document).ready(function() {
+// 	if ($("body").hasClass("login")) {
+// 		$("").onClick("");
+// 	}
+// });
