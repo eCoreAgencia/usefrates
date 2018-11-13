@@ -9,3 +9,4 @@ import './components/filter';
 import './components/product';
 import './components/minicart';
 import './components/account';
+import './components/searchMob';
