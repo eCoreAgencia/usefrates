@@ -8,7 +8,7 @@ class catalog {
         $('.grid_list').on('click', function(e) {
 			e.preventDefault();
             
-            $('.allVitrine .is-fluid .shelf.prateleira ul').addClass('active');
+            $('.allVitrine .is-fluid .prateleira ul').addClass('active');
             $('.section__navTop__orderBy--grid a').removeClass('active');
             $(this).addClass('active');
         });
@@ -16,7 +16,7 @@ class catalog {
         $('.grid_grade').on('click', function(e) {
 			e.preventDefault();
             
-            $('.allVitrine .is-fluid .shelf.prateleira ul').removeClass('active');
+            $('.allVitrine .is-fluid .prateleira ul').removeClass('active');
             $('.section__navTop__orderBy--grid a').removeClass('active');
             $(this).addClass('active');
 		})
