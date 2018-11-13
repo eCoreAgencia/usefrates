@@ -22,10 +22,17 @@
 		right: 0;
 		height: 100vh;
 		background-color: $c-white;
-		width: 358px;
+		width: 90%;
 		z-index: 60;
 		display: none;
 		flex-direction: column;
+		padding: 0 20px;
+		overflow: auto;
+		@include atMedium {
+			width: 400px;
+			overflow: hidden;
+			padding: 0 35px;
+		}
 
 		.active & {
 			display: flex;
@@ -45,38 +52,43 @@
 			width: 100%;
 			display: flex;
 			align-items: center;
-			padding: 20px;
-			background-color: $c-primary;
-
+			background-color: $c-white;
+			padding: 30px 0;
 			svg {
 				width: 10px;
-			}
-
-			path {
-				fill: $c-white;
 			}
 		}
 	}
 
 	&__footer {
-		margin-top: auto;
+		margin-top: 40px;
 	}
 
 	&__title {
-		color: $c-white;
-		text-transform: uppercase;
-		@include font-size(20px);
-		margin: 0 auto;
+		color: #e75300;
+		font-family: 'Roboto';
+		font-weight: 400;
+		@include font-size(17px);
+		margin: 0 auto 0 18px;
 	}
 
 	&__checkout {
-		display: block;
+		display: flex;
 		width: 100%;
-		padding: 20px;
+		justify-content: center;
+		align-items: center;
 		text-transform: uppercase;
 		color: $c-white;
-		background-color: #8cc44b;
+		background-color: $c-orange;
 		text-align: center;
+		height: 45px;
+		padding: 20px;
+		color: #ffffff;
+		@extend %font-family-unitedsans;
+		font-size: 16px;
+		font-weight: 800;
+		text-decoration: none;
+		margin-bottom: 40px;
 	}
 
 	&__totals {
@@ -96,32 +108,54 @@
 	}
 
 	&-product {
-		padding: 10px;
-		display: flex;
-		justify-content: space-between;
 		border-bottom: 1px solid #dcdcdc;
-
+		padding: 30px 0;
+		list-style: none;
 		&__image {
-			width: 95px;
-			height: 95px;
-			border: 1px solid $c-gray;
-			border-radius: 10px;
-			padding: 2px;
+			width: 100px;
+			height: 100px;
 			overflow: hidden;
 		}
 
 		&__info {
 			padding: 5px;
-			max-width: 168px;
+			max-width: 210px;
 		}
 
 		&__name {
-			@include font-size(14px);
+			@include font-size(18px);
+			color: #211e14;
+			@extend %font-family-roboto;
+			font-weight: 700;
+			margin: 0 0 10px 0;
 		}
 
 		&__remove {
 			background-color: transparent;
 			border: none;
+			display: block;
+			color: #211e14;
+			@extend %font-family-unitedsans;
+			font-size: 13px;
+			font-weight: 800;
+			line-height: 17px;
+			text-transform: uppercase;
+			/* Text style for "REMOVER" */
+			letter-spacing: 0.46px;
+			margin-top: 20px;
+		}
+		&__price {
+			color: #211e14;
+			@extend %font-family-unitedsans;
+			@include font-size(16px);
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 0.36px;
+
+			margin-bottom: 16px;
+		}
+		&__wrapper {
+			display: flex;
 		}
 	}
 
@@ -131,6 +165,13 @@
 
 		.icon-cart {
 			@include font-size(18px);
+			&:before {
+				content: "";
+				display: block;
+				width: 19px;
+				height: 18px;
+				background: url(/arquivos/icon-cart-png.png) no-repeat;
+			}
 		}
 
 		&-value {
@@ -140,6 +181,76 @@
 			font-weight: 700;
 			letter-spacing: 0.34px;
 			position: relative;
+		}
+	}
+
+	&__icon {
+		margin-top: 6px;
+	}
+	&__review {
+		margin-bottom: 25px;
+		@include atMedium {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__review-header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-bottom: 3px solid #e8e7e5;
+	}
+	&__item-counter,
+	.minicart__item-qty {
+		@extend %font-family-unitedsans;
+		@include font-size(17px);
+		font-weight: 800;
+		line-height: 34px;
+		text-transform: uppercase;
+		letter-spacing: 0.4px;
+		@include atMedium {
+			@include font-size(18px);
+		}
+	}
+	&__item-counter {
+		color: #211e14;
+		margin-right: 5px;
+	}
+	&__item-qty {
+		color: #e75300;
+	}
+	&__dsp-total {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 20px;
+		flex-direction: column;
+		@include atMedium {
+			flex-direction: row;
+		}
+	}
+	&__dsp-txt {
+		color: #211e14;
+		@extend %font-family-roboto;
+		@include font-size(17px);
+		font-weight: 400;
+	}
+	&__dsp-number {
+		color: #211e14;
+		@extend %font-family-unitedsans;
+		@include font-size(16px);
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.36px;
+		margin-top: 4px;
+		@include atMedium {
+			margin-top: initial;
+		}
+	}
+	&__content {
+		@include atMedium {
+			height: 26rem;
+			overflow: auto;
 		}
 	}
 }
