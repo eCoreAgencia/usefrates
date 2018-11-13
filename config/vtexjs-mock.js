@@ -1306,7 +1306,7 @@
 		"productId": 4,
 		"name": "BOTA ATAC COYOTE 8''",
 		"salesChannel": "1",
-		"available": false,
+		"available": true,
 		"displayMode": "lista",
 		"dimensions": ["Cor", "Tamanho"],
 		"dimensionsInputType": {

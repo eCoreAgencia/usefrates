@@ -23,7 +23,8 @@ $(document).ready(() => {
 		$(window).scroll(() => {
 			headerFixed();
 		})
-	}
+    }
+    
 	if (isMobile.any()) {
 
 		$('.btn--menu').on('click', function () {

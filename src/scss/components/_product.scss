@@ -230,7 +230,17 @@
 			padding: 5px;
 		}
 
-		max-width: 434px;
+        max-width: 434px;
+        
+        &--fixed {
+            position: fixed;
+            top: 70px;
+            right: 0;
+            @include mq(container){
+                left: 50%;
+                margin-left: 115px;
+            }
+        }
 	}
 
 	&__main {
