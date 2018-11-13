@@ -8,8 +8,7 @@
 			text-align: center;
 			@include atMedium {
 				padding: 24.5px 0;
-				background: url(/arquivos/textura-areas.png) repeat scroll 0 0
-					transparent;
+				background: url(/arquivos/textura-areas.png) repeat scroll 0 0 transparent;
 			}
 			.box-banner {
 				display: inline-block;
@@ -49,6 +48,23 @@
 	}
 }
 
+.slick-slider {
+	button {
+		svg {
+			use {
+				stroke: #cccbc7;
+			}
+		}
+		&:hover {
+			svg {
+				use {
+					stroke: #211e14;
+				}
+			}
+		}
+	}
+}
+
 .cattop {
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -57,7 +73,7 @@
 	align-items: flex-end;
 	position: relative;
 	&::after {
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		top: 0;
@@ -75,22 +91,22 @@
 	}
 
 	&--1 {
-		background-image: url("/arquivos/categoriatop-2.png");
+		background-image: url('/arquivos/categoriatop-2.png');
 	}
 	&--2 {
-		background-image: url("/arquivos/categoriatop-1.png");
+		background-image: url('/arquivos/categoriatop-1.png');
 	}
 	&--3 {
-		background-image: url("/arquivos/categoriatop-3.png");
+		background-image: url('/arquivos/categoriatop-3.png');
 	}
 	&--4 {
-		background-image: url("/arquivos/categoriatop-4.png");
+		background-image: url('/arquivos/categoriatop-4.png');
 	}
 	&--5 {
-		background-image: url("/arquivos/categoriatop-5.png");
+		background-image: url('/arquivos/categoriatop-5.png');
 	}
 	&--6 {
-		background-image: url("/arquivos/categoriatop-6.png");
+		background-image: url('/arquivos/categoriatop-6.png');
 	}
 	&__wrapper {
 		display: flex;
@@ -99,7 +115,7 @@
 		padding-bottom: 20px;
 		text-decoration: none;
 		&::after {
-			content: "";
+			content: '';
 			display: block;
 			width: 87.7%;
 			height: 5px;
@@ -130,7 +146,7 @@
 		text-transform: uppercase;
 
 		&::after {
-			content: "";
+			content: '';
 			display: inline-block;
 			width: 5px;
 			height: 5px;
@@ -164,7 +180,7 @@
 			justify-content: space-between;
 			align-items: center;
 			&::after {
-				content: "";
+				content: '';
 				display: inline-block;
 				width: 8px;
 				height: 8px;
