@@ -131,6 +131,13 @@
 
 		.icon-cart {
 			@include font-size(18px);
+			&:before {
+				content: "";
+				display: block;
+				width: 19px;
+				height: 18px;
+				background: url(/arquivos/icon-cart-png.png) no-repeat;
+			}
 		}
 
 		&-value {

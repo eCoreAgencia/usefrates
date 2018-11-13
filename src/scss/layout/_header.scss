@@ -200,13 +200,52 @@
 		padding-left: 5px;
 		padding-right: 5px;
 
+		.js-search-form {
+			&.active {
+				@include mq(mobile) {
+					position: absolute;
+					left: 0;
+					background: #000;
+					z-index: 99;
+					top: 60px;
+					width: 100%;
+					padding: 11px;
+				}
+				@include mq(tablet) {
+					position: relative;
+					background: transparent;
+					width: initial;
+					padding: 0;
+					top: initial;
+				}
+				.search-form {
+					@include mq(mobile) {
+						display: block;
+						form {
+							input[type="search"] {
+								width: 90%;
+							}
+						}
+					}
+	
+					@include mq(tablet) {
+	
+					}
+				}
+			}
+		}
+
 		.search-form {
+			
 			@include mq(mobile) {
 				display: none;
 			}
 
 			@include mq(tablet) {
 				display: block;
+				.js-search-form .active {
+					display: none;
+				}
 			}
 		}
 	}
