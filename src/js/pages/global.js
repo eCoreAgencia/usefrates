@@ -1,7 +1,4 @@
-import {
-	isMobile
-} from '../utils';
-
+import { isMobile } from '../utils';
 
 $(document).ready(() => {
 	const headerFixed = () => {
@@ -13,7 +10,7 @@ $(document).ready(() => {
 		} else {
 			$('.header').removeClass('header--fixed');
 		}
-	}
+	};
 
 	console.log(isMobile.Android());
 
@@ -30,11 +27,10 @@ $(document).ready(() => {
 	})
     
 	if (isMobile.any()) {
-
-		$('.btn--menu').on('click', function () {
+		$('.btn--menu').on('click', function() {
 			$('.header__menu').show();
-		})
+		});
 	}
 
-
-})
+	$('.newsletter__form').sendForm('NL');
+});
