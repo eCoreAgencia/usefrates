@@ -1,7 +1,4 @@
-import {
-	isMobile
-} from '../utils';
-
+import { isMobile } from '../utils';
 
 $(document).ready(() => {
 	const headerFixed = () => {
@@ -13,7 +10,7 @@ $(document).ready(() => {
 		} else {
 			$('.header').removeClass('header--fixed');
 		}
-	}
+	};
 
 	console.log(isMobile.Android());
 
@@ -23,7 +20,11 @@ $(document).ready(() => {
 		$(window).scroll(() => {
 			headerFixed();
 		})
-    }
+	}
+	
+	$(".footer__column .footer__title").on('click', function(e) {
+		$(this).next().toggleClass('active');
+	})
     
 
 

@@ -11,3 +11,4 @@ import './components/product';
 import './components/minicart';
 import './components/account';
 import './components/searchMob';
+import './components/send-form';

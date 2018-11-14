@@ -53,6 +53,8 @@ block content
                         i.icon-menu
     section.section__page.container.allVitrine
         .category__filter.filter(style="display:none;")
+            .clouseFilter
+                a(href="#" class="clouse") X
             .filter__inner
                 .filter__content
                     ul.filter__menu
@@ -292,6 +294,15 @@ block content
             .shelf__vitrine
                 +vtex-controller('<vtex.cmc:searchResult layout="65c15678-2bbe-72e0-3aa6-0aa635db2f86" itemCount="16"  columnCount="16" />')
                     include ../vtexParts/searchResult.pug
+            .textCatalog
+                .titleText 
+                    <svg class="section__title__ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25"><defs><path id="qg31a" d="M874.24 1114.82a3.41 3.41 0 0 1-3.42 3.42H856.2a3.41 3.41 0 0 1-3.4-3.42h-.02v-14.62h.02a3.41 3.41 0 0 1 3.4-3.42h14.63a3.41 3.41 0 0 1 3.42 3.42v14.62zM851 1120h25v-25h-25z"></path><path id="qg31b" d="M870.69 1111.73c0 1.2-.97 2.16-2.16 2.16h-9.25c-1.2 0-2.16-.97-2.16-2.16h-.01v-9.26h.01c0-1.19.97-2.16 2.16-2.16v-.01h9.25v.01c1.2 0 2.16.97 2.16 2.16v9.26zm-14.85 3.43h16.13v-16.13h-16.13z"></path><path id="qg31c" d="M867.93 1106.51h-3.45v-3.45h-1.15v3.45h-3.46v1.16h3.46v3.45h1.15v-3.45h3.45z"></path></defs><g><g transform="translate(-851 -1095)"><g><use fill="#e75300" xlink:href="#qg31a"></use></g><g><use fill="#e75300" xlink:href="#qg31b"></use></g><g><use fill="#e75300" xlink:href="#qg31c"></use></g></g></g></svg>
+                    h3 
+                        +vtex-controller('<vtex.cmc:searchTitle />')
+                            | Camisa
+                +vtex-controller('<vtex:contentPlaceHolder id="Text category" />')
+                    h4
+                        | Combining superior craftsmanship, modern technology, and precise engineering, 5.11 pants are the backbone of 5.11 Tactical clothing. Each 5.11 pant line is built around a mission-specific battery of requirements. Materials selection, fabric types, stitching style, pocket sizing, and augmentations are all integrated to provide the user with a high quality pant that excels in a particular role. From the full-featured utility and dependability of our traditional Tactical Pant to the industry-specific pockets on our EMS Pant, all of our 5.11 pants for men are crafted with performance in mind. Designed with direct input from operators on the ground, and integrating a wealth of patented features and functions you won’t find anywhere else, 5.11 Tactical sets the global standard for high performance pants for men.
 
 					  
 block scripts
