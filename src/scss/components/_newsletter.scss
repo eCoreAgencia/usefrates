@@ -1,0 +1,70 @@
+.newsletter {
+	padding: 0 25px;
+	@include atMedium {
+		padding: initial;
+	}
+	&.grid {
+		@include atMedium {
+			display: grid;
+			&--2 {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+	&__title {
+		color: #000000;
+		@extend %font-family-unitedsans;
+		font-size: 26px;
+		font-weight: 800;
+		text-transform: uppercase;
+		line-height: 30px;
+		margin: 0 0 5px 0;
+		@include atMedium {
+			font-size: 36px;
+			line-height: initial;
+		}
+	}
+	&__text {
+		color: #e75300;
+		@extend %font-family-unitedsans;
+		font-size: 16px;
+		font-weight: 800;
+		text-transform: uppercase;
+		margin: 0;
+		@include atMedium {
+			font-size: 20px;
+		}
+	}
+	&__input {
+		width: 100%;
+		border: 2px solid #dadad8;
+		padding: 20px;
+		:placeholder {
+			color: #c0c0c0;
+			@extend %font-family-roboto;
+			font-size: 18px;
+			font-weight: 400;
+			letter-spacing: -0.36px;
+		}
+	}
+	&__form {
+		position: relative;
+		display: flex;
+		@include atMedium {
+			padding-left: 10%;
+		}
+		svg {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			right: 10px;
+		}
+	}
+	&__call {
+		margin: 0 0 16px 0;
+		@include atMedium {
+			margin: initial;
+		}
+	}
+}
