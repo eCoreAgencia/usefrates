@@ -23,7 +23,11 @@ $(document).ready(() => {
 		$(window).scroll(() => {
 			headerFixed();
 		})
-    }
+	}
+	
+	$(".footer__column .footer__title").on('click', function(e) {
+		$(this).next().toggleClass('active');
+	})
     
 	if (isMobile.any()) {
 

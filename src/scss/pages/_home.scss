@@ -3,6 +3,10 @@
 		transform: rotate(180deg);
 	}
 
+	.shelf--grid li {
+		margin: 0 10px;
+	}
+
 	.comprecategoria {
 		&__box {
 			text-align: center;

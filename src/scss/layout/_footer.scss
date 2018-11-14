@@ -19,12 +19,46 @@
 	&__column {
 		@include mq(mobile) {
 			width: 100%;
+			//display: none;
+			h3 {
+				position: relative;
+				&:after {
+					content: '';
+					position: absolute;
+					right: 30px;
+					display: inline-block;
+					width: 12px;
+					height: 12px;
+					border: solid #e75300;
+					border-width: 2px 2px 0 0;
+					border-radius: 2px;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(134deg);
+				}
+			}
+			.social-media {
+				padding: 0 19px;
+			}
+			.menu {
+				display: none;
+				&.active {
+					display: block;
+				}
+			}
 		}
 
 		@include mq("tablet") {
 			max-width: 272px;
-
-
+			display: block;
+			.social-media {
+				padding: 0;
+			}
+			h3 {
+				&:after {
+					display: none;
+				}
+			}
 		}
 
 		.menu {

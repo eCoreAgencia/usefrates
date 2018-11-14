@@ -5,6 +5,23 @@
   padding-left: 20px;
   padding-top: 20px;
   padding-right: 20px;
+  @include mq(mobile) {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 75%;
+    height: 100%;
+  }
+  @include mq("tablet") {
+    position: relative;
+    top: initial;
+    z-index: 0;
+    width: 36%;
+    height: initial;
+    .clouseFilter {
+        display: none;
+    }
+   }
   .search-multiple-navigator {
         display: block !important;
   }
