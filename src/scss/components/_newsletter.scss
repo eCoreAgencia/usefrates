@@ -50,21 +50,85 @@
 	&__form {
 		position: relative;
 		display: flex;
+		flex-direction: column;
+		max-height: 63px;
 		@include atMedium {
 			padding-left: 10%;
 		}
-		svg {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			margin: auto;
-			right: 10px;
+
+		&.success {
+			display: flex;
+			align-items: center;
+			.newsletter__input {
+				display: none;
+			}
+			.newsletter__btn {
+				display: none;
+			}
+			.newsletter__success {
+				align-items: center;
+				svg {
+					flex-shrink: 0;
+				}
+			}
+			.newsletter__success-msg {
+				margin-left: 18px;
+			}
+		}
+		&.form-fail {
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		right: 10px;
+	}
+	&__success {
+		position: absolute;
+		display: none;
+		margin-top: 30px;
+		margin: 30px 0 40px 0;
+		top: -18px;
+		@include atMedium {
+			margin: initial;
+			top: initial;
 		}
 	}
 	&__call {
 		margin: 0 0 16px 0;
 		@include atMedium {
 			margin: initial;
+		}
+	}
+	&__btn {
+		background: transparent;
+		border: none;
+	}
+
+	&__fail {
+		display: none;
+		@include atMedium {
+			position: absolute;
+			right: 31.7%;
+			bottom: -27px;
+		}
+	}
+	&__fail-msg {
+		color: #d0021b;
+		@extend %font-family-roboto;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18px;
+		margin-top: 10px;
+	}
+	&.form-fail {
+		@include atMedium {
+			.newsletter__fail {
+				display: block;
+			}
 		}
 	}
 }
