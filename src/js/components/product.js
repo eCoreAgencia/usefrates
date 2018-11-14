@@ -58,12 +58,12 @@ class Product {
 				Preencha os dados e clique no botão abaixo para ser avisado quando houver disponibilidade.
 			</p>
 
-			<form class="form" id="form-notifyme">
+			<form class="form" id="form-notifyme" action="/no-cache/AviseMe.aspx">
 				<div class="form-control">
-					<input class="input" type="text" placeholder="Insira seu nome" name="" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Insira seu nome...'" />
+					<input class="input" type="text" placeholder="Insira seu nome" name="notifymeClientName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Insira seu nome...'" />
 				</div>
 				<div class="form-control">
-					<input class="input" type="email" placeholder="Insira seu e-mail" name="" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Insira seu nome...'" />
+					<input class="input" type="email" placeholder="Insira seu e-mail" name="notifymeClientEmail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Insira seu nome...'" />
 				</div>
 				<button class="btn btn--primary">Avise-Me</button>
 			</form>
@@ -72,18 +72,66 @@ class Product {
 		$('.product__action').hide();
 
 		$('.product__skus').html(html);
-	}
+    }
+    buyProduct() {
+       
+    }
 }
 
 $(document).ready(() => {
 	if ($('body').hasClass('product')) {
-		window.Product = new Product();
+        window.productChoice = {};
+        window.Product = new Product();
+        
+        const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
+        const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
+    
+		$('.shelf__carousel--full ul').slick({
+			arrows: true,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			infinite: true,
+			prevArrow: shelf__prev,
+			nextArrow: shelf__next,
+			responsive: [
+				{
+					breakpoint: 800,
+					settings: 'unslick'
+				}
+			]
+		});
 		if (isMobile.any()) {
 			$('.thumbs').slick({
 				arrows: false,
 				dots: true
 			});
-		}
+        }
+        
+        const positionFixed = () => {
+            const distancePageTop = 100;
+            const footerPosition = $('footer').offset().top;
+            const windowHeight = $(window).height();
+            const pageScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (pageScroll >= distancePageTop) {
+                $('.product__main .product__info').addClass('product__info--fixed');
+                if(footerPosition - windowHeight){
+                    $('.product__main .product__info--fixed').addClass('product__info--opacity');
+                }else {
+                    $('.product__main .product__info--fixed').addClass('product__info--opacity');
+                }
+            } else {
+                $('.product__main .product__info').removeClass('product__info--fixed');
+            }
+        }
+        
+        if (!isMobile.any()) {
+            positionFixed();
+    
+            $(window).scroll(() => {
+                positionFixed();
+            })
+        }
 
 
 
@@ -130,7 +178,10 @@ $(document).ready(() => {
 				$(document).click(function () {
 					$styledSelect.removeClass('active');
 					$list.hide();
-				});
+                });
+                
+
+
 
 			});
 		});
