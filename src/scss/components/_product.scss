@@ -312,8 +312,12 @@
 	}
 
 	&__code {
-		padding: 10px 0;
-		@include font-size(14px);
+        padding: 10px 0;
+        @extend %display-flex;
+        @include font-size(14px);
+        .skuReference {
+            margin-left: 10px;
+        }
 	}
 
 	&__skus {
@@ -383,6 +387,10 @@
 					&:hover {
 						cursor: pointer;
 					}
+                }
+                
+                @include mq(tablet, max) {
+					margin: 11px auto;
 				}
 
 			}
@@ -392,6 +400,10 @@
 
 
 		&--select {
+
+            @include mq(tablet) {
+                max-width: 300px;
+            }
 
 			.select-options,
 			select {
@@ -413,7 +425,11 @@
 
 				&:hover {
 					cursor: pointer;
-				}
+                }
+                
+                i {
+                    transform: rotate(90deg)
+                }
 			}
 
 			.select-options {
@@ -505,7 +521,8 @@
 		.button {
 			@extend %background-color-white;
 			@extend %color-primary;
-			@extend %font-family-unitedsans;
+            @extend %font-family-unitedsans;
+            @extend %no-border;
 			@include font-size(30px);
 			width: 100%;
 			padding: 3px;

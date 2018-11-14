@@ -32,7 +32,11 @@
 			@include font-size(20px);
 		}
 
-	}
+    }
+    
+    &--close {
+        @extend .btn--menu;
+    }
 
 	&--search {
 		background-color: transparent;

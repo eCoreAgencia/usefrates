@@ -25,12 +25,6 @@ $(document).ready(() => {
 		})
     }
     
-	if (isMobile.any()) {
-
-		$('.btn--menu').on('click', function () {
-			$('.header__menu').show();
-		})
-	}
 
 
 })
