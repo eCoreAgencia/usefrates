@@ -197,4 +197,7 @@
 		color: #6a6157;
 		@include font-size(30px);
 	}
+	a {
+		text-decoration: none;
+	}
 }
