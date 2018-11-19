@@ -39,6 +39,11 @@
 			}
 			.social-media {
 				padding: 0 19px;
+				display: flex;
+				justify-content: center;
+				@include atMedium {
+					justify-content: flex-start;
+				}
 			}
 			.menu {
 				display: none;
