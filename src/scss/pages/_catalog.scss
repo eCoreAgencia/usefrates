@@ -3,7 +3,7 @@ body {
         .section__diff {
             padding: 0;
         }
-        
+
         .section__title {
             background: url(/arquivos/BG_Banner_Categoria.jpg) center;
             text-align: center;
@@ -19,7 +19,7 @@ body {
                 font-family: "United Sans Condensed";
             }
         }
-    
+
         .section__navTop {
             border-bottom: 3px solid #e8e7e5;
             .container {
@@ -145,10 +145,10 @@ body {
                         display: block;
                     }
                     a {
-                        margin-left: 10px; 
+                        margin-left: 10px;
                     }
                 }
-                
+
                 &--grid {
                     display: flex;
                     justify-content: space-between;
@@ -161,7 +161,7 @@ body {
                 }
             }
         }
-    
+
         .section__inner {
             @include mq(mobile) {
                 p {
@@ -183,7 +183,7 @@ body {
                 letter-spacing: 0.5px;
             }
         }
-    
+
         .diff__container {
             box-shadow: none;
             padding-top: 20px;
@@ -337,7 +337,8 @@ body {
                             text-transform: uppercase;
                             letter-spacing: 1px;
                             padding: 14px 0 11px;
-                            @extend %font-family-unitedsans;
+							@extend %font-family-unitedsans;
+							font-weight: 800;
                             @media only screen and (max-width: 640px) {
                                 position: relative;
                                 display: block;
@@ -392,7 +393,7 @@ body {
                             left: 0px;
                         }
                     }
-                    
+
                     li {
                         &.slick-slide {
                             margin-left: 0;
