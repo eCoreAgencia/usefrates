@@ -16,8 +16,24 @@ class Product {
 			} else {
 				self.renderFormNotifyMe(product);
 			}
-		})
-	}
+        })
+        
+        $('.button--plus').on('click', () => {
+            self.changeQuantity(1);
+        })
+
+        $('.button--minus').on('click', () => {
+            self.changeQuantity(-1);
+        })
+    }
+    
+    changeQuantity(val) {
+        let currentVal = $('.product__qtd-value').val()
+        let newVal = +currentVal + +val
+        if (newVal) {
+            $('.product__qtd-value').val(newVal)
+        }
+    }
 
 	renderSkuSelectors(product) {
 		console.log(product);
@@ -115,9 +131,9 @@ $(document).ready(() => {
     
             if (pageScroll >= distancePageTop) {
                 $('.product__main .product__info').addClass('product__info--fixed');
-                if(footerPosition - windowHeight){
+                if (footerPosition - windowHeight) { 
                     $('.product__main .product__info--fixed').addClass('product__info--opacity');
-                }else {
+                } else {
                     $('.product__main .product__info--fixed').addClass('product__info--opacity');
                 }
             } else {
@@ -145,7 +161,8 @@ $(document).ready(() => {
 				$this.after('<div class="select-styled"></div>');
 
 				var $styledSelect = $this.next('div.select-styled');
-				$styledSelect.text($this.children('option').eq(0).text());
+                $styledSelect.text($this.children('option').eq(0).text());
+                $styledSelect.append('<i class="icon-arrow-right"></i>');
 
 				var $list = $('<ul />', {
 					'class': 'select-options'
@@ -170,7 +187,8 @@ $(document).ready(() => {
 
 				$listItems.click(function (e) {
 					e.stopPropagation();
-					$styledSelect.text($(this).text()).removeClass('active');
+                    $styledSelect.text($(this).text()).removeClass('active');
+                    $styledSelect.append('<i class="icon-arrow-right"></i>');
 					$this.val($(this).attr('rel'));
 					$list.hide();
 				});

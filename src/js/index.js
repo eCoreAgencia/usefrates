@@ -5,6 +5,7 @@ import './pages/catalog';
 import './pages/empty-search';
 import './pages/login';
 
+import './components/menu';
 import './components/filter';
 import './components/product';
 import './components/minicart';

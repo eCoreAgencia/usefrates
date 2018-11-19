@@ -5,6 +5,7 @@ class Filter {
 		this.init();
 		this.clearFilter();
 		this.openFilter();
+		this.clouseFilter();
 	}
 	
 	openFilter() {
@@ -20,6 +21,15 @@ class Filter {
 				$('.category__filter.filter').addClass('active');
 			}
 		})
+	}
+
+	clouseFilter() {
+		$(".clouseFilter").on("click", function(e) {
+			e.preventDefault();
+			$(".btnOpenFilter").html('<i class="icon-filter"/>MONSTRAR FILTRO');
+			$('.category__filter.filter').fadeOut();
+			$('.category__filter.filter').removeClass('active');
+		});
 	}
 
 	clearFilter() {

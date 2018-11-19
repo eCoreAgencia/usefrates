@@ -19,13 +19,13 @@ $(document).ready(() => {
 
 		$(window).scroll(() => {
 			headerFixed();
-		});
+		})
 	}
-	if (isMobile.any()) {
-		$('.btn--menu').on('click', function() {
-			$('.header__menu').show();
-		});
-	}
+	
+	$(".footer__column .footer__title").on('click', function(e) {
+		$(this).next().toggleClass('active');
+	})
+    
 
-	$('.newsletter__form').sendForm('NL');
-});
+
+})

@@ -16,6 +16,7 @@ body {
                 font-weight: 700;
                 line-height: 100px;
                 text-transform: uppercase;
+                font-family: "United Sans Condensed";
             }
         }
     
@@ -27,6 +28,18 @@ body {
                 align-items: center;
             }
             &__filter {
+                @include mq(mobile) {
+                    display: flex;
+                    align-items: center;
+                    .btnClear {
+                        display: none;
+                    }
+                }
+                @include mq("tablet") {
+                    .btnClear {
+                        display: block;
+                    }
+                }
                 a {
                     @extend %font-family-unitedsans;
                     font-size: 14px;
@@ -36,7 +49,7 @@ body {
                     text-decoration: none;
                     color:  #6a6157;
                     padding: 5px 0;
-                    font-weight: 300;
+                    font-weight: 700;
                     &.btnClear {
                         i {
                             &:before {
@@ -48,25 +61,54 @@ body {
                             }
                         }
                     }
-                    &.btnOpenFilter {
-                        color: #e75300;
-                        margin-right: 30px;
-                        padding-right: 30px;
-                        border-right: 1px solid #dadad8;
-                        transition: .3s ease;
-                        i {
-                            margin-right: 5px;
-                            &:before {
-                                font-size: 11px;
+                    @include mq(mobile) {
+                        &.btnOpenFilter {
+                            color: #e75300;
+                            margin-right: 0px;
+                            font-size: 12px;
+                            padding-left: 25px;
+                            transition: .3s ease;
+                            i {
+                                margin-right: 5px;
+                                &:before {
+                                    font-size: 11px;
+                                }
+                            }
+                            &:hover {
+                                color: #6a6157;
                             }
                         }
-                        &:hover {
-                            color: #6a6157;
+                    }
+                    @include mq("tablet") {
+                        &.btnOpenFilter {
+                            color: #e75300;
+                            margin-right: 30px;
+                            padding-right: 30px;
+                            font-size: 14px;
+                            padding-left: 0;
+                            border-right: 1px solid #dadad8;
+                            transition: .3s ease;
+                            i {
+                                margin-right: 5px;
+                                &:before {
+                                    font-size: 11px;
+                                }
+                            }
+                            &:hover {
+                                color: #6a6157;
+                            }
                         }
                     }
                 }
             }
             &__numberProduct {
+                @include mq(mobile) {
+                    display: none;
+                }
+
+                @include mq("tablet") {
+                    display: block;
+                }
                 p {
                     color: #000000;
                     font-size: 15px;
@@ -81,7 +123,27 @@ body {
             &__orderBy {
                 display: flex;
                 align-items: center;
+                @include mq(mobile) {
+                    width: 43%;
+                    select {
+                        border: 1px solid #ccc;
+                        width: 80%;
+                    }
+                }
+                @include mq("tablet") {
+                    width: initial;
+                    select {
+                        border: none;
+                        width: initial;
+                    }
+                }
                 &--grid  {
+                    @include mq(mobile) {
+                        display: none;
+                    }
+                    @include mq("tablet") {
+                        display: block;
+                    }
                     a {
                         margin-left: 10px; 
                     }
@@ -101,6 +163,16 @@ body {
         }
     
         .section__inner {
+            @include mq(mobile) {
+                p {
+                    display: none;
+                }
+            }
+            @include mq("tablet") {
+                p {
+                    display: block;
+                }
+            }
             p {
                 margin-right: 10px;
                 color: #6a6157;
@@ -123,9 +195,24 @@ body {
 
         .allVitrine {
             display: flex;
+            position: initial;
             .is-fluid {
                 width: 100%;
                 padding: 0 20px;
+                .textCatalog {
+                    margin-bottom: 60px;
+                    .titleText {
+                        display: flex;
+                        align-items: center;
+                    }
+                    h4 {
+                        color: #000000;
+                        font-family: Roboto;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 25px;
+                    }
+                }
                 .pages {
                     display: none;
                 }
@@ -134,8 +221,13 @@ body {
                     li {
                         transition: .5s ease;
                         display: inline-block;
-                        width: 230px;
                         margin: 10px;
+                        @include mq(mobile) {
+                            width: 42%;
+                        }
+                        @include mq("tablet") {
+                            width: 230px;
+                        }
                     }
                     &.active {
                         display: flex;
