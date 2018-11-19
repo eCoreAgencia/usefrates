@@ -43,7 +43,7 @@
 		.menu__item {
 			padding: 0 10px;
 
-			+.menu__item {
+			+ .menu__item {
 				border-left: 1px solid $c-primary;
 			}
 		}
@@ -131,14 +131,23 @@
 			.menu {
 				height: 75px;
 			}
-
 			.menu__item {
 				display: flex;
 				align-items: center;
+				justify-content: flex-end;
+				&--dropdown {
+					padding: 0 10px;
+					border-bottom: 7px solid transparent;
+					border-top: 7px solid transparent;
+					&:hover {
+						border-bottom: 7px solid #e75300;
+						border-top: 7px solid transparent;
+					}
+				}
 			}
 
 			.menu__submenu {
-				padding: 30px;
+				padding: 60px;
 			}
 
 			.menu__inner {
@@ -149,9 +158,21 @@
 			}
 
 			.menu__submenu .menu__link {
-				color: $c-white;
-				padding: 10px;
+				color: #fbf7f1;
+				font-family: 'United Sans';
+				font-size: 16px;
+				font-weight: 800;
+				line-height: 34px;
+				text-transform: uppercase;
 				letter-spacing: 0.57px;
+				&.menu--highlight {
+					color: #e75300;
+					&::after{
+						content: "";
+						background: url('/arquivos/arrow-highlight.png');
+						display: inline;
+					}
+				}
 			}
 
 			.menu__submenu .menu {
@@ -159,30 +180,34 @@
 				height: 100%;
 				border-right: 2px solid #6a6157;
 				max-width: 167px;
+				padding-right: 24%;
+				justify-content: flex-start;
 			}
 
 			.menu__column {
+				flex-basis: 15%;
 				&--box {
 					display: flex;
 					flex-wrap: wrap;
 					max-width: 710px;
 					padding: 10px 30px;
+					flex-basis: 65%;
 				}
 			}
 
 			.menu__box {
-				width: 190px;
+				flex-basis: 30%;
 				margin: 0 10px 10px;
 
 				.menu__link {
 					display: block;
 					width: 100%;
-					padding: 5px 0;
-					font-family: Roboto;
+					font-family: 'Roboto';
 					@include font-size(14px);
 					text-transform: none;
 					color: #bab1a8;
 					font-weight: 400;
+					line-height: 1.7;
 				}
 			}
 
@@ -193,9 +218,11 @@
 				font-family: 'United Sans';
 				display: block;
 				width: 100%;
-				margin-bottom: 15px;
+				font-weight: 800;
+				margin-bottom: 5px;
 				@include font-size(16px);
 			}
+
 		}
 	}
 
@@ -246,21 +273,19 @@
 					@include mq(mobile) {
 						display: block;
 						form {
-							input[type="search"] {
+							input[type='search'] {
 								width: 90%;
 							}
 						}
 					}
-	
+
 					@include mq(tablet) {
-	
 					}
 				}
 			}
 		}
 
 		.search-form {
-			
 			@include mq(mobile) {
 				display: none;
 			}
@@ -275,7 +300,6 @@
 	}
 
 	@include mq(tablet) {
-
 		.btn--search,
 		.btn--menu {
 			display: none;

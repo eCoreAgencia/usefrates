@@ -162,14 +162,22 @@
 		display: flex;
 		align-items: center;
 
-		.icon-cart {
-			@include font-size(18px);
-			&:before {
-				content: "";
-				display: block;
-				width: 19px;
-				height: 18px;
-				background: url(/arquivos/icon-cart-png.png) no-repeat;
+		.icon-cart--black {
+			@include atMedium {
+
+				svg {
+					// stroke: #000;
+					fill: #000;
+					use {
+						fill: #000;
+					}
+				}
+			}
+			.header--fixed & {
+				fill: #bab1a8;
+					use {
+					fill: #bab1a8;
+				}
 			}
 		}
 
