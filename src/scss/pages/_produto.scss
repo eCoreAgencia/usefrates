@@ -6,4 +6,20 @@
     .section__product-bottom, .section__shelf {
         max-width: 600px;
     }
+
+    .section__shelf {
+        padding-top: 20px;
+
+        .prateleira > h2 {
+            @extend %display-none;
+        }
+    }
+
+    .section__shelf .section__title {
+        @extend %flex-justify-content-flex-start;
+    }
+
+    .sku-selector-container {
+        @extend %display-none;
+    }
 }

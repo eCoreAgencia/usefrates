@@ -3,15 +3,20 @@ import {
 } from '../modules/vtexRequest';
 import {
 	isMobile,
-	slugify
+	slugify,
+    isEmpty
 } from '../utils';
+
 class Product {
 	constructor() {
 		const productId = $('#___rc-p-id').val();
-		let self = this;
+        let self = this;
+        this.variations = {};
+        this.product = {}
 		const productWithVariations = getProductWithVariations(productId);
 		productWithVariations.then(product => {
 			if (product.available) {
+                self.product = product;
 				self.renderSkuSelectors(product);
 			} else {
 				self.renderFormNotifyMe(product);
@@ -25,6 +30,12 @@ class Product {
         $('.button--minus').on('click', () => {
             self.changeQuantity(-1);
         })
+
+        $('.btn--buy').on('click', () => {
+            self.buyProduct();
+        })
+
+       
     }
     
     changeQuantity(val) {
@@ -40,7 +51,8 @@ class Product {
 		const select = `
             <div class = "product__skus--size product__skus--select">
                 <span class="product__skus-title">Tamanho</span>
-                <select name="sku-size">
+                <select name="Tamanho">
+                    <option value=˜˜ hidden>Selecione um tamanho</option>
                     ${this.createSkuSelect(product.dimensionsMap.Tamanho)}
                 </select>
             </div>`;
@@ -64,7 +76,7 @@ class Product {
 	}
 
 	createSkuThumb(dimensions) {
-		return dimensions.map(dimension => `<li><label for="${slugify(dimension)}">${dimension}</label><input type="radio" id="${slugify(dimension)}" name="sku-color" value="${dimension}"></li>`).join('');
+		return dimensions.map(dimension => `<li><label for="${slugify(dimension)}">${dimension}</label><input type="radio" id="${slugify(dimension)}" name="Cor" value="${dimension}"></li>`).join('');
 	}
 
 	renderFormNotifyMe() {
@@ -89,15 +101,64 @@ class Product {
 
 		$('.product__skus').html(html);
     }
-    buyProduct() {
-       
+
+    getSkuSelected() {
+
+        let self = this;
+
+        $('.product__skus-inner').find(
+            `input[type="text"],
+            input[type="number"],
+            input[type="tel"],
+            input[type="email"],
+            input[type="hidden"],
+            input[type="radio"]:checked,
+            input[type="checkbox"]:checked,
+            select,
+            textarea`
+        ).each(function(i) {
+            var name = $(this).attr('name') || $(this).attr('id');
+            if (name) {
+                self.variations[name] = $(this).val();
+            }
+        });
+
+        if(!self.variations.hasOwnProperty('Tamanho')){
+            return false
+        }
+
+        if(!self.variations.hasOwnProperty('Cor')){
+            return false
+        }
+
+        return true;
     }
+
+    getSkuId() {
+        let self = this;
+        return this.product.skus.filter(sku => {
+            console.log(sku.dimensions.Cor, sku.dimensions.Tamanho)
+            if(sku.dimensions.Cor == self.variations.Cor && sku.dimensions.Tamanho == self.variations.Tamanho){
+                return sku;
+            }
+        });
+    }
+    buyProduct() {
+        let self = this;
+        if(self.getSkuSelected()){
+            const sku = self.getSkuId();
+            console.log(sku);
+        }
+    }
+
 }
 
 $(document).ready(() => {
 	if ($('body').hasClass('product')) {
         window.productChoice = {};
         window.Product = new Product();
+
+
         
         const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
         const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
@@ -120,7 +181,9 @@ $(document).ready(() => {
 			$('.thumbs').slick({
 				arrows: false,
 				dots: true
-			});
+            });
+            
+            
         }
         
         const positionFixed = () => {

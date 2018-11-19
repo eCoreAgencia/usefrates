@@ -129,16 +129,27 @@
 	&__price {
 		@extend %display-flex;
 		@extend %flex-justify-content-center;
-		@extend %flex-wrap-wrap;
+        @extend %flex-wrap-wrap;
+        
+        .economia-de {
+            @extend %display-none;
+        }
 
 		.price__installment {
 			width: 100%;
-			@extend %display-block;
+            @extend %display-block;
+            
 		}
 
 		.product--shelf & {
-			padding: 10px;
-			width: 100%;
+			padding: 10px 0;
+            width: 100%;
+            .price {
+                @extend %display-flex;
+
+                @extend %flex-justify-content-center;
+                @extend %flex-wrap-wrap;
+            }
 
 			.price__best {
 				margin-left: 20px;
@@ -149,7 +160,11 @@
 				text-align: center;
 				@include font-size(13px);
 
-			}
+            }
+            
+            .price__list {
+                width: 100%;
+            }
 		}
 
 		.preco-a-vista {
@@ -538,7 +553,7 @@
 	&__description {
 		border-top: 1px solid #dddddd;
 		border-bottom: 1px solid #dddddd;
-		padding: 40px 15px;
+		padding: 40px 0;
 		margin: 20px 0;
 
 		.section__title {

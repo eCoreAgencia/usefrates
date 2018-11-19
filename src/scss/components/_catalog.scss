@@ -9,17 +9,14 @@
 
   .shelf {
     ul {
-      flex-wrap: wrap;
-      justify-content: flex-start;
+        @extend %flex-justify-content-flex-start;
+        @extend %flex-wrap-wrap;
+        @extend %display-flex;
     }
 
     .shelf {
         
-        ul {
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            display: inline-block;
-        }
+        
         li {
             min-width: 293px;
             display: inline-block;
@@ -41,7 +38,7 @@
   }
 
   .section__inner {
-    display: flex;
+    @extend %display-flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 10px;
