@@ -75,6 +75,17 @@
 				}
 			}
 
+			.modal {
+				p,
+				h5,
+				div {
+					padding: 0;
+					@include atMedium {
+						padding: 0;
+					}
+				}
+			}
+
 			div.account__box__orders__area {
 				padding: 0;
 			}
@@ -170,7 +181,6 @@
 	top: 10%;
 	left: 50%;
 	z-index: 1050;
-	width: 560px;
 	margin-left: -280px;
 	background-color: $c-white;
 	border: 1px solid #999;
@@ -186,6 +196,9 @@
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding-box;
 	background-clip: padding-box;
+	@include atMedium {
+		width: 560px;
+	}
 }
 
 .modal.fade {
@@ -197,7 +210,10 @@
 }
 
 .modal.fade.in {
-	top: 10%;
+	top: 3%;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .modal-header {
@@ -212,6 +228,7 @@
 .modal-header h3 {
 	margin: 0;
 	line-height: 30px;
+	padding: 15px 0;
 }
 
 .modal-body {
