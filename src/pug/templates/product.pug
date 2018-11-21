@@ -1,29 +1,29 @@
 extends ../layouts/default.pug
 
 block vars
-	- var pageTitle = ' Produto'
-	- var bodyClass = 'product'
+    - var pageTitle = ' Produto'
+    - var bodyClass = 'product'
 
 block content
-	.container
-		section.section__page.section__breadcrumb
-			+vtex-controller('<vtex.cmc:breadCrumb />')
-				.bread-crumb
-					ul
-						li
-							a(href='https://tactical.vtexcommercestable.com.br/', rel='v:url', property='v:title') tactical
-						li
-							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas', rel='v:url', property='v:title') Ferramentas Elétricas
-						li
-							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
-						li.last
-							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
-		section.section__page.section__product-header
-			.product__main
-				.product__media
-					.product__media-top
-						+vtex-controller('<vtex.cmc:ProductImage zoom="on"/>')
-							include ../vtexParts/vtexProductImages.pug
+    .container
+        section.section__page.section__breadcrumb
+            +vtex-controller('<vtex.cmc:breadCrumb />')
+                .bread-crumb
+                    ul
+                        li
+                            a(href='https://tactical.vtexcommercestable.com.br/', rel='v:url', property='v:title') tactical
+                        li
+                            a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas', rel='v:url', property='v:title') Ferramentas Elétricas
+                        li
+                            a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
+                        li.last
+                            a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
+        section.section__page.section__product-header
+            .product__main
+                .product__media
+                    .product__media-top
+                        +vtex-controller('<vtex.cmc:ProductImage zoom="on"/>')
+                            include ../vtexParts/vtexProductImages.pug
 
                 .product__info
                     .product__name
@@ -63,17 +63,7 @@ block content
                                             | Preço a vista:
                                             strong.skuPrice R$ 639,90
                     .product__skus
-                        +vtex-controller('<vtex.cmc:skuRichSelection changeImage="1" />')
-                            .sku-selector-container.sku-selector-container-0
-                                ul.topic.Voltagem.productid-21.numopt-2
-                                    li.specification Voltagem
-                                    li.select.skuList.item-dimension-Voltagem
-                                        span.group_0
-                                            input#21_Voltagem_0.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_110v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='110V', data-dimension='Voltagem', value='110V', specification='110v')
-                                            label.dimension-Voltagem.espec_0.skuespec_110v.skuespec_Voltagem_opcao_110V.skuespec_Voltagem_opcao_110v(for='21_Voltagem_0') 110V
-                                            input#21_Voltagem_1.skuselector-specification-label.input-dimension-Voltagem.sku-selector.skuespec_220v.change-image(type='radio', name='21_Voltagem', dimension='Voltagem', data-value='220V', data-dimension='Voltagem', value='220V', specification='220v')
-                                            label.dimension-Voltagem.espec_0.skuespec_220v.skuespec_Voltagem_opcao_220V.skuespec_Voltagem_opcao_220v(for='21_Voltagem_1') 220V
-                    .product__action
+                    .product__action              
                         .product__action-top
                             .product__qtd
                                 button.button.button--plus
@@ -82,7 +72,9 @@ block content
                                 button.button.button--minus
                                     include ../../svg/minus.svg
                             .product__buy
-                                button.btn.btn--buy Adicionar ao Carrinho
+                                button.btn.btn--buy.ld-ext-right
+                                    | Adicionar ao Carrinho
+                                    .ld.ld-ring.ld-spin
                         .product__action-bottom
                             +vtex-controller('<vtex.cmc:BuyButton/>')
                                 a.buy-button.buy-button-ref(target='_top', href="javascript:alert('Por favor, selecione o modelo desejado.');", style='display:block')
@@ -128,6 +120,10 @@ block content
                             each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                                 li
                                     include ../shelves/prateleira
-
+        .product__zoom
+            .product__zoom-thumbs
+            .product__zoom-image
+            button.btn.btn--close
+                i.icon-close
 block scripts
-	script(src='/arquivos/ec-easyzoom.js')
+    script(src='/arquivos/ec-easyzoom.js')

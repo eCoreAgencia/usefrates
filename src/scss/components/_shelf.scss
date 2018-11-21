@@ -19,7 +19,11 @@
 		}
 
 		.prateleira {
-			padding: 0 25px;
+            padding: 0 25px;
+            
+            & > h2 {
+                @extend %display-none;
+            }
 
 			@include atMedium {
 				padding: 0;

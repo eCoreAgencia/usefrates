@@ -597,7 +597,56 @@
 			padding: 13px 26px;
 			width: 100%;
 		}
-	}
+    }
+
+    &__zoom {
+        position: fixed;
+        width: 100%;
+        background: #fff;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 99;
+        @extend %display-none;
+        @extend %flex-justify-content-space-between;
+
+        &.is-active {
+            @extend %display-flex;
+        }
+
+        &-thumbs {
+            margin-left: 30px;
+            max-width: 75px;
+            margin-top: 10px;
+            img {
+                margin: 10px 0;
+            }
+        }
+
+        &-image {
+            
+            img {
+                height: 100vh;
+                width: auto;
+            }
+        }
+        .btn--close {
+            background-color: transparent;
+            color:   #bab1a8;
+            i {
+                font-size: 33px;
+            }
+        }
+    }
+
+    .error {
+        @extend %display-block;
+        margin-bottom: 5px;
+        color: red;
+        @include font-size(12px);
+    }
 
 }
 

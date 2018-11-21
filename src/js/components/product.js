@@ -4,8 +4,6 @@ import {
 import {
 	isMobile,
 	slugify,
-    isEmpty
-	slugify,
 	addToCart
 } from '../utils';
 
@@ -14,7 +12,9 @@ class Product {
 		const productId = $('#___rc-p-id').val();
         let self = this;
         this.variations = {};
-        this.product = {}
+        this.product = {};
+        this.makeZoom();
+        $('.zoomPup, .zoomWindow, .zoomPreload').remove();
 		const productWithVariations = getProductWithVariations(productId);
 		productWithVariations.then(product => {
 			if (product.available) {
@@ -29,9 +29,27 @@ class Product {
             self.changeQuantity(-1);
         })
 
-        $('.btn--buy').on('click', () => {
-            self.buyProduct();
+        $('.button--minus').on('click', () => {
+			self.changeQuantity(-1);
+		})
+
+		$('.btn--buy').on('click', function () {
+            $(this).addClass('running');
+			self.buyProduct();
+        });
+        
+        $('.image-zoom').on('click', function (e) {
+            e.preventDefault();
+            $('.product__zoom').addClass('is-active');
         })
+
+        $('.product__zoom .btn--close').on('click', function (e) {
+            e.preventDefault();
+            $('.product__zoom').removeClass('is-active');
+        });
+
+
+        
 
        
     }
@@ -44,33 +62,13 @@ class Product {
         }
     }
 
-		$('.button--minus').on('click', () => {
-			self.changeQuantity(-1);
-		})
-
-		$('.btn--buy').on('click', function () {
-			$(this).addClass('running');
-			const qtd = $('.product__qtd-value').val();
-			const sku = $('#___rc-p-sku-ids').val();
-			addToCart(sku, qtd);
-		})
-	}
-
-	changeQuantity(val) {
-		let currentVal = $('.product__qtd-value').val()
-		let newVal = +currentVal + +val
-		if (newVal) {
-			$('.product__qtd-value').val(newVal)
-		}
-	}
-
 	renderSkuSelectors(product) {
 		console.log(product);
 		const select = `
             <div class = "product__skus--size product__skus--select">
                 <span class="product__skus-title">Tamanho</span>
                 <select name="Tamanho">
-                    <option value=˜˜ hidden>Selecione um tamanho</option>
+                    <option value="" hidden>Selecione um tamanho</option>
                     ${this.createSkuSelect(product.dimensionsMap.Tamanho)}
                 </select>
             </div>`;
@@ -136,18 +134,21 @@ class Product {
             textarea`
         ).each(function(i) {
             var name = $(this).attr('name') || $(this).attr('id');
-            if (name) {
+            if (name && this.value) {
                 self.variations[name] = $(this).val();
             }
         });
 
         if(!self.variations.hasOwnProperty('Tamanho')){
+            $('<span class="error">Selecione um tamanho</span>').insertAfter('.product__skus--size .product__skus-title')
             return false
         }
 
         if(!self.variations.hasOwnProperty('Cor')){
+            $('<span class="error">Selecione um cor</span>').insertAfter('.product__skus--color .product__skus-title')
             return false
         }
+        console.log(self.variations)
 
         return true;
     }
@@ -155,18 +156,50 @@ class Product {
     getSkuId() {
         let self = this;
         return this.product.skus.filter(sku => {
-            console.log(sku.dimensions.Cor, sku.dimensions.Tamanho)
+            
             if(sku.dimensions.Cor == self.variations.Cor && sku.dimensions.Tamanho == self.variations.Tamanho){
                 return sku;
             }
         });
     }
     buyProduct() {
+        
         let self = this;
+        console.log(self.variations)
+        
         if(self.getSkuSelected()){
             const sku = self.getSkuId();
-            console.log(sku);
+            const qtd = parseInt($('.product__qtd-value').val());
+            if(sku[0]){
+                console.log(sku[0]);
+                addToCart(sku[0].sku, qtd);
+            }else{
+                alert('Produto não disponível')
+            }
+            
+        }else {
+            $('.btn--buy').removeClass('running');
         }
+			
+    }
+
+    makeZoom() {
+        $('.thumbs li').each(function(){
+            const img = $('img', this).attr('src');
+            $('.product__zoom .product__zoom-thumbs').append(`<a href=""><img src="${img}" /></a>`);
+        });
+
+        $('.image-zoom').each(function(){
+            const img = $(this).attr('href');
+            $('.product__zoom .product__zoom-image').append(`<img src="${img}" />`);
+        });
+
+        $('.product__zoom').on('click', 'a', function (e) {
+            e.preventDefault();
+            const img = $('img', this).attr('src').replace('500-500', '1000-1000');
+            $('.product__zoom .product__zoom-image img').attr('src', img);
+
+        })
     }
 
 }
@@ -204,12 +237,13 @@ $(document).ready(() => {
         
         const positionFixed = () => {
             const distancePageTop = 100;
-            const footerPosition = $('footer').offset().top;
+            const footerPosition = $('.section__newsletter').offset().top;
             const windowHeight = $(window).height();
             const pageScroll = window.pageYOffset || document.documentElement.scrollTop;
     
             if (pageScroll >= distancePageTop) {
                 $('.product__main .product__info').addClass('product__info--fixed');
+                console.log(pageScroll, footerPosition);
                 if (footerPosition - windowHeight) { 
                     $('.product__main .product__info--fixed').addClass('product__info--opacity');
                 } else {
@@ -228,31 +262,7 @@ $(document).ready(() => {
             })
         }
 
-		const positionFixed = () => {
-			const distancePageTop = 100;
-			const footerPosition = $('footer').offset().top;
-			const windowHeight = $(window).height();
-			const pageScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-			if (pageScroll >= distancePageTop) {
-				$('.product__main .product__info').addClass('product__info--fixed');
-				if (footerPosition - windowHeight) {
-					$('.product__main .product__info--fixed').addClass('product__info--opacity');
-				} else {
-					$('.product__main .product__info--fixed').addClass('product__info--opacity');
-				}
-			} else {
-				$('.product__main .product__info').removeClass('product__info--fixed');
-			}
-		}
-
-		if (!isMobile.any()) {
-			positionFixed();
-
-			$(window).scroll(() => {
-				positionFixed();
-			})
-		}
+		
 
 
 
