@@ -3,7 +3,8 @@ import {
 } from '../modules/vtexRequest';
 import {
 	isMobile,
-	slugify
+	slugify,
+	addToCart
 } from '../utils';
 class Product {
 	constructor() {
@@ -16,24 +17,31 @@ class Product {
 			} else {
 				self.renderFormNotifyMe(product);
 			}
-        })
-        
-        $('.button--plus').on('click', () => {
-            self.changeQuantity(1);
-        })
+		})
 
-        $('.button--minus').on('click', () => {
-            self.changeQuantity(-1);
-        })
-    }
-    
-    changeQuantity(val) {
-        let currentVal = $('.product__qtd-value').val()
-        let newVal = +currentVal + +val
-        if (newVal) {
-            $('.product__qtd-value').val(newVal)
-        }
-    }
+		$('.button--plus').on('click', () => {
+			self.changeQuantity(1);
+		})
+
+		$('.button--minus').on('click', () => {
+			self.changeQuantity(-1);
+		})
+
+		$('.btn--buy').on('click', function () {
+			$(this).addClass('running');
+			const qtd = $('.product__qtd-value').val();
+			const sku = $('#___rc-p-sku-ids').val();
+			addToCart(sku, qtd);
+		})
+	}
+
+	changeQuantity(val) {
+		let currentVal = $('.product__qtd-value').val()
+		let newVal = +currentVal + +val
+		if (newVal) {
+			$('.product__qtd-value').val(newVal)
+		}
+	}
 
 	renderSkuSelectors(product) {
 		console.log(product);
@@ -88,20 +96,20 @@ class Product {
 		$('.product__action').hide();
 
 		$('.product__skus').html(html);
-    }
-    buyProduct() {
-       
-    }
+	}
+	buyProduct() {
+
+	}
 }
 
 $(document).ready(() => {
 	if ($('body').hasClass('product')) {
-        window.productChoice = {};
-        window.Product = new Product();
-        
-        const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
-        const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
-    
+		window.productChoice = {};
+		window.Product = new Product();
+
+		const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
+		const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43"><defs><path id="vcuya" d="M1460 1326.21l21.21-21.21 21.21 21.21-21.21 21.21z"/><path id="vcuyc" d="M1481.5 1318.5l-7.52 7.52"/><path id="vcuyd" d="M1481.5 1333.02l-7.52-7.52"/><clipPath id="vcuyb"><use fill="#fff" xlink:href="#vcuya"/></clipPath></defs><g><g transform="matrix(-1 0 0 1 1503 -1305)"><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#vcuyb&quot;)" xlink:href="#vcuya"/></g><g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyc"/></g><g><use fill="#fff" fill-opacity="0" stroke="#000" stroke-linecap="square" stroke-miterlimit="50" stroke-width="2" xlink:href="#vcuyd"/></g></g></g></g></svg></button>`
+
 		$('.shelf__carousel--full ul').slick({
 			arrows: true,
 			slidesToShow: 2,
@@ -109,45 +117,43 @@ $(document).ready(() => {
 			infinite: true,
 			prevArrow: shelf__prev,
 			nextArrow: shelf__next,
-			responsive: [
-				{
-					breakpoint: 800,
-					settings: 'unslick'
-				}
-			]
+			responsive: [{
+				breakpoint: 800,
+				settings: 'unslick'
+			}]
 		});
 		if (isMobile.any()) {
 			$('.thumbs').slick({
 				arrows: false,
 				dots: true
 			});
-        }
-        
-        const positionFixed = () => {
-            const distancePageTop = 100;
-            const footerPosition = $('footer').offset().top;
-            const windowHeight = $(window).height();
-            const pageScroll = window.pageYOffset || document.documentElement.scrollTop;
-    
-            if (pageScroll >= distancePageTop) {
-                $('.product__main .product__info').addClass('product__info--fixed');
-                if (footerPosition - windowHeight) { 
-                    $('.product__main .product__info--fixed').addClass('product__info--opacity');
-                } else {
-                    $('.product__main .product__info--fixed').addClass('product__info--opacity');
-                }
-            } else {
-                $('.product__main .product__info').removeClass('product__info--fixed');
-            }
-        }
-        
-        if (!isMobile.any()) {
-            positionFixed();
-    
-            $(window).scroll(() => {
-                positionFixed();
-            })
-        }
+		}
+
+		const positionFixed = () => {
+			const distancePageTop = 100;
+			const footerPosition = $('footer').offset().top;
+			const windowHeight = $(window).height();
+			const pageScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+			if (pageScroll >= distancePageTop) {
+				$('.product__main .product__info').addClass('product__info--fixed');
+				if (footerPosition - windowHeight) {
+					$('.product__main .product__info--fixed').addClass('product__info--opacity');
+				} else {
+					$('.product__main .product__info--fixed').addClass('product__info--opacity');
+				}
+			} else {
+				$('.product__main .product__info').removeClass('product__info--fixed');
+			}
+		}
+
+		if (!isMobile.any()) {
+			positionFixed();
+
+			$(window).scroll(() => {
+				positionFixed();
+			})
+		}
 
 
 
@@ -161,8 +167,8 @@ $(document).ready(() => {
 				$this.after('<div class="select-styled"></div>');
 
 				var $styledSelect = $this.next('div.select-styled');
-                $styledSelect.text($this.children('option').eq(0).text());
-                $styledSelect.append('<i class="icon-arrow-right"></i>');
+				$styledSelect.text($this.children('option').eq(0).text());
+				$styledSelect.append('<i class="icon-arrow-right"></i>');
 
 				var $list = $('<ul />', {
 					'class': 'select-options'
@@ -187,8 +193,8 @@ $(document).ready(() => {
 
 				$listItems.click(function (e) {
 					e.stopPropagation();
-                    $styledSelect.text($(this).text()).removeClass('active');
-                    $styledSelect.append('<i class="icon-arrow-right"></i>');
+					$styledSelect.text($(this).text()).removeClass('active');
+					$styledSelect.append('<i class="icon-arrow-right"></i>');
 					$this.val($(this).attr('rel'));
 					$list.hide();
 				});
@@ -196,8 +202,8 @@ $(document).ready(() => {
 				$(document).click(function () {
 					$styledSelect.removeClass('active');
 					$list.hide();
-                });
-                
+				});
+
 
 
 
