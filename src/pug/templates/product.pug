@@ -1,29 +1,29 @@
 extends ../layouts/default.pug
 
 block vars
-    - var pageTitle = ' Produto'
-    - var bodyClass = 'product'
+	- var pageTitle = ' Produto'
+	- var bodyClass = 'product'
 
 block content
-    .container
-        section.section__page.section__breadcrumb
-            +vtex-controller('<vtex.cmc:breadCrumb />')
-                .bread-crumb
-                    ul
-                        li
-                            a(href='https://tactical.vtexcommercestable.com.br/', rel='v:url', property='v:title') tactical
-                        li
-                            a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas', rel='v:url', property='v:title') Ferramentas Elétricas
-                        li
-                            a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
-                        li.last
-                            a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
-        section.section__page.section__product-header
-            .product__main
-                .product__media
-                    .product__media-top
-                        +vtex-controller('<vtex.cmc:ProductImage zoom="on"/>')
-                            include ../vtexParts/vtexProductImages.pug
+	.container
+		section.section__page.section__breadcrumb
+			+vtex-controller('<vtex.cmc:breadCrumb />')
+				.bread-crumb
+					ul
+						li
+							a(href='https://tactical.vtexcommercestable.com.br/', rel='v:url', property='v:title') tactical
+						li
+							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas', rel='v:url', property='v:title') Ferramentas Elétricas
+						li
+							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
+						li.last
+							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
+		section.section__page.section__product-header
+			.product__main
+				.product__media
+					.product__media-top
+						+vtex-controller('<vtex.cmc:ProductImage zoom="on"/>')
+							include ../vtexParts/vtexProductImages.pug
 
                 .product__info
                     .product__name
@@ -130,4 +130,4 @@ block content
                                     include ../shelves/prateleira
 
 block scripts
-    script(src='/arquivos/ec-easyzoom.js')
+	script(src='/arquivos/ec-easyzoom.js')

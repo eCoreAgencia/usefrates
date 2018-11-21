@@ -30,7 +30,7 @@ else
 	span.product__id(data-product-id= dataProductId)
 	.product__header
 		.product__media
-			a.product__link
+			a.product__link(title= title, href= href)
 				!= getImageTag
 		.product__actions
 			a.btn.btn--buy.product__buy(title= title, href= href) Compre Agora

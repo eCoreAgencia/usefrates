@@ -39,6 +39,11 @@
 			}
 			.social-media {
 				padding: 0 19px;
+				display: flex;
+				justify-content: center;
+				@include atMedium {
+					justify-content: flex-start;
+				}
 			}
 			.menu {
 				display: none;
@@ -191,5 +196,8 @@
 	i {
 		color: #6a6157;
 		@include font-size(30px);
+	}
+	a {
+		text-decoration: none;
 	}
 }

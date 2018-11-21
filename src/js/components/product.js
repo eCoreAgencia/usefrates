@@ -5,6 +5,8 @@ import {
 	isMobile,
 	slugify,
     isEmpty
+	slugify,
+	addToCart
 } from '../utils';
 
 class Product {
@@ -21,11 +23,7 @@ class Product {
 			} else {
 				self.renderFormNotifyMe(product);
 			}
-        })
-        
-        $('.button--plus').on('click', () => {
-            self.changeQuantity(1);
-        })
+		})
 
         $('.button--minus').on('click', () => {
             self.changeQuantity(-1);
@@ -45,6 +43,26 @@ class Product {
             $('.product__qtd-value').val(newVal)
         }
     }
+
+		$('.button--minus').on('click', () => {
+			self.changeQuantity(-1);
+		})
+
+		$('.btn--buy').on('click', function () {
+			$(this).addClass('running');
+			const qtd = $('.product__qtd-value').val();
+			const sku = $('#___rc-p-sku-ids').val();
+			addToCart(sku, qtd);
+		})
+	}
+
+	changeQuantity(val) {
+		let currentVal = $('.product__qtd-value').val()
+		let newVal = +currentVal + +val
+		if (newVal) {
+			$('.product__qtd-value').val(newVal)
+		}
+	}
 
 	renderSkuSelectors(product) {
 		console.log(product);
@@ -170,12 +188,10 @@ $(document).ready(() => {
 			infinite: true,
 			prevArrow: shelf__prev,
 			nextArrow: shelf__next,
-			responsive: [
-				{
-					breakpoint: 800,
-					settings: 'unslick'
-				}
-			]
+			responsive: [{
+				breakpoint: 800,
+				settings: 'unslick'
+			}]
 		});
 		if (isMobile.any()) {
 			$('.thumbs').slick({
@@ -212,6 +228,32 @@ $(document).ready(() => {
             })
         }
 
+		const positionFixed = () => {
+			const distancePageTop = 100;
+			const footerPosition = $('footer').offset().top;
+			const windowHeight = $(window).height();
+			const pageScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+			if (pageScroll >= distancePageTop) {
+				$('.product__main .product__info').addClass('product__info--fixed');
+				if (footerPosition - windowHeight) {
+					$('.product__main .product__info--fixed').addClass('product__info--opacity');
+				} else {
+					$('.product__main .product__info--fixed').addClass('product__info--opacity');
+				}
+			} else {
+				$('.product__main .product__info').removeClass('product__info--fixed');
+			}
+		}
+
+		if (!isMobile.any()) {
+			positionFixed();
+
+			$(window).scroll(() => {
+				positionFixed();
+			})
+		}
+
 
 
 		$(window).on('skuSelectorCreated', () => {
@@ -224,8 +266,8 @@ $(document).ready(() => {
 				$this.after('<div class="select-styled"></div>');
 
 				var $styledSelect = $this.next('div.select-styled');
-                $styledSelect.text($this.children('option').eq(0).text());
-                $styledSelect.append('<i class="icon-arrow-right"></i>');
+				$styledSelect.text($this.children('option').eq(0).text());
+				$styledSelect.append('<i class="icon-arrow-right"></i>');
 
 				var $list = $('<ul />', {
 					'class': 'select-options'
@@ -250,8 +292,8 @@ $(document).ready(() => {
 
 				$listItems.click(function (e) {
 					e.stopPropagation();
-                    $styledSelect.text($(this).text()).removeClass('active');
-                    $styledSelect.append('<i class="icon-arrow-right"></i>');
+					$styledSelect.text($(this).text()).removeClass('active');
+					$styledSelect.append('<i class="icon-arrow-right"></i>');
 					$this.val($(this).attr('rel'));
 					$list.hide();
 				});
@@ -259,8 +301,8 @@ $(document).ready(() => {
 				$(document).click(function () {
 					$styledSelect.removeClass('active');
 					$list.hide();
-                });
-                
+				});
+
 
 
 
