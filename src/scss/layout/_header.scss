@@ -1,0 +1,43 @@
+.header {
+	.bg-blue {
+		background-color: $c-blue;
+	}
+	&__minicart {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+	}
+	&__main {
+
+	}
+	.is-flex {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+	}
+}
+.tipbar {
+	@extend %display-flex;
+	@extend %flex-justify-content-space-between;
+	height: 45px;
+	&__left {
+		@extend %display-flex;
+		flex-basis: 60%;
+		@extend %flex-justify-content-space-between;
+		@extend %flex-align-items-center;
+	}
+	&__right {
+		@extend %display-flex;
+		@extend %flex-justify-content-space-between;
+		@extend %flex-align-items-center;
+		flex-basis: 20%;
+	}
+	&__link {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+		@include font-size(15px);
+		color: $c-white;
+	}
+	svg {
+		margin-right: 10px;
+		align-self: center;
+	}
+}

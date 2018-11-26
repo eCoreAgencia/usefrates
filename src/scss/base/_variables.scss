@@ -88,7 +88,7 @@ $font-sizes: (
 
 $grid-columns: 12 !default;
 $grid-gutter-width: 20px !default;
-$page-container: 1100px !default;
+$page-container: $b-lg-max !default;
 
 $breakpoints: (
 	'mobile': 320px,
