@@ -2,9 +2,31 @@ header.header
 	.header_top.bg-blue
 		.container
 			.tip-bar
-				a.tipbar-link(href="http://")
+				a.tipbar-link(href="http://") Desconto na Primeira Compra
 					include ../../svg/desc-tipbar.svg
-				a.tipbar-link(href="http://")
-				a.tipbar-link(href="http://")
-				a.tipbar-link(href="http://")
+				a.tipbar-link(href="http://") Troca Grátis
+					include ../../svg/troca-tipbar.svg
+				a.tipbar-link(href="http://") Frete Grátis
+					include ../../svg/frete-tipbar.svg
+				a.tipbar-link(href="http://") Atendimento
+					include ../../svg/atendimento-tipbar.svg
+				a.tipbar-link(href="/account") Minha Conta
+					include ../../svg/conta-tipbar.svg
+				.header__minicart
+					.js-minicart
+	.header__main
+		.container
+			.header__logo
+				include ../../svg/logo-frates.svg
 
+			nav.menu
+				ul.menu__list
+					li.menu__item
+						a.menu__link(href="http://") Camisas
+					li.menu__item
+						a.menu__link(href="http://") Polos
+					li.menu__item
+						a.menu__link(href="http://") Camisetas
+			.search-form
+				input.search-input
+				include ../../svg/lupa-search.svg
