@@ -13,7 +13,7 @@
 		text-align: center;
 		margin-bottom: 15px;
 		text-transform: uppercase;
-		@extend %font-family-trumpgothicwest;
+		// @extend %font-family-trumpgothicwest;
 	}
 
 	&__box {
@@ -62,7 +62,7 @@
 					margin: 0 20px 0 30px;
 					display: inline-block;
 					vertical-align: text-bottom;
-					background: url(/arquivos/ico-account.png) no-repeat scroll 0 0 transparent;
+					// background: url(/arquivos/ico-account.png) no-repeat scroll 0 0 transparent;
 				}
 			}
 

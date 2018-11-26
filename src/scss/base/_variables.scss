@@ -38,7 +38,7 @@ $c-gray: #d9d9d9;
 $c-green: #0f0;
 $c-yellow: #80754e;
 $c-blue: #00263d;
-$c-primary: $c-orange;
+$c-primary: $c-yellow;
 
 $colors: (
 	white: (
@@ -52,7 +52,7 @@ $colors: (
 		base: $c-gray,
 		light: #e4e4e4,
 		lighter: #e8e8e8,
-		dark: #bdbdbd
+		dark: #9e9e9e
 	),
 	error: (
 		base: $c-red,
