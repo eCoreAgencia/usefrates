@@ -1,17 +1,62 @@
 .header {
-	.bg-blue {
-		background-color: $c-blue;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	background-image: linear-gradient(to top,transparent 0,rgba(0,0,0,.6) 100%);
+	.bg-blue,
+	.bg-white {
+		background-color: transparent;
+		transition: all 0.5s ease-out;
 	}
 	&__minicart {
 		@extend %display-flex;
 		@extend %flex-align-items-center;
 	}
 	&__main {
-
-	}
-	.is-flex {
 		@extend %display-flex;
 		@extend %flex-align-items-center;
+		@include atMedium {
+			height: 115px;
+		}
+	}
+	&__wrapper {
+		@extend %flex-align-items-center;
+		display: grid;
+		grid-template-columns: max-content 1fr 0.5fr;
+		grid-auto-rows: 1fr;
+		grid-gap: 5%;
+	}
+	&:hover {
+		.bg-blue {
+			background-color: $c-blue;
+			transition: all 0.5s ease;
+		}
+		.bg-white {
+			background-color: $c-white;
+			transition: all 0.5s ease;
+		}
+		.menu-txt-color {
+			color: $c-primary;
+			transition: all 0.5s ease;
+		}
+		.icon-color {
+			use {
+				fill: $c-primary;
+				transition: all 0.5s ease;
+			}
+		}
+		.lupa-color {
+			use {
+				fill: $c-primary;
+				transition: all 0.5s ease;
+			}
+		}
+		.input-color {
+			border-color: $c-primary;
+			&::placeholder {
+				color: #b4b4b4;
+			}
+		}
 	}
 }
 .tipbar {

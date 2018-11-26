@@ -1,0 +1,16 @@
+.menu {
+	flex-basis: 30%;
+	&__list {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+	}
+	&__item {
+		margin-right: 10%;
+	}
+	&__link {
+		@include font-size(15px);
+		@extend %text-transform-uppercase;
+		font-weight: bold;
+		color: $c-white;
+	}
+}

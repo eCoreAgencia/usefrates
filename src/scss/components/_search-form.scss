@@ -1,0 +1,26 @@
+.search-form {
+	flex-basis: 25%;
+	@extend %display-flex;
+	&__input {
+		border-width: 0 0 1px 0;
+		border-color: $c-white;
+		width: 100%;
+		background: transparent;
+		&::placeholder {
+			color: $c-white;
+			font-family: 'Open Sans';
+			font-style: italic;
+			@include font-size(15px);
+			font-style: italic;
+		}
+	}
+	svg {
+		margin-left: 10px;
+	}
+	button {
+		background: none;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+}

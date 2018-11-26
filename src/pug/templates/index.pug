@@ -5,31 +5,44 @@ block vars
 	- var bodyClass = 'home '
 
 block content
-	//- section.section__page.section__hero
-	//- 	.banner.banner--full
-	//- 		.banner__inner
-	//- 			+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
-	//- 				.box-banner
-	//- 					a(href="")
-	//- 						img(src="/arquivos/banner-ex.png")/
-	//- 				.box-banner
-	//- 					a(href="")
-	//- 						img(src="/arquivos/banner-ex.png")/
-	//- 				.box-banner
-	//- 					a(href="")
-	//- 						img(src="/arquivos/banner-ex.png")/
-	//- 	.banner.banner--mobile
-	//- 		.banner__inner
-	//- 			+vtex-controller('<vtex:contentPlaceHolder id="Banner Full Mobile" />')
-	//- 				.box-banner
-	//- 					a(href="")
-	//- 						img(src="/arquivos/banner-full-mbl.png")/
-	//- 				.box-banner
-	//- 					a(href="")
-	//- 						img(src="/arquivos/banner-full-mbl.png")/
-	//- 				.box-banner
-	//- 					a(href="")
-	//- 						img(src="/arquivos/banner-full-mbl.png")/
+	section.section__hero
+		.banner.banner--full
+			.banner__inner
+				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner-ex.jpg")/
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner-ex.jpg")/
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner-ex.jpg")/
+		.banner.banner--mobile
+			.banner__inner
+				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full Mobile" />')
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner-full-mbl.jpg")/
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner-full-mbl.jpg")/
+					.box-banner
+						a(href="")
+							img(src="/arquivos/banner-full-mbl.jpg")/
+
+
+	section.section__page.section__shelf
+		h2.shelf__title
+			| Produtos em Destaque
+			include ../../svg/decor.svg
+		.shelf.shelf__carousel--full
+			+vtex-controller('<vtex:contentPlaceHolder id="Produtos em Destaque"/>')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+							li
+								include ../shelves/prateleira
 	//- section.section__page.section__comprecategoria
 	//- 	include ../vtexParts/comprecategoriatop-new.pug
 	//- section.section__page.section__compre-categoria--mobile
@@ -66,13 +79,13 @@ block content
 	//- 	+vtex-controller('<vtex:contentPlaceHolder id="banner Categoria" />')
 	//- 		.box-banner
 	//- 			a(href="")
-	//- 				img(src="/arquivos/bottom-banner.png")/
+	//- 				img(src="/arquivos/bottom-banner.jpg")/
 
 	//- section.section__page.section__bannercategoria--mobile
 	//- 	+vtex-controller('<vtex:contentPlaceHolder id="banner Categoria Mobile" />')
 	//- 		.box-banner
 	//- 			a(href="")
-	//- 				img(src="/arquivos/mobile-collection.png")/
+	//- 				img(src="/arquivos/mobile-collection.jpg")/
 
 	//- section.section__page.section__comprecategoriabottom
 	//- 	include ../vtexParts/comprecategoriabottom.pug

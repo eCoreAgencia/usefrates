@@ -21,19 +21,21 @@ header.header
 						| Minha Conta
 					.header__minicart
 						.js-minicart
-	.header__main
-		.container.is-flex
-			.header__logo
-				include ../../svg/logo-frates.svg
+	.header__main.bg-white
+		.container
+			.header__wrapper
+				a.header__logo(href="/")
+					include ../../svg/logo-frates.svg
 
-			nav.menu
-				ul.menu__list
-					li.menu__item
-						a.menu__link(href="http://") Camisas
-					li.menu__item
-						a.menu__link(href="http://") Polos
-					li.menu__item
-						a.menu__link(href="http://") Camisetas
-			.search-form
-				input.search-input
-				include ../../svg/lupa-search.svg
+				nav.menu
+					ul.menu__list
+						li.menu__item
+							a.menu__link.menu-txt-color(href="http://") Camisas
+						li.menu__item
+							a.menu__link.menu-txt-color(href="http://") Polos
+						li.menu__item
+							a.menu__link.menu-txt-color(href="http://") Camisetas
+				.search-form
+					input.search-form__input.input-color(placeholder="Encontre um produto")
+					button
+						include ../../svg/lupa-search.svg
