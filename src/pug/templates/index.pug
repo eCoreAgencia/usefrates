@@ -8,7 +8,7 @@ block content
 	section.section__hero
 		.banner.banner--full
 			.banner__inner
-				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
+				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full"/>')
 					.box-banner
 						a(href="")
 							img(src="/arquivos/banner-ex.jpg")/
@@ -33,16 +33,53 @@ block content
 
 
 	section.section__page.section__shelf
-		h2.shelf__title
-			| Produtos em Destaque
-			include ../../svg/decor.svg
-		.shelf.shelf__carousel--full
-			+vtex-controller('<vtex:contentPlaceHolder id="Produtos em Destaque"/>')
-				.prateleira
-					ul
-						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
-							li
-								include ../shelves/prateleira
+		.container
+			h2.shelf__title
+				| Produtos em Destaque
+				include ../../svg/decor.svg
+			.shelf.shelf__carousel--full
+				+vtex-controller('<vtex:contentPlaceHolder id="Produtos em Destaque"/>')
+					.prateleira
+						ul
+							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+								li
+									include ../shelves/prateleira
+
+	section.section__page.section__banner
+		.banner.banner__static
+			+vtex-controller('<vtex:contentPlaceHolder id="Banner Middle Page"/>')
+				.box-banner
+					a(href="")
+						img(src="/arquivos/banner-static.png")/
+
+	section.section__page.section__shelf
+		.container
+			h2.shelf__title
+				| Ofertas da Semana
+				include ../../svg/decor.svg
+			.shelf.shelf__carousel--full
+				+vtex-controller('<vtex:contentPlaceHolder id="Ofertas da Semana"/>')
+					.prateleira
+						ul
+							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+								li
+									include ../shelves/prateleira
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//- section.section__page.section__comprecategoria
 	//- 	include ../vtexParts/comprecategoriatop-new.pug
 	//- section.section__page.section__compre-categoria--mobile

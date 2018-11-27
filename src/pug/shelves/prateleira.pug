@@ -14,15 +14,15 @@ if (global.process.env.NODE_ENV === 'production')
 	- var description = '$product.DescriptionShort'
 
 else
-	- var title = 'XPRT® MultiCam® Tactical Pant'
+	- var title = 'Camiseta Manga Curta Lifestyle'
 	- var href = '/product.html'
 	- var dataProductId = Math.floor(Math.random() * 9999999)
-	- var listPrice = 'R$ 299,99'
-	- var bestPrice = 'R$ 199,99'
+	- var listPrice = 'R$ 189,00'
+	- var bestPrice = 'R$ 129,00'
 	- var flags = '<p class="flag destaque">novo</p>'
-	- var getImageTag = '<img src="/arquivos/ImgProduto-220x220.png" width="220" height="220" />'
-	- var getImageTag2 = '<img src="/arquivos/ImgProduto-220x220.png" width="220" height="220" />'
-	- var categoryName = '+ Iluminação'
+	- var getImageTag = '<img src="/arquivos/prateleira-pic.jpg" width="282" height="426" />'
+	- var getImageTag2 = '<img src="/arquivos/prateleira-pic.jpg" width="282" height="426" />'
+	- var categoryName = '+ Camisas'
 	- var categoryHref = '/category.html'
 	- var description = 'Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é...'
 
@@ -32,28 +32,27 @@ else
 		.product__media
 			a.product__link(title= title, href= href)
 				!= getImageTag
-		.product__actions
-			a.btn.btn--buy.product__buy(title= title, href= href) Compre Agora
+			.product__button
+				a.btn.btn__buy(title= title, href= href)
+					include ../../svg/carrinho-tipbar.svg
+					| Comprar
 	.product__reviews
 	.product__info
-		.product__info--name
-			h3.product__name
-				a.product__link(title= title, href= href)= title
-			h4.description= description
-
+		h3.product__name
+			a.product__link(title= title, href= href)= title
 		.product__price
 			if ( global.process.env.NODE_ENV === 'production' )
 				!= '\n#if ($product.IsInStock)'
 				!= '\n  <div class="price">'
 				!= '\n		#if ($product.HasBestPrice)'
-				!= '\n    		<span class="price__old">' + listPrice + '</span>'
+				!= '\n    		<span class="price__list price__list--line">' + listPrice + '</span>'
 				!= '\n    		<span class="price__best">' + bestPrice + '</span>'
 				!= '\n    	#else'
 				!= '\n    		<span class="price__list">' + listPrice + '</span>'
 				!= '\n    	#end'
 				!= '\n    	#if ($product.NumbersOfInstallment > 1)'
-				!= '\n      	<span class="price__installment">ou até'
-				!= '\n        		${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
+				!= '\n      	<span class="price__installment">'
+				!= '\n        		${product.NumbersOfInstallment}X ${product.InstallmentValue}'
 				!= '\n      	</span>'
 				!= '\n    	#end'
 				!= '\n  </div>'
@@ -62,7 +61,7 @@ else
 				!= '\n#end\n'
 			else
 				.price
-					span.price__old R$ 432,75
-					span.price__best R$ 432,75
-					span.price__installment ou até 10x de R$ 43,28
-					a.btn.btn--buy.product__buy.btn-list(title= title, href= href) VER DETALHES
+					span.price__list--line R$ 189,00
+					span.price__best R$ 129,00
+					span.price__installment 2x R$ 64,50
+

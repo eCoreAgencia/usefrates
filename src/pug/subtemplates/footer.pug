@@ -1,57 +1,54 @@
-//- footer.footer
-//- 	.footer__inner
-//- 		.footer__column
-//- 			h3.footer__title Atendimento
-//- 			ul.menu
-//- 				li.menu__item.menu__item--highlight
-//- 					a.menu__link(href="tel:1100000000") (11) 0000-0000
-//- 				//- li.menu__item
-//- 				//-   a.menu__link(href="/fale-conosco") Fale Conosco
-//- 				//- li.menu__item
-//- 				//-   a.menu__link(href="/institucional/perguntas-frequentes") Perguntas Frequentes
-//- 				li.menu__item
-//- 					a.menu__link(href="/institucional/trocas-e-devolucoes") Trocas e Devoluções
-//- 				li.menu__item
-//- 					a.menu__link(href="/account") Minha Conta
-//- 		.footer__column
-//- 			h3.footer__title Sobre a 5.11
-//- 			ul.menu
-//- 				li.menu__item
-//- 					a.menu__link(href="/institucional/sobre-a-marca") Sobre a Marca
-//- 				//- li.menu__item
-//- 				//-   a.menu__link(href="/encontre-uma-loja") Encontre uma loja
-//- 				li.menu__item
-//- 					a.menu__link(href="/institucional/politica-de-privacidade") Política de Privacidade
-//- 				li.menu__item
-//- 					a.menu__link(href="/institucional/politica-de-pagamento") Política de Pagamento
-//- 				//- li.menu__item
-//- 				//-   a.menu__link(href="/institucional/trabalhe-conosco") Trabalhe Conosco
-//- 				li.menu__item
-//- 					a.menu__link(href="/institucional/tabela-de-medidas") Tabela de Medidas
-//- 		.footer__column
-//- 			h3.footer__title Siga-nos
-//- 			.footer__social-media
-//- 				ul.social-media
-//- 					li.social-media__item
-//- 						a.social-media__link.social-media__link--instagram(href="/")
-//- 							i.icon-instagram
-//- 					li.social-media__item
-//- 						a.social-media__link.social-media__link--twitter(href="/")
-//- 							i.icon-twitter
-//- 					li.social-media__item
-//- 						a.social-media__link.social-media__link--facebook(href="/")
-//- 							i.icon-facebook
-//- 					li.social-media__item
-//- 						a.social-media__link.social-media__link--youtube(href="/")
-//- 							i.icon-youtube
-//- 			.footer__secure
-//- 				// TODO: Colocar as imagens de segurança
-//- 				img(src="/arquivos/logo-clearsale.png")/
-//- 				img(src="/arquivos/logo-rapidssl.png")/
-//- 		.footer__column
-//- 			// TODO: logo footer
-//- 			.footer__logo
-//- 				.logo.logo--footer
-//- 					include ../../svg/logo-footer.svg
-//- 			p.footer__brand-description Built on a foundation of durability, quality and value, 5.11 Tactical leads the industry in delivering functionally innovative gear, head to toe.
-//- 			spam.footer__brand-copyright © 2018 5.11, Inc. All rights reserved.
+footer.footer.bg-gray
+	.container
+		.footer__inner
+			.footer__box
+				.footer__title
+					| Central de Ajuda
+				ul.footer__institucional
+					li.footer__institucional-item
+						a.footer__institucional-link(href="http://") Sobre Nós
+					li.footer__institucional-item
+						a.footer__institucional-link(href="http://") Privacidade
+					li.footer__institucional-item
+						a.footer__institucional-link(href="http://") Pagamentos
+					li.footer__institucional-item
+						a.footer__institucional-link(href="http://") Troca e Devolução
+					li.footer__institucional-item
+						a.footer__institucional-link(href="http://") Dúvidas Frequentes
+					li.footer__institucional-item
+						a.footer__institucional-link(href="http://") Fale Conosco
+			.footer__box
+				.footer__title
+					| Formas de Pagamento
+				.footer__pagamento
+					img(src="/arquivos/allcards.png")/
+				.footer__title
+					| Sua Compra Segura
+				.footer__secure
+					img(src="/arquivos/secure.png")/
+			.footer__box.flexbasis-50
+				.footer__title
+					| Fique ligado nas novidades da Frates
+				.footer__newsletter.newsletter
+					form.newsletter__form
+						input.newsletter__input(type="text", name="nome" placeholder="Digite seu Nome")
+						input.newsletter__input(type="text", name="email" placeholder="E-mail")
+						button.newsletter__button(type="submit") Cadastrar
+				.footer__split-items
+					.footer__revenda
+						img(src="/arquivos/vendedor.png")/
+					.footer__social
+						.footer__title Me Segue ;)
+						ul.footer__social-list
+							li.footer__social-item
+								a.footer__social-link
+									include ../../svg/instagram.svg
+							li.footer__social-item
+								a.footer__social-link
+									include ../../svg/face.svg
+							li.footer__social-item
+								a.footer__social-link
+									include ../../svg/twitter.svg
+							li.footer__social-item
+								a.footer__social-link
+									include ../../svg/youtube.svg

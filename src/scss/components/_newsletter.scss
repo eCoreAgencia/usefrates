@@ -1,0 +1,25 @@
+.newsletter {
+	&__form {
+		@extend %display-flex;
+	}
+	&__input {
+		flex: 1;
+		background: transparent;
+		border-width: 0 0 1px 0;
+		border-color: $c-primary;
+		margin-right: 30px;
+		&::placeholder {
+			color: $c-primary;
+			font-family: 'Open Sans';
+			font-style: italic;
+			@include font-size(15px);
+		}
+	}
+	&__button {
+		padding: 6px 25px;
+		background-color: $c-primary;
+		color: $c-white;
+		@include font-size(20px);
+		font-weight: 500;
+	}
+}

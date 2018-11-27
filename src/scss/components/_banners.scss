@@ -31,12 +31,6 @@
 			}
 		}
 	}
-	&__inner {
-		img {
-			width: 100%;
-			filter: brightness(75%);
-		}
-	}
 
 	&--full {
 		display: none;
@@ -55,9 +49,17 @@
 		}
 	}
 
+	&__inner {
+		img {
+			filter: brightness(75%);
+		}
+	}
 	.box-banner {
 		& > a {
 			display: block;
+		}
+		img {
+			width: 100%;
 		}
 	}
 }
