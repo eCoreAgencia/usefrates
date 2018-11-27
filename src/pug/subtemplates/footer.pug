@@ -1,54 +1,68 @@
 footer.footer.bg-gray
-	.container
-		.footer__inner
-			.footer__box
-				.footer__title
-					| Central de Ajuda
-				ul.footer__institucional
-					li.footer__institucional-item
-						a.footer__institucional-link(href="http://") Sobre Nós
-					li.footer__institucional-item
-						a.footer__institucional-link(href="http://") Privacidade
-					li.footer__institucional-item
-						a.footer__institucional-link(href="http://") Pagamentos
-					li.footer__institucional-item
-						a.footer__institucional-link(href="http://") Troca e Devolução
-					li.footer__institucional-item
-						a.footer__institucional-link(href="http://") Dúvidas Frequentes
-					li.footer__institucional-item
-						a.footer__institucional-link(href="http://") Fale Conosco
-			.footer__box
-				.footer__title
-					| Formas de Pagamento
-				.footer__pagamento
-					img(src="/arquivos/allcards.png")/
-				.footer__title
-					| Sua Compra Segura
-				.footer__secure
-					img(src="/arquivos/secure.png")/
-			.footer__box.flexbasis-50
-				.footer__title
-					| Fique ligado nas novidades da Frates
-				.footer__newsletter.newsletter
-					form.newsletter__form
-						input.newsletter__input(type="text", name="nome" placeholder="Digite seu Nome")
-						input.newsletter__input(type="text", name="email" placeholder="E-mail")
-						button.newsletter__button(type="submit") Cadastrar
-				.footer__split-items
-					.footer__revenda
-						img(src="/arquivos/vendedor.png")/
-					.footer__social
-						.footer__title Me Segue ;)
-						ul.footer__social-list
-							li.footer__social-item
-								a.footer__social-link
-									include ../../svg/instagram.svg
-							li.footer__social-item
-								a.footer__social-link
-									include ../../svg/face.svg
-							li.footer__social-item
-								a.footer__social-link
-									include ../../svg/twitter.svg
-							li.footer__social-item
-								a.footer__social-link
-									include ../../svg/youtube.svg
+	.footer__top.bg-gray
+		.container
+			.footer__inner
+				.footer__box
+					.footer__title
+						| Central de Ajuda
+					ul.footer__institucional
+						li.footer__institucional-item
+							a.footer__institucional-link(href="/institucional/sobre-nos") Sobre Nós
+						li.footer__institucional-item
+							a.footer__institucional-link(href="/institucional/privacidade") Privacidade
+						li.footer__institucional-item
+							a.footer__institucional-link(href="/institucional/pagamentos") Pagamentos
+						li.footer__institucional-item
+							a.footer__institucional-link(href="/institucional/troca-e-devolucao") Troca e Devolução
+						li.footer__institucional-item
+							a.footer__institucional-link(href="/institucional/duvidas-frequentes") Dúvidas Frequentes
+						li.footer__institucional-item
+							a.footer__institucional-link(href="/institucional/fale-conosco") Fale Conosco
+				.footer__box
+					.footer__title
+						| Formas de Pagamento
+					.footer__pagamento
+						img(src="/arquivos/allcards.png")/
+					.footer__title
+						| Sua Compra Segura
+					.footer__secure
+						img(src="/arquivos/secure.png")/
+				.footer__box.flexbasis-50
+					.footer__title
+						| Fique ligado nas novidades da Frates
+					.footer__newsletter.newsletter
+						form.newsletter__form
+							input.newsletter__input(type="text", name="nome" placeholder="Digite seu Nome")
+							input.newsletter__input(type="text", name="email" placeholder="E-mail")
+							button.newsletter__button(type="submit") Cadastrar
+					.footer__split-items
+						.footer__revenda
+							a.footer__revenda-link
+								img(src="/arquivos/vendedor.png")/
+						.footer__social
+							.footer__title Me Segue ;)
+							ul.footer__social-list
+								li.footer__social-item
+									a.footer__social-link
+										include ../../svg/instagram.svg
+								li.footer__social-item
+									a.footer__social-link
+										include ../../svg/face.svg
+								li.footer__social-item
+									a.footer__social-link
+										include ../../svg/twitter.svg
+								li.footer__social-item
+									a.footer__social-link
+										include ../../svg/youtube.svg
+			.footer__bottom
+	.footer__bottom.bg-yellow
+		.container
+			.footer__inner
+				.footer__logo-agape
+					include ../../svg/agape.svg
+				.footer__copyright
+					p.footer__copyright-text
+						| Ágape Marka de Confecções Eireli - CNPJ: 18.160.385/0001-10 © Todos os direitos reservados. 2016
+				.footer__partners
+					include ../../svg/vtex.svg
+					include ../../svg/ecore.svg

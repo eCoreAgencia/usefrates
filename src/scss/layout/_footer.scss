@@ -3,6 +3,7 @@
 	&__inner {
 		@extend %display-flex;
 		@extend %flex-justify-content-space-between;
+		@extend %flex-align-items-center;
 		padding: 25px 0;
 	}
 	&__title {
@@ -17,8 +18,11 @@
 	&__institucional-item {
 		margin-bottom: 10px;
 	}
-	&.bg-gray {
+	.bg-gray {
 		background: #e8e8e8;
+	}
+	.bg-yellow {
+		background: $c-primary;
 	}
 	&__social {
 		@extend %display-flex;
@@ -40,5 +44,12 @@
 		@extend %display-flex;
 		@extend %flex-justify-content-space-between;
 		margin-top: 20px;
+	}
+	&__revenda-link {
+		display: flex;
+	}
+	&__partners {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
 	}
 }
