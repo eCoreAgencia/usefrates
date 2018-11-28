@@ -1,36 +1,61 @@
 $(document).ready(function() {
 	if ($('body').hasClass('home')) {
-		$('.forms-b2b').appendTo('.modaleCore__middle');
-		$('.product__cadastre').on('click', function(event) {
-			$('.modaleCore').addClass('active');
+		var $gallery = $('.banner--full .banner__inner');
+		const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="59" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#02253c" xlink:href="#j4iva"/></g></g></svg></button>`;
+		const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="59" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#02253c" xlink:href="#j4iva"/></g></g></svg></button>`;
+		const banner__prev = `<button type='button' class='slick-prev banner__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#ffffff" xlink:href="#j4iva"/></g></g></svg></button>`;
+		const banner__next = `<button type='button' class='slick-next banner__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#ffffff" xlink:href="#j4iva"/></g></g></svg></button>`;
+		const progressBar = $('.progress');
+		var slideCount = null;
+
+		$gallery.on('init', function(event, slick) {
+			slideCount = slick.slideCount;
+
+			console.log(slideCount);
+			setSlideCount();
+			setCurrentSlideNumber(slick.currentSlide);
 		});
 
-		if ($('.call__box')[0]) {
-			$('.call__box').each(function() {
-				const img = $('img', this).attr('src');
+		$gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+			setCurrentSlideNumber(nextSlide);
+			var calc = (nextSlide / (slick.slideCount - 1)) * 100;
+			progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
+		});
 
-				$(this).css('background-image', 'url(' + img + ')');
+		function setSlideCount() {
+			var $el = $('.slide-count-wrap').find('.total');
+			$el.text(function(i, n) {
+				var result = Number(n) + 1;
+				if (result < 10) {
+					return '0' + slideCount;
+				} else {
+					return result;
+				}
 			});
 		}
 
-		$('.product--shelf-flip .product__front').on('click', function() {
-			$(this)
-				.parents('.product--shelf-flip')
-				.addClass('hover');
-		});
-
-		var $gallery = $('.banner--full .banner__inner , .banner--mobile .banner__inner');
+		function setCurrentSlideNumber(currentSlide) {
+			var $el = $('.slide-count-wrap').find('.current');
+			var n = currentSlide + 1;
+			$el.text(function(i, n) {
+				var result = currentSlide + 1;
+				if (result < 10) {
+					return '0' + result;
+				} else {
+					return result;
+				}
+			});
+		}
 
 		$gallery.slick({
-			dots: true,
+			dots: false,
 			autoplay: true,
-			arrows: false,
+			arrows: true,
 			fade: true,
-			infinite: false
+			infinite: false,
+			prevArrow: banner__prev,
+			nextArrow: banner__next
 		});
-
-		const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="59" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#02253c" xlink:href="#j4iva"/></g></g></svg></button>`;
-		const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="59" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#02253c" xlink:href="#j4iva"/></g></g></svg></button>`;
 
 		$('.shelf__carousel--full ul').slick({
 			arrows: true,
@@ -45,26 +70,6 @@ $(document).ready(function() {
 					settings: 'unslick'
 				}
 			]
-		});
-
-		$(window).on('productFinished', function() {
-			console.log('productFinished');
-			$('.buy-by-category .shelf ul').each(function() {
-				if ($('li.helperComplement', this)[0]) {
-					$('li.helperComplement', this).remove();
-				}
-				if ($('li', this).length > 5 && !$(this).hasClass('slick-initialized')) {
-					$(this).slick({
-						arrows: true,
-						slideToShow: 3,
-						slidesToScroll: 1,
-						infinite: true,
-						variableWidth: true,
-						prevArrow: shelf__prev,
-						nextArrow: shelf__next
-					});
-				}
-			});
 		});
 	}
 });

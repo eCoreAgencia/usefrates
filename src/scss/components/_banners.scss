@@ -1,43 +1,101 @@
 .banner {
 	&--full,
 	&--mobile {
-		.slick-dots {
+		.slide-count-wrap {
+			width: 400px;
+			height: 100px;
 			position: absolute;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			padding: 40px 20px;
-			display: flex !important;
-			flex-direction: row;
-			justify-content: center;
-			margin: 0 auto;
-
-			li {
-				opacity: 0.5;
-				&.slick-active {
-					opacity: 1;
-				}
+			right: 266px;
+			bottom: 93px;
+			z-index: 10;
+			color: $c-white;
+			font-size: 29px;
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			.current,
+			.total {
+				padding: 0 5px;
+			}
+			.current {
+				font-weight: 700;
 			}
 
-			button {
-				border: none;
-				background-color: $c-black;
-				width: 5px;
-				height: 5px;
-				font-size: 0;
-				padding: 0;
-				border-radius: 50%;
-				margin: 0 2px;
+			.total {
+				opacity: 0.5;
+				font-weight: 400;
+				@include font-size(15px);
+				border-left: 1px solid rgba(255, 255, 255, 0.678);
+			}
+			.progress {
+				display: block;
+				width: 100%;
+				height: 10px;
+				border-radius: 10px;
+				overflow: hidden;
+				background-color: rgba(245, 245, 245, 0.631);
+				background-image: linear-gradient(to right, white, white);
+				background-repeat: no-repeat;
+				background-size: 0 100%;
+				transition: background-size 0.4s ease-in-out;
 			}
 		}
+		// .slick-dots {
+		// 	position: absolute;
+		// 	right: 70px;
+		// 	bottom: 40px;
+		// 	padding: 40px 20px;
+		// 	display: flex !important;
+		// 	justify-content: flex-end;
+		// 	li {
+		// 		opacity: 0.5;
+		// 		&.slick-active {
+		// 			opacity: 1;
+		// 		}
+		// 	}
+
+		// 	button {
+		// 		border: none;
+		// 		background-color: $c-white;
+		// 		width: 80px;
+		// 		height: 6px;
+		// 		font-size: 0;
+		// 		padding: 0;
+		// 	}
+		// }
 	}
 
 	&--full {
 		display: none;
+		position: relative;
 		@include atMedium {
 			display: block;
 		}
-		position: relative;
+		.banner__button {
+			position: absolute;
+			cursor: pointer;
+			z-index: 2;
+			background: transparent;
+			border: none;
+			margin: 0;
+			padding: 0;
+			@extend %display-flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.banner__button.slick-prev {
+			bottom: 94px;
+			right: 140px;
+		}
+		.banner__button.slick-next {
+			transform: rotate(180deg);
+			bottom: 94px;
+			right: 80px;
+			&:after {
+				content: '|';
+				color: white;
+				margin-left: 10px;
+			}
+		}
 	}
 	&--mobile {
 		display: block;

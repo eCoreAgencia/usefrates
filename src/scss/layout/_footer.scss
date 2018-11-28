@@ -52,4 +52,12 @@
 		@extend %display-flex;
 		@extend %flex-align-items-center;
 	}
+	&__copyright-text {
+		color: $c-white;
+		@include font-size(12px);
+		font-weight: 400;
+	}
+	.less-pd {
+		padding: 10px 0;
+	}
 }

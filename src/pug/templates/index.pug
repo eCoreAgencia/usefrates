@@ -7,6 +7,10 @@ block vars
 block content
 	section.section__hero
 		.banner.banner--full
+			.slide-count-wrap
+				span.current
+				span.total
+				.progress(role='progressbar', aria-valuemin='0', aria-valuemax='100')
 			.banner__inner
 				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full"/>')
 					.box-banner
