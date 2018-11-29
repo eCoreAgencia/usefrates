@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	if ($('body').hasClass('home')) {
 		var $gallery = $('.banner--full .banner__inner');
+		var $galleryMob = $('.banner--mobile .banner__inner');
 		const shelf__prev = `<button type='button' class='slick-prev shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="59" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#02253c" xlink:href="#j4iva"/></g></g></svg></button>`;
 		const shelf__next = `<button type='button' class='slick-next shelf__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="59" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#02253c" xlink:href="#j4iva"/></g></g></svg></button>`;
 		const banner__prev = `<button type='button' class='slick-prev banner__button'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 59"><defs><path id="j4iva" d="M20.598 726.843l27.965 27.727 2.427-2.307-26.515-26.573 26.602-26.574-2.53-2.306-27.95 27.727z"/></defs><g><g transform="translate(-20 -696)"><use fill="#ffffff" xlink:href="#j4iva"/></g></g></svg></button>`;
@@ -10,7 +11,6 @@ $(document).ready(function() {
 
 		$gallery.on('init', function(event, slick) {
 			slideCount = slick.slideCount;
-
 			console.log(slideCount);
 			setSlideCount();
 			setCurrentSlideNumber(slick.currentSlide);
@@ -56,6 +56,15 @@ $(document).ready(function() {
 			prevArrow: banner__prev,
 			nextArrow: banner__next
 		});
+		$galleryMob.slick({
+			dots: true,
+			autoplay: true,
+			arrows: true,
+			fade: true,
+			infinite: false,
+			prevArrow: banner__prev,
+			nextArrow: banner__next
+		});
 
 		$('.shelf__carousel--full ul').slick({
 			arrows: true,
@@ -66,8 +75,18 @@ $(document).ready(function() {
 			nextArrow: shelf__next,
 			responsive: [
 				{
-					breakpoint: 800,
-					settings: 'unslick'
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1
+					}
 				}
 			]
 		});

@@ -1,6 +1,10 @@
 .banner {
-	&--full,
-	&--mobile {
+	&--full {
+		display: none;
+		position: relative;
+		@include atMedium {
+			display: block;
+		}
 		.slide-count-wrap {
 			width: 400px;
 			height: 100px;
@@ -31,7 +35,7 @@
 				border-radius: 10px;
 				overflow: hidden;
 				background-color: rgba(245, 245, 245, 0.631);
-				background-image: linear-gradient(to right, white, whitewsw);
+				background-image: linear-gradient(to right, white, white);
 				background-repeat: no-repeat;
 				background-size: 0 100%;
 				transition: background-size 0.4s ease-in-out;
@@ -40,14 +44,6 @@
 				@extend %display-flex;
 				@extend %flex-align-items-center;
 			}
-		}
-	}
-
-	&--full {
-		display: none;
-		position: relative;
-		@include atMedium {
-			display: block;
 		}
 		.banner__button {
 			position: absolute;
@@ -76,13 +72,48 @@
 			}
 		}
 	}
+
 	&--mobile {
 		display: block;
-		.slick-dots {
-			padding: 0;
-		}
 		@include atMedium {
 			display: none;
+		}
+		.slick-dots {
+			position: absolute;
+			bottom: 22px;
+			left: 0;
+			right: 0;
+			justify-content: center;
+			display: inline-flex;
+			margin: auto;
+		}
+		.slick-dots li {
+			margin: 0 3px;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			font-size: 0;
+			background: rgba(255, 255, 255, 0.637);
+		}
+		.slick-dots li.slick-active {
+			background: white;
+		}
+		.banner__button {
+			position: absolute;
+			z-index: 20;
+		}
+		.banner__button.slick-prev {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+		}
+		.banner__button.slick-next {
+			transform: rotate(180deg);
+			top: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
 		}
 	}
 

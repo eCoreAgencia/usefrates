@@ -6,16 +6,26 @@
 		@extend %flex-justify-content-center;
 		@extend %text-transform-uppercase;
 		color: $c-black;
-		@include font-size(36px);
+		@include font-size(20px);
 		font-weight: 400;
 		svg {
 			margin-top: 10px;
+			padding: 0 40px;
+		}
+
+		@include atMedium {
+			@include font-size(36px);
+			svg {
+				padding: 0;
+			}
 		}
 	}
 	.slick-initialized {
 		&.slick-slider {
-			display: flex;
-			justify-content: center;
+			@include atMedium {
+				display: flex;
+				justify-content: center;
+			}
 		}
 	}
 	&__button {

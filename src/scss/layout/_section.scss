@@ -1,6 +1,9 @@
 .section {
 	&__page {
-		margin: 40px auto;
+		margin: 20px auto;
+		@include atMedium {
+			margin: 40px auto;
+		}
 	}
 	&__shelf {
 		margin-bottom: 80px;

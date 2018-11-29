@@ -19,13 +19,13 @@ $(document).ready(() => {
 
 		$(window).scroll(() => {
 			headerFixed();
-		})
+		});
 	}
 
-	$(".footer__column .footer__title").on('click', function(e) {
-		$(this).next().toggleClass('active');
-	})
+	$('.header__lupa-mobile').on('click', function(e) {
+		e.preventDefault();
+		$('.header__wrapper').toggleClass('search-active');
+	});
 
-	$('.newsletter__form').sendForm('NL')
-
-})
+	$('.newsletter__form').sendForm('NL');
+});
