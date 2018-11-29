@@ -1,5 +1,5 @@
 header.header
-	.header_top.bg-blue
+	.header__top.bg-blue
 		.container
 			.tipbar
 				.tipbar__left
@@ -12,6 +12,11 @@ header.header
 					a.tipbar__link(href="http://")
 						include ../../svg/frete-tipbar.svg
 						| Frete Grátis
+						p.tipbar__floating-tip
+							| Nas compras acima de <strong>R$000,00.</strong></br>
+							| Para entregas feitas pela</br>
+							| <strong>Total express.</strong></br>
+							| Selecione a opção no checkout.</br>
 					a.tipbar__link(href="http://")
 						include ../../svg/atendimento-tipbar.svg
 						| Atendimento
@@ -24,8 +29,13 @@ header.header
 	.header__main.bg-white
 		.container
 			.header__wrapper
+				.header__menu-icon
+					.header__menu-icon__middle
 				a.header__logo(href="/")
-					include ../../svg/logo-frates.svg
+					span.header__logo-desk
+						include ../../svg/logo-frates.svg
+					span.header__logo-mob
+						include ../../svg/logo-frates-mob.svg
 				nav.menu
 					ul.menu__list
 						li.menu__item

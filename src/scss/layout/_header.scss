@@ -1,13 +1,23 @@
 .header {
-	position: absolute;
-	z-index: 1;
-	width: 100%;
-	background-image: linear-gradient(to top, transparent 0, rgba(0, 0, 0, 0.6) 100%);
+	@include atMedium {
+		z-index: 1;
+		width: 100%;
+		position: absolute;
+		background-image: linear-gradient(to top, transparent 0, rgba(0, 0, 0, 0.6) 100%);
+	}
 	.bg-blue,
 	.bg-white {
 		background-color: transparent;
 		transition: all 0.5s ease-out;
 	}
+	&__wrapper {
+		display: grid;
+		grid-template-columns: max-content 1fr 0.5fr;
+		grid-auto-rows: 1fr;
+		grid-gap: 5%;
+		align-items: center;
+	}
+
 	&__minicart {
 		@extend %display-flex;
 		@extend %flex-align-items-center;
@@ -19,50 +29,134 @@
 			height: 115px;
 		}
 	}
-	&__wrapper {
-		@extend %flex-align-items-center;
-		display: grid;
-		grid-template-columns: max-content 1fr 0.5fr;
-		grid-auto-rows: 1fr;
-		grid-gap: 5%;
+
+	&__logo-desk {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+	}
+	&__logo-mob {
+		display: block;
+		@include atMedium {
+			display: none;
+		}
+	}
+	&__top {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+	}
+	&__top {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+	}
+	&__menu-icon {
+		width: 23px;
+		height: 19px;
+		position: relative;
+		z-index: 10;
+		left: 18px;
+		margin: 4% 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 23px;
+			height: 2px;
+			background-color: $c-primary;
+			transform-origin: 0 0;
+			transition: transform 0.3s ease-out;
+		}
+		&__middle {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 23px;
+			height: 2px;
+			background-color: $c-primary;
+			transition: all 0.3s ease-out;
+			transform-origin: 0 50%;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 23px;
+			height: 2px;
+			background-color: $c-primary;
+			transform-origin: 0% 100%;
+			transition: transform 0.3s ease-out;
+		}
+		@include atMedium {
+			display: none;
+		}
+	}
+
+	&__menu-icon--close-x {
+		&::before {
+			transform: rotate(45deg) scaleX(1.25);
+			background-color: $c-white;
+		}
+
+		.header__menu-icon__middle {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+
+		&::after {
+			transform: rotate(-45deg) scale(1.25) translateY(1px) translateX(-1px);
+			background-color: $c-white;
+		}
 	}
 	&:hover {
-		.bg-blue {
-			background-color: $c-blue;
-			transition: all 0.5s ease;
-		}
-		.bg-white {
-			background-color: $c-white;
-			transition: all 0.5s ease;
-		}
-		.menu-txt-color {
-			color: $c-primary;
-			transition: all 0.5s ease;
-		}
-		.icon-color {
-			use {
-				fill: $c-primary;
+		@include atMedium {
+			.bg-blue {
+				background-color: $c-blue;
 				transition: all 0.5s ease;
 			}
-		}
-		.lupa-color {
-			use {
-				fill: $c-primary;
+			.bg-white {
+				background-color: $c-white;
 				transition: all 0.5s ease;
 			}
-		}
-		.input-color {
-			border-color: $c-primary;
-			&::placeholder {
-				color: #b4b4b4;
+			.menu-txt-color {
+				color: $c-primary;
+				transition: all 0.5s ease;
+			}
+			.icon-color {
+				use {
+					fill: $c-primary;
+					transition: all 0.5s ease;
+				}
+			}
+
+			.lupa-color {
+				use {
+					fill: $c-primary;
+					transition: all 0.5s ease;
+				}
+			}
+			.input-color {
+				border-color: $c-primary;
+				&::placeholder {
+					color: #b4b4b4;
+				}
 			}
 		}
 	}
 }
+
 .tipbar {
-	@extend %display-flex;
+	display: flex;
 	@extend %flex-justify-content-space-between;
 	height: 45px;
+	position: relative;
 	&__left {
 		@extend %display-flex;
 		flex-basis: 60%;
@@ -80,9 +174,42 @@
 		@extend %flex-align-items-center;
 		@include font-size(15px);
 		color: $c-white;
+		position: relative;
 	}
 	svg {
 		margin-right: 10px;
 		align-self: center;
+	}
+	&__floating-tip {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+		@extend %flex-direction-column;
+		position: absolute;
+		display: none;
+		background-color: $c-primary;
+		color: $c-blue;
+		top: 30px;
+		right: 50%;
+		transform: translateX(50%);
+		z-index: 12;
+		@include font-size(16px);
+		padding: 15px;
+		min-width: 280px;
+		border-radius: 20px;
+		:hover > & {
+			display: block;
+		}
+		&::before {
+			content: '';
+			width: 0;
+			height: 0;
+			border-bottom: 10px solid $c-primary;
+			border-top: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-left: 10px solid transparent;
+			position: absolute;
+			top: -20px;
+			right: 50%;
+		}
 	}
 }

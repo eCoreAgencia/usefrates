@@ -5,13 +5,11 @@
 			width: 400px;
 			height: 100px;
 			position: absolute;
-			right: 266px;
-			bottom: 93px;
+			right: 25px;
+			bottom: 20px;
 			z-index: 10;
 			color: $c-white;
 			font-size: 29px;
-			@extend %display-flex;
-			@extend %flex-align-items-center;
 			.current,
 			.total {
 				padding: 0 5px;
@@ -33,35 +31,16 @@
 				border-radius: 10px;
 				overflow: hidden;
 				background-color: rgba(245, 245, 245, 0.631);
-				background-image: linear-gradient(to right, white, white);
+				background-image: linear-gradient(to right, white, whitewsw);
 				background-repeat: no-repeat;
 				background-size: 0 100%;
 				transition: background-size 0.4s ease-in-out;
 			}
+			.slide-counter {
+				@extend %display-flex;
+				@extend %flex-align-items-center;
+			}
 		}
-		// .slick-dots {
-		// 	position: absolute;
-		// 	right: 70px;
-		// 	bottom: 40px;
-		// 	padding: 40px 20px;
-		// 	display: flex !important;
-		// 	justify-content: flex-end;
-		// 	li {
-		// 		opacity: 0.5;
-		// 		&.slick-active {
-		// 			opacity: 1;
-		// 		}
-		// 	}
-
-		// 	button {
-		// 		border: none;
-		// 		background-color: $c-white;
-		// 		width: 80px;
-		// 		height: 6px;
-		// 		font-size: 0;
-		// 		padding: 0;
-		// 	}
-		// }
 	}
 
 	&--full {
@@ -73,7 +52,7 @@
 		.banner__button {
 			position: absolute;
 			cursor: pointer;
-			z-index: 2;
+			z-index: 11;
 			background: transparent;
 			border: none;
 			margin: 0;

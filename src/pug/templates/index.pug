@@ -8,8 +8,9 @@ block content
 	section.section__hero
 		.banner.banner--full
 			.slide-count-wrap
-				span.current
-				span.total
+				.slide-counter
+					span.current
+					span.total
 				.progress(role='progressbar', aria-valuemin='0', aria-valuemax='100')
 			.banner__inner
 				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full"/>')
@@ -27,13 +28,13 @@ block content
 				+vtex-controller('<vtex:contentPlaceHolder id="Banner Full Mobile" />')
 					.box-banner
 						a(href="")
-							img(src="/arquivos/banner-full-mbl.jpg")/
+							img(src="https://via.placeholder.com/750x869")/
 					.box-banner
 						a(href="")
-							img(src="/arquivos/banner-full-mbl.jpg")/
+							img(src="https://via.placeholder.com/750x869")/
 					.box-banner
 						a(href="")
-							img(src="/arquivos/banner-full-mbl.jpg")/
+							img(src="https://via.placeholder.com/750x869")/
 
 
 	section.section__page.section__shelf
@@ -51,6 +52,11 @@ block content
 
 	section.section__page.section__banner
 		.banner.banner__static
+			+vtex-controller('<vtex:contentPlaceHolder id="Banner Middle Page"/>')
+				.box-banner
+					a(href="")
+						img(src="/arquivos/banner-static.png")/
+		.banner.banner__static--mobile
 			+vtex-controller('<vtex:contentPlaceHolder id="Banner Middle Page"/>')
 				.box-banner
 					a(href="")
