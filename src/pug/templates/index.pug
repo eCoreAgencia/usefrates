@@ -49,6 +49,8 @@ block content
 							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
 								li
 									include ../shelves/prateleira
+			.section__page.viewmore
+				a("/category").viewmore__txt + Veja Mais
 
 	section.section__page.section__banner
 		.banner.banner__static
@@ -60,7 +62,7 @@ block content
 			+vtex-controller('<vtex:contentPlaceHolder id="Banner Middle Page"/>')
 				.box-banner
 					a(href="")
-						img(src="/arquivos/banner-static.png")/
+						img(src="/arquivos/banner-static-mobile.png")/
 
 	section.section__page.section__shelf
 		.container
@@ -74,6 +76,10 @@ block content
 							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
 								li
 									include ../shelves/prateleira
+			.section__page.viewmore
+				a("/category").viewmore__txt + Veja Mais
+
+
 
 
 

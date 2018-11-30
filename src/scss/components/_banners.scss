@@ -130,4 +130,16 @@
 			width: 100%;
 		}
 	}
+	&__static {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+	}
+	&__static--mobile {
+		display: block;
+		@include atMedium {
+			display: none;
+		}
+	}
 }

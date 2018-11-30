@@ -6,6 +6,9 @@
 		}
 	}
 	&__shelf {
-		margin-bottom: 80px;
+		margin-bottom: 25px;
+		@include atMedium {
+			margin-bottom: 80px;
+		}
 	}
 }

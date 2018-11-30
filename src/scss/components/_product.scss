@@ -2,10 +2,16 @@
 	&--shelf {
 		display: grid;
 		max-width: 283px;
-		margin: 0 auto;
+		margin: 0 6px;
+		@include atMedium {
+			margin: 0 auto;
+		}
 	}
 	&__name {
-		margin: 15px auto 8px auto;
+		margin: 0;
+		@include atMedium {
+			margin: 15px auto 8px auto;
+		}
 	}
 	&__media {
 		position: relative;
@@ -18,19 +24,27 @@
 		font-weight: bold;
 		@extend %display-flex;
 		@extend %flex-justify-content-center;
+		text-align: center;
 	}
 	&__info {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 0.7fr 1fr;
+		@include atMedium {
+			grid-template-rows: 1fr 1fr;
+		}
 	}
 	&__button {
-		position: absolute;
-		bottom: -17%;
 		width: 100%;
 		padding: 10px;
 		background-color: rgba(255, 255, 255, 0.705);
-		opacity: 0;
+		bottom: 0;
+		opacity: 1;
+		@include atMedium {
+			position: absolute;
+			opacity: 0;
+			bottom: -17%;
+		}
 		// transition: all 0.4s ease;
 		.product--shelf:hover & {
 			bottom: 0;
@@ -64,14 +78,27 @@
 		@extend %text-transform-uppercase;
 		color: #80754e;
 		padding: 0 5px;
+		@include font-size(15px);
+		@include atSmall {
+			@include font-size(12px);
+		}
+		@include atMedium {
+			@include font-size(16px);
+		}
 	}
 	&__installment {
 		@extend %text-transform-uppercase;
 		color: #817e7a;
-		@include font-size(16px);
+		@include font-size(15px);
 		font-weight: bold;
 		border-left: 1px solid $c-simple-black;
 		padding: 0 5px;
+		@include atSmall {
+			@include font-size(12px);
+		}
+		@include atMedium {
+			@include font-size(16px);
+		}
 	}
 	@keyframes buyAnimation {
 		0% {

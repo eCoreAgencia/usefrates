@@ -1,18 +1,28 @@
 .newsletter {
 	&__form {
 		@extend %display-flex;
+		flex-direction: column;
+		@include atMedium {
+			flex-direction: row;
+		}
 	}
 	&__input {
 		flex: 1;
 		background: transparent;
 		border-width: 0 0 1px 0;
 		border-color: $c-primary;
-		margin-right: 30px;
+		margin: 0 30px;
+		text-align: center;
+		margin: 20px 0;
 		&::placeholder {
 			color: $c-primary;
 			font-family: 'Open Sans';
 			font-style: italic;
 			@include font-size(15px);
+		}
+		@include atMedium {
+			margin: 0 30px 0 0;
+			text-align: left;
 		}
 	}
 	&__button {
@@ -21,5 +31,9 @@
 		color: $c-white;
 		@include font-size(20px);
 		font-weight: 500;
+		margin: 0 30px;
+		@include atMedium {
+			margin: initial;
+		}
 	}
 }
