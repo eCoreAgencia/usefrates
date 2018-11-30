@@ -1,0 +1,88 @@
+body.catalog {
+    .filter {
+        &__content {
+            display: none;
+        }
+
+        &__inner {
+            .menu-navegue {
+                display: none;
+            }
+            .navigation-tabs {
+                .search-multiple-navigator {
+                    display: flex !important;
+                    justify-content: space-between;
+                    h3, h4, >a {
+                        display: none;
+                    }
+                    fieldset {
+                        display: flex;
+                        border: none;
+                        width: 210px;
+                        padding: 10px 10px 20px 10px;
+                        margin-right: 20px;
+                        h5 {
+                            margin-bottom: 10px;
+                            margin-top: 10px;
+                        }
+
+                        div {
+                            label {
+                                cursor: pointer;
+                                input {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        &.filtro_cor {
+                            div {
+                                margin-top: -17px;
+                                label {
+                                    border: 1px solid #ccc;
+                                    display: inline-block;
+                                    width: 20px;
+                                    height: 20px;
+                                    text-align: center;
+                                    margin-right: 8px;
+                                    font-size: 0px;
+                                    margin-bottom: -4px;
+                                    &.sr_selected {
+                                        border: 1px solid #81754f;
+                                    }
+                                    &:hover {
+                                        border: 1px solid #81754f;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.filtro_tamanho {
+                            div {
+                                label {
+                                    border: 1px solid #ccc;
+                                    display: inline-block;
+                                    width: 38px;
+                                    height: 38px;
+                                    text-align: center;
+                                    padding: 10px 0;
+                                    font-size: 12px;
+                                    margin-right: 6px;
+                                    margin-bottom: 10px;
+                                    &.sr_selected {
+                                        background: #81754f;
+                                        color: #fff;
+                                    }
+                                    &:hover {
+                                        background: #81754f;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
