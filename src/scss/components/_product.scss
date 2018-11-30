@@ -73,14 +73,18 @@
 		flex-basis: 100%;
 		text-align: center;
 		margin-bottom: 5px;
+		@include font-size(13px);
+		@include atMedium {
+			@include font-size(16px);
+		}
 	}
 	&__best {
 		@extend %text-transform-uppercase;
 		color: #80754e;
 		padding: 0 5px;
-		@include font-size(15px);
+		@include font-size(12px);
 		@include atSmall {
-			@include font-size(12px);
+			@include font-size(15px);
 		}
 		@include atMedium {
 			@include font-size(16px);
@@ -89,12 +93,12 @@
 	&__installment {
 		@extend %text-transform-uppercase;
 		color: #817e7a;
-		@include font-size(15px);
+		@include font-size(12px);
 		font-weight: bold;
 		border-left: 1px solid $c-simple-black;
 		padding: 0 5px;
 		@include atSmall {
-			@include font-size(12px);
+			@include font-size(15px);
 		}
 		@include atMedium {
 			@include font-size(16px);

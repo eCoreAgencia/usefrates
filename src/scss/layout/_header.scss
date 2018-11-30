@@ -1,20 +1,83 @@
-.header {
+// HOME HEADER 	HAS HOVER EFFECTS THAT OTHER PAGES DON`T
+body.home .header {
 	@include atMedium {
-		z-index: 1;
-		width: 100%;
-		position: absolute;
 		background-image: linear-gradient(to top, transparent 0, rgba(0, 0, 0, 0.6) 100%);
+		position: absolute;
 	}
 	.bg-blue,
 	.bg-white {
 		background-color: transparent;
 		transition: all 0.5s ease-out;
 	}
+	.menu-txt-color {
+		color: $c-white;
+	}
+	.icon-color {
+		use {
+			fill: $c-white;
+			transition: all 0.5s ease;
+		}
+	}
+	.input-color {
+		border-color: $c-white;
+		&::placeholder {
+			color: $c-white;
+		}
+	}
+	.lupa-color {
+		use {
+			fill: $c-white;
+			transition: all 0.5s ease;
+		}
+	}
+	&:hover {
+		@include atMedium {
+			.bg-blue {
+				background-color: $c-blue;
+				transition: all 0.5s ease;
+			}
+			.bg-white {
+				background-color: $c-white;
+				transition: all 0.5s ease;
+			}
+			.menu-txt-color {
+				color: $c-primary;
+				transition: all 0.5s ease;
+			}
+			.icon-color {
+				use {
+					fill: $c-primary;
+					transition: all 0.5s ease;
+				}
+			}
+
+			.lupa-color {
+				use {
+					fill: $c-primary;
+					transition: all 0.5s ease;
+				}
+			}
+			.input-color {
+				border-color: $c-primary;
+				&::placeholder {
+					color: #b4b4b4;
+				}
+			}
+		}
+	}
+}
+.header {
+	@include atMedium {
+		z-index: 1;
+		width: 100%;
+		position: static;
+	}
+
 	&__wrapper {
 		display: grid;
-		grid-template-columns: 1fr 2fr 0.5fr 0.5fr;
+		grid-template-columns: 60px 60px 2fr 60px 60px;
 		grid-template-rows: 1fr 1px;
-		grid-template-areas: 'menu logo searchico carrinho' 'divisor divisor divisor divisor';
+		grid-template-areas: 'menu blank logo searchico carrinho' 'divisor divisor divisor divisor divisor';
 		align-items: center;
 		@include atMedium {
 			grid-template-columns: max-content 1fr 0.5fr;
@@ -176,130 +239,126 @@
 			background-color: $c-white;
 		}
 	}
-	&:hover {
-		@include atMedium {
-			.bg-blue {
-				background-color: $c-blue;
-				transition: all 0.5s ease;
-			}
-			.bg-white {
-				background-color: $c-white;
-				transition: all 0.5s ease;
-			}
-			.menu-txt-color {
-				color: $c-primary;
-				transition: all 0.5s ease;
-			}
-			.icon-color {
-				use {
-					fill: $c-primary;
-					transition: all 0.5s ease;
-				}
-			}
 
-			.lupa-color {
-				use {
-					fill: $c-primary;
-					transition: all 0.5s ease;
-				}
+	@include atMedium {
+		.bg-blue {
+			background-color: $c-blue;
+		}
+		.bg-white {
+			background-color: $c-white;
+		}
+		.menu-txt-color {
+			color: $c-primary;
+		}
+		.icon-color {
+			use {
+				fill: $c-primary;
 			}
-			.input-color {
-				border-color: $c-primary;
-				&::placeholder {
-					color: #b4b4b4;
-				}
+		}
+
+		.lupa-color {
+			use {
+				fill: $c-primary;
+			}
+		}
+		.input-color {
+			border-color: $c-primary;
+			&::placeholder {
+				color: #b4b4b4;
 			}
 		}
 	}
-}
 
-.tipbar {
-	display: flex;
-	@extend %flex-justify-content-space-between;
-	height: 45px;
-	position: relative;
-	&__left {
-		@extend %display-flex;
-		flex-basis: 60%;
+	.tipbar {
+		display: flex;
 		@extend %flex-justify-content-space-between;
-		@extend %flex-align-items-center;
-	}
-	&__right {
-		@extend %display-flex;
-		@extend %flex-justify-content-space-between;
-		@extend %flex-align-items-center;
-		flex-basis: 20%;
-	}
-	&__link {
-		@extend %display-flex;
-		@extend %flex-align-items-center;
-		@include font-size(15px);
-		color: $c-white;
+		height: 45px;
 		position: relative;
-	}
-	svg {
-		margin-right: 10px;
-		align-self: center;
-	}
-	&__floating-tip {
-		@extend %display-flex;
-		@extend %flex-align-items-center;
-		@extend %flex-direction-column;
-		position: absolute;
-		display: none;
-		background-color: $c-primary;
-		color: $c-blue;
-		top: 30px;
-		right: 50%;
-		transform: translateX(50%);
-		z-index: 12;
-		@include font-size(16px);
-		padding: 15px;
-		min-width: 280px;
-		border-radius: 20px;
-		:hover > & {
-			display: block;
+		&__left {
+			@extend %display-flex;
+			flex-basis: 60%;
+			@extend %flex-justify-content-space-between;
+			@extend %flex-align-items-center;
 		}
-		&::before {
-			content: '';
-			width: 0;
-			height: 0;
-			border-bottom: 10px solid $c-primary;
-			border-top: 10px solid transparent;
-			border-right: 10px solid transparent;
-			border-left: 10px solid transparent;
-			position: absolute;
-			top: -20px;
-			right: 50%;
+		&__right {
+			@extend %display-flex;
+			@extend %flex-justify-content-space-between;
+			@extend %flex-align-items-center;
+			flex-basis: 20%;
 		}
-	}
-	&__mobile {
-		background-color: $c-blue;
-		color: white;
-		@include atMedium {
-			display: none;
+		&__link {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			@include font-size(15px);
+			color: $c-white;
+			position: relative;
 		}
-	}
-	&__mobile-ico {
+		&__link:hover {
+			> .tipbar__floating-tip {
+				display: block;
+			}
+		}
 		svg {
-			width: 30px;
-			height: 30px;
+			margin-right: 10px;
+			align-self: center;
 		}
-	}
-	&__mobile-wrapper {
-		@extend %display-flex;
-		@extend %flex-justify-content-space-between;
-		@extend %flex-align-items-center;
-		padding: 0 10px;
-	}
-	&__mobile-text {
-		margin: 0;
-		padding: 16px 9px;
-		font-size: 11px;
-	}
-	&__mobile-ico {
-		@extend %display-flex;
-		@extend %flex-justify-content-center;
-		@extend %flex-align-items-center;
+		&__floating-tip {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			@extend %flex-direction-column;
+			position: absolute;
+			display: none;
+			background-color: $c-primary;
+			color: $c-blue;
+			top: 30px;
+			right: 50%;
+			transform: translateX(50%);
+			z-index: 12;
+			@include font-size(16px);
+			padding: 15px;
+			min-width: 280px;
+			border-radius: 20px;
+			&::before {
+				content: '';
+				width: 0;
+				height: 0;
+				border-bottom: 10px solid $c-primary;
+				border-top: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-left: 10px solid transparent;
+				position: absolute;
+				top: -20px;
+				right: 50%;
+			}
+		}
+		&__mobile {
+			background-color: $c-blue;
+			color: white;
+			@include atMedium {
+				display: none;
+			}
+		}
+		&__mobile-ico {
+			svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+		&__mobile-wrapper {
+			@extend %display-flex;
+			@extend %flex-justify-content-space-between;
+			@extend %flex-align-items-center;
+			padding: 0 10px;
+		}
+		&__mobile-text {
+			margin: 0;
+			padding: 16px 9px;
+			font-size: 11px;
+		}
+		&__mobile-ico {
+			@extend %display-flex;
+			@extend %flex-justify-content-center;
+			@extend %flex-align-items-center;
+		}
 	}
 }
