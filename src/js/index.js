@@ -1,6 +1,7 @@
 import '../scss/main.scss';
 import './pages/global';
 import './pages/home';
+import './pages/header';
 import './pages/catalog';
 import './pages/empty-search';
 import './pages/login';

@@ -77,6 +77,10 @@
 	&__social-list {
 		@extend %display-flex;
 		@extend %flex-justify-content-space-between;
+		padding: 0 40px;
+		@include atMedium {
+			padding: 0;
+		}
 	}
 	&__revenda,
 	&__social {
@@ -134,7 +138,7 @@
 	}
 }
 .border-bottom {
-	border-bottom: 1px solid $c-primary;
+	border-bottom: 1.4px solid #ccc;
 	@include atMedium {
 		border: 0;
 	}

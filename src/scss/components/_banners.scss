@@ -100,7 +100,9 @@
 		}
 		.banner__button {
 			position: absolute;
-			z-index: 20;
+			z-index: 4;
+			width: 40px;
+			height: 40px;
 		}
 		.banner__button.slick-prev {
 			top: 0;

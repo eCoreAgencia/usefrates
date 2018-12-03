@@ -22,10 +22,5 @@ $(document).ready(() => {
 		});
 	}
 
-	$('.header__lupa-mobile').on('click', function(e) {
-		e.preventDefault();
-		$('.header__wrapper').toggleClass('search-active');
-	});
-
 	$('.newsletter__form').sendForm('NL');
 });

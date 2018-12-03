@@ -47,11 +47,25 @@ header.header
 					ul.menu__list
 						li.menu__item
 							a.menu__link.menu-txt-color(href="http://") Camisas
+								i.menu__link-arrow
+									include ../../svg/arrow-menu.svg
 							include ../vtexParts/dropdown
 						li.menu__item
 							a.menu__link.menu-txt-color(href="http://") Polos
+								i.menu__link-arrow
+									include ../../svg/arrow-menu.svg
 						li.menu__item
 							a.menu__link.menu-txt-color(href="http://") Camisetas
+								i.menu__link-arrow
+									include ../../svg/arrow-menu.svg
+						li.menu__account
+							a(href="/account")
+								include ../../svg/conta-tipbar.svg
+								| Minha Conta
+						li.menu__revenda
+							a(href="/account")
+								include ../../svg/revenda-icon.svg
+								| Seja um revendedor
 				span.divisor
 				.search-form
 					input.search-form__input.input-color(placeholder="Encontre um produto")
