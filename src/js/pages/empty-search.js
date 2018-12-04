@@ -1,8 +1,8 @@
 $(document).ready(() => {
 	if ($('body').hasClass('empty-search')) {
-		let word = decodeURI(window.location.search);
-		word = word.replace('?ft=', '');
-		$('.empty-search__term-result').text(word);
+		// let word = decodeURI(window.location.search);
+		// word = word.replace('?ft=', '');
+		// $('.empty-search__term-result').text('"' + word + '"');
 	}
 });
 

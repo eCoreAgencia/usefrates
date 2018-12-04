@@ -1,0 +1,25 @@
+.empty-search {
+	&__term-result {
+		font-weight: bold;
+		color: $c-primary;
+		margin-left: 5px;
+	}
+	&__ico {
+		svg {
+			width: 70px;
+			height: 70px;
+			use {
+				fill: #9e9d9e;
+			}
+		}
+	}
+	&__title {
+		font-weight: 400;
+		@include font-size(16px);
+		padding: 0 30px;
+	}
+	&__tip {
+		@include font-size(12px);
+		color: #757575;
+	}
+}

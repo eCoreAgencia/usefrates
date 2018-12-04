@@ -199,6 +199,9 @@ body.menu-active {
 			@include font-size(14px);
 			padding: 0;
 			border: none;
+			&:hover {
+				color: $c-primary;
+			}
 		}
 	}
 }

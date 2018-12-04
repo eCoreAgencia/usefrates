@@ -11,4 +11,17 @@
 			margin-bottom: 80px;
 		}
 	}
+	&__search-term {
+		@extend %display-flex;
+		background-color: #efeeee;
+		padding: 0 10px;
+		border-bottom: 1px solid #c9c9c9;
+	}
+	&__search-body {
+		@extend %display-flex;
+		@extend %flex-direction-column;
+		@extend %flex-align-items-center;
+		@extend %text-align-center;
+		padding: 40px 10px;
+	}
 }

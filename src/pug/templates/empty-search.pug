@@ -7,9 +7,9 @@ block vars
 block content
 	section.section__search-term
 		p.empty-search__term-title
-			| Busca por:
+			| <em>Busca por: </em>
 		p.empty-search__term-result
-			| asdnbakdasnkdj
+			|  "asdnbakdasnkdj"
 	section.section__search-body
 		i.empty-search__ico
 			include ../../svg/lupa-search.svg
@@ -20,7 +20,7 @@ block content
 	section.section__page.section__shelf
 		.container
 			h2.shelf__title
-				| Produtos em Destaque
+				| Confira as Novidades
 				include ../../svg/decor.svg
 			.shelf.shelf__carousel--full
 				+vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades"/>')
