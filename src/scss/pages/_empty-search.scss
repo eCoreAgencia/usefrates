@@ -3,6 +3,9 @@
 		font-weight: bold;
 		color: $c-primary;
 		margin-left: 5px;
+		@include atMedium {
+			margin: 0;
+		}
 	}
 	&__ico {
 		svg {
@@ -12,11 +15,35 @@
 				fill: #9e9d9e;
 			}
 		}
+		@include atMedium {
+			position: absolute;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			z-index: -1;
+			svg {
+				width: 100px;
+				height: 100px;
+				use {
+					fill: #e0e0e0;
+				}
+			}
+		}
 	}
 	&__title {
 		font-weight: 400;
 		@include font-size(16px);
 		padding: 0 30px;
+		@include atMedium {
+			display: none;
+		}
+		&--desk {
+			display: none;
+			@include atMedium {
+				display: block;
+				margin-bottom: 5px;
+			}
+		}
 	}
 	&__tip {
 		@include font-size(12px);

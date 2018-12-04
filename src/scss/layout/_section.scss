@@ -16,6 +16,9 @@
 		background-color: #efeeee;
 		padding: 0 10px;
 		border-bottom: 1px solid #c9c9c9;
+		@include atMedium {
+			display: none;
+		}
 	}
 	&__search-body {
 		@extend %display-flex;
@@ -23,5 +26,18 @@
 		@extend %flex-align-items-center;
 		@extend %text-align-center;
 		padding: 40px 10px;
+		.empty-search__term-result {
+			display: none;
+		}
+	}
+	&__search-body--desktop {
+		@include atMedium {
+			background-color: #efeeee;
+			position: relative;
+			z-index: 0;
+			.empty-search__term-result {
+				display: inline-flex;
+			}
+		}
 	}
 }
