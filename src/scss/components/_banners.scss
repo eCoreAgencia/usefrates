@@ -6,7 +6,7 @@
 			display: block;
 		}
 		.slide-count-wrap {
-			width: 400px;
+			width: 300px;
 			height: 100px;
 			position: absolute;
 			right: 25px;
@@ -59,16 +59,53 @@
 		}
 		.banner__button.slick-prev {
 			bottom: 94px;
-			right: 140px;
+			right: 92px;
+			svg {
+				display: none;
+			}
+
+			&::after {
+				content: '';
+				width: 12px;
+				height: 12px;
+				border: solid rgba(255, 255, 255, 0.705);
+				border-width: 6px 0 0 6px;
+				display: inline-flex;
+				transform: rotate(-45deg);
+			}
+			&:hover {
+				&:after {
+					border-top: 6px solid rgba(255, 255, 255, 0.905);
+					border-left: 6px solid rgba(255, 255, 255, 0.905);
+				}
+			}
 		}
 		.banner__button.slick-next {
-			transform: rotate(180deg);
 			bottom: 94px;
-			right: 80px;
-			&:after {
-				content: '|';
-				color: white;
-				margin-left: 10px;
+			right: 32px;
+			svg {
+				display: none;
+			}
+			&:before {
+				content: '';
+				width: 20px;
+				height: 20px;
+				border-left: 2px solid rgba(255, 255, 255, 0.705);
+			}
+			&::after {
+				content: '';
+				width: 12px;
+				height: 12px;
+				border: solid rgba(255, 255, 255, 0.705);
+				border-width: 6px 6px 0 0;
+				display: inline-flex;
+				transform: rotate(45deg);
+			}
+			&:hover {
+				&:after {
+					border-top: 6px solid rgba(255, 255, 255, 0.905);
+					border-right: 6px solid rgba(255, 255, 255, 0.905);
+				}
 			}
 		}
 	}
@@ -89,8 +126,8 @@
 		}
 		.slick-dots li {
 			margin: 0 3px;
-			width: 15px;
-			height: 15px;
+			width: 13px;
+			height: 13px;
 			border-radius: 50%;
 			font-size: 0;
 			background: rgba(255, 255, 255, 0.637);

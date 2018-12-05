@@ -1,3 +1,61 @@
+// PAGE AND PRODUCT COMPONENT PLACEHOLDERS
+
+%product {
+	&__info {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.7fr 1fr;
+	}
+	&__link {
+		@extend %text-transform-uppercase;
+		color: $c-simple-black;
+		@include font-size(13px);
+		font-size: 13px;
+		font-weight: bold;
+		@extend %display-flex;
+		@extend %flex-justify-content-center;
+		text-align: center;
+	}
+}
+
+// PRICING PLACEHOLDERS
+
+%price {
+	font-weight: 400;
+	@extend %display-flex;
+	flex-wrap: wrap;
+	@extend %flex-justify-content-center;
+	&__list {
+		@extend %text-transform-uppercase;
+		color: #757575;
+		@include font-size(20px);
+		padding: 0 5px;
+	}
+	&__list--line {
+		text-decoration: line-through;
+		flex-basis: 100%;
+		text-align: center;
+		margin-bottom: 5px;
+		@include font-size(13px);
+	}
+	&__best {
+		@extend %text-transform-uppercase;
+		color: #80754e;
+		padding: 0 5px;
+		@include font-size(12px);
+	}
+	&__installment {
+		@extend %text-transform-uppercase;
+		color: #817e7a;
+		@include font-size(12px);
+		font-weight: bold;
+		border-left: 1px solid $c-simple-black;
+		padding: 0 5px;
+	}
+}
+
+// PRODUCT COMPONENT
+
 .product {
 	&--shelf {
 		display: grid;
@@ -17,23 +75,15 @@
 		position: relative;
 	}
 	&__link {
-		@extend %text-transform-uppercase;
-		color: $c-simple-black;
-		@include font-size(13px);
-		font-size: 13px;
-		font-weight: bold;
-		@extend %display-flex;
-		@extend %flex-justify-content-center;
-		text-align: center;
+		@extend %product__link;
 	}
 	&__info {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 0.7fr 1fr;
+		@extend %product__info;
 		@include atMedium {
 			grid-template-rows: 1fr 1fr;
 		}
 	}
+
 	&__button {
 		width: 100%;
 		padding: 10px;
@@ -56,54 +106,8 @@
 		width: 100%;
 		height: 100%;
 	}
-}
-.price {
-	font-weight: 400;
-	@extend %display-flex;
-	flex-wrap: wrap;
-	@extend %flex-justify-content-center;
-	&__list {
-		@extend %text-transform-uppercase;
-		color: #757575;
-		@include font-size(20px);
-		padding: 0 5px;
-	}
-	&__list--line {
-		text-decoration: line-through;
-		flex-basis: 100%;
-		text-align: center;
-		margin-bottom: 5px;
-		@include font-size(13px);
-		@include atMedium {
-			@include font-size(16px);
-		}
-	}
-	&__best {
-		@extend %text-transform-uppercase;
-		color: #80754e;
-		padding: 0 5px;
-		@include font-size(12px);
-		@include atSmall {
-			@include font-size(15px);
-		}
-		@include atMedium {
-			@include font-size(16px);
-		}
-	}
-	&__installment {
-		@extend %text-transform-uppercase;
-		color: #817e7a;
-		@include font-size(12px);
-		font-weight: bold;
-		border-left: 1px solid $c-simple-black;
-		padding: 0 5px;
-		@include atSmall {
-			@include font-size(15px);
-		}
-		@include atMedium {
-			@include font-size(16px);
-		}
-	}
+
+	//BUY BUTTON ANIMATION
 	@keyframes buyAnimation {
 		0% {
 			bottom: -17%;
@@ -128,6 +132,38 @@
 		100% {
 			bottom: 0;
 			opacity: 1;
+		}
+	}
+}
+// PRICING
+
+.price {
+	@extend %price;
+	&__list {
+		@extend %price__list;
+	}
+	&__list--line {
+		@extend %price__list--line;
+		@include atMedium {
+			@include font-size(16px);
+		}
+	}
+	&__best {
+		@extend %price__best;
+		@include atSmall {
+			@include font-size(15px);
+		}
+		@include atMedium {
+			@include font-size(16px);
+		}
+	}
+	&__installment {
+		@extend %price__installment;
+		@include atSmall {
+			@include font-size(15px);
+		}
+		@include atMedium {
+			@include font-size(16px);
 		}
 	}
 }

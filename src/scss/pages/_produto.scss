@@ -1,25 +1,83 @@
 .product {
-    .section__page {
-        margin: 0;
-    }
+	.section__page {
+		margin: 0;
+	}
 
-    .section__product-bottom, .section__shelf {
-        max-width: 600px;
-    }
+	&__main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 5%;
+		h1 {
+			margin: 0;
+		}
+		.product__group {
+			@extend %display-flex;
+		}
+		.product__info {
+			@extend %display-flex;
+			@extend %flex-direction-column;
+		}
+		#show {
+			display: grid;
+			grid-template-columns: 0.2fr 1fr;
+			grid-template-areas: 'thumbs mainImg';
+			grid-gap: 10px;
+		}
+		#include {
+			order: 1;
+			grid-area: mainImg;
+		}
+		.thumbs {
+			order: 0;
+			grid-area: thumbs;
+		}
 
-    .section__shelf {
-        padding-top: 20px;
+		.productName {
+			@include font-size(22px);
+			margin: 0;
+		}
+		.valor-de {
+			@extend %price__list--line;
+			text-align: left;
+			font-size: 0px;
+			color: #a8a198;
+			.skuListPrice {
+				@include font-size(16px);
+			}
+		}
+		.price {
+			@extend %flex-justify-content-flex-start;
+		}
 
-        .prateleira > h2 {
-            @extend %display-none;
-        }
-    }
-
-    .section__shelf .section__title {
-        @extend %flex-justify-content-flex-start;
-    }
-
-    .sku-selector-container {
-        @extend %display-none;
-    }
+		.descricao-preco {
+			margin: 0;
+		}
+		.valor-por {
+			font-size: 0px;
+			.skuBestPrice {
+				@include font-size(38px);
+				font-weight: 300;
+				font-style: normal;
+			}
+		}
+		.skuBestInstallmentNumber {
+			&:after {
+				content: ' sem juros ';
+				display: inline;
+			}
+		}
+		.valor-dividido {
+			color: #757575;
+			@include font-size(12px);
+			font-weight: 400;
+		}
+		.preco-a-vista {
+			display: none !important;
+		}
+		.product__skus {
+			li.specification {
+				display: none;
+			}
+		}
+	}
 }
