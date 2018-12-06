@@ -4,28 +4,87 @@
 	}
 
 	&__main {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 5%;
+		@include atMedium {
+			display: grid;
+			grid-template-columns: max-content min-content 0.2fr;
+			grid-gap: 10%;
+			padding-left: 5%;
+		}
+
 		h1 {
 			margin: 0;
 		}
 		.product__group {
 			@extend %display-flex;
+			@extend %flex-justify-content-flex-start;
+		}
+		.product__qtd {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			flex: 1;
+			&-title {
+				color: #000000;
+				@include font-size(13px);
+				margin-right: 20px;
+			}
+			&-wrapper {
+				border: 1px solid #757575;
+				@extend %display-flex;
+				height: 100%;
+			}
+			&-value {
+				width: 30px;
+				text-align: center;
+				border: 0;
+			}
+			.button {
+				border: 0;
+				width: 30px;
+				font-weight: bold;
+				color: #757575;
+			}
 		}
 		.product__info {
 			@extend %display-flex;
 			@extend %flex-direction-column;
 		}
+
+		.product__price {
+			margin: 10px 0 20px 0;
+		}
+
+		.product__action {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			margin: 30px 0;
+		}
+
+		.buy-button {
+			background-color: $c-blue;
+			color: white;
+			@extend %display-flex;
+			flex: 1;
+			padding: 15px;
+			text-align: center;
+			font-size: 15px;
+			text-transform: uppercase;
+		}
+
 		#show {
-			display: grid;
-			grid-template-columns: 0.2fr 1fr;
-			grid-template-areas: 'thumbs mainImg';
-			grid-gap: 10px;
+			@include atMedium {
+				display: grid;
+				grid-template-columns: 0.2fr 1fr;
+				grid-template-areas: 'thumbs mainImg';
+				grid-gap: 10px;
+			}
 		}
 		#include {
-			order: 1;
-			grid-area: mainImg;
+			display: none;
+			@include atMedium {
+				display: block;
+				order: 1;
+				grid-area: mainImg;
+			}
 		}
 		.thumbs {
 			order: 0;
@@ -41,6 +100,7 @@
 			text-align: left;
 			font-size: 0px;
 			color: #a8a198;
+			margin: 0;
 			.skuListPrice {
 				@include font-size(16px);
 			}
@@ -70,14 +130,109 @@
 			color: #757575;
 			@include font-size(12px);
 			font-weight: 400;
+			font-style: normal;
 		}
 		.preco-a-vista {
 			display: none !important;
 		}
 		.product__skus {
+			border-right: 1px solid black;
+			flex-basis: 40%;
+			margin-right: 15px;
 			li.specification {
 				display: none;
 			}
+		}
+		.product__sizes {
+			@extend %display-flex;
+			flex: 1;
+			@extend %flex-justify-content-center;
+		}
+		.product__sizes-link {
+			background-image: url('/arquivos/medidas-logo.png');
+			background-repeat: no-repeat;
+			display: block;
+			width: 45px;
+			height: 45px;
+			cursor: pointer;
+		}
+		.select.skuList {
+			span {
+				@extend %display-flex;
+				@extend %flex-align-items-center;
+			}
+			input {
+				display: none;
+				&.checked {
+					+ label {
+						background-color: $c-primary;
+						color: $c-white;
+					}
+				}
+			}
+			label {
+				@extend %display-flex;
+				@extend %flex-justify-content-center;
+				@extend %flex-align-items-center;
+				width: 38px;
+				height: 38px;
+				border: 1px solid #bdbdbd;
+				flex-shrink: 0;
+				margin-right: 20px;
+			}
+		}
+		.product__shipping {
+			@extend %display-flex;
+			flex-basis: 80%;
+			border-right: 1px solid black;
+		}
+		.product__shipping-ico {
+			margin-right: 30px;
+		}
+		.shipping__info {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+		}
+		.shipping__input {
+			border: 1px solid #bdbdbd;
+			padding-left: 10px;
+		}
+		.shipping__txt {
+			margin: 0;
+			color: #757575;
+			@include font-size(10px);
+			margin-right: 20px;
+		}
+		.shipping__link {
+			color: #80754e;
+			@include font-size(10px);
+			font-weight: bold;
+		}
+		.section__title__txt {
+			color: #212121;
+			@include font-size(15px);
+			font-weight: bold;
+			border-bottom: 1px solid #bdbdbd;
+			padding: 10px 0;
+			@extend %display-flex;
+			@extend %flex-justify-content-space-between;
+		}
+		.productReference {
+			color: #757575;
+			@include font-size(10px);
+			&:before {
+				content: 'ref:';
+				display: inline-block;
+				margin-right: 5px;
+				text-transform: uppercase;
+			}
+		}
+		.section__product-description {
+			margin-top: 40px;
+		}
+		.product__description-text {
+			color: #757575;
+			@include font-size(15px);
 		}
 	}
 }

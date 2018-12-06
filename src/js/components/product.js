@@ -35,11 +35,6 @@ class Product {
 			self.changeQuantity(-1);
 		});
 
-		$('.btn--buy').on('click', function() {
-			$(this).addClass('running');
-			self.buyProduct();
-		});
-
 		$('.image-zoom').on('click', function(e) {
 			e.preventDefault();
 			$('.product__zoom').addClass('is-active');
@@ -48,6 +43,25 @@ class Product {
 		$('.product__zoom .btn--close').on('click', function(e) {
 			e.preventDefault();
 			$('.product__zoom').removeClass('is-active');
+		});
+
+		$('.buy-button.buy-button-ref').on('click', function(e) {
+			e.preventDefault();
+			var sku = $(this)
+				.attr('href')
+				.split('sku=')[1]
+				.split('&qty')[0];
+			var qty = 3;
+
+			var item = {
+				id: sku,
+				quantity: qty,
+				seller: '1'
+			};
+
+			vtexjs.checkout.addToCart([item], null).done(function(orderForm) {
+				console.log(orderForm);
+			});
 		});
 	}
 	simulateShipping() {
@@ -87,25 +101,6 @@ class Product {
 		$(window).trigger('skuSelectorCreated');
 	}
 
-	createSkuSelect(dimensions) {
-		return dimensions
-			.map(dimension => `<option value="${dimension}">${dimension}</option>`)
-			.join('');
-	}
-
-	createSkuThumb(dimensions) {
-		return dimensions
-			.map(
-				dimension =>
-					`<li><label for="${slugify(
-						dimension
-					)}">${dimension}</label><input type="radio" id="${slugify(
-						dimension
-					)}" name="Cor" value="${dimension}"></li>`
-			)
-			.join('');
-	}
-
 	renderFormNotifyMe() {
 		const html = `<div class="product__unavailable">
 			<span class="product__unavailable-title"> PRODUTO INDISPONÍVEL</span>
@@ -127,35 +122,6 @@ class Product {
 		$('.product__action').hide();
 
 		$('.product__skus').html(html);
-	}
-
-	getSkuId() {
-		let self = this;
-		return this.product.skus.filter(sku => {
-			if (
-				sku.dimensions.Cor == self.variations.Cor &&
-				sku.dimensions.Tamanho == self.variations.Tamanho
-			) {
-				return sku;
-			}
-		});
-	}
-	buyProduct() {
-		let self = this;
-		console.log(self.variations);
-
-		if (self.getSkuSelected()) {
-			const sku = self.getSkuId();
-			const qtd = parseInt($('.product__qtd-value').val());
-			if (sku[0]) {
-				console.log(sku[0]);
-				addToCart(sku[0].sku, qtd);
-			} else {
-				alert('Produto não disponível');
-			}
-		} else {
-			$('.btn--buy').removeClass('running');
-		}
 	}
 
 	makeZoom() {

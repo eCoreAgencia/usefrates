@@ -26,7 +26,7 @@ block content
 							include ../vtexParts/vtexProductImages.pug
 
 				.product__info
-					+vtex-controller('<vtex.cmc:productName />')
+					+vtex-controller('<vtex.cmc:productName/>')
 						h1
 							.fn.productName.Mandril-1-2--com-Chave-Black-Decker CAMISA BÁSICA PRETA
 								input#___rc-p-id(type='hidden', value='125')
@@ -41,10 +41,10 @@ block content
 										p.descricao-preco
 											em.valor-de.price-list-price(style='display: block;')
 												| De:
-												strong.skuListPrice R$ 24,99
+												strong.skuListPrice R$ 189,00
 											em.valor-por.price-best-price(style='display: block;')
 												| Por:
-												strong.skuBestPrice R$ 639,90
+												strong.skuBestPrice R$ 129,00
 											em.valor-dividido.price-installments(style='display: block;')
 												span
 													span
@@ -62,27 +62,31 @@ block content
 						.product__skus
 							+vtex-controller('<vtex.cmc:skuRichSelection changeImage="1" />')
 								.sku-selector-container.sku-selector-container-0
-									ul.topic.Tamanho.productid-4.numopt-1
+									ul.topic.Tamanho.productid-42999.numopt-6.col-md-8.col-xs-12
 										li.specification Tamanho
 										li.select.skuList.item-dimension-Tamanho
-											span.group_0
-												input#4_Tamanho_0.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_Xg.change-image.checked.sku-picked(type='radio', name='4_Tamanho', dimension='Tamanho', data-value='XG', data-dimension='Tamanho', value='XG', specification='Xg', checked='checked')
-												label.dimension-Tamanho.espec_0.skuespec_Xg.skuespec_Tamanho_opcao_XG.skuespec_Tamanho_opcao_Xg.checked.sku-picked(for='4_Tamanho_0') XG
-												input#4_Tamanho_0.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_Xg.change-image.checked.sku-picked(type='radio', name='4_Tamanho', dimension='Tamanho', data-value='XG', data-dimension='Tamanho', value='XG', specification='Xg', checked='checked')
-												label.dimension-Tamanho.espec_0.skuespec_Xg.skuespec_Tamanho_opcao_XG.skuespec_Tamanho_opcao_Xg.checked.sku-picked(for='4_Tamanho_0') XG
-												input#4_Tamanho_0.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_Xg.change-image.checked.sku-picked(type='radio', name='4_Tamanho', dimension='Tamanho', data-value='XG', data-dimension='Tamanho', value='XG', specification='Xg', checked='checked')
-												label.dimension-Tamanho.espec_0.skuespec_Xg.skuespec_Tamanho_opcao_XG.skuespec_Tamanho_opcao_Xg.checked.sku-picked(for='4_Tamanho_0') XG
-												input#4_Tamanho_0.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_Xg.change-image.checked.sku-picked(type='radio', name='4_Tamanho', dimension='Tamanho', data-value='XG', data-dimension='Tamanho', value='XG', specification='Xg', checked='checked')
-												label.dimension-Tamanho.espec_0.skuespec_Xg.skuespec_Tamanho_opcao_XG.skuespec_Tamanho_opcao_Xg.checked.sku-picked(for='4_Tamanho_0') XG
+											span.group_1
+												input#42999_Tamanho_1.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_P.change-image.checked.sku-picked(type='radio', name='42999_Tamanho', dimension='Tamanho', data-value='P', data-dimension='Tamanho', value='P', specification='P', checked='checked')
+												label.dimension-Tamanho.espec_1.skuespec_P.skuespec_Tamanho_opcao_P.skuespec_Tamanho_opcao_P(for='42999_Tamanho_1') P
+												input#42999_Tamanho_2.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_M.change-image(type='radio', name='42999_Tamanho', dimension='Tamanho', data-value='M', data-dimension='Tamanho', value='M', specification='M')
+												label.dimension-Tamanho.espec_1.skuespec_M.skuespec_Tamanho_opcao_M.skuespec_Tamanho_opcao_M(for='42999_Tamanho_2') M
+												input#42999_Tamanho_3.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_G.change-image(type='radio', name='42999_Tamanho', dimension='Tamanho', data-value='G', data-dimension='Tamanho', value='G', specification='G')
+												label.dimension-Tamanho.espec_1.skuespec_G.skuespec_Tamanho_opcao_G.skuespec_Tamanho_opcao_G(for='42999_Tamanho_3') G
+												input#42999_Tamanho_4.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_Gg.change-image(type='radio', name='42999_Tamanho', dimension='Tamanho', data-value='GG', data-dimension='Tamanho', value='GG', specification='Gg')
+												label.dimension-Tamanho.espec_1.skuespec_Gg.skuespec_Tamanho_opcao_GG.skuespec_Tamanho_opcao_Gg(for='42999_Tamanho_4') GG
 						.product__qtd
-							button.button.button--plus
-								//- include ../../svg/plus.svg
-							input.product__qtd-value(type="text" value="1")/
-							button.button.button--minus
-								//- include ../../svg/minus.svg
+							span.product__qtd-title Quantidade
+							.product__qtd-wrapper
+								button.button.button--minus
+									| -
+								input.product__qtd-value(type="text" value="1")/
+								button.button.button--plus
+									| +
+
 
 
 					.product__action
+						//- include ../../svg/carrinho-tipbar.svg
 						+vtex-controller('<vtex.cmc:BuyButton/>')
 							a.buy-button.buy-button-ref(target='_top', href="javascript:alert('Por favor, selecione o modelo desejado.');", style='display:block')
 								| Comprar
@@ -108,31 +112,45 @@ block content
 									fieldset.error(style='display: none')
 										label
 											span.sku-notifyme-error.notifyme-error
-
-					.product__shipping
-						.product__shipping-ico
-							include ../../svg/icon-truck.svg
-						.shipping
-							form.shipping__form
-								input.shipping__input(type='text', placeholder='Digite seu CEP para calcular o prazo e valor')/
-								button.button.shipping__button
-									| ok
-							a.shipping__link Não sei meu CEP
-							.shipping__result
+					.product__group
+						.product__shipping
+							.product__shipping-ico
+								include ../../svg/icon-truck.svg
+							.shipping
+								.shipping__info
+									p.shipping__txt calcular prazo e valor:
+									a(href="http://www.buscacep.correios.com.br/sistemas/buscacep/").shipping__link Não sei meu CEP
+								form.shipping__form
+									input.shipping__input(type='text', placeholder='CEP')/
+									button.button.shipping__button
+										| ok
+								.shipping__result
+						.product__sizes
+							a.product__sizes-link
 					section.section__page.section__product-description
 						.product__description
 							section.section__title
 								h2.section__title__txt Descrição
+									+vtex-controller('<vtex.cmc:productReference/>')
+										.productReference.l2545444 2545444
 							.product__description-text
 								+vtex-controller('<vtex.cmc:ProductDescription />')
 									p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint voluptates laudantium nesciunt veniam quae in error similique aliquid, magnam voluptas ex eum autem architecto? Consequatur unde animi quae aliquid deserunt.
+
+		section.section__buy-togheter
+			.container
+				h2.shelf__title
+					| Aproveite e compre junto
+					include ../../svg/decor.svg
+				+vtex-controller('<vtex.cmc:BuyTogether/>')
+
 		section.section__page.section__shelf
 				.container
 					h2.shelf__title
-						| Ofertas da Semana
+						| Quem Viu, Viu Também
 						include ../../svg/decor.svg
 					.shelf.shelf__carousel--full
-						+vtex-controller('<vtex:contentPlaceHolder id="Ofertas da Semana"/>')
+						+vtex-controller('<vtex:contentPlaceHolder id="Quem Viu"/>')
 							.prateleira
 								ul
 									each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -140,10 +158,5 @@ block content
 											include ../shelves/prateleira
 					.section__page.viewmore
 						a("/category").viewmore__txt + Veja Mais
-		.product__zoom
-			.product__zoom-thumbs
-			.product__zoom-image
-			button.btn.btn--close
-				i.icon-close
 block scripts
 	script(src='/arquivos/ec-easyzoom.js')
