@@ -47,13 +47,14 @@ class Product {
 
 		$('.buy-button.buy-button-ref').on('click', function(e) {
 			e.preventDefault();
-			var sku = $(this)
+			let sku = $(this)
 				.attr('href')
 				.split('sku=')[1]
 				.split('&qty')[0];
-			var qty = 3;
+			e;
+			let qty = $('.product__qtd - value').val();
 
-			var item = {
+			let item = {
 				id: sku,
 				quantity: qty,
 				seller: '1'
@@ -63,6 +64,35 @@ class Product {
 				console.log(orderForm);
 			});
 		});
+		$('.product__sizes-link').on('click', function(e) {
+			e.preventDefault();
+			$('body').toggleClass('modal-active');
+			$('.section__modal').addClass('is-openned');
+			$('.modal__medidas-content').fadeIn();
+		});
+
+		$('.modal__medidas-close').on('click', function(e) {
+			e.preventDefault();
+			$('.modal__medidas-content').fadeOut();
+			setTimeout(function() {
+				$('body').removeClass('modal-active');
+				$('.section__modal').removeClass('is-openned');
+			}, 500);
+		});
+
+		if ($(window).width() <= 799) {
+			$('.thumbs li').each(function(index) {
+				const url = $(this)
+					.find('a')
+					.find('img')
+					.attr('src');
+				const urlReplace = url.replace('-55-55', '-600-600');
+				$(this)
+					.find('a')
+					.find('img')
+					.attr('src', urlReplace);
+			});
+		}
 	}
 	simulateShipping() {
 		window.SimulateShipping = new SimulateShipping();
@@ -182,6 +212,23 @@ $(document).ready(() => {
 						nextArrow: mob__next,
 						dots: true
 					}
+				}
+			]
+		});
+
+		$('.thumbs').slick({
+			centerMode: true,
+			centerPadding: '30px',
+			slidesToShow: 1,
+			mobileFirst: 'true',
+			arrows: false,
+			prevArrow: mob__prev,
+			nextArrow: mob__next,
+			dots: true,
+			responsive: [
+				{
+					breakpoint: 800,
+					settings: 'unslick'
 				}
 			]
 		});

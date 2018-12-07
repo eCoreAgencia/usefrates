@@ -1,8 +1,4 @@
 .product {
-	.section__page {
-		margin: 0;
-	}
-
 	&__main {
 		@include atMedium {
 			display: grid;
@@ -42,6 +38,7 @@
 				width: 30px;
 				font-weight: bold;
 				color: #757575;
+				background-color: transparent;
 			}
 		}
 		.product__info {
@@ -50,9 +47,46 @@
 		}
 
 		.product__price {
-			margin: 10px 0 20px 0;
+			display: none;
+			@include atMedium {
+				display: block;
+				margin: 10px 0 20px 0;
+			}
 		}
+		.product__price--mobile {
+			@include atMedium {
+				display: none;
+			}
+			.descricao-preco {
+				@extend %display-flex;
+				flex-wrap: wrap;
+				@extend %flex-justify-content-center;
+			}
 
+			.valor-dividido span span {
+				font-size: 0px;
+			}
+			.skuBestInstallmentNumber {
+				@extend %price__installment;
+				padding: 0 0 0 5px;
+				font-size: 17px !important;
+				.x {
+					@extend %price__installment;
+					border: none;
+					font-size: 17px !important;
+				}
+			}
+			.skuBestInstallmentValue {
+				@extend %price__installment;
+				padding: 0;
+				border: none;
+				font-size: 17px !important;
+			}
+			.skuBestPrice {
+				@extend %price__best;
+				font-size: 17px !important;
+			}
+		}
 		.product__action {
 			@extend %display-flex;
 			@extend %flex-align-items-center;
@@ -62,12 +96,24 @@
 		.buy-button {
 			background-color: $c-blue;
 			color: white;
-			@extend %display-flex;
+			display: flex !important;
+			@extend %flex-align-items-center;
+			@extend %flex-justify-content-center;
 			flex: 1;
 			padding: 15px;
 			text-align: center;
 			font-size: 15px;
 			text-transform: uppercase;
+			&:before {
+				content: '';
+				background-image: url('/arquivos/carrinho-png.png');
+				background-repeat: no-repeat;
+				background-position: center;
+				display: inline-flex;
+				@extend %flex-align-items-center;
+				width: 45px;
+				height: 30px;
+			}
 		}
 
 		#show {
@@ -89,24 +135,69 @@
 		.thumbs {
 			order: 0;
 			grid-area: thumbs;
+			li {
+				img {
+					box-shadow: 1px 1px 8px 0px black;
+					@include atMedium {
+						box-shadow: none;
+					}
+				}
+			}
+			a {
+				display: block;
+			}
+			.slick-slide {
+				margin: 10px;
+				a {
+					padding: 10px;
+				}
+			}
+			.slick-current {
+				a {
+					padding: 0;
+				}
+			}
+
+			@include atMedium {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-auto-rows: max-content;
+				grid-gap: 10px;
+			}
 		}
 
 		.productName {
 			@include font-size(22px);
 			margin: 0;
 		}
+		.product__name--mobile {
+			.productName {
+				@include font-size(18px);
+				text-align: center;
+			}
+			@include atMedium {
+				display: none;
+			}
+		}
 		.valor-de {
 			@extend %price__list--line;
-			text-align: left;
 			font-size: 0px;
 			color: #a8a198;
 			margin: 0;
+			text-align: center;
 			.skuListPrice {
 				@include font-size(16px);
+				font-weight: normal;
+			}
+			@include atMedium {
+				text-align: left;
 			}
 		}
 		.price {
-			@extend %flex-justify-content-flex-start;
+			justify-content: center;
+			@include atMedium {
+				justify-content: flex-start;
+			}
 		}
 
 		.descricao-preco {
@@ -115,15 +206,29 @@
 		.valor-por {
 			font-size: 0px;
 			.skuBestPrice {
-				@include font-size(38px);
-				font-weight: 300;
-				font-style: normal;
+				@extend %price__best;
+			}
+			@include atMedium {
+				.skuBestPrice {
+					@include font-size(38px);
+					font-weight: 300;
+					font-style: normal;
+					color: #000000;
+					padding: 0;
+				}
+			}
+		}
+		.valor-de + .valor-por {
+			.skuBestPrice {
+				color: #000000;
 			}
 		}
 		.skuBestInstallmentNumber {
 			&:after {
-				content: ' sem juros ';
-				display: inline;
+				@include atMedium {
+					content: ' sem juros ';
+					display: inline;
+				}
 			}
 		}
 		.valor-dividido {
@@ -134,6 +239,9 @@
 		}
 		.preco-a-vista {
 			display: none !important;
+		}
+		.skuBestInstallmentValue {
+			font-weight: normal;
 		}
 		.product__skus {
 			border-right: 1px solid black;
@@ -229,10 +337,37 @@
 		}
 		.section__product-description {
 			margin-top: 40px;
+			margin-bottom: 0;
 		}
 		.product__description-text {
 			color: #757575;
 			@include font-size(15px);
+		}
+		.shipping__button {
+			background-color: $c-blue;
+			color: $c-white;
+		}
+		#botaoZoom {
+			display: flex;
+
+			@include atMedium {
+				padding: 0;
+				img {
+					box-shadow: none;
+				}
+			}
+		}
+		.product__social-list {
+			@extend %display-flex;
+		}
+		.product__social-item {
+			margin-right: 20px;
+		}
+		.product__info .productName {
+			display: none;
+			@include atMedium {
+				display: block;
+			}
 		}
 	}
 }

@@ -37,12 +37,22 @@
 		text-align: center;
 		margin-bottom: 5px;
 		@include font-size(13px);
+		font-style: normal;
+		font-weight: normal;
 	}
 	&__best {
 		@extend %text-transform-uppercase;
-		color: #80754e;
+		color: $c-primary;
 		padding: 0 5px;
+		font-weight: normal;
 		@include font-size(12px);
+		font-style: normal;
+		@include atSmall {
+			@include font-size(15px);
+		}
+		@include atMedium {
+			@include font-size(16px);
+		}
 	}
 	&__installment {
 		@extend %text-transform-uppercase;
@@ -51,6 +61,12 @@
 		font-weight: bold;
 		border-left: 1px solid $c-simple-black;
 		padding: 0 5px;
+		@include atSmall {
+			@include font-size(15px);
+		}
+		@include atMedium {
+			@include font-size(16px);
+		}
 	}
 }
 
@@ -150,20 +166,11 @@
 	}
 	&__best {
 		@extend %price__best;
-		@include atSmall {
-			@include font-size(15px);
-		}
-		@include atMedium {
-			@include font-size(16px);
+		.price__list--line + & {
+			color: black;
 		}
 	}
 	&__installment {
 		@extend %price__installment;
-		@include atSmall {
-			@include font-size(15px);
-		}
-		@include atMedium {
-			@include font-size(16px);
-		}
 	}
 }

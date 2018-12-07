@@ -121,20 +121,33 @@
 	transform: translateX(0%);
 	transition: all 0.4s ease-in-out;
 }
-body.menu-active {
-	&:before {
-		content: '';
-		position: absolute;
-		top: 51px;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		height: 100vh;
-		width: 100vw;
-		background-color: rgba(0, 0, 0, 0.7);
-		z-index: 1;
-		@include atMedium {
-			display: none;
+
+body {
+	&.menu-active,
+	&.modal-active {
+		&:before {
+			content: '';
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			background-color: rgba(0, 0, 0, 0.7);
+			z-index: 1;
+		}
+	}
+	&.menu-active {
+		&::before {
+			top: 51px;
+			@include atMedium {
+				display: none;
+			}
+		}
+	}
+	&.modal-active {
+		&::before {
+			top: 0;
 		}
 	}
 }

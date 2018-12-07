@@ -1,6 +1,9 @@
 .section__breadcrumb {
+	display: none;
 	margin-top: 25px;
-
+	@include atMedium {
+		display: block;
+	}
 	.bread-crumb {
 		padding: 10px 0;
 

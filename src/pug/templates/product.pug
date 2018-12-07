@@ -20,6 +20,39 @@ block content
 							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
 		section.section__page.section__product-header
 			.product__main
+				.product__name--mobile
+					+vtex-controller('<vtex.cmc:productName/>')
+						h1
+							.fn.productName.camisa-preta-basica CAMISA BÁSICA PRETA
+								input#___rc-p-id(type='hidden', value='125')
+								input#___rc-p-dv-id(type='hidden', value='22,9')
+								input#___rc-p-sku-ids(type='hidden', value='150')
+								input#___rc-p-kit-ids(type='hidden', value='')
+				.product__price--mobile
+						.price
+							+vtex-controller('<vtex.cmc:skuPrice />')
+								.plugin-preco
+									.productPrice
+										p.descricao-preco
+											em.valor-de.price-list-price(style='display: block;')
+												| De:
+												strong.skuListPrice R$ 189,00
+											em.valor-por.price-best-price(style='display: block;')
+												| Por:
+												strong.skuBestPrice R$ 129,00
+											em.valor-dividido.price-installments(style='display: block;')
+												span
+													span
+														| ou
+														label.skuBestInstallmentNumber
+															| 12
+															span.x x
+														|  de
+													strong
+														label.skuBestInstallmentValue R$ 53,32
+										p.preco-a-vista.price-cash(style='display: block;')
+											| Preço a vista:
+											strong.skuPrice R$ 639,90
 				.product__media
 					.product__media-top
 						+vtex-controller('<vtex.cmc:ProductImage zoom="on"/>')
@@ -28,7 +61,7 @@ block content
 				.product__info
 					+vtex-controller('<vtex.cmc:productName/>')
 						h1
-							.fn.productName.Mandril-1-2--com-Chave-Black-Decker CAMISA BÁSICA PRETA
+							.fn.productName.camisa-preta-basica CAMISA BÁSICA PRETA
 								input#___rc-p-id(type='hidden', value='125')
 								input#___rc-p-dv-id(type='hidden', value='22,9')
 								input#___rc-p-sku-ids(type='hidden', value='150')
@@ -136,6 +169,20 @@ block content
 							.product__description-text
 								+vtex-controller('<vtex.cmc:ProductDescription />')
 									p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint voluptates laudantium nesciunt veniam quae in error similique aliquid, magnam voluptas ex eum autem architecto? Consequatur unde animi quae aliquid deserunt.
+					section.section__product-social
+						.product__social
+							section.section__title
+								h2.section__title__txt Indique e compartilhe ;)
+							ul.product__social-list
+								li.product__social-item
+									a.product__social-link
+										include ../../svg/insta-svg.svg
+								li.product__social-item
+									a.product__social-link
+										include ../../svg/face.svg
+								li.product__social-item
+									a.product__social-link
+										include ../../svg/twitter.svg
 
 		section.section__buy-togheter
 			.container
@@ -158,5 +205,10 @@ block content
 											include ../shelves/prateleira
 					.section__page.viewmore
 						a("/category").viewmore__txt + Veja Mais
+		section.section__modal
+			.modal__medidas-content
+				img(src="/arquivos/medidas.png", alt="", srcset="")
+				a.modal__medidas-close
+
 block scripts
 	script(src='/arquivos/ec-easyzoom.js')
