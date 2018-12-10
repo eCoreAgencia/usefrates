@@ -100,7 +100,7 @@ block content
 										li.select.skuList.item-dimension-Tamanho
 											span.group_1
 												input#42999_Tamanho_1.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_P.change-image.checked.sku-picked(type='radio', name='42999_Tamanho', dimension='Tamanho', data-value='P', data-dimension='Tamanho', value='P', specification='P', checked='checked')
-												label.dimension-Tamanho.espec_1.skuespec_P.skuespec_Tamanho_opcao_P.skuespec_Tamanho_opcao_P(for='42999_Tamanho_1') P
+												label.dimension-Tamanho.espec_1.skuespec_P.skuespec_Tamanho_opcao_P.skuespec_Tamanho_opcao_P.checked.sku-picked(for='42999_Tamanho_1') P
 												input#42999_Tamanho_2.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_M.change-image(type='radio', name='42999_Tamanho', dimension='Tamanho', data-value='M', data-dimension='Tamanho', value='M', specification='M')
 												label.dimension-Tamanho.espec_1.skuespec_M.skuespec_Tamanho_opcao_M.skuespec_Tamanho_opcao_M(for='42999_Tamanho_2') M
 												input#42999_Tamanho_3.skuselector-specification-label.input-dimension-Tamanho.sku-selector.skuespec_G.change-image(type='radio', name='42999_Tamanho', dimension='Tamanho', data-value='G', data-dimension='Tamanho', value='G', specification='G')
@@ -145,7 +145,7 @@ block content
 									fieldset.error(style='display: none')
 										label
 											span.sku-notifyme-error.notifyme-error
-					.product__group
+					.product__group.product__group--mobile
 						.product__shipping
 							.product__shipping-ico
 								include ../../svg/icon-truck.svg
@@ -160,31 +160,35 @@ block content
 								.shipping__result
 						.product__sizes
 							a.product__sizes-link
-					section.section__page.section__product-description
-						.product__description
-							section.section__title
-								h2.section__title__txt Descrição
-									+vtex-controller('<vtex.cmc:productReference/>')
-										.productReference.l2545444 2545444
-							.product__description-text
-								+vtex-controller('<vtex.cmc:ProductDescription />')
-									p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint voluptates laudantium nesciunt veniam quae in error similique aliquid, magnam voluptas ex eum autem architecto? Consequatur unde animi quae aliquid deserunt.
-					section.section__product-social
-						.product__social
-							section.section__title
-								h2.section__title__txt Indique e compartilhe ;)
-							ul.product__social-list
-								li.product__social-item
-									a.product__social-link
-										include ../../svg/insta-svg.svg
-								li.product__social-item
-									a.product__social-link
-										include ../../svg/face.svg
-								li.product__social-item
-									a.product__social-link
-										include ../../svg/twitter.svg
 
-		section.section__buy-togheter
+					.product__information
+						p.product__information-txt Informações
+						.product__info-group
+							section.section__page.section__product-description
+								.product__description
+									section.section__title
+										h2.section__title__txt Descrição
+											+vtex-controller('<vtex.cmc:productReference/>')
+												.productReference.l2545444 2545444
+									.product__description-text
+										+vtex-controller('<vtex.cmc:ProductDescription />')
+											p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint voluptates laudantium nesciunt veniam quae in error similique aliquid, magnam voluptas ex eum autem architecto? Consequatur unde animi quae aliquid deserunt.
+							section.section__product-social
+								.product__social
+									section.section__title
+										h2.section__title__txt Indique e compartilhe ;)
+									ul.product__social-list
+										li.product__social-item
+											a.product__social-link
+												include ../../svg/insta-svg.svg
+										li.product__social-item
+											a.product__social-link
+												include ../../svg/face.svg
+										li.product__social-item
+											a.product__social-link
+												include ../../svg/twitter.svg
+
+		section.section__buy-together
 			.container
 				h2.shelf__title
 					| Aproveite e compre junto
@@ -207,7 +211,8 @@ block content
 						a("/category").viewmore__txt + Veja Mais
 		section.section__modal
 			.modal__medidas-content
-				img(src="/arquivos/medidas.png", alt="", srcset="")
+				img.modal__medidas-desk(src="/arquivos/medidas.png", alt="", srcset="")
+				img.modal__medidas-mbl(src="/arquivos/medidas-mobile.png", alt="", srcset="")
 				a.modal__medidas-close
 
 block scripts

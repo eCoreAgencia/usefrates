@@ -21,6 +21,7 @@
 	&__list {
 		margin-top: 16%;
 		background-color: $c-white;
+		overflow-y: auto;
 		@include atMedium {
 			background: none;
 			margin-top: 0;

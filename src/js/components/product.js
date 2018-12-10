@@ -64,7 +64,7 @@ class Product {
 				console.log(orderForm);
 			});
 		});
-		$('.product__sizes-link').on('click', function(e) {
+		$('.product__sizes').on('click', function(e) {
 			e.preventDefault();
 			$('body').toggleClass('modal-active');
 			$('.section__modal').addClass('is-openned');
@@ -80,6 +80,8 @@ class Product {
 			}, 500);
 		});
 
+		// MOBILE ONLY
+
 		if ($(window).width() <= 799) {
 			$('.thumbs li').each(function(index) {
 				const url = $(this)
@@ -91,6 +93,22 @@ class Product {
 					.find('a')
 					.find('img')
 					.attr('src', urlReplace);
+			});
+			$('.shipping').appendTo('.product__group--mobile');
+
+			$('.product__shipping').on('click', function(e) {
+				e.preventDefault();
+				$('.shipping').fadeToggle();
+			});
+			$('.product__information-txt').on('click', function(e) {
+				e.preventDefault();
+				$('.product__info-group').fadeToggle();
+				$(this).toggleClass('is-opened');
+			});
+			$('.specification').on('click', function(e) {
+				e.preventDefault();
+				$('.skuList').fadeToggle();
+				$(this).toggleClass('is-opened');
 			});
 		}
 	}

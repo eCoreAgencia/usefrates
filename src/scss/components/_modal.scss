@@ -23,4 +23,16 @@
 			}
 		}
 	}
+	&__medidas-mbl {
+		display: block;
+		@include atMedium {
+			display: none;
+		}
+	}
+	&__medidas-desk {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+	}
 }
