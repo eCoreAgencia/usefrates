@@ -23,6 +23,7 @@
 		background-color: $c-white;
 		overflow-y: auto;
 		@include atMedium {
+			overflow: initial;
 			background: none;
 			margin-top: 0;
 			display: flex;

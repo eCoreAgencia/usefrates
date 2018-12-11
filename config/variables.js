@@ -5,5 +5,5 @@ module.exports = {
 	TEMPLATE_PREFIX: 'eCore-',
 	PROJECT_VERSION: pjson.version,
 	STORE_ID: 'usefrates',
-	STORE_NAME: 'usefrates'
+	STORE_NAME: 'frates'
 };

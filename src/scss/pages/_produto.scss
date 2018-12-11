@@ -147,18 +147,18 @@
 			position: fixed;
 			bottom: 0;
 			left: 0;
-			background-color: $c-blue;
 			color: white;
 			display: flex !important;
 			@extend %flex-align-items-center;
 			@extend %flex-justify-content-center;
 			flex: 1;
-			padding: 15px;
+			padding: 10px;
 			text-align: center;
 			font-size: 15px;
 			text-transform: uppercase;
 			width: 100%;
 			z-index: 9999999;
+			background-color: #25a578;
 			&:before {
 				content: '';
 				background-image: url('/arquivos/carrinho-png.png');
@@ -170,8 +170,10 @@
 				height: 30px;
 			}
 			@include atMedium {
+				background-color: $c-blue;
 				position: static;
 				widows: auto;
+				padding: 15px;
 			}
 		}
 
