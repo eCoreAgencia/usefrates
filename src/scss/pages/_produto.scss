@@ -445,6 +445,21 @@
 				flex-basis: 80%;
 			}
 		}
+		.product__shipping__result {
+			display: flex;
+			margin-top: 5px;
+			align-items: center;
+		}
+		.product__shipping-close.shipping__close {
+			color: red;
+			border: 1px solid black;
+			margin-right: 5px;
+		}
+		.product__shipping-table__row {
+			font-size: 12px;
+			display: flex;
+			flex-direction: column;
+		}
 		.shipping {
 			display: none;
 			margin: 20px auto;
