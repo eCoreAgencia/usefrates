@@ -123,6 +123,10 @@
 			justify-content: center;
 			display: inline-flex;
 			margin: auto;
+			button {
+				background: transparent;
+				border: none;
+			}
 		}
 		.slick-dots li {
 			margin: 0 3px;

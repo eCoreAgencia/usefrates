@@ -445,6 +445,7 @@
 			@include atMedium {
 				display: block;
 				margin: 0;
+				min-width: 220px;
 			}
 		}
 		.product__shipping-ico {
@@ -528,6 +529,10 @@
 			bottom: 4%;
 			li {
 				background-color: #fdfdfdc2;
+			}
+			button {
+				background: transparent;
+				border: none;
 			}
 		}
 		.slick-dots li.slick-active {
