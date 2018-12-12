@@ -159,6 +159,7 @@
 			width: 100%;
 			z-index: 9999999;
 			background-color: #25a578;
+
 			&:before {
 				content: '';
 				background-image: url('/arquivos/carrinho-png.png');
@@ -174,6 +175,7 @@
 				position: static;
 				widows: auto;
 				padding: 15px;
+				min-width: 430px;
 			}
 		}
 
@@ -239,6 +241,9 @@
 			@include atMedium {
 				display: none;
 			}
+		}
+		.economia-de {
+			display: none;
 		}
 		.valor-de {
 			@extend %price__list--line;
@@ -433,6 +438,7 @@
 			border: 1px solid #bdbdbd;
 			border-radius: 10px;
 			@include atMedium {
+				justify-content: flex-start;
 				border: none;
 				border-radius: 0;
 				border-right: 1px solid black;
