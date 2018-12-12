@@ -1,33 +1,54 @@
-//- extends ../layouts/default.pug
+extends ../layouts/default.pug
 
-//- block vars
-//- 	- var pageTitle = 'Categoria'
-//- 	- var bodyClass = 'institucional'
+block vars
+	- var pageTitle = ' institutional'
+	- var bodyClass = 'institutional'
 
-//- block content
-//- 	.container
-//- 		.wrapper--mobile
-//- 			section.section__page.section__breadcrumb
-//- 				section.section__page.section__institutional
-//- 					.columns
-//- 						aside.section__institutional__sidebar.column.is-3
-//- 							h3.section__institutional__sidebar__title SOBRE A 5.11
-//- 							ul.section__institutional__sidebar__list
-//- 								li.section__institutional__sidebar__list__item
-//- 									a.section__institutional__sidebar__list__item__link(href="/institucional/sobre-a-marca") Sobre a Marca
-//- 								//- li.section__institutional__sidebar__list__item
-//- 								//- 	a.section__institutional__sidebar__list__item__link(href="/institucional/encontre-uma-loja") Encontre uma Loja
-//- 								li.section__institutional__sidebar__list__item
-//- 									a.section__institutional__sidebar__list__item__link(href="/institucional/politica-de-privacidade") Política de Privacidade
-//- 								li.section__institutional__sidebar__list__item
-//- 									a.section__institutional__sidebar__list__item__link(href="/institucional/politica-de-pagamento") Política de Pagamento
-//- 								//- li.section__institutional__sidebar__list__item
-//- 								//- 	a.section__institutional__sidebar__list__item__link(href="/institucional/trabalhe-conosco") Trabalhe Conosco
-//- 						.institutional__content.column
-//- 							.banner.institutional__content__banner
-//- 								+vtex-controller('<vtex:contentPlaceHolder id="Banner Institucional" />')
-//- 							.institutional__content__text
+block content
+	.container
+		section.section__page.section__institutional
+			.institutional__grid
+				aside.institutional-sidebar
+					ul.institutional__list
+						li.institutional__item
+							a.institutional__link(href="/institucional/sobre-a-marca") Sobre Nós
+						li.institutional__item
+							a.institutional__link(href="/institucional/sobre-a-marca") Privacidade
+						li.institutional__item
+							a.institutional__link(href="/institucional/sobre-a-marca") Pagamentos
+						li.institutional__item
+							a.institutional__link(href="/institucional/sobre-a-marca") Troca e Devolução
+						li.institutional__item
+							a.institutional__link(href="/institucional/sobre-a-marca") Dúvidas Frequentes
+						li.institutional__item
+							a.institutional__link(href="/institucional/sobre-a-marca") Fale Conosco
+				.institutional__content
+					.institutional__title
+						+vtex-controller('<vtex:contentPlaceHolder id="Conteúdo institutional Titulo"/>')
+							| Sobre Nós
+					.banner.institutional__banner
+						+vtex-controller('<vtex:contentPlaceHolder id="Banner institutional"/>')
+							.box-banner
+								a(href="")
+									img(src="/arquivos/banner-institucional.png")/
 
-//- 									h3.title
-//- 										+vtex-controller('<vtex:contentPlaceHolder id="Conteúdo Institucional Titulo" />')
-//- 									+vtex-controller('<vtex:contentPlaceHolder id="Conteúdo Institucional Conteudo" />')
+					.institutional__text
+						+vtex-controller('<vtex:contentPlaceHolder id="Conteúdo institutional Conteudo"/>')
+
+							h3
+								| Negócio
+							p
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo illum corporis dolorem nobis minus commodi inventore aliquam molestiae ut officiis cum harum quas, doloremque aperiam ullam perferendis magni placeat? Unde nam non labore deleniti laudantium doloremque ab accusamus ullam.
+							h3
+								| Missão
+							p
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo illum corporis dolorem nobis minus commodi inventore aliquam molestiae ut officiis cum harum quas, doloremque aperiam ullam perferendis magni placeat? Unde nam non labore deleniti laudantium doloremque ab accusamus ullam.
+							h3
+								| Visão
+							p
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo illum corporis dolorem nobis minus commodi inventore aliquam molestiae ut officiis cum harum quas, doloremque aperiam ullam perferendis magni placeat? Unde nam non labore deleniti laudantium doloremque ab accusamus ullam.
+							h3
+								| Valores
+							p
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Est explicabo illum corporis dolorem nobis minus commodi inventore aliquam molestiae ut officiis cum harum quas, doloremque aperiam ullam perferendis magni placeat? Unde nam non labore deleniti laudantium doloremque ab accusamus ullam.
+

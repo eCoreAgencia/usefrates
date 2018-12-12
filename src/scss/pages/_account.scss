@@ -1,19 +1,26 @@
 .section__account {
 	box-sizing: border-box;
-	.bread-crumb {
-		display: none;
-		@include atMedium {
-			display: block;
-		}
-	}
+
 	&__tlt {
-		font-size: 50px;
-		color: #211e14;
-		font-weight: 700;
-		text-align: center;
-		margin-bottom: 15px;
-		text-transform: uppercase;
-		// @extend %font-family-trumpgothicwest;
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+		@extend %flex-justify-content-center;
+		flex-wrap: nowrap;
+		padding-top: 45px;
+		@include font-size(20px);
+
+		@include atMedium {
+			@include font-size(30px);
+			justify-content: space-between;
+			&:before,
+			&:after {
+				content: '';
+				flex-basis: 40%;
+				display: block;
+				height: 2px;
+				background-color: #cecece;
+			}
+		}
 	}
 
 	&__box {
@@ -37,33 +44,25 @@
 .account__boxes {
 	.column {
 		padding: 0;
+		border: 1px solid #cecece;
 
 		.account__box {
 			padding: 0;
+			margin: 0;
+			background-color: #fafafa;
 			@include mq(tablet, max) {
 				margin: 0;
 				width: auto;
 			}
 
 			h4 {
-				color: #fff;
-				font-size: 20px;
-				padding: 15px 0;
-				font-weight: 800;
+				font-size: 24px;
+				padding: 15px 0px;
 				line-height: 32px;
-				margin-bottom: 20px;
 				text-transform: uppercase;
-				background-color: #211e14;
-
-				&:before {
-					content: '';
-					width: 25px;
-					height: 25px;
-					margin: 0 20px 0 30px;
-					display: inline-block;
-					vertical-align: text-bottom;
-					// background: url(/arquivos/ico-account.png) no-repeat scroll 0 0 transparent;
-				}
+				background-color: transparent;
+				font-weight: 400;
+				margin: 0 30px;
 			}
 
 			p,
@@ -105,7 +104,8 @@
 		display: grid;
 
 		@include atMedium {
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 40px;
 		}
 	}
 }
@@ -118,6 +118,13 @@
 	width: 100%;
 	padding: 0;
 	margin: 0;
+}
+.profile-detail-display,
+.address-display-block {
+	text-align: center;
+	@include atMedium {
+		text-align: left;
+	}
 }
 .section__account h4 {
 	color: #333;
@@ -296,7 +303,7 @@
 	}
 
 	&__box {
-		width: 358px;
+		width: 100%;
 		height: 400px;
 		margin: 10px;
 		padding: 40px;
@@ -314,14 +321,15 @@
 	.address-update,
 	#edit-data-link,
 	.account__box__orders__link {
-		display: block;
+		display: inline-flex;
 		margin: 10px 0;
-		color: #372527;
-		font-size: 14px;
-		font-weight: 700;
-		font-family: Roboto;
-		text-decoration: underline;
-		background-color: #fbf7f1;
+		padding: 10px 20px;
+		color: $c-white;
+		font-size: 16px;
+		font-weight: 400;
+		font-family: 'Open Sans';
+		text-decoration: none;
+		background-color: $c-blue;
 	}
 
 	.modal {
@@ -335,7 +343,11 @@
 	}
 
 	.profile-detail-display-info {
-		margin: 10px 0;
+		line-height: 1.5;
+	}
+	&__subtitle {
+		text-align: center;
+		color: #9e9e9e !important;
 	}
 }
 
@@ -343,15 +355,12 @@ body.account {
 	main {
 		margin-bottom: 126px;
 	}
-	.navbar {
-		position: static;
-	}
 
 	.title {
 		color: #372527 !important;
 	}
-	.header__area {
-		padding: 12px 0;
+	.header .container {
+		padding: 0;
 	}
 	.navbar-link {
 		line-height: 0;

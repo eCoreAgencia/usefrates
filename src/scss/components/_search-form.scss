@@ -1,16 +1,26 @@
 .search-form {
-	flex-basis: 25%;
-	@extend %display-flex;
+	flex-basis: 100%;
+	grid-area: sform;
+	padding: 0 10px;
+	display: none;
+	@include atMedium {
+		flex-basis: 25%;
+		padding: 0;
+		display: flex;
+	}
 	&__input {
 		border-width: 0 0 1px 0;
-		border-color: $c-white;
 		width: 100%;
 		background: transparent;
+		border-color: $c-primary;
 		&::placeholder {
 			color: $c-white;
 			font-family: 'Open Sans';
 			font-style: italic;
 			@include font-size(15px);
+		}
+		@include atMedium {
+			border-color: $c-white;
 		}
 	}
 	svg {
@@ -21,5 +31,17 @@
 		border: none;
 		margin: 0;
 		padding: 0;
+	}
+	.lupa-color {
+		use {
+			fill: $c-primary;
+			transition: all 0.5s ease;
+		}
+		@include atMedium {
+			use {
+				fill: $c-white;
+				transition: all 0.5s ease;
+			}
+		}
 	}
 }

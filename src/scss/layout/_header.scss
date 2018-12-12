@@ -1,121 +1,52 @@
-.header {
+// HOME HEADER 	HAS HOVER EFFECTS THAT OTHER PAGES DON`T... SO BODY.HOME IS HERE AND IT PROVIDES SOME
+// STYLING TO OTHER HEADERS TOO
+body.home .header {
 	@include atMedium {
-		z-index: 1;
-		width: 100%;
-		position: absolute;
 		background-image: linear-gradient(to top, transparent 0, rgba(0, 0, 0, 0.6) 100%);
+		position: absolute;
 	}
+
+	// FUNCTIONAL CLASSES TO TARGET CSS3 NON HOVERED EVENTS
+
 	.bg-blue,
 	.bg-white {
 		background-color: transparent;
 		transition: all 0.5s ease-out;
 	}
-	&__wrapper {
-		display: grid;
-		grid-template-columns: max-content 1fr 0.5fr;
-		grid-auto-rows: 1fr;
-		grid-gap: 5%;
-		align-items: center;
-	}
 
-	&__minicart {
-		@extend %display-flex;
-		@extend %flex-align-items-center;
+	// MENU ITEM TEXT COLOR
+	.menu-txt-color {
+		@include atMedium {
+			color: $c-white;
+		}
+	}
+	.icon-color {
+		fill: $c-white;
+		transition: all 0.5s ease;
+	}
+	.input-color {
+		border-color: $c-white;
+		&::placeholder {
+			color: $c-white;
+		}
+	}
+	.lupa-color {
+		@include atMedium {
+			use {
+				fill: $c-white;
+				transition: all 0.5s ease;
+			}
+		}
 	}
 	&__main {
-		@extend %display-flex;
-		@extend %flex-align-items-center;
 		@include atMedium {
-			height: 115px;
+			border-bottom: none;
 		}
 	}
 
-	&__logo-desk {
-		display: none;
-		@include atMedium {
-			display: block;
-		}
-	}
-	&__logo-mob {
-		display: block;
-		@include atMedium {
-			display: none;
-		}
-	}
-	&__top {
-		display: none;
-		@include atMedium {
-			display: block;
-		}
-	}
-	&__top {
-		display: none;
-		@include atMedium {
-			display: block;
-		}
-	}
-	&__menu-icon {
-		width: 23px;
-		height: 19px;
-		position: relative;
-		z-index: 10;
-		left: 18px;
-		margin: 4% 0;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 23px;
-			height: 2px;
-			background-color: $c-primary;
-			transform-origin: 0 0;
-			transition: transform 0.3s ease-out;
-		}
-		&__middle {
-			position: absolute;
-			top: 8px;
-			left: 0;
-			width: 23px;
-			height: 2px;
-			background-color: $c-primary;
-			transition: all 0.3s ease-out;
-			transform-origin: 0 50%;
-		}
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 23px;
-			height: 2px;
-			background-color: $c-primary;
-			transform-origin: 0% 100%;
-			transition: transform 0.3s ease-out;
-		}
-		@include atMedium {
-			display: none;
-		}
-	}
-
-	&__menu-icon--close-x {
-		&::before {
-			transform: rotate(45deg) scaleX(1.25);
-			background-color: $c-white;
-		}
-
-		.header__menu-icon__middle {
-			opacity: 0;
-			transform: scaleX(0);
-		}
-
-		&::after {
-			transform: rotate(-45deg) scale(1.25) translateY(1px) translateX(-1px);
-			background-color: $c-white;
-		}
-	}
 	&:hover {
+		// CCS3 FUNCTIONAL CLASSES TO TARGET HOVERED EVENTS
+
 		@include atMedium {
 			.bg-blue {
 				background-color: $c-blue;
@@ -130,10 +61,8 @@
 				transition: all 0.5s ease;
 			}
 			.icon-color {
-				use {
-					fill: $c-primary;
-					transition: all 0.5s ease;
-				}
+				fill: $c-primary;
+				transition: all 0.5s ease;
 			}
 
 			.lupa-color {
@@ -152,64 +81,299 @@
 	}
 }
 
-.tipbar {
-	display: flex;
-	@extend %flex-justify-content-space-between;
-	height: 45px;
-	position: relative;
-	&__left {
+// GENERAL PAGE HEADERS
+
+.header {
+	@include atMedium {
+		z-index: 1;
+		width: 100%;
+		position: static;
+	}
+	&.menu-active {
+		.header__menu-icon {
+			background: $c-primary;
+		}
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 60px 60px 2fr 60px 60px;
+		grid-template-rows: 1fr;
+		grid-template-areas: 'menu blank logo searchico carrinho';
+		align-items: center;
+		@include atMedium {
+			grid-template-columns: max-content 1fr 0.5fr;
+			grid-template-rows: 1fr;
+			grid-gap: 5%;
+			grid-template-areas: 'logo menu sform';
+		}
+		&.search-active {
+			grid-template-rows: 1fr 1px 1fr;
+			grid-template-areas: 'menu blank logo searchico carrinho' 'divisor divisor divisor divisor divisor' 'sform sform sform sform sform';
+			.search-form {
+				display: flex;
+			}
+		}
+	}
+	.divisor {
+		background-color: #b4b4b4;
+		width: 100%;
+		height: 100%;
+		grid-area: divisor;
+		@include atMedium {
+			display: none;
+		}
+	}
+	&__minicart-mobile {
 		@extend %display-flex;
-		flex-basis: 60%;
-		@extend %flex-justify-content-space-between;
+		@extend %flex-justify-content-center;
+		@extend %flex-align-items-center;
+		border: none;
+		background: none;
+		grid-area: carrinho;
+		svg {
+			use {
+				fill: $c-primary;
+			}
+		}
+		@include atMedium {
+			display: none;
+		}
+	}
+	&__minicart {
+		@extend %display-flex;
 		@extend %flex-align-items-center;
 	}
-	&__right {
-		@extend %display-flex;
-		@extend %flex-justify-content-space-between;
-		@extend %flex-align-items-center;
-		flex-basis: 20%;
-	}
-	&__link {
+	&__main {
 		@extend %display-flex;
 		@extend %flex-align-items-center;
-		@include font-size(15px);
-		color: $c-white;
-		position: relative;
+		@include atMedium {
+			height: 115px;
+			border-bottom: 1px solid #bdbdbd;
+		}
 	}
-	svg {
-		margin-right: 10px;
-		align-self: center;
+	&__logo {
+		grid-area: logo;
+		justify-self: center;
 	}
-	&__floating-tip {
-		@extend %display-flex;
-		@extend %flex-align-items-center;
-		@extend %flex-direction-column;
-		position: absolute;
+
+	&__logo-desk {
 		display: none;
-		background-color: $c-primary;
-		color: $c-blue;
-		top: 30px;
-		right: 50%;
-		transform: translateX(50%);
-		z-index: 12;
-		@include font-size(16px);
-		padding: 15px;
-		min-width: 280px;
-		border-radius: 20px;
-		:hover > & {
+		@include atMedium {
 			display: block;
 		}
+	}
+	&__logo-mob {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+		@include atMedium {
+			display: none;
+		}
+	}
+	&__lupa-mobile {
+		grid-area: searchico;
+		@extend %display-flex;
+		@extend %flex-justify-content-center;
+		@extend %flex-align-items-center;
+		border: none;
+		background: none;
+		@include atMedium {
+			display: none;
+		}
+	}
+	&__lupa-mobile-icon {
+		svg {
+			use {
+				fill: $c-primary;
+			}
+		}
+	}
+	&__top {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+	}
+	&__menu-icon {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 21;
+		left: 0px;
+		grid-area: menu;
 		&::before {
 			content: '';
-			width: 0;
-			height: 0;
-			border-bottom: 10px solid $c-primary;
-			border-top: 10px solid transparent;
-			border-right: 10px solid transparent;
-			border-left: 10px solid transparent;
 			position: absolute;
-			top: -20px;
+			top: 13px;
+			left: 10px;
+			width: 40px;
+			height: 5px;
+			background-color: $c-primary;
+			transform-origin: 0 0;
+			transition: transform 0.3s ease-out;
+		}
+		&__middle {
+			position: absolute;
+			top: 23.5px;
+			left: 10px;
+			width: 40px;
+			height: 5px;
+			background-color: $c-primary;
+			transition: all 0.3s ease-out;
+			transform-origin: 0 50%;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 11px;
+			left: 10px;
+			width: 40px;
+			height: 5px;
+			background-color: $c-primary;
+			transform-origin: 0% 100%;
+			transition: transform 0.3s ease-out;
+		}
+		@include atMedium {
+			display: none;
+		}
+	}
+
+	&__menu-icon--close-x {
+		&::before {
+			transform: rotate(45deg) scaleX(0.95);
+			background-color: $c-white;
+			left: 17px;
+		}
+
+		.header__menu-icon__middle {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+
+		&::after {
+			transform: rotate(-45deg) scale(0.95) translateY(1.2px) translateX(-1.7px);
+			background-color: $c-white;
+			left: 17px;
+		}
+	}
+
+	@include atMedium {
+		.bg-blue {
+			background-color: $c-blue;
+		}
+		.bg-white {
+			background-color: $c-white;
+		}
+		.menu-txt-color {
+			color: $c-primary;
+		}
+		.icon-color {
+			fill: $c-primary;
+		}
+
+		.lupa-color {
+			use {
+				fill: $c-primary;
+			}
+		}
+		.input-color {
+			border-color: $c-primary;
+			&::placeholder {
+				color: #b4b4b4;
+			}
+		}
+	}
+
+	.tipbar {
+		display: flex;
+		@extend %flex-justify-content-space-between;
+		height: 45px;
+		position: relative;
+		&__left {
+			@extend %display-flex;
+			flex-basis: 60%;
+			@extend %flex-justify-content-space-between;
+			@extend %flex-align-items-center;
+		}
+		&__right {
+			@extend %display-flex;
+			@extend %flex-justify-content-space-between;
+			@extend %flex-align-items-center;
+			flex-basis: 20%;
+		}
+		&__link {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			@include font-size(15px);
+			color: $c-white;
+			position: relative;
+		}
+		&__link:hover {
+			> .tipbar__floating-tip {
+				display: block;
+			}
+		}
+		svg {
+			margin-right: 5px;
+			align-self: center;
+		}
+		&__floating-tip {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			@extend %flex-direction-column;
+			position: absolute;
+			display: none;
+			background-color: $c-primary;
+			color: $c-blue;
+			top: 30px;
 			right: 50%;
+			transform: translateX(50%);
+			z-index: 12;
+			@include font-size(16px);
+			padding: 15px;
+			min-width: 280px;
+			border-radius: 20px;
+			&::before {
+				content: '';
+				width: 0;
+				height: 0;
+				border-bottom: 10px solid $c-primary;
+				border-top: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-left: 10px solid transparent;
+				position: absolute;
+				top: -20px;
+				right: 50%;
+			}
+		}
+		&__mobile {
+			background-color: $c-blue;
+			color: white;
+			@include atMedium {
+				display: none;
+			}
+		}
+		&__mobile-ico {
+			svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+		&__mobile-wrapper {
+			@extend %display-flex;
+			@extend %flex-justify-content-space-between;
+			@extend %flex-align-items-center;
+			padding: 0 10px;
+		}
+		&__mobile-text {
+			margin: 0;
+			padding: 16px 9px;
+			font-size: 11px;
+		}
+		&__mobile-ico {
+			@extend %display-flex;
+			@extend %flex-justify-content-center;
+			@extend %flex-align-items-center;
 		}
 	}
 }

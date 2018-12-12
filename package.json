@@ -1,6 +1,6 @@
 {
-	"name": "tactical",
-	"version": "0.1.3",
+	"name": "frates",
+	"version": "0.0.2",
 	"description": "",
 	"main": "index.js",
 	"scripts": {

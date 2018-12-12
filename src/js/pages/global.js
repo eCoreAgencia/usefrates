@@ -19,13 +19,8 @@ $(document).ready(() => {
 
 		$(window).scroll(() => {
 			headerFixed();
-		})
+		});
 	}
 
-	$(".footer__column .footer__title").on('click', function(e) {
-		$(this).next().toggleClass('active');
-	})
-
-	$('.newsletter__form').sendForm('NL')
-
-})
+	$('.newsletter__form').sendForm('NL');
+});

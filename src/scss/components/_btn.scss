@@ -4,13 +4,22 @@
 		@extend %flex-justify-content-center;
 		@extend %flex-align-items-center;
 		width: 100%;
-		height: 54px;
+		height: 30px;
 		background-color: $c-blue;
 		color: $c-white;
-		@include font-size(20px);
+		@include font-size(15px);
 		font-weight: 400;
 		svg {
-			margin-right: 10px;
+			margin-right: 8px;
+			padding: 4px;
+		}
+		@include atMedium {
+			@include font-size(20px);
+			height: 54px;
+			svg {
+				padding: 0;
+				margin-right: 10px;
+			}
 		}
 	}
 }

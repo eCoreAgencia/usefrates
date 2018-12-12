@@ -1,32 +1,155 @@
 .menu {
 	position: absolute;
-	top: 200px;
+	opacity: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 15%;
+	z-index: 20;
+	height: 100vh;
+	transform: translateX(-115%);
+	transition: all 0.4s ease-in-out;
 	@include atMedium {
+		opacity: 1;
+		transform: translateX(0);
+		height: initial;
+		background: none;
 		position: initial;
 		flex-basis: 30%;
-		&__list {
+		z-index: initial;
+	}
+	&__list {
+		margin-top: 51px;
+		background-color: $c-white;
+		overflow-y: auto;
+		@include atMedium {
+			overflow: initial;
+			background: none;
+			margin-top: 0;
 			display: flex;
 			align-items: center;
 		}
-		&__item {
+	}
+	&__item {
+		border: solid #ccc;
+		border-width: 0 1px 1px 1px;
+
+		&:first-child {
+			border: 1px solid #ccc;
+		}
+		@include atMedium {
 			padding: 4%;
 			cursor: pointer;
 			position: relative;
 			transition-duration: 0.5s;
+			border-left: none;
+			border-right: none;
 			border-bottom: 3px solid transparent;
 			border-top: 3px solid transparent;
+			&:first-child {
+				border-bottom: 3px solid transparent;
+				border-top: 3px solid transparent;
+				border-left: none;
+				border-right: none;
+			}
 			&:hover {
 				border-bottom: 3px solid $c-primary;
 			}
 		}
-		&__link {
-			display: flex;
+	}
+	&__link {
+		@extend %display-flex;
+		@extend %flex-justify-content-space-between;
+		@extend %flex-align-items-center;
+		padding: 15px 10px 15px 70px;
+		font-weight: bold;
+		@extend %text-transform-uppercase;
+		svg {
+			padding: 5px;
+			transform: rotate(0deg);
+			transition: all 0.4s ease-in-out;
+		}
+		&.is-clicked {
+			svg {
+				transform: rotate(90deg);
+				transition: all 0.4s ease-in-out;
+			}
+		}
+
+		@include atMedium {
+			text-transform: normal;
+			padding: 0;
 			align-items: center;
 			justify-content: center;
 			text-transform: uppercase;
 			@include font-size(15px);
-			font-weight: bold;
 			color: $c-white;
+			svg {
+				display: none;
+			}
+		}
+	}
+
+	// ADICIONAL MOBILE ITEMS
+
+	&__revenda,
+	&__account {
+		background: $c-primary;
+
+		a {
+			@extend %display-flex;
+			@extend %flex-align-items-center;
+			color: $c-white;
+			@extend %text-transform-uppercase;
+			font-weight: bold;
+			padding: 12px 0;
+		}
+		svg {
+			width: 40px;
+			height: 40px;
+			margin: auto 10px auto 20px;
+		}
+		@include atMedium {
+			display: none;
+		}
+	}
+	&__account {
+		border-bottom: 1px solid #736946;
+	}
+}
+
+.menu-active .menu {
+	opacity: 1;
+	transform: translateX(0%);
+	transition: all 0.4s ease-in-out;
+}
+
+body {
+	&.menu-active,
+	&.modal-active {
+		&:before {
+			content: '';
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			background-color: rgba(0, 0, 0, 0.7);
+			z-index: 1;
+		}
+	}
+	&.menu-active {
+		&::before {
+			top: 51px;
+			@include atMedium {
+				display: none;
+			}
+		}
+	}
+	&.modal-active {
+		&::before {
+			top: 0;
 		}
 	}
 }
@@ -35,36 +158,65 @@
 
 .menu {
 	&__dropdown {
-		visibility: hidden;
-		opacity: 0;
-		position: absolute;
-		transition: all 0.5s ease;
-		position: absolute;
-		left: 50%;
-		top: 105%;
-		transform: translateX(-50%);
-		display: none;
-		transition: all 0.5s ease;
-		min-width: 15rem;
-		background: $c-white;
-		padding: 15% 15% 5% 15%;
 		font-weight: bold;
 		@include font-size(14px);
-		:hover,
-		:focus-within > &,
-		:hover > & {
-			visibility: visible;
-			opacity: 1;
-			display: block;
+		background-color: #efeeee;
+		display: none;
+		@include atMedium {
+			position: absolute;
+			left: 50%;
+			top: 105%;
+			transform: translateX(-50%);
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.5s ease;
+			display: none;
+			min-width: 15rem;
+			background: $c-white;
+			padding: 15% 15% 5% 15%;
+			:hover,
+			:focus-within > &,
+			:hover > & {
+				visibility: visible;
+				opacity: 1;
+				display: block;
+			}
 		}
 	}
 	&__dropdown-item {
-		padding: 10px;
 		cursor: pointer;
-		text-align: center;
-		border-bottom: 1px solid #e4e4e4;
-		& + & + & {
+		margin: 0px 10px;
+		border-bottom: 1px solid #9e9d9e;
+		&:last-of-type {
 			border-bottom: 1px solid transparent;
+		}
+		@include atMedium {
+			margin: 0;
+			text-align: center;
+			padding: 10px;
+			border-bottom: 1px solid #e4e4e4;
+			& + & + & {
+				border-bottom: 1px solid transparent;
+			}
+		}
+	}
+	&__dropdown-link {
+		@extend %display-flex;
+		@extend %flex-align-items-center;
+		font-weight: bold;
+		@include font-size(16px);
+		padding: 20.5px 10px 20.5px 60px;
+		color: #9e9d9e;
+
+		@include atMedium {
+			background-color: initial;
+			display: block;
+			@include font-size(14px);
+			padding: 0;
+			border: none;
+			&:hover {
+				color: $c-primary;
+			}
 		}
 	}
 }
