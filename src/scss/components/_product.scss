@@ -28,8 +28,15 @@
 	&__list {
 		@extend %text-transform-uppercase;
 		color: #757575;
-		@include font-size(20px);
 		padding: 0 5px;
+		@include font-size(13px);
+		font-style: normal;
+		@include atSmall {
+			@include font-size(15px);
+		}
+		@include atMedium {
+			@include font-size(16px);
+		}
 	}
 	&__list--line {
 		text-decoration: line-through;
