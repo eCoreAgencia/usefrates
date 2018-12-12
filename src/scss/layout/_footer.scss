@@ -97,6 +97,10 @@
 	&__revenda-link {
 		@extend %display-flex;
 		@extend %flex-justify-content-center;
+		img {
+			width: auto;
+			height: auto;
+		}
 		@include atMedium {
 		}
 	}
