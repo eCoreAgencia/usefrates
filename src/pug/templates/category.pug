@@ -9,25 +9,10 @@ block content
         h2
             +vtex-controller('<vtex.cmc:searchTitle />')
                 | Camisa
-    //section.section__page.section__banner
-        .container
-            .banner.banner__category
-                +vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
-                    .box-banner
-                        a(href="")
-                            img(src="http://via.placeholder.com/2000x207")/
     section.section__page.section__navTop
         .container
             .category__filter.filter
                 .filter__inner
-                    .filter__content
-                        ul.filter__menu
-                            li.filter__item
-                                span Todos
-                                .filter__options
-                                    label
-                        .filter__actions
-                            button.button.button--primary Aplicar
                     +vtex-controller('<vtex.cmc:searchNavigator />')
                         script(type='text/javascript', language='javascript').
                             $(document).ready(function() {
