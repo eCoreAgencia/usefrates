@@ -1,196 +1,210 @@
 extends ../layouts/default.pug
 
 block vars
-  - var pageTitle = 'Categoria'
-  - var bodyClass = 'catalog category'
+	- var pageTitle = 'Categoria'
+	- var bodyClass = 'catalog category'
 
 block content
-    section.sextion__page.section__title
-        h2
-            +vtex-controller('<vtex.cmc:searchTitle />')
-                | Camisa
-    section.section__page.section__navTop
-        .container
-            .category__filter.filter
-                .filter__inner
-                    +vtex-controller('<vtex.cmc:searchNavigator />')
-                        script(type='text/javascript', language='javascript').
-                            $(document).ready(function() {
-                                partialSearchUrl = '/busca?O=OrderByReleaseDateDESC&';
-                            });
-                        .navigation-tabs
-                            .menu-departamento
-                                span.rt
-                                span.rb
-                                div
-                                    .menu-navegue
-                                        a.search-navigator-tab.tab-navegue-ativo(title='Navegue', href='#') Navegar
-                                        a.search-navigator-tab.tab-refinar(title='Refinar Resultado', href='#') Refinar Resultado
-                                    .search-multiple-navigator(style='display: block; visibility: visible;')
-                                        h3.roupas
-                                            span
-                                            a(href='https://www.thugnine.com.br/roupas', title='Roupas') Roupas
-                                        h4.roupas
-                                            span
-                                            a(href='https://www.thugnine.com.br/roupas', title='Camisetas') Camisetas
-                                        a.bt-refinar.search-filter-button.even(title='Refinar Resultado', href='#') Refinar Resultado
-                                        fieldset.refino.Caracteristicas.filtro_tamanho
-                                            h5.Caracteristicas Tamanho
-                                            div
-                                                label.sr_p(title='P', index='0')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_23:P', type='checkbox', name='P', value='P')
-                                                    | P
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_m(title='M', index='1')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_23:M', type='checkbox', name='M', value='M')
-                                                    | M
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_g(title='G', index='2')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_23:G', type='checkbox', name='G', value='G')
-                                                    | G
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_gg(title='GG', index='3')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_23:GG', type='checkbox', name='GG', value='GG')
-                                                    | GG
-                                                    span.sr_box
-                                                    span.sr_box2
-                                        fieldset.refino.even.Caracteristicas.filtro_cor
-                                            h5.even.Caracteristicas Cor
-                                            div
-                                                label.sr_branco(title='BRANCO', index='0')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:BRANCO', type='checkbox', name='BRANCO', value='BRANCO')
-                                                    | BRANCO
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_preto(title='PRETO', index='1')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:PRETO', type='checkbox', name='PRETO', value='PRETO')
-                                                    | PRETO
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_mescla(title='MESCLA', index='2')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:MESCLA', type='checkbox', name='MESCLA', value='MESCLA')
-                                                    | MESCLA
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_marrom(title='MARROM', index='3')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:MARROM', type='checkbox', name='MARROM', value='MARROM')
-                                                    | MARROM
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_camuflado(title='CAMUFLADO', index='4')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:CAMUFLADO', type='checkbox', name='CAMUFLADO', value='CAMUFLADO')
-                                                    | CAMUFLADO
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_cinza(title='CINZA', index='5')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:CINZA', type='checkbox', name='CINZA', value='CINZA')
-                                                    | CINZA
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_verde-escuro(title='VERDE ESCURO', index='6')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:VERDE+ESCURO', type='checkbox', name='VERDE+ESCURO', value='VERDE ESCURO')
-                                                    | VERDE ESCURO
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_rosa(title='ROSA', index='7')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:ROSA', type='checkbox', name='ROSA', value='ROSA')
-                                                    | ROSA
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_marinho(title='MARINHO', index='8')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:MARINHO', type='checkbox', name='MARINHO', value='MARINHO')
-                                                    | MARINHO
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_vinho(title='VINHO', index='9')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:VINHO', type='checkbox', name='VINHO', value='VINHO')
-                                                    | VINHO
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_vermelho(title='VERMELHO', index='10')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:VERMELHO', type='checkbox', name='VERMELHO', value='VERMELHO')
-                                                    | VERMELHO
-                                                    span.sr_box
-                                                    span.sr_box2
-                                                label.sr_azul(title='AZUL', index='11')
-                                                    input.multi-search-checkbox(rel='fq=specificationFilter_24:AZUL', type='checkbox', name='AZUL', value='AZUL')
-                                                    | AZUL
-                                                    span.sr_box
-                                                    span.sr_box2
-                                    .search-single-navigator(style='display: none;')
-                                        h3.roupas
-                                            span
-                                            a(href='https://www.thugnine.com.br/roupas', title='Roupas') Roupas
-                                        h4.roupas.even
-                                            a(href='https://www.thugnine.com.br/roupas/camisetas?O=OrderByReleaseDateDESC&PS=48', title='Camisetas') Camisetas (272)
-                                        h5.Hide.Caracteristicas.HideModelo Modelo
-                                        ul.Modelo.Caracteristicas
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/Dry Fit?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_22', title='Dry Fit') Dry Fit (8)
-                                            li.last
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/Malha 100@perc@ Algodão?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_22', title='Malha 100% Algodão') Malha 100% Algodão (206)
-                                        h5.Hide.even.Caracteristicas.HideTamanho Tamanho
-                                        ul.Tamanho.even.Caracteristicas
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/P?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='P') P (198)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/M?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='M') M (161)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/G?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='G') G (83)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/GG?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='GG') GG (46)
-                                            li.last
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/GGG?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='GGG') GGG (24)
-                                        h5.Hide.Caracteristicas.HideCor Cor
-                                        ul.Cor.Caracteristicas
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/BRANCO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='BRANCO') BRANCO (80)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/PRETO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='PRETO') PRETO (174)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/MESCLA?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MESCLA') MESCLA (29)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/MARROM?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MARROM') MARROM (1)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/CAMUFLADO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='CAMUFLADO') CAMUFLADO (1)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/CINZA?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='CINZA') CINZA (1)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/VERDE ESCURO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VERDE ESCURO') VERDE ESCURO (6)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/ROSA?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='ROSA') ROSA (1)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/MARINHO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MARINHO') MARINHO (4)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/VINHO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VINHO') VINHO (12)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/VERMELHO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VERMELHO') VERMELHO (2)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/AZUL?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='AZUL') AZUL (7)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/BEGE?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='BEGE') BEGE (4)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/SUBLIMACAO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='SUBLIMACAO') SUBLIMACAO (1)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/AZUL CLARO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='AZUL CLARO') AZUL CLARO (1)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/AMARELO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='AMARELO') AMARELO (2)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/MESCLA ESCURO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MESCLA ESCURO') MESCLA ESCURO (1)
-                                            li
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/AZUL 18-3945 TCX?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='AZUL 18-3945 TCX') AZUL 18-3945 TCX (1)
-                                            li.last
-                                                a(href='https://www.thugnine.com.br/roupas/camisetas/MESCLA SENSATION?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MESCLA SENSATION') MESCLA SENSATION (1)
-                        .urlLastSearch(style='display:none') http://www.thugnine.com.br/roupas/camisetas?O=OrderByReleaseDateDESC
+	section.section__page.section__title
+		h2
+			+vtex-controller('<vtex.cmc:searchTitle />')
+				| Camisa
+	section.section__page.section__navTop
+		.container
+			.category__filter.filter
+				.filter__inner
+					+vtex-controller('<vtex.cmc:searchNavigator />')
+						.filterCategory.filterOptions
+							script(type='text/javascript', language='javascript').
+								$(document).ready(function() {
+								partialSearchUrl = '/busca?O=OrderByReleaseDateDESC&';
+								});
+							.navigation-tabs
+								.menu-departamento
+									span.rt
+									span.rb
+									div
+										.menu-navegue
+											a.search-navigator-tab.tab-navegue-ativo(title='Navegue', href='#') Navegar
+											a.search-navigator-tab.tab-refinar(title='Refinar Resultado', href='#') Refinar Resultado
+										.search-multiple-navigator(style='visibility: visible;')
+											h3.roupas
+												span
+												a(href='https://www.thugnine.com.br/roupas', title='Roupas') Roupas
+											h4.roupas
+												span
+												a(href='https://www.thugnine.com.br/roupas', title='Camisetas') Camisetas
+											a.bt-refinar.search-filter-button.even(title='Refinar Resultado', href='#') Refinar Resultado
+											fieldset.refino.Caracteristicas.filtro_tamanho
+												h5.Caracteristicas Tamanho
+												div
+													label.sr_p(title='P', index='0')
+														input.multi-search-checkbox(rel='fq=specificationFilter_23:P', type='checkbox', name='P', value='P')
+														| P
+														span.sr_box
+														span.sr_box2
+													label.sr_m(title='M', index='1')
+														input.multi-search-checkbox(rel='fq=specificationFilter_23:M', type='checkbox', name='M', value='M')
+														| M
+														span.sr_box
+														span.sr_box2
+													label.sr_g(title='G', index='2')
+														input.multi-search-checkbox(rel='fq=specificationFilter_23:G', type='checkbox', name='G', value='G')
+														| G
+														span.sr_box
+														span.sr_box2
+													label.sr_gg(title='GG', index='3')
+														input.multi-search-checkbox(rel='fq=specificationFilter_23:GG', type='checkbox', name='GG', value='GG')
+														| GG
+														span.sr_box
+														span.sr_box2
+											fieldset.refino.even.Caracteristicas.filtro_cor
+												h5.even.Caracteristicas Cor
+												div
+													label.sr_branco(title='BRANCO', index='0')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:BRANCO', type='checkbox', name='BRANCO', value='BRANCO')
+														| BRANCO
+														span.sr_box
+														span.sr_box2
+													label.sr_preto(title='PRETO', index='1')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:PRETO', type='checkbox', name='PRETO', value='PRETO')
+														| PRETO
+														span.sr_box
+														span.sr_box2
+													label.sr_mescla(title='MESCLA', index='2')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:MESCLA', type='checkbox', name='MESCLA', value='MESCLA')
+														| MESCLA
+														span.sr_box
+														span.sr_box2
+													label.sr_marrom(title='MARROM', index='3')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:MARROM', type='checkbox', name='MARROM', value='MARROM')
+														| MARROM
+														span.sr_box
+														span.sr_box2
+													label.sr_cinza(title='CINZA', index='4')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:CINZA', type='checkbox', name='CINZA', value='CINZA')
+														| CINZA
+														span.sr_box
+														span.sr_box2
+													label.sr_verde-escuro(title='VERDE ESCURO', index='5')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:VERDE+ESCURO', type='checkbox', name='VERDE+ESCURO', value='VERDE ESCURO')
+														| VERDE ESCURO
+														span.sr_box
+														span.sr_box2
+													label.sr_marinho(title='MARINHO', index='6')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:MARINHO', type='checkbox', name='MARINHO', value='MARINHO')
+														| MARINHO
+														span.sr_box
+														span.sr_box2
+													label.sr_vinho(title='VINHO', index='7')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:VINHO', type='checkbox', name='VINHO', value='VINHO')
+														| VINHO
+														span.sr_box
+														span.sr_box2
+													label.sr_vermelho(title='VERMELHO', index='8')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:VERMELHO', type='checkbox', name='VERMELHO', value='VERMELHO')
+														| VERMELHO
+														span.sr_box
+														span.sr_box2
+													label.sr_azul(title='AZUL', index='9')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:AZUL', type='checkbox', name='AZUL', value='AZUL')
+														| AZUL
+														span.sr_box
+														span.sr_box2
+													label.sr_roxo(title='ROXO', index='10')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:ROXO', type='checkbox', name='ROXO', value='ROXO')
+														| ROXO
+														span.sr_box
+														span.sr_box2
+													label.sr_bege(title='BEGE', index='11')
+														input.multi-search-checkbox(rel='fq=specificationFilter_24:BEGE', type='checkbox', name='BEGE', value='BEGE')
+														| BEGE
+														span.sr_box
+														span.sr_box2
 
-    section.section__page.container.allVitrine
-        .is-fluid
-            .shelf__vitrine
-                +vtex-controller('<vtex.cmc:searchResult layout="65c15678-2bbe-72e0-3aa6-0aa635db2f86" itemCount="16"  columnCount="16" />')
-                    include ../vtexParts/searchResult.pug
+										.search-single-navigator(style='display: none;')
+											h3.roupas
+												span
+												a(href='https://www.thugnine.com.br/roupas', title='Roupas') Roupas
+											h4.roupas.even
+												a(href='https://www.thugnine.com.br/roupas/camisetas?O=OrderByReleaseDateDESC&PS=48', title='Camisetas') Camisetas (244)
+											h5.Hide.Caracteristicas.HideModelo Modelo
+											ul.Modelo.Caracteristicas
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/Dry Fit?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_22', title='Dry Fit') Dry Fit (5)
+												li.last
+													a(href='https://www.thugnine.com.br/roupas/camisetas/Malha 100@perc@ Algodão?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_22', title='Malha 100% Algodão') Malha 100% Algodão (152)
+											h5.Hide.even.Caracteristicas.HideTamanho Tamanho
+											ul.Tamanho.even.Caracteristicas
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/P?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='P') P (214)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/M?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='M') M (154)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/G?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='G') G (77)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/GG?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='GG') GG (58)
+												li.last
+													a(href='https://www.thugnine.com.br/roupas/camisetas/GGG?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_23', title='GGG') GGG (36)
+											h5.Hide.Caracteristicas.HideCor Cor
+											ul.Cor.Caracteristicas
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/BRANCO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='BRANCO') BRANCO (88)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/PRETO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='PRETO') PRETO (197)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/MESCLA?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MESCLA') MESCLA (21)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/MARROM?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MARROM') MARROM (1)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/CINZA?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='CINZA') CINZA (1)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/VERDE ESCURO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VERDE ESCURO') VERDE ESCURO (7)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/MARINHO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MARINHO') MARINHO (2)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/VINHO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VINHO') VINHO (12)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/VERMELHO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VERMELHO') VERMELHO (3)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/AZUL?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='AZUL') AZUL (9)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/ROXO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='ROXO') ROXO (1)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/BEGE?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='BEGE') BEGE (2)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/AZUL CLARO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='AZUL CLARO') AZUL CLARO (3)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/AMARELO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='AMARELO') AMARELO (2)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/MESCLA ESCURO?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MESCLA ESCURO') MESCLA ESCURO (1)
+												li
+													a(href='https://www.thugnine.com.br/roupas/camisetas/MESCLA SENSATION?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='MESCLA SENSATION') MESCLA SENSATION (3)
+												li.last
+													a(href='https://www.thugnine.com.br/roupas/camisetas/VERDE BANDEIRA?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VERDE BANDEIRA') VERDE BANDEIRA (1)
+							.urlLastSearch(style='display:none') http://www.thugnine.com.br/roupas/camisetas?O=OrderByReleaseDateDESC
+							.content-grid
+								i.icon-grid-twe
+								i.icon-grid-four
+					a.btnClear LIMPAR FILTROS
+	section.section__page.section__breadcrumb
+		.container
+			+vtex-controller('<vtex.cmc:breadCrumb />')
+				.bread-crumb
+					ul
+						li
+							a(href='https://tactical.vtexcommercestable.com.br/', rel='v:url', property='v:title') Frates
+						li
+							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas', rel='v:url', property='v:title') Camisas
+						li
+							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios', rel='v:url', property='v:title') Acessórios
+						li.last
+							a(href='https://tactical.vtexcommercestable.com.br/ferramentas-eletricas/acessorios/mandril', rel='v:url', property='v:title') Mandril
+	section.section__page.container.allVitrine
+		.is-fluid
+			.shelf__vitrine
+				+vtex-controller('<vtex.cmc:searchResult layout="65c15678-2bbe-72e0-3aa6-0aa635db2f86" itemCount="16"  columnCount="16" />')
+					include ../vtexParts/searchResult.pug
 
 block scripts
-    script(src='/arquivos/vtex-SmartResearch.js?v=%PROJECT_VERSION%')
+	script(src='/arquivos/vtex-SmartResearch.js?v=%PROJECT_VERSION%')

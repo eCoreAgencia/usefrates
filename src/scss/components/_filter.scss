@@ -1,10 +1,11 @@
 body.catalog {
 	.filter {
-		&__content {
-			display: none;
-		}
-
+		flex: 1;
 		&__inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex: 1;
 			.menu-navegue {
 				display: none;
 			}
@@ -91,6 +92,12 @@ body.catalog {
 					}
 				}
 			}
+		}
+		.btnClear {
+			border: 1px solid black;
+			color: black;
+			padding: 10px 20px;
+			cursor: pointer;
 		}
 	}
 }

@@ -1,99 +1,56 @@
 .catalog {
+	.searchResultsTime,
+	.sub,
+	.pages,
+	.pager {
+		display: none;
+	}
 
-  .searchResultsTime,
-  .sub,
-  .pages,
-  .pager {
-    display: none;
-  }
+	.shelf {
+		ul {
+			@extend %flex-justify-content-flex-start;
+			@extend %flex-wrap-wrap;
+			@extend %display-flex;
+		}
 
-  .shelf {
-    ul {
-        @extend %flex-justify-content-flex-start;
-        @extend %flex-wrap-wrap;
-        @extend %display-flex;
-    }
+		.shelf {
+			li {
+				min-width: 293px;
+				display: inline-block;
+			}
+		}
+	}
 
-    .shelf {
-        
-        
-        li {
-            min-width: 293px;
-            display: inline-block;
-        }
-    }
-  }
+	.orderBy {
+		select {
+			color: $c-black;
+		}
 
-  .orderBy {
-    select {
+		.select {
+			&::after {
+				border-color: #bdbdbd;
+			}
+		}
+	}
 
-      color: $c-black;
-    }
+	.section__inner {
+		@extend %display-flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 
-    .select {
-      &::after {
-        border-color: #bdbdbd;
-      }
-    }
-  }
+	.btn-load-more {
+		display: flex;
+		margin: 10px auto;
+		width: 200px;
+		border-color: #9e9e9e;
+		text-transform: uppercase;
+		font-size: 18px;
+	}
 
-  .section__inner {
-    @extend %display-flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .bread-crumb ul {
-    display: flex;
-
-    li {
-      margin: 0 5px;
-
-
-      a {
-        color: #757575;
-
-        &:hover {
-          @extend %color-primary;
-        }
-      }
-
-      &::after {
-        content: "|";
-        display: inline-block;
-        margin-left: 5px;
-      }
-
-      &:last-child {
-        &::after {
-          display: none;
-        }
-      }
-
-      &.last {
-        strong {
-          font-weight: 400;
-        }
-
-        a {
-          @extend %color-primary;
-        }
-      }
-    }
-  }
-
-  .btn-load-more {
-    display: flex;
-    margin: 10px auto;
-    width: 200px;
-    border-color: #9e9e9e;
-    text-transform: uppercase;
-    font-size: 18px;
-  }
-
-  #returnToTop {
-    display: none !important;
-  }
+	#returnToTop {
+		display: none !important;
+	}
 }
