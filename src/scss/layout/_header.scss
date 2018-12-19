@@ -2,7 +2,11 @@
 // STYLING TO OTHER HEADERS TOO
 body.home .header {
 	@include atMedium {
-		background-image: linear-gradient(to top, transparent 0, rgba(0, 0, 0, 0.6) 100%);
+		background-image: linear-gradient(
+			to top,
+			transparent 0,
+			rgba(0, 0, 0, 0.6) 100%
+		);
 		position: absolute;
 	}
 
@@ -97,19 +101,19 @@ body.home .header {
 
 	&__wrapper {
 		display: grid;
-		grid-template-columns: 60px 60px 2fr 60px 60px;
+		grid-template-columns: 60px 40px 2fr 50px 50px;
 		grid-template-rows: 1fr;
-		grid-template-areas: 'menu blank logo searchico carrinho';
+		grid-template-areas: "menu blank logo searchico carrinho";
 		align-items: center;
 		@include atMedium {
 			grid-template-columns: max-content 1fr 0.5fr;
 			grid-template-rows: 1fr;
 			grid-gap: 5%;
-			grid-template-areas: 'logo menu sform';
+			grid-template-areas: "logo menu sform";
 		}
 		&.search-active {
 			grid-template-rows: 1fr 1px 1fr;
-			grid-template-areas: 'menu blank logo searchico carrinho' 'divisor divisor divisor divisor divisor' 'sform sform sform sform sform';
+			grid-template-areas: "menu blank logo searchico carrinho" "divisor divisor divisor divisor divisor" "sform sform sform sform sform";
 			.search-form {
 				display: flex;
 			}
@@ -202,7 +206,7 @@ body.home .header {
 		left: 0px;
 		grid-area: menu;
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			top: 13px;
 			left: 10px;
@@ -223,7 +227,7 @@ body.home .header {
 			transform-origin: 0 50%;
 		}
 		&::after {
-			content: '';
+			content: "";
 			position: absolute;
 			bottom: 11px;
 			left: 10px;
@@ -251,7 +255,8 @@ body.home .header {
 		}
 
 		&::after {
-			transform: rotate(-45deg) scale(0.95) translateY(1.2px) translateX(-1.7px);
+			transform: rotate(-45deg) scale(0.95) translateY(1.2px)
+				translateX(-1.7px);
 			background-color: $c-white;
 			left: 17px;
 		}
@@ -334,7 +339,7 @@ body.home .header {
 			min-width: 280px;
 			border-radius: 20px;
 			&::before {
-				content: '';
+				content: "";
 				width: 0;
 				height: 0;
 				border-bottom: 10px solid $c-primary;

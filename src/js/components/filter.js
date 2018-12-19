@@ -1,11 +1,18 @@
 class Filter {
 	constructor() {
-		this.menu = document.querySelector(".logo ");
 		$(".helperComplement").remove();
-		// this.init();
 		this.clearFilter();
+		// this.init();
 		// this.openFilter();
 		// this.clouseFilter();
+	}
+	clearFilter() {
+		$(".btnClear").on("click", function(e) {
+			e.preventDefault();
+			$("fieldset label.sr_selected").each(function() {
+				$(this).trigger("click");
+			});
+		});
 	}
 
 	// openFilter() {
@@ -31,15 +38,6 @@ class Filter {
 	// 		$(".category__filter.filter").removeClass("active");
 	// 	});
 	// }
-
-	clearFilter() {
-		$(".btnClear").on("click", function(e) {
-			e.preventDefault();
-			$("fieldset label.sr_selected").each(function() {
-				$(this).trigger("click");
-			});
-		});
-	}
 
 	// init() {
 	// 	$(".orderBy .select select").on("change", function() {

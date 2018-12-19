@@ -1,14 +1,20 @@
 body {
 	&.catalog {
 		.section__title {
-			background: url(/arquivos/banner-catalog-title.jpg) center no-repeat;
+			background: url(/arquivos/banner-catalog-title-mobile.jpg) center
+				no-repeat;
 			background-size: 100%;
-			height: 250px;
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin: 0;
 			padding: 0;
+			@include atMedium {
+				background: url(/arquivos/banner-catalog-title.jpg) center
+					no-repeat;
+				height: 250px;
+			}
 			h2 {
 				padding: 0;
 				margin: 0;
@@ -21,14 +27,16 @@ body {
 		}
 
 		.section__navTop {
-			border-bottom: 1px solid #bdbdbd;
-			border-top: 1px solid #bdbdbd;
 			margin-top: -2px;
 			margin: 0;
 			.container {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+			}
+			@include atMedium {
+				border-bottom: 1px solid #bdbdbd;
+				border-top: 1px solid #bdbdbd;
 			}
 		}
 

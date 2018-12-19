@@ -45,7 +45,7 @@
 				flex: 1;
 				justify-content: space-between;
 				&::after {
-					content: ' peças';
+					content: " peças";
 					display: inline-flex;
 					align-items: center;
 					order: 2;
@@ -63,7 +63,7 @@
 			}
 			.button {
 				border: 0;
-				width: 50px;
+				width: 30px;
 				font-weight: bold;
 				color: #757575;
 				background-color: transparent;
@@ -161,8 +161,8 @@
 			background-color: #25a578;
 
 			&:before {
-				content: '';
-				background-image: url('/arquivos/carrinho-png.png');
+				content: "";
+				background-image: url("/arquivos/carrinho-png.png");
 				background-repeat: no-repeat;
 				background-position: center;
 				display: inline-flex;
@@ -183,7 +183,7 @@
 			@include atMedium {
 				display: grid;
 				grid-template-columns: 0.2fr 1fr;
-				grid-template-areas: 'thumbs mainImg';
+				grid-template-areas: "thumbs mainImg";
 				grid-gap: 10px;
 			}
 		}
@@ -292,7 +292,7 @@
 		.skuBestInstallmentNumber {
 			&:after {
 				@include atMedium {
-					content: ' sem juros ';
+					content: " sem juros ";
 					display: inline;
 				}
 			}
@@ -328,7 +328,7 @@
 					display: none;
 				}
 				&:after {
-					content: '';
+					content: "";
 					display: flex;
 					width: 8px;
 					height: 8px;
@@ -358,7 +358,7 @@
 			}
 		}
 		.product__sizes-link {
-			background-image: url('/arquivos/medidas-logo.png');
+			background-image: url("/arquivos/medidas-logo.png");
 			background-repeat: no-repeat;
 			display: block;
 			width: 45px;
@@ -420,7 +420,7 @@
 					}
 				}
 				&:after {
-					content: '';
+					content: "";
 					width: 10px;
 					height: 10px;
 					border: 1px solid black;
@@ -506,7 +506,7 @@
 			color: #757575;
 			@include font-size(10px);
 			&:before {
-				content: 'ref:';
+				content: "ref:";
 				display: inline-block;
 				margin-right: 5px;
 				text-transform: uppercase;
@@ -568,7 +568,7 @@
 		@extend %flex-align-items-center;
 		padding: 11.5px 0;
 		&:after {
-			content: '';
+			content: "";
 			display: flex;
 			width: 8px;
 			height: 8px;

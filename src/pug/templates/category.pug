@@ -10,8 +10,14 @@ block content
 			+vtex-controller('<vtex.cmc:searchTitle />')
 				| Camisa
 	section.section__page.section__navTop
-		.container
-			.category__filter.filter
+		.filter-mobile
+			.filter-mobile__filter Filtros
+			.filter-mobile__order Ordenar Por
+			ul.filter-mobile__absolute-list
+			+vtex-controller('<vtex.cmc:searchNavigator />')
+
+		.category__filter.filter.filter-desktop
+			.container
 				.filter__inner
 					+vtex-controller('<vtex.cmc:searchNavigator />')
 						.filterCategory.filterOptions
@@ -183,9 +189,6 @@ block content
 												li.last
 													a(href='https://www.thugnine.com.br/roupas/camisetas/VERDE BANDEIRA?O=OrderByReleaseDateDESC&PS=48&map=c,c,specificationFilter_24', title='VERDE BANDEIRA') VERDE BANDEIRA (1)
 							.urlLastSearch(style='display:none') http://www.thugnine.com.br/roupas/camisetas?O=OrderByReleaseDateDESC
-							.content-grid
-								i.icon-grid-twe
-								i.icon-grid-four
 					a.btnClear LIMPAR FILTROS
 	section.section__page.section__breadcrumb
 		.container
