@@ -3,9 +3,16 @@ class Catalog {
 		this.checkBody();
 		this.getFilters();
 		this.renderFilters();
+		this.events();
 		let filterNames = [];
+		this.buttonFilter = $(".filter-mobile__filter");
 	}
-
+	events() {
+		this.buttonFilter.click(this.toggleTheFilterOptions.bind(this));
+	}
+	toggleTheFilterOptions() {
+		console.log(this);
+	}
 	checkBody() {
 		if ($("body").hasClass("catalog") && $(window).width <= 800) {
 			this.getFilters();
