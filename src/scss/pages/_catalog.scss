@@ -19,10 +19,13 @@ body {
 				padding: 0;
 				margin: 0;
 				color: #a69e93;
-				font-size: 60px;
 				font-weight: 400;
 				text-transform: uppercase;
 				font-family: $playfair;
+				@include font-size(30px);
+				@include atMedium {
+					@include font-size(60px);
+				}
 			}
 		}
 

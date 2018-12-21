@@ -1,10 +1,20 @@
 class Filter {
 	constructor() {
 		$(".helperComplement").remove();
+		// FIRST LEVEL PART
+		this.buttonOpenFilter = $(".filter-mobile__filter");
+		this.filterInner = $(".filter-mobile__inner");
+		// SECOND LEVEL PART
+		this.buttonFilterOpenSelector = $(
+			".filter-mobile .search-multiple-navigator h5"
+		);
 		this.clearFilter();
-		// this.init();
-		// this.openFilter();
-		// this.clouseFilter();
+		this.events();
+		this.createSelection();
+	}
+	events() {
+		this.buttonOpenFilter.click(this.openFilterOptions.bind(this));
+		this.buttonFilterOpenSelector.click(this.giveActualfilterClassname);
 	}
 	clearFilter() {
 		$(".btnClear").on("click", function(e) {
@@ -14,66 +24,65 @@ class Filter {
 			});
 		});
 	}
+	openFilterOptions() {
+		this.buttonOpenFilter.toggleClass("arrow-change");
+		this.filterInner.toggleClass("is-oppened");
+	}
 
-	// openFilter() {
-	// 	$(".btnOpenFilter").on("click", function(e) {
-	// 		e.preventDefault();
-	// 		if ($(".category__filter.filter").hasClass("active")) {
-	// 			$(this).html('<i class="icon-filter"/>MONSTRAR FILTRO');
-	// 			$(".category__filter.filter").fadeOut();
-	// 			$(".category__filter.filter").removeClass("active");
-	// 		} else {
-	// 			$(this).html('<i class="icon-arrow-left"/>FECHAR FILTROS');
-	// 			$(".category__filter.filter").fadeIn();
-	// 			$(".category__filter.filter").addClass("active");
-	// 		}
-	// 	});
-	// }
+	createSelection() {
+		$(".filter fieldset h5").each(function() {
+			if (
+				$(this)
+					.next("div")
+					.find("label")[0]
+			) {
+				const text = $(this).text();
+				let label = $(this)
+					.next("div")
+					.html();
+				const html = `
+				<div class = "filter-mobile__menu">
+					<h6 class="filter-mobile__title">${text}</h6>
+					<div class="filter-mobile__options">${label}</div>
+				</div>`;
+				$(document)
+					.find(".filter-mobile__menu")
+					.append(html);
+			}
+		});
 
-	// clouseFilter() {
-	// 	$(".clouseFilter").on("click", function(e) {
-	// 		e.preventDefault();
-	// 		$(".btnOpenFilter").html('<i class="icon-filter"/>MONSTRAR FILTRO');
-	// 		$(".category__filter.filter").fadeOut();
-	// 		$(".category__filter.filter").removeClass("active");
-	// 	});
-	// }
+		$(".filter input[type='checkbox']").vtexSmartResearch();
+	}
 
-	// init() {
-	// 	$(".orderBy .select select").on("change", function() {
-	// 		const value = $(this).val();
-	// 		window.location.href = window.location.href + "?PS=12&O=" + value;
-	// 	});
-
-	// 	if (this.isExist(this.menu)) {
-	// 		console.log(this.menu);
-	// 	} else {
-	// 		console.log("Não existe");
-	// 	}
-
-	// 	$(".filter .search-multiple-navigator fieldset").each(function() {
-	// 		if ($("div", this).find("label")[0]) {
-	// 			const text = $("h5", this).text();
-	// 			let label = $("div", this).html();
-	// 			const html = `
-	// 		  		<li class="filter__item"><span>${text}</span>
-	// 					<div class="filter__options">
-	// 			  			${label}
-	// 					</div>
-	// 		  		</li>`;
-	// 			$(".filter__menu").append(html);
-	// 		}
-	// 	});
-
-	// 	$(".filter input[type='checkbox']").vtexSmartResearch();
-	// }
-
-	// isExist(e) {
-	// 	const exist = e == null ? false : true;
-	// 	return exist;
-	// }
+	giveActualfilterClassname() {
+		$(".filter-mobile__menu").toggleClass("is-active");
+	}
 }
 
 if ($("body").hasClass("catalog")) {
 	window.filter = new Filter();
 }
+
+// $(this);
+// if (
+// 	$(this)
+// 		.next("div")
+// 		.find("label")[0]
+// ) {
+// 	const text = $(this).text();
+// 	let label = $(this)
+// 		.next("div")
+// 		.html();
+// 	const html = `
+// 		<ul class="filter-mobile__list">
+// 			<li class="filter-mobile__item"><span>${text}</span><li>
+// 			  <div class="filter-mobile__options">
+// 				${label}
+// 			  </div>
+// 			</li>
+// 		</ul>`;
+// 	$(document)
+// 		.find(".filter-mobile__menu")
+// 		.append(html);
+// }
+// $(".filter-mobile input[type='checkbox']").vtexSmartResearch();

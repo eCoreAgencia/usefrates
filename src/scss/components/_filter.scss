@@ -106,10 +106,25 @@ body.catalog {
 			cursor: pointer;
 		}
 	}
+
 	.filter-mobile {
 		position: relative;
 		display: flex;
 		@include atMedium {
+			display: none;
+		}
+		&__menu {
+			position: absolute;
+			z-index: 999;
+			background: red;
+			top: 0;
+			left: 100%;
+			display: flex;
+			&.is-active {
+				left: 0;
+			}
+		}
+		.search-single-navigator {
 			display: none;
 		}
 		&__order,
@@ -131,6 +146,11 @@ body.catalog {
 				transform: rotate(45deg);
 				display: block;
 			}
+			&.arrow-change {
+				&:after {
+					transform: rotate(135deg);
+				}
+			}
 		}
 		&__filter {
 			border-width: 1px 1px 1px 0;
@@ -138,32 +158,64 @@ body.catalog {
 		&__order {
 			border-width: 1px 0 1px 0;
 		}
-		&__absolute-list {
+		&__inner {
 			display: none;
 			position: absolute;
 			top: 100%;
-			width: 100%;
-			flex: 1;
 			z-index: 999;
+			background: white;
+			width: 100%;
+			&.is-oppened {
+				display: block;
+			}
 		}
 		&__item {
 			border-bottom: 1px solid #cdcdcd;
 			padding: 20px 10px;
 			background: white;
 		}
-		&__link {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			text-transform: uppercase;
-			&:after {
-				content: "";
-				width: 10px;
-				height: 10px;
-				border-top: 3px solid #9e9e9e;
-				border-right: 3px solid #9e9e9e;
-				transform: rotate(45deg);
+
+		.search-multiple-navigator > :not(fieldset) {
+			display: none;
+		}
+		.menu-navegue {
+			display: none;
+		}
+		.search-multiple-navigator {
+			display: block;
+			fieldset {
+				display: flex;
+				margin: 0;
+				border-width: 0 0 1px 0;
+				padding: 0;
+			}
+			h5 {
+				padding: 20px 10px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				text-transform: uppercase;
+				font-weight: normal;
+				margin: 0;
+
+				&:after {
+					content: "";
+					width: 10px;
+					height: 10px;
+					border-top: 3px solid #9e9e9e;
+					border-right: 3px solid #9e9e9e;
+					transform: rotate(45deg);
+					display: block;
+				}
+			}
+			h5 + div {
 				display: block;
+				position: absolute;
+				width: 100vw;
+				height: 100vh;
+				top: 0;
+				bottom: 0;
+				right: 100%;
 			}
 		}
 	}
