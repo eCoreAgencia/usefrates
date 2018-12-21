@@ -32,6 +32,7 @@ class Filter {
 		console.log(element);
 		let absoluteDiv = $('.filter-mobile__absolute');
 		absoluteDiv.html(element);
+		absoluteDiv.toggleClass('active');
 	}
 
 	clearFilter() {

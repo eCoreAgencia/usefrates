@@ -178,9 +178,18 @@ body.catalog {
 			top: 0;
 			bottom: 0;
 			left: 100%;
+			background-color: $c-white;
+			z-index: 9999;
 			&.active {
 				left: 0;
 				right: 0;
+			}
+			fieldset {
+				border: 0;
+			}
+			div {
+				display: flex;
+				flex-direction: column;
 			}
 		}
 	}
