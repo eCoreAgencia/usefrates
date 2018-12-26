@@ -5,11 +5,17 @@ class Filter {
 		this.renderListNamesData();
 		this.clearFilter();
 		this.buttonFilter = $('.filter-mobile__item');
+		this.closeButtonFilter = $('#close-filter');
 		this.events();
+		this.closeFilter();
 		let self = this;
 	}
 	events() {
-		this.buttonFilter.click(this.toggleTheFilterOptions);
+		let self = this;
+		this.buttonFilter.on('click', function() {
+			self.toggleTheFilterOptions(this);
+		});
+
 	}
 
 	renderListNamesData() {
@@ -23,20 +29,26 @@ class Filter {
 			);
 		});
 	}
-
-	toggleTheFilterOptions() {
-		console.log(this);
-		let itemData = $(this).attr('data-name');
-		console.log(itemData);
-		let element = $(document).find($(`.filtro_${itemData.toLowerCase()}`));
-		console.log(element);
+	closeFilter() {
+		$('.filter-mobile__absolute').removeClass('active');
+	}
+	toggleTheFilterOptions(e) {
+		let itemData = $(e).attr('data-name');
+		let element = $(`.filtro_${itemData.toLowerCase()}`).html();
 		let absoluteDiv = $('.filter-mobile__absolute');
 		absoluteDiv.html(element);
 		absoluteDiv.toggleClass('active');
+		this.closeButton();
+	}
+
+	closeButton() {
+		let buttonToCloseFilter = `<span onClick="filter.closeFilter()" id="close-filter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg></span>`;
+		let filterBox = $('.filter-mobile__absolute');
+		filterBox.find('h5').append(buttonToCloseFilter);
 	}
 
 	clearFilter() {
-		$('.btnClear').on('click', function(e) {
+		$('.btnClear, #close-filter').on('click', function(e) {
 			e.preventDefault();
 			$('fieldset label.sr_selected').each(function() {
 				$(this).trigger('click');
@@ -48,27 +60,3 @@ class Filter {
 if ($('body').hasClass('catalog')) {
 	window.filter = new Filter();
 }
-
-// $(this);
-// if (
-// 	$(this)
-// 		.next("div")
-// 		.find("label")[0]
-// ) {
-// 	const text = $(this).text();
-// 	let label = $(this)
-// 		.next("div")
-// 		.html();
-// 	const html = `
-// 		<ul class="filter-mobile__list">
-// 			<li class="filter-mobile__item"><span>${text}</span><li>
-// 			  <div class="filter-mobile__options">
-// 				${label}
-// 			  </div>
-// 			</li>
-// 		</ul>`;
-// 	$(document)
-// 		.find(".filter-mobile__menu")
-// 		.append(html);
-// }
-// $(".filter-mobile input[type='checkbox']").vtexSmartResearch();
