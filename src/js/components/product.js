@@ -52,14 +52,14 @@ class Product {
 				.split("sku=")[1]
 				.split("&qty")[0];
 
-			let qty = $(".product__qtd - value").val();
+			let qty = $(".product__qtd-value").val();
 
 			let item = {
 				id: sku,
 				quantity: qty,
 				seller: "1"
 			};
-
+			console.log(item);
 			vtexjs.checkout.addToCart([item], null).done(function(orderForm) {
 				console.log(orderForm);
 			});
@@ -124,30 +124,30 @@ class Product {
 		}
 	}
 
-	renderSkuSelectors(product) {
-		console.log(product);
-		const select = `
-            <div class = "product__skus--size product__skus--select">
-                <span class="product__skus-title">Tamanho</span>
-                <select name="Tamanho">
-                    <option value="" hidden>Selecione um tamanho</option>
-                    ${this.createSkuSelect(product.dimensionsMap.Tamanho)}
-                </select>
-            </div>`;
-		const list = `
-            <div class="product__skus--color product__skus--thumb">
-                <span class="product__skus-title">Cor</span>
-                <ul>
-                    ${this.createSkuThumb(product.dimensionsMap.Cor)}
-                </ul>
-            </div>`;
-		const skus = `<div class="product__skus-inner">
-                ${list}
-                ${select}
-        </div>`;
-		$(".product__skus").html(skus);
-		$(window).trigger("skuSelectorCreated");
-	}
+	// renderSkuSelectors(product) {
+	// 	console.log(product);
+	// 	const select = `
+	//         <div class = "product__skus--size product__skus--select">
+	//             <span class="product__skus-title">Tamanho</span>
+	//             <select name="Tamanho">
+	//                 <option value="" hidden>Selecione um tamanho</option>
+	//                 ${this.createSkuSelect(product.dimensionsMap.Tamanho)}
+	//             </select>
+	//         </div>`;
+	// 	const list = `
+	//         <div class="product__skus--color product__skus--thumb">
+	//             <span class="product__skus-title">Cor</span>
+	//             <ul>
+	//                 ${this.createSkuThumb(product.dimensionsMap.Cor)}
+	//             </ul>
+	//         </div>`;
+	// 	const skus = `<div class="product__skus-inner">
+	//             ${list}
+	//             ${select}
+	//     </div>`;
+	// 	$(".product__skus").html(skus);
+	// 	$(window).trigger("skuSelectorCreated");
+	// }
 
 	renderFormNotifyMe() {
 		const html = `<div class="product__unavailable">
@@ -169,7 +169,7 @@ class Product {
 
 		$(".product__action").hide();
 
-		$(".product__skus").html(html);
+		$(".product__group").html(html);
 	}
 
 	makeZoom() {
