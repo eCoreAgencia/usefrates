@@ -104,9 +104,12 @@
 			width: 95px;
 			height: 95px;
 			border: 1px solid $c-gray;
-			border-radius: 10px;
 			padding: 2px;
 			overflow: hidden;
+			img {
+				width: auto;
+				height: auto;
+			}
 		}
 
 		&__info {
