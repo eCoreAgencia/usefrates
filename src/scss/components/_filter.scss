@@ -107,6 +107,9 @@ body.catalog {
 		}
 	}
 
+	.search-single-navigator {
+		display: none;
+	}
 	.filter-mobile {
 		position: relative;
 		display: flex;
@@ -114,9 +117,6 @@ body.catalog {
 			display: none;
 		}
 
-		.search-single-navigator {
-			display: none;
-		}
 		&__order,
 		&__filter {
 			flex: 1;
