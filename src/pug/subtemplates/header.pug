@@ -65,10 +65,12 @@ header.header
 								include ../../svg/revenda-icon.svg
 								| Seja um revendedor
 				span.divisor
-				form.search-form#header-form
-					input.search-form__input.input-color(placeholder="Encontre um produto")/
+
+				form.search-form#header-form(action="/busca", method="get")
+					input.search-form__input.input-color(type='text',placeholder="Encontre um produto")/
 					button
 						include ../../svg/lupa-search.svg
+				.search-form__result
 
 			.tipbar__mobile
 				.tipbar__mobile-wrapper

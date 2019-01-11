@@ -8,7 +8,7 @@
 		let self = $.fn.searchform;
 		let el = this;
 		let defaults = {
-			vtexStore: "usefrates",
+			vtexStore: "tactical",
 			autocomplete: true,
 			showDepartments: true,
 			thumbWidth: 80,

@@ -5,9 +5,26 @@ class Product {
 	constructor() {
 		const productId = $("#___rc-p-id").val();
 		let self = this;
-		let thumbs = $(".thumbs");
 		this.simulateShipping();
-		this.makeZoom();
+		this.thumbsClickEvent();
+		const fix_zoom = function() {
+			window.LoadZoom = function(pi) {
+				const zoomImage = $(".image-zoom");
+				$(".zoomPup, .zoomWindow, .zoomPreload").remove();
+				if (!zoomImage.length) {
+					const img = $("#image-main");
+					const imgUrl = img.attr("src");
+					img.wrap(`<a href="${imgUrl}" class="image-zoom" />`);
+				}
+				const zoom = $("#image")
+					.addClass("easyzoom easyzoom--overlay")
+					.easyZoom();
+				window.zoomAPI = zoom.data("easyZoom");
+				window.ImageControl = () => null;
+			};
+			LoadZoom(0);
+		};
+		$(fix_zoom);
 
 		$(".button--plus").on("click", () => {
 			self.changeQuantity(1);
@@ -17,15 +34,15 @@ class Product {
 			self.changeQuantity(-1);
 		});
 
-		$(".image-zoom").on("click", function(e) {
-			e.preventDefault();
-			$(".product__zoom").addClass("is-active");
-		});
+		// $(".image-zoom").on("click", function(e) {
+		// 	e.preventDefault();
+		// 	$(".product__zoom").addClass("is-active");
+		// });
 
-		$(".product__zoom .btn--close").on("click", function(e) {
-			e.preventDefault();
-			$(".product__zoom").removeClass("is-active");
-		});
+		// $(".product__zoom .btn--close").on("click", function(e) {
+		// 	e.preventDefault();
+		// 	$(".product__zoom").removeClass("is-active");
+		// });
 
 		$(".buy-button.buy-button-ref").on("click", function(e) {
 			e.preventDefault();
@@ -94,34 +111,22 @@ class Product {
 			});
 		}
 	}
+	thumbsClickEvent() {
+		let thumbs = $(".thumbs");
+		thumbs.on("click", "a", function(e) {
+			e.preventDefault();
+			const imgUri = $(this).attr("rel");
+			zoomAPI._init();
+			zoomAPI.swap(imgUri, imgUri);
+			if (!imgUri) {
+				zoomAPI.teardown();
+			}
+			thumbs.find("a").removeClass("ON");
+			$(this).addClass("ON");
+		});
+	}
 	simulateShipping() {
 		window.SimulateShipping = new SimulateShipping();
-	}
-	makeZoom() {
-		$(".zoomPup, .zoomWindow, .zoomPreload").remove();
-
-		$(".thumbs li").each(function() {
-			const img = $("img", this).attr("src");
-			$(".product__zoom .product__zoom-thumbs").append(
-				`<a href=""><img src="${img}" /></a>`
-			);
-		});
-
-		$("#image a").each(function() {
-			const img = $(this).attr("href");
-			$(".product__zoom .product__zoom-image").append(
-				`<img src="${img}" />`
-			);
-			$("#image").html(`<img src="${img}" />`);
-		});
-
-		$(".product__zoom").on("click", "a", function(e) {
-			e.preventDefault();
-			const img = $("img", this)
-				.attr("src")
-				.replace("500-500", "1000-1000");
-			$(".product__zoom .product__zoom-image img").attr("src", img);
-		});
 	}
 	changeQuantity(val) {
 		let currentVal = $(".product__qtd-value").val();
@@ -130,31 +135,6 @@ class Product {
 			$(".product__qtd-value").val(newVal);
 		}
 	}
-
-	// renderSkuSelectors(product) {
-	// 	console.log(product);
-	// 	const select = `
-	//         <div class = "product__skus--size product__skus--select">
-	//             <span class="product__skus-title">Tamanho</span>
-	//             <select name="Tamanho">
-	//                 <option value="" hidden>Selecione um tamanho</option>
-	//                 ${this.createSkuSelect(product.dimensionsMap.Tamanho)}
-	//             </select>
-	//         </div>`;
-	// 	const list = `
-	//         <div class="product__skus--color product__skus--thumb">
-	//             <span class="product__skus-title">Cor</span>
-	//             <ul>
-	//                 ${this.createSkuThumb(product.dimensionsMap.Cor)}
-	//             </ul>
-	//         </div>`;
-	// 	const skus = `<div class="product__skus-inner">
-	//             ${list}
-	//             ${select}
-	//     </div>`;
-	// 	$(".product__skus").html(skus);
-	// 	$(window).trigger("skuSelectorCreated");
-	// }
 
 	renderFormNotifyMe() {
 		const html = `<div class="product__unavailable">
@@ -177,30 +157,6 @@ class Product {
 		$(".product__action").hide();
 
 		$(".product__group").html(html);
-	}
-
-	makeZoom() {
-		$(".thumbs li").each(function() {
-			const img = $("img", this).attr("src");
-			$(".product__zoom .product__zoom-thumbs").append(
-				`<a href=""><img src="${img}" /></a>`
-			);
-		});
-
-		$(".image-zoom").each(function() {
-			const img = $(this).attr("href");
-			$(".product__zoom .product__zoom-image").append(
-				`<img src="${img}" />`
-			);
-		});
-
-		$(".product__zoom").on("click", "a", function(e) {
-			e.preventDefault();
-			const img = $("img", this)
-				.attr("src")
-				.replace("500-500", "1000-1000");
-			$(".product__zoom .product__zoom-image img").attr("src", img);
-		});
 	}
 }
 

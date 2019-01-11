@@ -15,6 +15,3 @@ import "./components/searchMob";
 import "./components/send-form";
 import "./components/searchForm";
 import "./components/simulateShipping";
-$(document).ready(function() {
-	$(".#header-form").searchform({ vtexStore: "usefrates" });
-});

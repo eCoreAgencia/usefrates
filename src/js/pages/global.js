@@ -1,14 +1,15 @@
-import { isMobile } from '../utils';
+import { isMobile } from "../utils";
 
 $(document).ready(() => {
 	const headerFixed = () => {
 		const distancePageTop = 100;
-		const pageScroll = window.pageYOffset || document.documentElement.scrollTop;
+		const pageScroll =
+			window.pageYOffset || document.documentElement.scrollTop;
 
 		if (pageScroll >= distancePageTop) {
-			$('.header').addClass('header--fixed');
+			$(".header").addClass("header--fixed");
 		} else {
-			$('.header').removeClass('header--fixed');
+			$(".header").removeClass("header--fixed");
 		}
 	};
 
@@ -22,5 +23,8 @@ $(document).ready(() => {
 		});
 	}
 
-	$('.newsletter__form').sendForm('NL');
+	$(".newsletter__form").sendForm("NL");
+	$(document).ready(function() {
+		$("#header-form").searchform({ vtexStore: "usefrates" });
+	});
 });
