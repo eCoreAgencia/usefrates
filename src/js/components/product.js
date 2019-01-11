@@ -7,25 +7,7 @@ class Product {
 		let self = this;
 		let thumbs = $(".thumbs");
 		this.simulateShipping();
-		let fix_zoom = function() {
-			window.LoadZoom = function(pi) {
-				let zoomImage = $(".image-zoom");
-				// zoomImage.jqzoom()
-				$(".zoomPup, .zoomWindow, .zoomPreload").remove();
-				if (!zoomImage.length) {
-					let img = $("#image-main");
-					let imgUrl = img.attr("src");
-					img.wrap(`<a href="${imgUrl}" class="image-zoom" />`);
-				}
-				let zoom = $("#image")
-					.addClass("easyzoom easyzoom--overlay")
-					.easyZoom();
-				window.zoomAPI = zoom.data("easyZoom");
-				window.ImageControl = () => null;
-			};
-			LoadZoom(0);
-		};
-		$(fix_zoom);
+		this.makeZoom();
 
 		$(".button--plus").on("click", () => {
 			self.changeQuantity(1);
@@ -88,7 +70,7 @@ class Product {
 					.find("a")
 					.find("img")
 					.attr("src");
-				const urlReplace = url.replace("-55-55", "-600-600");
+				const urlReplace = url.replace("-100-150", "-400-600");
 				$(this)
 					.find("a")
 					.find("img")
@@ -115,7 +97,32 @@ class Product {
 	simulateShipping() {
 		window.SimulateShipping = new SimulateShipping();
 	}
+	makeZoom() {
+		$(".zoomPup, .zoomWindow, .zoomPreload").remove();
 
+		$(".thumbs li").each(function() {
+			const img = $("img", this).attr("src");
+			$(".product__zoom .product__zoom-thumbs").append(
+				`<a href=""><img src="${img}" /></a>`
+			);
+		});
+
+		$("#image a").each(function() {
+			const img = $(this).attr("href");
+			$(".product__zoom .product__zoom-image").append(
+				`<img src="${img}" />`
+			);
+			$("#image").html(`<img src="${img}" />`);
+		});
+
+		$(".product__zoom").on("click", "a", function(e) {
+			e.preventDefault();
+			const img = $("img", this)
+				.attr("src")
+				.replace("500-500", "1000-1000");
+			$(".product__zoom .product__zoom-image img").attr("src", img);
+		});
+	}
 	changeQuantity(val) {
 		let currentVal = $(".product__qtd-value").val();
 		let newVal = +currentVal + +val;
@@ -214,6 +221,8 @@ $(document).ready(() => {
 			infinite: true,
 			prevArrow: shelf__prev,
 			nextArrow: shelf__next,
+			variableWidth: true,
+			centerMode: true,
 			responsive: [
 				{
 					breakpoint: 600,
