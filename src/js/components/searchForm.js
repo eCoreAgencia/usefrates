@@ -147,14 +147,6 @@
 								<h3 class="product__name">
 									<a class="product__link" href="${link}" title="${productName}">${productName}</a>
 								</h3>
-								<div class="product__price">
-									<div class="price">
-										<span class="price__list">${bestPriceFormated}</span>
-										<span class="price__instament">${parcelas !== 0 ? parcelas : ""}x R$ ${
-								valorParcela !== 0 ? valorParcela : ""
-							} sem juros.</span>
-									</div>
-								</div>
 							</div>
 						</div>`;
 						} else {
