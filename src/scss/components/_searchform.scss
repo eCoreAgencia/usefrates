@@ -1,10 +1,15 @@
 .search-form {
 	&__result {
 		position: absolute;
-		right: 85px;
-		top: 100%;
 		background: white;
+		top: 103px;
+		right: 0;
+		left: 0;
+		z-index: 99;
 		@include atMedium {
+			top: 100%;
+			right: 85px;
+			left: inherit;
 			min-width: 500px;
 		}
 		.product--shelf {

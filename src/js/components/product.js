@@ -174,33 +174,9 @@ $(document).ready(() => {
 			arrows: true,
 			slidesToShow: 4,
 			slidesToScroll: 1,
-			infinite: true,
-			prevArrow: shelf__prev,
-			nextArrow: shelf__next,
 			variableWidth: true,
-			centerMode: true,
-			responsive: [
-				{
-					breakpoint: 600,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1,
-						prevArrow: mob__prev,
-						nextArrow: mob__next,
-						dots: true
-					}
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-						prevArrow: mob__prev,
-						nextArrow: mob__next,
-						dots: true
-					}
-				}
-			]
+			prevArrow: shelf__prev,
+			nextArrow: shelf__next
 		});
 
 		$(".thumbs").slick({

@@ -38,11 +38,13 @@ class Filter {
 
 	closeFilter() {
 		$(".filter-mobile__absolute").removeClass("active");
+		$(".filter-mobile__absolute").attr("id", "");
 	}
 	toggleTheFilterOptions(e) {
 		let itemData = $(e).attr("data-name");
 		let element = $(`.filtro_${itemData.toLowerCase()}`).html();
 		let absoluteDiv = $(".filter-mobile__absolute");
+		$(".filter-mobile__absolute").attr("id", itemData);
 		absoluteDiv.html(element);
 		absoluteDiv.toggleClass("active");
 		this.closeButton();
