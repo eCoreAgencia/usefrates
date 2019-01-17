@@ -32,6 +32,8 @@ else
 		.product__media
 			a.product__link(title= title, href= href)
 				!= getImageTag
+				.flags
+					p.flag.desconto 90% OFF
 			.product__button
 				a.btn.btn__buy(title= title, href= href)
 					include ../../svg/carrinho-tipbar.svg

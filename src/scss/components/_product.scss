@@ -181,3 +181,41 @@
 		@extend %price__installment;
 	}
 }
+
+// FLAGS
+.flags {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+
+	.flag {
+		position: absolute;
+		top: 0;
+		right: -5px;
+		width: 56px;
+		height: 26px;
+		line-height: 2;
+		font-weight: 400;
+		color: $c-white;
+		background-color: $c-primary;
+		border-bottom-left-radius: 12px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: -3px;
+			width: 5px;
+			height: 10px;
+			background-color: #726845;
+			z-index: -1;
+			transform: rotate(195deg) translateX(5px);
+		}
+
+		&.desconto {
+			background-color: $c-blue;
+		}
+	}
+}
