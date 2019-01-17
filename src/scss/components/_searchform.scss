@@ -2,13 +2,13 @@
 	&__result {
 		position: absolute;
 		background: white;
-		top: 103px;
+		bottom: -30px;
 		right: 0;
 		left: 0;
 		z-index: 99;
 		@include atMedium {
-			top: 100%;
-			right: 85px;
+			top: 75px;
+			right: -10px;
 			left: inherit;
 			min-width: 500px;
 		}

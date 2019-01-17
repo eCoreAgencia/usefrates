@@ -3,6 +3,7 @@
 	grid-area: sform;
 	padding: 0 10px;
 	display: none;
+	position: relative;
 	@include atMedium {
 		flex-basis: 25%;
 		padding: 0;
