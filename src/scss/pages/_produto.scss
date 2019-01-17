@@ -488,6 +488,9 @@
 		.shipping__input {
 			border: 1px solid #bdbdbd;
 			padding-left: 10px;
+			@include atMedium {
+				max-width: 180px;
+			}
 		}
 		.shipping__txt {
 			margin: 0;
