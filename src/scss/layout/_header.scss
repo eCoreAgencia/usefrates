@@ -388,6 +388,7 @@ body.home .header {
 		background-color: $c-white;
 		background-image: none !important;
 		z-index: 99;
+		width: 100%;
 
 		.header__top, .tipbar__mobile {
 			display: none;
