@@ -15,13 +15,17 @@ $(document).ready(() => {
 
 	console.log(isMobile.Android());
 
-	if (!isMobile.any()) {
+	$(window).scroll(() => {
 		headerFixed();
+	});
 
-		$(window).scroll(() => {
-			headerFixed();
-		});
-	}
+	// if (!isMobile.any()) {
+	// 	headerFixed();
+
+	// 	$(window).scroll(() => {
+	// 		headerFixed();
+	// 	});
+	// }
 
 	$(".newsletter__form").sendForm("NL");
 	$(document).ready(function() {

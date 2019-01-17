@@ -48,7 +48,7 @@ body.home .header {
 		}
 	}
 
-	&:hover {
+	&:hover, &.header--fixed {
 		// CCS3 FUNCTIONAL CLASSES TO TARGET HOVERED EVENTS
 
 		@include atMedium {
@@ -379,6 +379,18 @@ body.home .header {
 			@extend %display-flex;
 			@extend %flex-justify-content-center;
 			@extend %flex-align-items-center;
+		}
+	}
+
+	&.header--fixed {
+		position: fixed !important;
+		top: 0;
+		background-color: $c-white;
+		background-image: none !important;
+		z-index: 99;
+
+		.header__top, .tipbar__mobile {
+			display: none;
 		}
 	}
 }
