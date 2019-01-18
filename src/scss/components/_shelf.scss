@@ -109,6 +109,7 @@
 	@extend %flex-justify-content-center;
 	flex-wrap: nowrap;
 	padding-top: 45px;
+	display: none;
 	@include atMedium {
 		display: none;
 	}
