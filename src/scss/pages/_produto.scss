@@ -201,7 +201,7 @@
 			grid-area: thumbs;
 			li {
 				img {
-					box-shadow: 1px 1px 8px 0px black;
+					box-shadow: 1px 1px 4px 0px black;
 					@include atMedium {
 						box-shadow: none;
 					}
