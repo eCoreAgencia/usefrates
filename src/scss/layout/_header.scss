@@ -114,6 +114,17 @@ body.home .header {
 		&.search-active {
 			grid-template-rows: 1fr 1px 1fr;
 			grid-template-areas: "menu blank logo searchico carrinho" "divisor divisor divisor divisor divisor" "sform sform sform sform sform";
+			height: 51px;
+			animation: searchAnim .3s forwards;
+
+			@keyframes searchAnim {
+				from {
+					height: 51px;
+				}
+				to {
+					height: 103px;
+				}
+			}
 			.search-form {
 				display: flex;
 			}
