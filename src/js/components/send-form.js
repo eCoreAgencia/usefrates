@@ -50,6 +50,7 @@ $.fn.sendForm = function(entity, overwriteFields) {
 				if (entity == 'NL') {
 					form.addClass('success');
 					form.find('.newsletter__success').css('display', 'flex');
+					$('.newsletter__form').html('<p>Obrigado por se cadastrar na Frates !!</p>');
 				}
 			})
 			.fail(function(jqXHR, textStatus) {

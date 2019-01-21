@@ -90,8 +90,11 @@
 			list.append(
 				`<div class="button-resultados">
 					<a class="search-form__link" href="${query}">Ver todos os resultados</a>
-					<div class="ld ld-ring ld-spin"></div>
 				</div>`
+				// `<div class="button-resultados">
+				// 	<a class="search-form__link" href="${query}">Ver todos os resultados</a>
+				// 	<div class="ld ld-ring ld-spin"></div>
+				// </div>`
 			);
 
 			if (!items) return;
@@ -308,6 +311,7 @@
 					"?O=OrderByTopSaleDESC",
 				error(err) {
 					console.error(err);
+					$(".button-resultados .ld-ring").remove();
 					list.removeClass("is-fetching").hide();
 					if (settings.showBrands) {
 						brandsList.addClass("is-fetching").hide();
@@ -320,11 +324,12 @@
 					let brands = [];
 
 					list.removeClass("is-fetching");
-					let theLink = $(".button-resultados").find(".ld-ring");
-					theLink.remove();
+					$(".button-resultados .ld-ring").remove();
 
 					if (settings.showBrands) {
 						brandsList.removeClass("is-fetching");
+
+						$(".button-resultados .ld-ring").remove();
 
 						data.forEach(item => {
 							if (brands.indexOf(item.brand) == -1) {
