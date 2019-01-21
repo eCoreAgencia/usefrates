@@ -65,7 +65,7 @@ class Product {
 		});
 		$(".product__sizes").on("click", function(e) {
 			e.preventDefault();
-			alert("em-breve");
+			alert("em breve");
 			// $("body").toggleClass("modal-active");
 			// $(".section__modal").addClass("is-openned");
 			// $(".modal__medidas-content").fadeIn();
