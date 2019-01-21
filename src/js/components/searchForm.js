@@ -320,8 +320,10 @@
 					let brands = [];
 
 					list.removeClass("is-fetching");
-					let theLink = $(".button-resultados").find(".ld-ring");
-					theLink.remove();
+					$(".button-resultados")
+						.find(".ld-ring")
+						.hide();
+					$(".search-form__link").show();
 
 					if (settings.showBrands) {
 						brandsList.removeClass("is-fetching");
