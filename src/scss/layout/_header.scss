@@ -48,7 +48,8 @@ body.home .header {
 		}
 	}
 
-	&:hover, &.header--fixed {
+	&:hover,
+	&.header--fixed {
 		// CCS3 FUNCTIONAL CLASSES TO TARGET HOVERED EVENTS
 
 		@include atMedium {
@@ -115,7 +116,7 @@ body.home .header {
 			grid-template-rows: 1fr 1px 1fr;
 			grid-template-areas: "menu blank logo searchico carrinho" "divisor divisor divisor divisor divisor" "sform sform sform sform sform";
 			height: 51px;
-			animation: searchAnim .3s forwards;
+			animation: searchAnim 0.3s forwards;
 
 			@keyframes searchAnim {
 				from {
@@ -361,6 +362,10 @@ body.home .header {
 				top: -20px;
 				right: 50%;
 			}
+			a {
+				color: $c-blue;
+				margin-bottom: 5px;
+			}
 		}
 		&__mobile {
 			background-color: $c-blue;
@@ -401,7 +406,8 @@ body.home .header {
 		z-index: 99;
 		width: 100%;
 
-		.header__top, .tipbar__mobile {
+		.header__top,
+		.tipbar__mobile {
 			display: none;
 		}
 	}

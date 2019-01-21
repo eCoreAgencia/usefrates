@@ -6,20 +6,26 @@ header.header
 					a.tipbar__link(href="http://")
 						include ../../svg/desc-tipbar.svg
 						| Desconto na Primeira Compra
-					a.tipbar__link(href="http://")
+						p.tipbar__floating-tip
+							| Desconto de R$20,00 na sua primeira compra usando o cupom <strong>FRATES20</strong>
+					a.tipbar__link(href="/institucional/trocas-e-devolucoes")
 						include ../../svg/troca-tipbar.svg
 						| Troca Grátis
 					a.tipbar__link(href="http://")
 						include ../../svg/frete-tipbar.svg
 						| Frete Grátis
 						p.tipbar__floating-tip
-							| Nas compras acima de <strong>R$000,00.</strong>
-							| Para entregas feitas pela
-							| <strong>Total express.</strong>
-							| Selecione a opção no checkout.
-					a.tipbar__link(href="http://")
+							| Nas compras acima de <strong>R$299,00.</strong>
+					.tipbar__link(href="http://")
 						include ../../svg/atendimento-tipbar.svg
 						| Atendimento
+						.tipbar__floating-tip
+							a(href="tel:(62)4013-6390") <strong>Telefone:</strong> (62) 4013-6390 <br />
+							a(href="mailto:contato@usefrates.com") <strong>Email:</strong> contato@usefrates.com
+							//- a(href="tel:(62)4013-639") <strong>Whatsapp:</strong> (62)4013-6390
+
+
+
 				.tipbar__right
 					a.tipbar__link(href="/account")
 						include ../../svg/conta-tipbar.svg

@@ -9,6 +9,9 @@
 		padding: 0;
 		display: flex;
 	}
+	&__link {
+		display: none;
+	}
 	&__input {
 		border-width: 0 0 1px 0;
 		width: 100%;
@@ -16,7 +19,7 @@
 		border-color: $c-primary;
 		&::placeholder {
 			color: $c-white;
-			font-family: 'Open Sans';
+			font-family: "Open Sans";
 			font-style: italic;
 			@include font-size(15px);
 		}
