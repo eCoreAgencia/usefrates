@@ -7,6 +7,7 @@ import "./pages/empty-search";
 import "./pages/login";
 
 import "./components/mobilemenu";
+import "./components/contact";
 import "./components/filter";
 import "./components/product";
 import "./components/minicart";
