@@ -34,7 +34,7 @@
 		@include atMedium {
 			background-color: #efeeee;
 			position: relative;
-			z-index: 0;
+			z-index: -1;
 			.empty-search__term-result {
 				display: inline-flex;
 			}
