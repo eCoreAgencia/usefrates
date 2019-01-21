@@ -65,9 +65,10 @@ class Product {
 		});
 		$(".product__sizes").on("click", function(e) {
 			e.preventDefault();
-			$("body").toggleClass("modal-active");
-			$(".section__modal").addClass("is-openned");
-			$(".modal__medidas-content").fadeIn();
+			alert("em-breve");
+			// $("body").toggleClass("modal-active");
+			// $(".section__modal").addClass("is-openned");
+			// $(".modal__medidas-content").fadeIn();
 		});
 
 		$(".modal__medidas-close").on("click", function(e) {

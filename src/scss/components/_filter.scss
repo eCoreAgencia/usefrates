@@ -8,7 +8,8 @@ body.catalog {
 	.filter {
 		flex: 1;
 		&__inner {
-			display: flex;
+			// display: flex;
+			display: none;
 			align-items: center;
 			justify-content: space-between;
 			flex: 1;

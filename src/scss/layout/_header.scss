@@ -324,6 +324,7 @@ body.home .header {
 			@include font-size(15px);
 			color: $c-white;
 			position: relative;
+			cursor: pointer;
 		}
 		&__link:hover {
 			> .tipbar__floating-tip {
