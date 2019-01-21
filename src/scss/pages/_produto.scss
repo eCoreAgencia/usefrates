@@ -408,11 +408,11 @@
 				@extend %flex-justify-content-space-between;
 				@extend %flex-align-items-center;
 				width: 100%;
-				height: 38px;
+				height: 50px;
 				border: 1px solid #bdbdbd;
 				flex-shrink: 0;
 				cursor: pointer;
-				transition: background-color .3s, color .3s;
+				transition: background-color 0.3s, color 0.3s;
 				&.checked {
 					@include atMedium {
 						background-color: $c-primary;
@@ -432,7 +432,7 @@
 					}
 				}
 				&:hover {
-					background-color: #BDBDBD;
+					background-color: #bdbdbd;
 					color: #fff;
 				}
 			}
