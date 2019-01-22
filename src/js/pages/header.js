@@ -10,15 +10,15 @@ $(document).ready(() => {
 		$("body").toggleClass("menu-active");
 	});
 
-	$(".menu__item").on("click", function(e) {
-		e.preventDefault();
-		let submenu = $(this).find(".menu__dropdown");
+	$(".menu__link-arrow").on("click", function(e) {
+		// e.preventDefault();
+		let submenu = $(this).parents("li").find(".menu__dropdown");
 		if (submenu.length) {
-			$(this)
+			$(this).parents("li")
 				.toggleClass("dropdown-active")
 				.find(".menu__link")
 				.toggleClass("is-clicked");
-			$(this).hasClass("dropdown-active")
+			$(this).parents("li").hasClass("dropdown-active")
 				? submenu.fadeIn()
 				: submenu.fadeOut();
 		}

@@ -1,86 +1,86 @@
 header.header
-	.header__top.bg-blue
-		.container
-			.tipbar
-				.tipbar__left
-					a.tipbar__link(href="http://")
-						include ../../svg/desc-tipbar.svg
-						| Desconto na Primeira Compra
-						p.tipbar__floating-tip
-							| Desconto de R$20,00 na sua primeira compra usando o cupom <strong>FRATES20</strong>
-					a.tipbar__link(href="/institucional/trocas-e-devolucoes")
-						include ../../svg/troca-tipbar.svg
-						| Troca Grátis
-					a.tipbar__link(href="http://")
-						include ../../svg/frete-tipbar.svg
-						| Frete Grátis
-						p.tipbar__floating-tip
-							| Nas compras acima de <strong>R$299</strong>
-					.tipbar__link(href="http://")
-						include ../../svg/atendimento-tipbar.svg
-						| Atendimento
-						.tipbar__floating-tip
-							a(href="tel:(62)4013-6390") <strong>Telefone:</strong> (62) 4013-6390 <br />
-							a(href="mailto:contato@usefrates.com") <strong>Email:</strong> contato@usefrates.com
-							//- a(href="tel:(62)4013-639") <strong>Whatsapp:</strong> (62)4013-6390
+    .header__top.bg-blue
+        .container
+            .tipbar
+                .tipbar__left
+                    a.tipbar__link(href="http://")
+                        include ../../svg/desc-tipbar.svg
+                        | Desconto na Primeira Compra
+                        p.tipbar__floating-tip
+                            | Desconto de R$20,00 na sua primeira compra usando o cupom <strong>FRATES20</strong>
+                    a.tipbar__link(href="/institucional/trocas-e-devolucoes")
+                        include ../../svg/troca-tipbar.svg
+                        | Troca Grátis
+                    a.tipbar__link(href="http://")
+                        include ../../svg/frete-tipbar.svg
+                        | Frete Grátis
+                        p.tipbar__floating-tip
+                            | Nas compras acima de <strong>R$299</strong>
+                    .tipbar__link(href="http://")
+                        include ../../svg/atendimento-tipbar.svg
+                        | Atendimento
+                        .tipbar__floating-tip
+                            a(href="tel:(62)4013-6390") <strong>Telefone:</strong> (62) 4013-6390 <br />
+                            a(href="mailto:contato@usefrates.com") <strong>Email:</strong> contato@usefrates.com
+                            //- a(href="tel:(62)4013-639") <strong>Whatsapp:</strong> (62)4013-6390
 
 
 
-				.tipbar__right
-					a.tipbar__link(href="/account")
-						include ../../svg/conta-tipbar.svg
-						| Minha Conta
-					.header__minicart
-						.js-minicart
-	.header__main.bg-white
-		.container
-			.header__wrapper
-				.header__menu-icon
-					.header__menu-icon__middle
-				a.header__logo(href="/")
-					span.header__logo-desk
-						include ../../svg/logo-frates.svg
-					span.header__logo-mob
-						include ../../svg/logo-frates-mob.svg
-				.header__lupa-mobile
-					button.header__lupa-mobile-icon
-						include ../../svg/lupa-search.svg
-				.header__minicart-mobile
-					.js-minicart
-				nav.menu
-					ul.menu__list
-						li.menu__item
-							a.menu__link.menu-txt-color(href="http://") Camisas
-								i.menu__link-arrow
-									include ../../svg/arrow-menu.svg
-							include ../vtexParts/dropdown
-						//- li.menu__item
-						//- 	a.menu__link.menu-txt-color(href="http://") Polos
-						//- 		i.menu__link-arrow
-						//- 			include ../../svg/arrow-menu.svg
-						//- li.menu__item
-						//- 	a.menu__link.menu-txt-color(href="http://") Camisetas
-						//- 		i.menu__link-arrow
-						//- 			include ../../svg/arrow-menu.svg
-						li.menu__account
-							a(href="/account")
-								include ../../svg/conta-tipbar.svg
-								| Minha Conta
-						li.menu__revenda
-							a(href="/account")
-								include ../../svg/revenda-icon.svg
-								| Seja um revendedor
-				span.divisor
+                .tipbar__right
+                    a.tipbar__link(href="/account")
+                        include ../../svg/conta-tipbar.svg
+                        | Minha Conta
+                    .header__minicart
+                        .js-minicart
+    .header__main.bg-white
+        .container
+            .header__wrapper
+                .header__menu-icon
+                    .header__menu-icon__middle
+                a.header__logo(href="/")
+                    span.header__logo-desk
+                        include ../../svg/logo-frates.svg
+                    span.header__logo-mob
+                        include ../../svg/logo-frates-mob.svg
+                .header__lupa-mobile
+                    button.header__lupa-mobile-icon
+                        include ../../svg/lupa-search.svg
+                .header__minicart-mobile
+                    .js-minicart
+                nav.menu
+                    ul.menu__list
+                        li.menu__item
+                            a.menu__link.menu-txt-color(href="/vestuario/masculino") Camisas
+                            i.menu__link-arrow
+                                include ../../svg/arrow-menu.svg
+                            include ../vtexParts/dropdown
+                        //- li.menu__item
+                        //- 	a.menu__link.menu-txt-color(href="http://") Polos
+                        //- 		i.menu__link-arrow
+                        //- 			include ../../svg/arrow-menu.svg
+                        //- li.menu__item
+                        //- 	a.menu__link.menu-txt-color(href="http://") Camisetas
+                        //- 		i.menu__link-arrow
+                        //- 			include ../../svg/arrow-menu.svg
+                        li.menu__account
+                            a(href="/account")
+                                include ../../svg/conta-tipbar.svg
+                                | Minha Conta
+                        li.menu__revenda
+                            a(href="/account")
+                                include ../../svg/revenda-icon.svg
+                                | Seja um revendedor
+                span.divisor
 
-				form.search-form#header-form(action="/busca", method="get")
-					input.input.search-form__input.input-color(type='text',placeholder="Encontre um produto")/
-					button
-						include ../../svg/lupa-search.svg
-					.search-form__result
+                form.search-form#header-form(action="/busca", method="get")
+                    input.input.search-form__input.input-color(type='text',placeholder="Encontre um produto")/
+                    button
+                        include ../../svg/lupa-search.svg
+                    .search-form__result
 
-			.tipbar__mobile
-				.tipbar__mobile-wrapper
-					.tipbar__mobile-ico
-						include ../../svg/desc-tipbar.svg
-					p.tipbar__mobile-text <strong>Desconto na Primeira Compra</strong> - R$20 OFF na sua primeira compra. Cupom <strong>FRATES20</strong>
+            .tipbar__mobile
+                .tipbar__mobile-wrapper
+                    .tipbar__mobile-ico
+                        include ../../svg/desc-tipbar.svg
+                    p.tipbar__mobile-text <strong>Desconto na Primeira Compra</strong> - R$20 OFF na sua primeira compra. Cupom <strong>FRATES20</strong>
 
