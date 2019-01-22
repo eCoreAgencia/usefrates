@@ -203,6 +203,12 @@
 			&.newThumbs {
 				display: block;
 			}
+			@include atMedium {
+				display: block;
+				&.newThumbs {
+					display: none;
+				}
+			}
 			li {
 				img {
 					box-shadow: 1px 1px 4px 0px #777;

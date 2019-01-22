@@ -8,8 +8,10 @@ $(document).ready(() => {
 
 		if (pageScroll >= distancePageTop) {
 			$(".header").addClass("header--fixed");
+			$("main").css('margin-top','200px');
 		} else {
 			$(".header").removeClass("header--fixed");
+			$("main").css('margin-top','0px');
 		}
 	};
 
