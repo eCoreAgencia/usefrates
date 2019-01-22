@@ -199,6 +199,10 @@
 		.thumbs {
 			order: 0;
 			grid-area: thumbs;
+			display: none;
+			&.newThumbs {
+				display: block;
+			}
 			li {
 				img {
 					box-shadow: 1px 1px 4px 0px #777;
