@@ -14,8 +14,8 @@
 	}
 
 	.minicart__count-value {
-		top: 0;
-		right: 0px;
+        top: -7px;
+        left: -17px
 	}
 }
 .minicart {
@@ -54,7 +54,7 @@
 		top: 0;
 		right: -100%;
 		left: 40px;
-		height: 100vh;
+		height: 100%;
 		background-color: $c-white;
 		z-index: 50;
 		display: none;
@@ -101,7 +101,7 @@
 		}
 	}
 	&__content {
-		height: 62%;
+		height: 68%;
 		overflow: auto;
 	}
 	&__footer {
@@ -126,7 +126,11 @@
 		background-color: #8cc44b;
 		text-align: center;
 		justify-content: center;
-		color: white;
+        color: white;
+        
+        svg {
+            margin-right: 10px;
+        }
 	}
 
 	&__totals {
@@ -181,7 +185,11 @@
 
 	&__count {
 		display: flex;
-		align-items: center;
+        align-items: center;
+        position: relative;
+        @include atMedium {
+            position: initial;
+        }
 
 		&-value {
 			position: absolute;
