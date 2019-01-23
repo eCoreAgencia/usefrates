@@ -626,5 +626,9 @@ body.product {
 		li {
 			margin: 0 25px;
 		}
-	}
+    }
+    .easyzoom-flyout img {
+        width: auto !important;
+        height: auto !important;
+    }
 }
