@@ -201,7 +201,8 @@
 			grid-area: thumbs;
 			display: none;
 			&.newThumbs {
-				display: block;
+                display: block;
+
 			}
 			@include atMedium {
 				display: block;
@@ -237,7 +238,28 @@
 				grid-template-columns: 1fr;
 				grid-auto-rows: max-content;
 				grid-gap: 10px;
-			}
+            }
+            .slick-next {
+                bottom: 65%;
+                right: 2%;
+                margin: auto;
+                svg {
+                }
+                @include atMedium {
+                    transform: rotate(180deg);
+                }
+            }
+            .slick-prev {
+                bottom: 65%;
+                left: 2%;
+                margin: auto;
+                svg {
+                    transform: rotate(180deg);
+                }
+                @include atMedium {
+                    transform: rotate(180deg);
+                }
+            }
 		}
 
 		.productName {
