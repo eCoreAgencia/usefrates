@@ -4,12 +4,12 @@
 		.minicart__container {
 			right: 0;
 			left: initial;
-			position: absolute;
+			position: fixed;
 		}
 		.minicart__overlay {
 			width: 100%;
 			height: 100%;
-			position: absolute;
+			position: fixed;
 		}
 	}
 
