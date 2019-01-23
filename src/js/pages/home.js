@@ -85,7 +85,7 @@ $(document).ready(function() {
 			nextArrow: shelf__next,
 			responsive: [
 				{
-					breakpoint: 600,
+					breakpoint: 800,
 					settings: {
 						slidesToShow: 3,
 						slidesToScroll: 1,
