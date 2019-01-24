@@ -21,13 +21,15 @@ $(document).ready(() => {
 		headerFixed();
 	});
 
-	// if (!isMobile.any()) {
-	// 	headerFixed();
 
-	// 	$(window).scroll(() => {
-	// 		headerFixed();
-	// 	});
-	// }
+	
+    $(".tipbar__mobile-list").slick({
+        dots: false,
+        // autoplay: true,
+        infinite: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+    });
 
 	$(".newsletter__form").sendForm("NL");
 	$(document).ready(function() {

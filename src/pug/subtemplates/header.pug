@@ -3,7 +3,7 @@ header.header
         .container
             .tipbar
                 .tipbar__left
-                    a.tipbar__link(href="http://")
+                    .tipbar__link
                         include ../../svg/desc-tipbar.svg
                         | Desconto na Primeira Compra
                         p.tipbar__floating-tip
@@ -11,12 +11,12 @@ header.header
                     a.tipbar__link(href="/institucional/trocas-e-devolucoes")
                         include ../../svg/troca-tipbar.svg
                         | Troca Grátis
-                    a.tipbar__link(href="http://")
+                    .tipbar__link
                         include ../../svg/frete-tipbar.svg
                         | Frete Grátis
                         p.tipbar__floating-tip
                             | Nas compras acima de <strong>R$299</strong>
-                    .tipbar__link(href="http://")
+                    .tipbar__link
                         include ../../svg/atendimento-tipbar.svg
                         | Atendimento
                         .tipbar__floating-tip
@@ -79,8 +79,32 @@ header.header
                     .search-form__result
 
             .tipbar__mobile
-                .tipbar__mobile-wrapper
-                    .tipbar__mobile-ico
-                        include ../../svg/desc-tipbar.svg
-                    p.tipbar__mobile-text <strong>Desconto na Primeira Compra</strong> - R$20 OFF na sua primeira compra. Cupom <strong>FRATES20</strong>
+                .tipbar__mobile-wrapper       
+                    ul.tipbar__mobile-list
+                        li.tipbar__mobile-text 
+                            a(href="http://") 
+                                .tipbar__mobile-ico
+                                    include ../../svg/desc-tipbar.svg
+                                span <strong>Desconto na Primeira Compra</strong> - R$20 OFF na sua primeira compra. Cupom <strong>FRATES20</strong>
 
+                        li.tipbar__mobile-text 
+                            a(href="http://") 
+                                .tipbar__mobile-ico
+                                    include ../../svg/troca-tipbar.svg
+                                span Troca Grátis
+
+                        li.tipbar__mobile-text 
+                            a(href="http://") 
+                                .tipbar__mobile-ico
+                                    include ../../svg/frete-tipbar.svg
+                                span Frete Grátis nas compras acima de <strong>R$299</strong>
+                        
+                        li.tipbar__mobile-text 
+                            a(href="http://") 
+                                .tipbar__mobile-ico
+                                    include ../../svg/atendimento-tipbar.svg
+                                span
+                                    | <strong>Telefone:</strong> (62) 4013-6390 /
+                                    | <strong>Email:</strong> contato@usefrates.com
+                                    //- a(href="tel:(62)4013-639") <strong>Whatsapp:</strong> (62)4013-6390
+                                
