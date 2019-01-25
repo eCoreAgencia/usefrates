@@ -305,31 +305,12 @@ $(document).ready(() => {
 		});
         
         
+        $("#divCompreJunto").each(function( index ) {
+            if( $(this).html().length == 0 ){
+             $(".section__buy-together").hide();
+             return false
+            }
+        });
         
-        
-        
-        
-        
-        
-        
-        // $(".shelf__carousel--full ul").slick({
-		// 	dots: false,
-		// 	arrows: true,
-		// 	slidesToShow: 2,
-		// 	slidesToScroll: 1,
-        //     variableWidth: true,
-        //     mobileFirst: true,
-		// 	prevArrow: mob__prev,
-        //     nextArrow: mob__next,
-        //     responsive: [
-        //         {
-        //             breakpoint: 800,
-        //             slidesToShow: 4,
-        //             variableWidth: false,
-        //             prevArrow: shelf__prev,
-        //             nextArrow: shelf__next,
-        //         }
-        //     ]
-		// });
 	}
 });

@@ -21,13 +21,16 @@
 	&__list {
 		margin-top: 51px;
 		background-color: $c-white;
-		overflow-y: auto;
+        overflow-y: auto;
+        height: 100%;
 		@include atMedium {
 			overflow: initial;
 			background: none;
 			margin-top: 0;
 			display: flex;
-			align-items: center;
+            align-items: center;
+            height: auto;
+            position: static;
 		}
 	}
 	&__item {
@@ -109,7 +112,7 @@
 	&__revenda,
 	&__account {
 		background: $c-primary;
-
+        width: 100%;
 		a {
 			@extend %display-flex;
 			@extend %flex-align-items-center;
@@ -126,9 +129,15 @@
 		@include atMedium {
 			display: none;
 		}
-	}
+    }
+    &__revenda {
+        position: absolute;
+        bottom: 0;
+    }
 	&__account {
-		border-bottom: 1px solid #736946;
+        border-bottom: 1px solid #736946;
+        position: absolute;
+        bottom: 64px;
 	}
 }
 
@@ -139,8 +148,10 @@
 }
 
 body {
+    overflow: initial;
 	&.menu-active,
 	&.modal-active {
+        overflow: hidden;
 		&:before {
 			content: '';
 			position: fixed;
@@ -205,6 +216,12 @@ body {
 			border-bottom: 1px solid transparent;
 		}
 		@include atMedium {
+            &.todos{
+                display: none;
+                a {
+                    color: #848484;
+                }
+            }
 			margin: 0;
 			text-align: center;
 			padding: 10px;

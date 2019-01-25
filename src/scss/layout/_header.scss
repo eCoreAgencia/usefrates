@@ -421,7 +421,8 @@ body.home .header {
 		background-image: none !important;
 		z-index: 99;
 		width: 100%;
-
+        opacity: 1;
+        transition: all 1s ease;
 		.header__top,
 		.tipbar__mobile {
 			display: none;

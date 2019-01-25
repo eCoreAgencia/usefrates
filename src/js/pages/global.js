@@ -2,16 +2,17 @@ import { isMobile } from "../utils";
 
 $(document).ready(() => {
 	const headerFixed = () => {
-		const distancePageTop = 100;
+		const distancePageTop = 2;
 		const pageScroll =
 			window.pageYOffset || document.documentElement.scrollTop;
 
 		if (pageScroll >= distancePageTop) {
 			$(".header").addClass("header--fixed");
-			$("main").css('margin-top','200px');
+            // $("main").css('padding-top', $(".header").height()+'px');
+            
 		} else {
 			$(".header").removeClass("header--fixed");
-			$("main").css('margin-top','0px');
+			$("main").css('padding-top','0px');
 		}
 	};
 
