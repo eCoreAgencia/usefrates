@@ -665,4 +665,10 @@ body.product {
         width: auto !important;
         height: auto !important;
     }
+    .footer {
+        padding-bottom: 50px;
+        @include atMedium{
+            padding-bottom: 0;
+        }
+    }
 }
