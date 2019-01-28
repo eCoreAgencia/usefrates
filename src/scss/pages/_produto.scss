@@ -496,12 +496,16 @@
 		.product__shipping__result {
 			display: flex;
 			margin-top: 5px;
-			align-items: center;
+            align-items: center;
+            position: relative;
 		}
 		.product__shipping-close.shipping__close {
 			color: red;
 			border: 1px solid black;
-			margin-right: 5px;
+            margin-right: 5px;
+            position: absolute;
+            top: 5px;
+            right: 0;
 		}
 		.product__shipping-table__row {
 			font-size: 12px;

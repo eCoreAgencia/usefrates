@@ -10,15 +10,15 @@ $(document).ready(() => {
 		$("body").toggleClass("menu-active");
 	});
 
-	$(".menu__item").on("click", function(e) {
+	$(".menu__link").on("click", function(e) {
 		e.preventDefault();
-		let submenu = $(this).find(".menu__dropdown");
+		let submenu = $(this).parent().find(".menu__dropdown");
 		if (submenu.length) {
-			$(this)
+			$(this).parent()
 				.toggleClass("dropdown-active")
 				.find(".menu__link")
 				.toggleClass("is-clicked");
-			$(this).hasClass("dropdown-active")
+			$(this).parent().hasClass("dropdown-active")
 				? submenu.fadeIn()
 				: submenu.fadeOut();
 		}
