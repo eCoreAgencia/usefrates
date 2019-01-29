@@ -1,66 +1,93 @@
 .institutional {
 	&__grid {
 		display: grid;
+
 		@include atMedium {
 			grid-template-columns: 0.2fr 1fr;
+			grid-gap: 60px;
 		}
 	}
+
 	&__title {
+		color: $c-primary;
+		@include font-size(30px);
+		font-weight: bold;
 		@extend %display-flex;
 		@extend %flex-align-items-center;
 		@extend %flex-justify-content-center;
 		display: flex;
-		@include font-size(35px);
-		color: black;
 		@extend %text-transform-uppercase;
 		flex: 1;
-		&:before,
-		&:after {
-			content: '';
-			flex: 1;
-			height: 2px;
-			background-color: #bdbdbd;
-		}
-		&::before {
-			margin-right: 40px;
-		}
-		&::after {
-			margin-left: 40px;
+
+		@include atMedium {
+			color: black;
+			@include font-size(35px);
+
+			&:before,
+			&:after {
+				content: '';
+				flex: 1;
+				height: 2px;
+				background-color: #bdbdbd;
+			}
+
+			&::before {
+				margin-right: 40px;
+			}
+
+			&::after {
+				margin-left: 40px;
+			}
 		}
 	}
+
 	&__list {
 		margin-top: 20px;
 		text-align: center;
+
 		@include atMedium {
 			text-align: left;
 		}
 	}
+
 	&__item {
 		margin-bottom: 25px;
 	}
+
 	&__link {
 		@extend %text-transform-uppercase;
 		font-weight: bold;
 		color: #9e9d9e;
 		@include font-size(18px);
+
+		&:hover {
+			color: $c-primary;
+		}
 	}
+
 	&__title {
 		margin-bottom: 20px;
 	}
+
 	&__content {
 		padding: 0 10px;
+
 		@include atMedium {
 			padding: 0;
 		}
 	}
+
 	h3 {
+		display: none;
 		color: $c-primary;
 		@include font-size(30px);
 		font-weight: bold;
 	}
+
 	p {
 		color: #757575;
 	}
+
 	form {
 		.item {
 			margin-bottom: 20px;
@@ -72,12 +99,14 @@
 				font-size: 15px;
 				width: 120px;
 			}
+
 			input {
 				border: none;
 				border-bottom: 2px solid #999;
 				padding: 10px;
-				width: 310px;			
+				width: 310px;
 			}
+
 			#sendEmail {
 				margin-top: 10px;
 				margin-left: 30px;
@@ -87,11 +116,12 @@
 				color: #fff;
 				background: #80754e;
 			}
+
 			textarea {
 				width: 310px;
 				height: 110px;
 				border: 1px solid #999;
-				padding: 7px;			
+				padding: 7px;
 			}
 		}
 	}

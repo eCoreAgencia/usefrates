@@ -5,6 +5,7 @@ import "./pages/header";
 import "./pages/catalog";
 import "./pages/empty-search";
 import "./pages/login";
+import "./pages/institucional";
 
 import "./components/mobilemenu";
 import "./components/contact";
